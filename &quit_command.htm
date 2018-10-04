@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;Quit</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;Quit</span>
+        </div>
+        <h1><a name="kanchor1893"></a>&amp;Quit</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[&amp;Quit]</p>
+        <p><a href="#Examples" class="selected">Example Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>Allows a script or document to be ended before it has fully executed. 
+ &#160;&amp;Quit can be used within the <a href="&amp;route_command.htm">&amp;Route</a> 
+ command (where the system checks to see if a file may move from one milestone 
+ to another), or in the Open File script to check, for example, if the 
+ user has the relevant permissions to view the file.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameter</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">no-status</p>
+                    <p><a name="kanchor1894"></a>When using the &amp;Quit command in a system script, this message 
+		 will display: <span style="font-weight: bold;">Document quit command</span>. 
+		 This message will not display in a non-system script. Including 
+		 the <span style="font-weight: bold;">no-status</span> parameter 
+		 with the &amp;Quit command in system scripts, will enable the 
+		 script to quit without the message displaying.</p>
+                    <p>Another use of the <span style="font-weight: bold;">no-status</span> 
+		 parameter within non-system scripts is shown below in Example 
+		 3, where the <span style="font-weight: bold;">no-status</span> 
+		 parameter allows all processing to continue in a script that has 
+		 called another script containing a &amp;Quit command.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">1 &amp;Quit 
+ used with milestones</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>This example shows a file progressing from the <span style="font-weight: bold;">Instructions 
+	 Received</span> milestone to the <b>Issue</b> 
+	 milestone. If the first condition is true, the message is output and 
+	 the &amp;Quit command ends the script. However, if it is false, the 
+	 file is progressed to the <span style="font-weight: bold;">Issue</span> 
+	 milestone from the <span style="font-weight: bold;">Instructions Received</span> 
+	 milestone.</p>
+            <p class="Script">[&amp;If MPR05&lt;"01/01/1980"]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Message "The LBA has 
+	 not been sent"]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Quit]</p>
+            <p class="Script">[&amp;Else]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;If MPR09 = "No"]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Message 
+	 "We do not yet have authority to issue"]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Quit]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;EndIf]</p>
+            <p class="Script">[&amp;EndIf]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">2 &amp;Quit 
+ used with the Open Case script</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p>This command may also be used in the <span style="font-weight: bold;">Open 
+	 File</span> script, where the file will not be opened. This allows 
+	 a developer to apply security to individual files using conditional 
+	 statements in the <span style="font-weight: bold;">Open File</span> 
+	 script. SCY06 is a field on a user-definable screen which determines 
+	 whether or not the file is secure: if it is secure and the user is 
+	 not the File Holder, access will be denied.</p>
+            <p class="Script">[&amp;If SCY06 = "Yes" &amp;And US04&lt;&gt;MT11]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Message "You are not 
+	 authorised to open this file"]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Quit]</p>
+            <p class="Script">[&amp;EndIf]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">3 &amp;Quit 
+ used with the no-status parameter</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p>This is an example of the &amp;Quit command with and without the 
+	 no-status parameter.</p>
+            <h5 class="note">Without no-status parameter</h5>
+            <p>&#160;Script A</p>
+            <p class="Script">[&amp;Call SCRIPTB]</p>
+            <p class="Script">[&amp;Message “Test1"]</p>
+            <p>Script B</p>
+            <p class="Script">[&amp;Message “Test2"]</p>
+            <p class="Script">[&amp;Quit]</p>
+            <p>Script A immediately calls Script B, outputs the message “Test2" 
+	 and quits processing. Therefore processing does not return to Script 
+	 A to output the message “Test1".</p>
+            <h5>With no-status parameter</h5>
+            <p>Script A</p>
+            <p class="Script">[&amp;Call SCRIPTB]</p>
+            <p class="Script">[&amp;Message “Test1"]</p>
+            <p>Script B</p>
+            <p class="Script">[&amp;Message “Test2"]</p>
+            <p class="Script">[&amp;Quit no-status]</p>
+            <p>This time, Script A immediately calls Script B, outputs the message 
+	 "Test2" and returns the processing to Script A to output 
+	 the message "Test1". Including the <span style="font-weight: bold;">no-status</span> 
+	 parameter with the &amp;Quit command has enabled the processing in 
+	 the scripts to continue running to the end.</p>
+        </div>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

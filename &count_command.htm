@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;Count</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;Count</span>
+        </div>
+        <h1><a name="kanchor1251"></a>&amp;Count</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[&amp;Count type = "<span style="font-weight: bold;">&lt;</span>Group<span style="font-weight: bold;">&gt;</span>",code = <span style="font-weight: bold;">&lt;</span>GroupCode<span style="font-weight: bold;">&gt;</span>,result = <span style="font-weight: bold;">&lt;</span>FieldName<span style="font-weight: bold;">&gt;</span>]</p>
+        <p class="Script">[&amp;Count type = "<span style="font-weight: bold;">&lt;</span>Relation<span style="font-weight: bold;">&gt;</span>",result = <span style="font-weight: bold;">&lt;</span>FieldName<span style="font-weight: bold;">&gt;</span>]</p>
+        <p class="Script">[&amp;Count type="<span style="font-weight: bold;">&lt;</span>Relation<span style="font-weight: bold;">&gt;</span>",from-type="<span style="font-weight: bold;">&lt;</span>Case<span style="font-weight: bold;">&gt;</span>",int-code=MT30,to-type="<span style="font-weight: bold;">&lt;</span>Entity<span style="font-weight: bold;">&gt;</span>",result=LF01]</p>
+        <p class="Script">[&amp;Count type="<span style="font-weight: bold;">&lt;</span>Relation<span style="font-weight: bold;">&gt;</span>",from-type="<span style="font-weight: bold;">&lt;</span>Entity<span style="font-weight: bold;">&gt;</span>",int-code=EN56,to-type="<span style="font-weight: bold;">&lt;</span>Case<span style="font-weight: bold;">&gt;</span>",result=LF01]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>Provides a quick method for counting the number of instances of a group 
+ or relations on a file or entity.</p>
+        <p>When viewing screens a default uddetail record is created. &amp;Count 
+ returns a value if there is a blank iteration of a group screen such as 
+ when a screen has been viewed but no data entered, or where an iteration 
+ of a group has been created but then deleted. Use the <span style="font-weight: bold;">field</span> 
+ and <span style="font-weight: bold;">value</span> parameters to exclude 
+ these default screens.</p>
+        <p>When counting relations, all relations for that file or entity are returned 
+ by default. Use the <a href="#From-Type" class="selected">From-Type</a>, <a href="#Int-Code" class="selected">Int-Code</a> 
+ and <a href="#To-Type" class="selected">To-Type</a> to restrict the type of relations you 
+ want to count.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">code = <span style="font-weight: bold;">&lt;</span>GroupCode<span style="font-weight: bold;">&gt;</span></p>
+                    <p>Specify the code of the group to be counted. If this parameter 
+		 is not included, the error message <span style="font-weight: bold;">You 
+		 must specify a valid code</span> is displayed.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">field = <span style="font-weight: bold;">&lt;</span>FieldName<span style="font-weight: bold;">&gt;</span></p>
+                    <p>Enter a relevant field to the group. If this is not a field 
+		 name belonging to the group, a count value of <span style="font-weight: bold;">0</span> 
+		 is returned. If this is blank or not included in the command the 
+		 count function works as before.</p>
+                    <p>Relation fields not recommended; they are only populated when 
+		 a field is amended on the screen.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> <span class="ScriptChar">field 
+		 = pointer field</span> does not work.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="From-Type" id="From-Type"></a>From-Type</p>
+                    <p>File/case or entity. This parameter must be used if <span class="ScriptChar">Int-Code 
+		 =</span> is also populated.</p>
+                    <ul>
+                        <li value="1">Blank or not present = From Current Entity/Case</li>
+                        <li value="2">“Entity or E” – Entities related</li>
+                        <li value="3">“Case or C” – Files/cases related</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="Int-Code" id="Int-Code"></a>Int-Code</p>
+                    <p>Int-code of file or entity from which to calculate relations. 
+		 Return the correct count for a specified type and count.</p>
+                    <p>This parameter must be used if <span class="ScriptChar">From-Type 
+		 =</span> is also used.</p>
+                    <ul>
+                        <li value="1">Blank or not present = Int-code of current entity/file 
+			 is used</li>
+                        <li value="2">Entity/file Internal code i.e. MT30 / EN56</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">No-Duplicates</p>
+                    <p>Count multiple links to an entity or case as one link. Returns 
+		 the count of entities and cases linked to, rather than relation 
+		 count.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">result = <span style="font-weight: bold;">&lt;</span>FieldName<span style="font-weight: bold;">&gt;</span></p>
+                    <p>Specify where the count is to be stored.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">status = &#160;</p>
+                    <p>Enables you to return a count of All files, or Open files, or 
+		 Completed files.</p>
+                    <p>The status parameter can only be used where <span class="ScriptChar">to-type 
+		 = case</span>. If it is used with any other &amp;Count parameter 
+		 it is ignored. See <a href="#Examples" class="selected">example 8</a>.</p>
+                    <p>The options available for status= are:</p>
+                    <ul>
+                        <li value="1">All (By default the command looks for all files)</li>
+                        <li value="2">Open or O</li>
+                        <li value="3">Complete or C</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="To-Type" id="To-Type"></a>To-Type 
+		 =</p>
+                    <p>Restrict the relation count returned to either entities or files.</p>
+                    <p>To-Type =</p>
+                    <ul>
+                        <li value="1">Blank or not present = All relations</li>
+                        <li value="2">“Entity or E” – Entities related</li>
+                        <li value="3">“Case or C” – Cases related</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">type = "<span style="font-weight: bold;">&lt;</span>Group<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Specify that the command is to count the instances of a group. 
+		 If this parameter is not included, the error message <span style="font-weight: bold;">You 
+		 have specified an incorrect 'type'</span> is displayed.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">type = "<span style="font-weight: bold;">&lt;</span>relation<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Specify that the command is to count the instances of relations. 
+		 If this parameter is not included, the error message <span style="font-weight: bold;">You 
+		 have specified an incorrect 'type'</span> is displayed.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">value =</p>
+                    <p>This parameter is used to store the condition for the field, 
+		 e.g.: "yes", "0.00", "reference". 
+		 The count only includes iterations where this condition is true.</p>
+                    <p>If this parameter is not included but the field parameter is, 
+		 then a count of all iterations where the given field is not blank 
+		 or 'no' (if field is a check box) is returned.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The parameters 
+		 code=, field= and value= are only used when counting group iterations. 
+		 The parameters from-type=, int-code= and to-type= are only used 
+		 when counting relations.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t8">1 Fundamental 
+ use of &amp;Count</a>
+        </p>
+        <div MadCap:targetName="t8" style="display: none;">
+            <p>Store the number of instances of the group ABCD to the temporary 
+	 field TF01:</p>
+            <p class="Script">[&amp;Count type = "GROUP",code = "ABCD",result 
+	 = TF01]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t7">2 Choosing 
+ the group to count</a>
+        </p>
+        <div MadCap:targetName="t7" style="display: none;">
+            <p class="Script">[&amp;Assign TF02 = ’Count which group?’(Choose ABCD:EFGH:IJKL)]</p>
+            <p class="Script">[&amp;Count type = "GROUP",code = TF02,result 
+	 = TF01]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Use the <a href="&amp;assign_command.htm">&amp;Assign</a> 
+	 command to specify which group you wish to count.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">3 Storing 
+ the result to a database field</a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p class="Script">&amp;Count type = 
+	 "GROUP",code = "ABCD",result = UDF01]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> If the result 
+	 of a count is not to be used immediately, it may be more convenient 
+	 to store the result to a database field rather than a temporary field.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">4 Field 
+ and value parameters</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p>The <a href="&amp;foreach_command.htm">&amp;ForEach</a> command needs 
+	 to be used with these two examples:</p>
+            <p class="Script">[&amp;Count type = "GROUP",code=TF01,result=TF99,field=TF02,value=TF03]</p>
+            <p class="Script">[&amp;Count type = "GROUP",code=TF01,result=TF99,field="ADO20",value=""]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">5 Return 
+ a count of all relations from the current entity or file</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p class="Script">[&amp;Count type = "Relation",result = 
+	 &lt;FieldName&gt;]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">6 Return 
+ a count of all relations to entities from the current case</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p class="Script">[&amp;Count type="Relation",from-type="Case",int-code=MT30,to-type="Entity",result=LF01]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">7 Return 
+ a count of all relations to cases from entities</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p class="Script">[&amp;Count type="Relation",from-type="Entity",int-code=EN56,to-type="Case",result=LF01]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">8 status= 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p>Return a count of all relations to cases from entities along with 
+	 a count of all files:</p>
+            <p class="Script">[&amp;Count type="Relation",int-code=EN56,from-type="Entity",to-type="Case",status="all",result=LF01]</p>
+        </div>
+        <h4>Developers' Tip</h4>
+        <p><a name="kanchor1252"></a>The &amp;Count command can replace an &amp;ForEach loop whose only purpose 
+ is to calculate the number of group members, making the code simpler to 
+ read and more efficient to execute.</p>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1"><a href="../Scripting/Good_Scripting_Practice/Use_&amp;Count.htm">Use 
+	 &amp;Count</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

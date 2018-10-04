@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;Conflict</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;Conflict</span>
+        </div>
+        <h1><a name="kanchor743"></a>&amp;Conflict</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script"><span class="ScriptChar">[&amp;Conflict {contains|begins|word},...,count 
+ = &lt;FieldName&gt;]</span>
+        </p>
+        <p class="Script"><span class="ScriptChar">[&amp;Conflict {contains|begins|word},...,list 
+ = &lt;FieldName&gt;]</span>
+        </p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>Searches entity types to identify those containing data matching the 
+ search criteria.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 19px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 60px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">begins = "&lt;string&gt;"</p>
+                    <p>Filter the search to include only entities that <span style="font-weight: bold;">begin</span> 
+		 with a specific string of characters.</p>
+                    <p>This parameter enables fast searches against entity types.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 66px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">button&lt;X&gt; = "&lt;ButtonText&gt;"</p>
+                    <p>Set the text of button1, displayed in the <span style="font-weight: bold;">Finder</span><a name="kanchor744"></a>. 
+		 The &amp;Conflict command can display a dialog box with up to 
+		 five buttons: the buttons are named button1, button2, button3, 
+		 button4 and button5. To have one of these buttons show on a screen, 
+		 say button3, add <span style="font-weight: bold;">button3 = "button 
+		 3 text"</span>, to your command.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 87px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">contains = "&lt;string&gt;"</p>
+                    <p>Filter the search to include only entities that <span style="font-weight: bold;">contain</span> 
+		 a specific string of characters.</p>
+                    <p>This parameter does not work in SQL.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Using this 
+		 parameter to search with can be slow. If this is the case, we 
+		 recommend using the <span style="font-weight: bold;">begins</span> 
+		 and <span style="font-weight: bold;">word</span> parameters for 
+		 faster searches.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">count = &lt;FieldName&gt;</p>
+                    <p>Identify the number of matching entities and return this number 
+		 to a field.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 66px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">default = "&lt;ButtonNumber&gt;"</p>
+                    <p>Assign a button as the default. The default button has the focus 
+		 applied and its value will be assigned if a user simply presses 
+		 <span style="font-weight: bold;">Return</span> on a screen. If 
+		 the default parameter is not used, focus will apply to button1. 
+		 Valid values are 1, 2, 3, 4, and 5, representing each of the five 
+		 buttons.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">fetch = &lt;NumericValue&gt;</p>
+                    <p>Limit the number of values returned to a specified number.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 70px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">list = &lt;FieldName&gt;</p>
+                    <p>Identify the field to which the matching entity will be returned.</p>
+                    <p>Where there is more than one matching entity, the list will 
+		 be presented to the user to select entity codes to assign to the 
+		 field.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 48px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">nodisplay</p>
+                    <p>Prevent the <span style="font-weight: bold;">Finder</span> being 
+		 displayed if 1 or 0 conflicts are found.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 79px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">response = &lt;Field&gt;</p>
+                    <p>Specify the location to which the user response should be returned. 
+		 &#160;If the user double-clicks their selection or highlights 
+		 a finder entry and presses <span style="font-weight: bold;">Return</span>, 
+		 the response will equal <span style="font-weight: bold;">GO</span>. 
+		 &#160;If the user clicks the <span style="font-weight: bold;">Close 
+		 window</span> button in the top right-hand corner of the dialog, 
+		 or presses <span style="font-weight: bold;">Escape</span>, the 
+		 response will equal <span style="font-weight: bold;">CANCEL</span>. 
+		 &#160;If any of the user-defined buttons are clicked, the response 
+		 will equal <span style="font-weight: bold;">BUTTONX</span>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 41px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">role = "&lt;Role1;Role2;... 
+		 &gt;"</p>
+                    <p>Return only entities of a certain role. Multiple types may be 
+		 specified in a list separated by semi-colons.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">title = "&lt;FinderText&gt;"</p>
+                    <p>Set the text of the <span style="font-weight: bold;">title</span> 
+		 displayed in the <span style="font-weight: bold;">Finder</span>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">type = "&lt;EType1;EType2;...&gt;"</p>
+                    <p>Return only entities of a certain type. Multiple types may be 
+		 specified in a list separated by semi-colons.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The &amp;Conflict 
+		 command only searches on the entity name, EN02.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 57px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">word = "&lt;string&gt;"</p>
+                    <p>Filter the search to include only entities that contain a specific 
+		 <span style="font-weight: bold;">word</span>.</p>
+                    <p>This parameter enables fast searches against entity types.</p>
+                </td>
+            </tr>
+        </table>
+        <h2 class="TableBannerHeading">Using the Returned Value</h2>
+        <p class="Script">[&amp;Conflict contains = "smith",list = TF01]</p>
+        <p>The value returned from this search will be assigned to TF01. If there 
+ is no conflict, TF01 will contain the value 0 (zero). If there is a conflict, 
+ TF01 will contain the internal code of the selected entity.</p>
+        <table style="left: 0px;top: 84px;" cellspacing="0" width="100%">
+            <col style="width: 33.333%;" />
+            <col style="width: 33.333%;" />
+            <col style="width: 33.333%;" />
+            <tr style="vertical-align: top;height: 19px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 33.333%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">If</p>
+                </td>
+                <td style="border-top: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 33.333%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">then</p>
+                </td>
+                <td style="border-top: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 33.333%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">and</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 28px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 33.333%;padding-right: 10px;padding-left: 10px;">
+                    <p>Search finds no conflicts</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 33.333%;padding-right: 10px;padding-left: 10px;">
+                    <p><span style="font-weight: bold;">No conflict found</span><span>message 
+		 displayed</span>, dialog box closes without selecting the highlighted 
+		 entity.</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 33.333%;padding-right: 10px;padding-left: 10px;">
+                    <p>Value 
+		 of 0 is returned to the script.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 28px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 33.333%;padding-right: 10px;padding-left: 10px;">
+                    <p><span style="font-weight: bold;">Close</span><span>button selected</span>
+                    </p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 33.333%;padding-right: 10px;padding-left: 10px;">
+                    <p><span style="font-weight: bold;">No conflict found</span><span>message 
+		 displayed</span>, dialog box closes without selecting the highlighted 
+		 entity.</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 33.333%;padding-right: 10px;padding-left: 10px;">
+                    <p>Value 
+		 of 0 is returned to the script.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 28px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 33.333%;padding-right: 10px;padding-left: 10px;">
+                    <p><span style="font-weight: bold;">Select 
+		 Conflicting Item</span> button is selected</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 33.333%;padding-right: 10px;padding-left: 10px;">
+                    <p>The 
+		 highlighted entry is selected, the dialog box closes.</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 33.333%;padding-right: 10px;padding-left: 10px;">
+                    <p>The 
+		 entity internal code (a positive integer) is returned to the script.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 28px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 33.333%;padding-right: 10px;padding-left: 10px;">
+                    <p>Entity in the browser is double-clicked</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 33.333%;padding-right: 10px;padding-left: 10px;">
+                    <p>The 
+		 highlighted entry is selected, the dialog box closes.</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 33.333%;padding-right: 10px;padding-left: 10px;">
+                    <p>The 
+		 entity internal code (a positive integer) is returned to the script.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 5px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 33.333%;padding-right: 10px;padding-left: 10px;">
+                    <p>If 1 or 0 conflicts are found when 
+		 &#160;the <span style="font-weight: bold;">nodisplay</span> parameter 
+		 is used</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 33.333%;padding-right: 10px;padding-left: 10px;">
+                    <p>The 
+		 conflicting entity is not displayed.</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 33.333%;padding-right: 10px;padding-left: 10px;">
+                    <p>&#160;</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">1 Creating 
+ a new case</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p class="Script">[&amp;Assign TF01 = "Visualfiles"]</p>
+            <p class="Script">[&amp;Assign TF03 = 0]</p>
+            <p class="Script">[&amp;Conflict Contains = TF01,Type = "orga", 
+	 Role = "client;introducer",Fetch = 9,List = TF02,Count = 
+	 TF03]</p>
+            <p class="Script">[&amp;If TF03 = 0]</p>
+            <p>&#160;&#160;&#160;***Entity does not yet exist so it is OK to create 
+	 it.***</p>
+            <p class="Script">[&amp;Else]</p>
+            <p>&#160;&#160;&#160;***Select existing Visualfiles entry, currently 
+	 contained in the TF02 code.***</p>
+            <p class="Script">[&amp;EndIf]</p>
+            <p>&#160;&#160;&#160;***Create the new file.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">2 Default 
+ focus</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p class="Script">[&amp;Assign TF01 = 'Please Enter Search String Containing 
+	 Name of the Person']</p>
+            <p class="Script">[&amp;Conflict contains = TF01,type = "INDI",count 
+	 = TF02,list = TF03,default = "2",fetch = "all"]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> &#160;Button2 
+	 will have the focus when the conflict dialog box is initially displayed.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">3 Using 
+ a temporary field for a role list</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p>A temporary field can be constructed to contain a list of roles 
+	 such that this list can be used in the role parameter. &#160;In this 
+	 example, the conflict command would return individuals taking on the 
+	 role of secretary, chair or administrator.</p>
+            <p class="Script">[&amp;Assign TF01 = "SECRETARY;CHAIRMAN;ADMINISTRATOR"]</p>
+            <p class="Script">[&amp;Conflict type = "INDI",count = TF03,role 
+	 = TF01]</p>
+        </div>
+        <h4>Developers' Tips</h4>
+        <ul>
+            <li value="1">If no<span style="font-weight: bold;"> fetch</span> limit is set, the entire database is searched. If the &amp;Conflict command is being used to establish whether a conflict exists, set the value of fetch to 1.
+            </li>
+            <li value="2">If a <span style="font-weight: bold;">fetch</span> value has been 
+	 set, it will determines the maximum value that can be assigned using 
+	 the <span style="font-weight: bold;">count</span> parameter, even 
+	 if other matches exist. If <span style="font-weight: bold;">fetch</span> 
+	 is set to 1, then the value assigned by the <span style="font-weight: bold;">count</span> 
+	 parameter can only be 0 or 1.</li>
+            <li value="3">The internal code, EN56, is stored as a decimal value (number) 
+	 but the output from the &amp;Conflict command is of type <span style="font-weight: bold;">text</span>: 
+	 when an EN56 code is returned from an &amp;Conflict search, it is 
+	 returned in type <span style="font-weight: bold;">text</span>. Consequently, 
+	 when testing, it is necessary to test against a value of type <span style="font-weight: bold;">text</span> to avoid a <span style="font-weight: bold;">&lt;mismatched 
+	 data types&gt;</span> error. &#160;Alternatively, the text value can 
+	 be converted to type <span style="font-weight: bold;">number</span> 
+	 with an <a href="&amp;assign_command.htm">&amp;Assign</a> command: <span class="ScriptChar">[&amp;Assign TF01 = TF01:number]</span>.</li>
+            <li value="4">If 1 or 0 conflicts are found when the <span style="font-weight: bold;">nodisplay</span> 
+	 parameter is used, the conflicting entity is not displayed.</li>
+        </ul>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1"><a href="../Scripting/Good_Scripting_Practice/Use_&amp;Conflict_Begins_Parameter.htm">Use 
+	 &amp;Conflict Begins Parameter</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

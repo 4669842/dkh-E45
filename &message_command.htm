@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;Message</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;Message</span>
+        </div>
+        <h1><a name="kanchor1997"></a>&amp;Message</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[&amp;Message "&lt;MessageText&gt;"]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>Displays a message to the user during the production of a document or 
+ running a script. The message is displayed in a message box with an <span style="font-weight: bold;">OK</span><a name="kanchor1998"></a> button to dismiss the message. 
+ &amp;Message commands can be a combination of text and data codes.</p>
+        <p>Basic &amp;Message commands produce a simple text expression in a dialog 
+ box, such as a prompt or reminder. For example:</p>
+        <p>'Please select from the following list' or 'Please enter the address 
+ in full'.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="next_action" id="next_action"></a>next-action={text_expression}</p>
+                    <p>The <span style="font-weight: bold;">next–action</span> parameter 
+		 is used to end the script run at this point. Any code after the 
+		 &amp;Message command is ignored and the script specified by the 
+		 text expression in the next-action parameter is run. See <a href="#Examples" class="selected">example 
+		 7</a>.</p>
+                    <p>Text expressions are used to name the required script and can 
+		 be constructed from any combination of the following:</p>
+                    <ul>
+                        <li value="1"><span class="ScriptChar">"constant text"</span>, 
+			 such as a script name</li>
+                        <li value="2"><span class="ScriptChar">'User input'</span>
+                        </li>
+                        <li value="3">Database fields</li>
+                        <li value="4">LF, TF, PI fields. The temporary field specified will contain 
+			 the value entered by the user.</li>
+                    </ul>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> For more information 
+		 on stateless scripting options go to <a href="../Scripting/Visualfiles_Browser_Environment.htm#no_wait_next_action_Parameters">no-wait 
+		 and next-action Parameters</a>, <a href="../Scripting/Visualfiles_Browser_Environment.htm">Visualfiles 
+		 Browser Environment</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">next-action-inputs={expression};{expression}...</p>
+                    <p>List of semi-colon delimited items to be passed as PI fields 
+		 into the next-action script.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="no-wait1" id="no-wait1"></a>no-wait</p>
+                    <p>Ends the script run at this point.</p>
+                    <p>When a script that includes the no-wait parameter is run and 
+		 there is no user response to a screen prompt, the <span style="font-weight: bold;">no-wait</span> 
+		 parameter is executed which ends the script, ignoring all subsequent 
+		 code. This results in agents that would otherwise be tied to the 
+		 unused application, being accessible to other system users. See 
+		 <a href="#Examples" class="selected">example 8</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">title = "&lt;TextString<span title="Input for this parameter can contain a combination of text string and fields concatenated together." style="cursor: hand;">&gt;</span>"</p>
+                    <p>This parameter adds a user-defined title to the message box 
+		 window.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t8">1 Producing 
+ a basic message</a>
+        </p>
+        <div MadCap:targetName="t8" style="display: none;">
+            <p class="Script">[&amp;Message "Please enter contact details"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t7">2 Using 
+ data codes in a message</a>
+        </p>
+        <div MadCap:targetName="t7" style="display: none;">
+            <p>This code will incorporate the value of <span style="font-weight: bold;">DC10 
+	 (Issue Date)</span> into the message.</p>
+            <p class="Script">[&amp;Message "Warning - Proceedings issued 
+	 on " + DC10]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">3 Capitalising 
+ text in a message</a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p>This code will capitalise the message text.</p>
+            <p class="Script">[&amp;Message "proceedings issued by " 
+	 + DC12:caps]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">4 Displaying 
+ the results of a calculation in a message</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p>This code will multiply the two temporary fields together and display 
+	 the product in the message box.</p>
+            <p class="Script">[&amp;Message TF01*TF02]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">5 Adding 
+ a title to a message box and incorporating a message</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p>The code will add a title, <span style="font-weight: bold;">Check 
+	 Paper</span>, to the message box.</p>
+            <p class="Script">[&amp;Message "This Form must be Printed on 
+	 Yellow Paper",title = "Check Paper"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">6 Message 
+ prompt format display in dialog</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>Use the code below to display values in a column.</p>
+            <p class="Script">[&amp;Message TF01 + "&lt;CR&gt;" + TF02 
+	 + "&lt;CR&gt;" + TF03]</p>
+            <p>or</p>
+            <p class="Script">[&amp;Message LF01+"<br />
+	"+LF02+"<br />
+	"+LF03+"<br />
+	"+LF04+"<br />
+	"+LF05]</p>
+            <p>Use the code below to display values in a line.</p>
+            <p class="Script">[&amp;Message LF01+""+LF02+""+LF03+""+LF04+""+LF05]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">7 next-action 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p>The next -action parameter ends the script run at this point. Then 
+	 runs the specified script (for example, <span style="font-weight: bold;">AfterMessage</span>) 
+	 when the user clicks the <span style="font-weight: bold;">OK</span> 
+	 button in the message dialog it is attached to. So in the script below 
+	 <span class="ScriptChar">[&amp;Assign TF01]</span> will not be executed:</p>
+            <p class="Script">[&amp;Message "TEST1 of next action script",next-action="AfterMessage"]</p>
+            <p class="Script">[&amp;Assign TF01]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> No variables are 
+	 available when the script is run, TF, LF etc.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">8 no-wait 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p>The no-wait parameter ends the script run at this point. In the 
+	 script below <span class="ScriptChar">[&amp;Assign TF01]</span> will 
+	 not be executed:</p>
+            <p class="Script">[&amp;Message "Message nowait",no-wait]</p>
+            <p class="Script">[&amp;Assign TF01]</p>
+        </div>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1"><a href="../Scripting/status,_system_variable_-_error_trapping.htm">Status, 
+	 System Variable - Error Trapping</a>
+            </li>
+            <li value="2"><a href="../Scripting/Visualfiles_Browser_Environment.htm#Stateless_Scripting_Options">Stateless 
+	 Scripting Options</a>
+            </li>
+            <li value="3"><a href="../Scripting/Visualfiles_Browser_Environment.htm">Visualfiles 
+	 Browser Environment</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

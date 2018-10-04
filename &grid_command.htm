@@ -1,0 +1,2171 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;Grid</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;Grid</span>
+        </div>
+        <h1 style="margin-right: 0px;"><a name="kanchor1311"></a>&amp;Grid</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[<span style="font-weight: bold;">{</span>&amp;Grid action 
+ = <span style="font-weight: bold;">}</span> "create", ...]</p>
+        <p class="Script">[&amp;Grid action = "delete"]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>Displays user-defined grids during the execution of a script.</p>
+        <p>This command is used to configure a grid and assign cell values which 
+ must be included between the <span style="font-weight: bold;">[&amp;Grid 
+ action = "create"]</span> and the <span style="font-weight: bold;">[&amp;Grid 
+ action = "delete"]</span> commands.</p>
+        <p><a name="kanchor1312"></a>The &amp;Grid command always includes the &#160;<a href="#action" class="selected"><span class="ScriptChar">action</span></a> parameter; its function changes 
+ depending on the action specified.</p>
+        <p>The &amp;Grid command may be used to create a new grid, create a new 
+ column or a new row, assign values to individual cells in a grid, and 
+ to display the grid.</p>
+        <p>Data can be updated in a grid, but developers should be aware that the 
+ &amp;Grid command simply displays data. Use the <a href="#update" class="selected">Update</a> 
+ parameter and the <a href="&amp;assign_command.htm">&amp;Assign</a> command 
+ to write values back to the database.</p>
+        <h3><a name="kanchor1313"></a><a name="kanchor1314"></a><a name="kanchor1315"></a><a name="kanchor1316"></a><a name="kanchor1317"></a><a name="Embedded_Grids" id="Embedded_Grids"></a>Embedded Grids - Grid 
+ Field Type</h3>
+        <p>There is a Grid field type available on user-definable screens for embedding 
+ grids. A grid can be placed within a user-definable screen so that it 
+ is generated and displayed when the screen is opened, instead of a being 
+ displayed using a <a href="&amp;Script_command.htm">&amp;Script</a> command. 
+ Scripts run from the screen are then able to access the grids, which can 
+ be embedded within a user-definable screen for a file, add-in, entity 
+ or role.</p>
+        <p>The grid is defined within the screen builder where you can position 
+ and size the grid on the screen, as well as select to have multiple rows, 
+ and select the script that is run to populate the grid. See <a href="#Examples" class="selected">example 
+ 12</a>.</p>
+        <p>In the Visualfiles Browser a <span class="ScriptChar">[&amp;Grid action 
+ = "load"]</span> command is used to fetch the entire grid back 
+ from the client PC; for this reason we recommend that large grids (more 
+ than 50 rows of data) are not embedded into screens for Visualfiles Browser 
+ systems.</p>
+        <p>There can be up to 30 grid fields on a screen. Each one is uniquely 
+ identified by the field name and a <span class="ScriptChar">[&amp;Grid 
+ action = "load",field=GRD01]</span> command should 
+ be used to load a specific embedded grid into the script’s GR variables.</p>
+        <p>Whenever an embedded grid is loaded using a <span class="ScriptChar">[&amp;Grid 
+ action = "load"]</span> command it will automatically be refreshed 
+ when the button script has finished. This is done by running the script 
+ defined for the embedded script.</p>
+        <p>Grid parameters <span style="font-weight: bold;">key</span> and <span style="font-weight: bold;">index</span> are not used within embedded 
+ grids.</p>
+        <p>Double-clicking on a grid item or row has no effect and cannot be used 
+ to perform an action. In a dialog grid the item is selected and dialog 
+ is closed.</p>
+        <p>Grid column size and position can be adjusted by each user in the same 
+ way as dialog grids.</p>
+        <p>Grid buttons and the use of <a href="#next_action" class="selected">next-actions</a> 
+ are not applicable to embedded grids.</p>
+        <h4>Grid Field Script</h4>
+        <p>When using embedded grids, a grid field is needed on a screen. </p>
+        <p>Use the 
+ following script (or similar) which needs to be related to that field: <a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="Grid_Field_Script">Grid Field Script</a>.</p>
+        <div MadCap:targetName="Grid_Field_Script" style="display: none;">
+            <p>[&amp;Assign LF01=0]   * count on relation</p>
+            <p>[&amp;Grid action="delete"]</p>
+            <p>[&amp;Grid action="create"]</p>
+            <p>[&amp;Grid action="create-col",name = "Name",format="x(40)",type="char"]</p>
+            <p>[&amp;Grid action="create-col",name = "Job Title",format="x(30)",type="char"]</p>
+            <p>[&amp;Grid action="create-col",name = "Phone",format="x(15)",type="char"]</p>
+            <p>[&amp;Grid action="create-col",name = "Mobile",format="x(15)",type="char"]</p>
+            <p>[&amp;Grid action="create-col",name = "Email",format="x(30)",type="char"]</p>
+            <p>[&amp;Grid action="create-col",name = "Main",format="x(4)",type="char"]</p>
+            <p>[&amp;Grid action="create-col",name = "InternalCode",format="x(5)",type="char",hidden,key]</p>
+            <p>[&amp;Grid action="create-col",name = "Select",format="x(5)",type="char",selected,hidden]</p>
+            <p>[&amp;ForEach FILE_CONTACT,noincludeall]</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign LF01=LF01+1]</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;[&amp;With FILE_CONTACT]</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Grid action="create-row"]</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign GR01=EN03]   * name</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign GR02=DAA03]   * title</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign GR03=DAA04]   * phone</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign GR04=DAA06]   * mobile</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign GR05=DAA07]   * email</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[&amp;SelectRelation type="MAINCONTACT_FILE", to-ref="thisFile"]</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[&amp;If status(selectrelation)=""]</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign GR06="*"]</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Else]</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign GR06=""]   * Main contact - currently not in use</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[&amp;EndIf]</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign GR07=EN56]   * internal code</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;[&amp;EndWith]</p>
+            <p>[&amp;EndFor]</p>
+            <p>* If not contacts exist, display blank grid</p>
+            <p>[&amp;If LF01=0]</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Grid action="create-row"]</p>
+            <p>[&amp;EndIf]</p>
+            <p>If there are no details to display in the grid, a large blank space 
+ is displayed on the screen. To resolve this issue, count the number of 
+ items you are trying to retrieve; if it is 0, create a blank row so that 
+ the grid appears, e.g. <span class="ScriptChar">[&amp;Grid action="create-row"]</span>.</p>
+            <p>The Grid Field Script cannot be a system script and it does not run 
+ messages.</p>
+        </div>
+        <h4>Grid Select Button</h4>
+        <p>Buttons are needed on your screen to manage the Grid Actions, such as 
+ <span style="font-weight: bold;">select</span> or <span style="font-weight: bold;">delete</span>. 
+ Here is a sample script: <a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t34">Grid Select Button Script</a>.</p>
+        <div MadCap:targetName="t34" style="display: none;">
+            <p class="Script">[&amp;Grid action="load",field=UAF16]</p>
+            <p class="Script">[&amp;ForEach GR,GR08="Yes"]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 LF02=GR08] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;* 
+	 determine if any contacts require editing</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;SelectEntity 
+	 int-code=GR07,ref="myCONTACT"]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 UAF04=myCONTACT.DAA01] &#160;&#160;* name</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 UAF10=myCONTACT.DAA03] &#160;&#160;* title</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 UAF06=myCONTACT.DAA04] &#160;&#160;* phone</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 UAF08=myCONTACT.DAA06] &#160;&#160;* mobile</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 UAF09=myCONTACT.DAA07] &#160;&#160;* email</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 UAF05=myCONTACT.DAA08] &#160;&#160;* surname</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 UAF07=myCONTACT.DAA05] &#160;&#160;* fax</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 UAF11=GR07] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;* 
+	 internal code</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 UAF14=myCONTACT.DAA02]``* dear</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;EndFor]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> You need to perform 
+	 a <span class="ScriptChar">[&amp;Grid action = "load"]</span> 
+	 every time you want to either refresh the grid, or perform an action 
+	 on highlighted items in the grid.</p>
+        </div>
+        <h3><a name="kanchor1318"></a><a name="kanchor1319"></a><a name="kanchor1320"></a><a name="kanchor1321"></a><a name="Row_Action_Script" id="Row_Action_Script"></a>Row Action Script</h3>
+        <p>When a grid row has a script associated with it you can double-click 
+ the row to make the GR fields for the row available within the script, 
+ enabling the user to carry out actions on the GR data.</p>
+        <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>The script assigned to the grid row must be an application script; system scripts are not supported.</p>
+        <p>When a grid is attached to a user-defined screen a row-action script, 
+ including the <a href="&amp;display_command.htm">&amp;Display</a> command 
+ if required, can be associated with it.</p>
+        <p>You can use a grid row script to identify a grid row as selected and 
+ then write back data to the group screen, including setting the check 
+ box field to “Yes”. </p>
+        <h3><a name="Grid_Tables" id="Grid_Tables"></a>Grid Tables</h3>
+        <p>Grids can be created with a fixed format to hold data label and data 
+ value pairs for any number of different tables within the one grid. Use 
+ the create-table and the create-table-row parameters to create your tables. 
+ See <a href="#Examples" class="selected">examples 29-31</a>.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col width="236" />
+            <col width="612" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="action" id="action"></a>[&amp;Grid action = "&lt;ActionParameter&gt;"]</p>
+                    <p style="margin-left: 0px;">The <span style="font-weight: bold;">action</span> 
+		 parameter specifies what the &amp;Grid command is to do: create 
+		 a new grid, column or row, display the grid, assign values to 
+		 individual cells or delete a grid. Further parameters are used 
+		 with <span style="margin-left: 0px;">each</span><span style="margin-left: 0px;font-weight: bold;"> action</span> <span style="margin-left: 0px;">parameter 
+		 to format and add functionality to the grid.</span></p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">[&amp;Grid action = "assign"]</p>
+                    <p>Assign values to the individual cells. Values can only be assigned 
+		 to cells in a row prior to another row being created. <a href="#GRFields" class="selected">GR 
+		 fields</a> can be used to achieve the same objective.</p>
+                    <p><span class="ScriptChar">&amp;Grid action = "Assign"</span> 
+		 parameter options include:</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">column = "&lt;ColumnNumber&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Identify the 
+		 column to which values will be assigned.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">value = "&lt;CellValue&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Assign values 
+		 to individual cells.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">[&amp;Grid action = "create"]</p>
+                    <p>Create a new grid. The <span style="font-weight: bold;">create</span> 
+		 parameter must be included in the first line of the grid definition.</p>
+                    <p>A grid definition must be completed before the definition of 
+		 another grid can begin.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="Create_col_parameter"></a>[&amp;Grid action = 
+		 "create-col"]</p>
+                    <p>Create a new column.</p>
+                    <p>Columns must be given a format and can be given names and types. 
+		 They can also be hidden from the end user.</p>
+                    <p><span class="ScriptChar">&amp;Grid action = "create-col"</span> 
+		 parameter options include:</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">descending</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Enables the sort 
+		 order of the grid to be reversed. See <a href="#Examples" class="selected">example 
+		 20</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">format = "&lt;ProgressFormat&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Define the format 
+		 of the data in a column: see <a href="../Modifiers/Progress_Text_Formatting.htm">Progress 
+		 Format</a> options.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">hidden</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Hide a column 
+		 from the user.</p>
+                    <p>Any column specified as EN56 is hidden automatically, regardless 
+		 of the inclusion or omission of the <span style="font-weight: bold;">hidden</span> 
+		 parameter.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">index</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Create a temporary 
+		 index to improve column searching.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">key</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Identifies the 
+		 column from which the result should be taken.</p>
+                    <p>There can only be one key column: where more than one column 
+		 is defined as a <span style="font-weight: bold;">key</span> column, 
+		 only the last instance specified will function as the <span style="font-weight: bold;">key</span>. 
+		 The key column can be hidden.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">name = "&lt;ColumnName&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Define the name 
+		 of a column.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Column headers 
+		 can also be added using the &amp;Grid <a href="#Fill_parameter" class="selected">fill</a> 
+		 parameter.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">save-settings</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Saves the column 
+		 order and width &#160;in embedded grids if modified by a user.</p>
+                    <p>If the grid initialisation script has multiple create-col commands 
+		 then provided the <span style="font-weight: bold;">save-settings</span> 
+		 parameter is assigned to one of the create-col commands, the embedded 
+		 grid column order is saved for the user and the order selected 
+		 will be used the next time the embedded grid is displayed in a 
+		 screen. &#160;See <a href="#Examples" class="selected">example 18</a>.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The ‘save-settings’ 
+		 parameter only works on create-col for embedded grids; it has 
+		 no effect on grids displayed from scripts.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">selected</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Used in conjunction 
+		 with <span class="ScriptChar">multi-select</span>, 
+		 create a grid with multiple selection functionality.</p>
+                    <p>When creating &#160;a grid, create a column in the grid to contain 
+		 the selected parameter, a hidden field of type <span style="font-weight: bold;">char</span> 
+		 or <span style="font-weight: bold;">logical</span>. This column 
+		 is then given a value of <span style="font-weight: bold;">YES</span> 
+		 if selected via control clicking (multi-selecting) on the grid 
+		 results.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">sort</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Used to sort 
+		 on embedded screens.</p>
+                    <p>The <span style="font-weight: bold;">sort</span> parameter enables 
+		 developers to determine a default sort column and to set a sort 
+		 column within scripting when creating the grid. See <a href="#Examples" class="selected">example 
+		 18</a>.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> If the sort 
+		 parameter is added by mistake to more than one <span style="font-weight: bold;">create-col</span> 
+		 command it only applies against the first column it was assigned 
+		 to.</p>
+                    <p>The sort parameter is only intended for use when creating embedded 
+		 grids on screens. When displaying grids from scripts the <span style="font-weight: bold;">sort</span> parameter should still 
+		 be applied to the <span style="font-weight: bold;">&amp;Grid action=“Display”</span> 
+		 command.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;"><a name="kanchor1322"></a><a name="kanchor1323"></a><a name="kanchor1324"></a><a name="kanchor1325"></a><a name="kanchor1326"></a><a name="type" id="type"></a>type 
+		 = "<span style="font-weight: bold;">&lt;</span>{char<span style="font-weight: bold;">|</span>deci<span style="font-weight: bold;">|</span>integer 
+		 <span style="font-weight: bold;">|</span>date<span style="font-weight: bold;">|</span>toggle-box<span style="font-weight: bold;">|</span>directory<span style="font-weight: bold;">|</span><br />		ccbc-query}<span style="font-weight: bold;">&gt;</span>"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Defines the type 
+		 of data in a column: see <a href="../Modifiers/Progress_Text_Formatting.htm">Progress 
+		 Format</a> options.</p>
+                    <p>Within a grid (either embedded or from a script), you can specify 
+		 that a column type has the format of toggle-box. See <a href="#Examples" class="selected">example 
+		 13</a>.<br />		When the toggle box format is applied to a grid there is a <span style="font-weight: bold;">Select All</span> right-click menu 
+		 option available to users in the grid fields. This option is used 
+		 to select all the grid rows either by ticking all the selection 
+		 toggle boxes or by highlighting all the rows.</p>
+                    <p>Use the directory data type option to populate a grid with the 
+		 contents of a directory (or list of directories). It lists details 
+		 of all files in each directory specified. See <a href="#Examples" class="selected">example 
+		 25</a>.</p>
+                    <p>Defendant responses to claims can be requested by using the 
+		 &amp;Grid command <span style="font-weight: bold;">type="ccbc-query"</span>. 
+		 For more information go to <a href="../CPC_&amp;_CCBC/CCBC_SDT_Development.htm#Requesting_Claim_Responses">Requesting 
+		 Claim Responses</a>.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Toggle-boxes 
+		 do not function with the <span style="font-weight: bold;">fill</span> 
+		 parameter; a workaround is to use a text field instead, where 
+		 the 'selected' field is hidden.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;"><a name="update" id="update"></a>update</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Change values 
+		 displayed in a grid. New data is only displayed in the GR fields 
+		 and must be assigned back to the corresponding record (using the 
+		 &amp;Assign command) after the grid has been displayed (see <a href="#Examples" class="selected">example 5</a>).</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">[&amp;Grid action = "create-row"]</p>
+                    <p>Create a new row in the grid. The minimum number of rows is 
+		 five.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="create-table" id="create-table"></a>[&amp;Grid action 
+		 = "create-table"]</p>
+                    <p>Create a grid with the following four fixed columns (see <a href="#Examples" class="selected">example 29</a>):</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">tablename=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>Assign the tablename 
+		 value into GR01. Holds a value used to identify the parent for 
+		 the data in the row.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">tablefield=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>Assign the tablefield 
+		 value into GR02. A label used to identify the data held in the 
+		 row.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">tablevalue=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>Assign the tablevalue 
+		 value into GR03. The actual data for this label/parent.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">tabletype=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>Assign the tabletype 
+		 value into GR04. Used to identify the type of data held in the 
+		 row, for example text or date.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="create-table-row" id="create-table-row"></a>[&amp;Grid action 
+		 = "create-table-row"]</p>
+                    <p>Create a single row in a table and assign four values, into 
+		 GR01 the value entered in <span style="font-weight: bold;">tablename</span>, 
+		 into GR02 the value entered in <span style="font-weight: bold;">tablefield</span>, 
+		 into GR03 the value entered in <span style="font-weight: bold;">tablevalue</span> 
+		 and into GR04 the value entered in <span style="font-weight: bold;">tabletype</span>. 
+		 See <a href="#Examples" class="selected">examples 29 &amp; 30</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">[&amp;Grid action = "display"]</p>
+                    <p>Display a grid: this action must be included to display the 
+		 grid. The grid is displayed within a dialog with up to six buttons.</p>
+                    <p>The display action can be used more than once in a grid.</p>
+                    <p>However, <span class="ScriptChar">[&amp;Grid action = "display"]</span> 
+		 cannot be used once <span class="ScriptChar">[&amp;Grid action 
+		 = "delete"]</span> has been entered.</p>
+                    <p><span class="ScriptChar">&amp;Grid action = "display"</span> 
+		 parameter options include:</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;"><a name="kanchor1327"></a><a name="kanchor1328"></a><a name="kanchor1329"></a><a name="Buttons" id="Buttons"></a>button&lt;x&gt;="&lt;Button1Label&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Assign a label 
+		 to Button1-5 in the grid.</p>
+                    <p>The &amp;Grid command displays a dialog box with up to six buttons: 
+		 the buttons are named <span style="font-weight: bold;">button1</span>, 
+		 <span style="font-weight: bold;">button2</span>, <span style="font-weight: bold;">button3</span>, 
+		 <span style="font-weight: bold;">button4</span>, <span style="font-weight: bold;">button5</span> 
+		 and <span style="font-weight: bold;">button6</span>. To have one 
+		 of these buttons show on a screen, add the following code, e.g.:</p>
+                    <p class="Script">button3 = "&lt;button label text"&gt;</p>
+                    <p>If no buttons are defined, a default <span style="font-weight: bold;">Cancel</span> 
+		 and <span style="font-weight: bold;">OK</span> button are displayed 
+		 in the dialog.</p>
+                    <p><span style="font-weight: bold;">Cancel</span> returns the <span style="font-weight: bold;">button1</span> response and <span style="font-weight: bold;">OK</span> 
+		 returns the <span style="font-weight: bold;">button2</span> response.</p>
+                    <p><span style="font-weight: bold;">button1</span> always functions 
+		 as the Cancel button by default. However, it is possible to edit 
+		 the label that is displayed, for example, <span style="font-weight: bold;">Quit</span>.</p>
+                    <p>To determine which button the user selected, add <span style="font-weight: bold;">response 
+		 = TF01</span> to the command. TF01 will contain <span style="font-weight: bold;">button1</span>, 
+		 <span style="font-weight: bold;">button2</span>, <span style="font-weight: bold;">button3</span>, 
+		 <span style="font-weight: bold;">button4</span>, <span style="font-weight: bold;">button5</span> 
+		 or <span style="font-weight: bold;">button6</span>. If a user 
+		 selects <span style="font-weight: bold;">Escape</span> or closes 
+		 the dialog box by clicking the <span style="font-weight: bold;">X</span> 
+		 in the top-right corner of the screen, TF01 will contain <span style="font-weight: bold;">Cancel</span>. If the user double-clicks 
+		 an item in the Grid or selects F2, TF01 will contain <span style="font-weight: bold;">Go</span>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">multi-select</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Used in conjunction 
+		 with the selected parameter, select <a href="#Multiple" class="selected">multiple</a> 
+		 rows in a grid using control clicking.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">no-cancel</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Prevents a user 
+		 from cancelling out of the displayed grid.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">order = "&lt;descending&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>The default sort 
+		 order is ascending. Assigning this parameter reverses the order 
+		 of a sort to descending.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> We recommend 
+		 including the <span style="font-weight: bold;">sort</span> parameter 
+		 in the command when the <span style="font-weight: bold;">order</span> 
+		 parameter is used. It enables you to specify which column to sort 
+		 on and thereby improve the formatting of the results.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">response = &lt;FieldName&gt;</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Specifies the 
+		 location to which the user response should be stored.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">result = &lt;FieldName&gt;</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>The value held 
+		 in the column identified by the <span style="font-weight: bold;">key</span> 
+		 parameter<span style="font-weight: bold;">.</span></p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">rows = "&lt;NumberOfRows&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Set the number 
+		 of rows displayed in the grid<span style="font-weight: bold;">.</span></p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">save-settings</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Saves the column 
+		 order and width if modified by a user.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">sort = "&lt;ColumnName&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Specify which 
+		 column to sort on.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">title = "&lt;GridTitle&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Assign a title 
+		 to the grid.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">no-vertical-scrollbar</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Set the vertical 
+		 scrollbar attribute to hide the scrollbar in an embedded grid. 
+		 See <a href="#Examples" class="selected">example 28</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="Fill_parameter"></a>[&amp;Grid action = "fill"]</p>
+                    <p>The "<span style="font-weight: bold;">fill</span>" 
+		 action is used to collect data from the application server in 
+		 order to populate a grid on the client PC enabling users to run 
+		 fast &amp;ForEach GR commands. It can be used in place of the 
+		 <span class="ScriptChar">[&amp;Grid action = "create"]</span>.</p>
+                    <p>Where filters have been specified in the &amp;Grid action="fill" 
+		 command they are picked up and used when &amp;Grid action="display" 
+		 is performed.</p>
+                    <p>The "<span style="font-weight: bold;">fill</span>" 
+		 action is used in conjunction with the create parameter at the 
+		 end of the syntax, see <a href="#Examples" class="selected">examples 8 &amp; 9</a>.</p>
+                    <p>The <span class="ScriptChar">action = "fill"</span> 
+		 parameter includes the options <span style="font-weight: bold;">hidden=</span>, 
+		 <span style="font-weight: bold;">sort=</span> and <span style="font-weight: bold;">filter=</span> 
+		 which are used to control the display and content of an embedded 
+		 grid in a screen. See <a href="#Examples" class="selected">example 17</a>.</p>
+                    <p>You can add column names with the "fill" action using 
+		 the syntax "<span class="ScriptChar">ABC01;Column Name 1,ABC02;Column 
+		 Name 2</span>", see <a href="#Examples" class="selected">example 31</a>. You 
+		 can also use the &amp;Grid <a href="#Create_col_parameter" class="selected">create_col</a> 
+		 parameter to do this.</p>
+                    <p>If you are using the &amp;Grid action="fill" in conjunction 
+		 with a group screen and then the grid is displayed (using &amp;Grid 
+		 action="display"), the result of the user selection 
+		 (group screen identifier) is stored in an additional silent grid 
+		 field. See <a href="#Examples" class="selected">example 32</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script" style="text-align: right;">datatypes=</p>
+                    <p class="Script">"<span style="font-weight: bold;">&lt;</span>{char<span style="font-weight: bold;">|</span>deci<span style="font-weight: bold;">|</span>integer<span style="font-weight: bold;">|</span>date}<span style="font-weight: bold;">&gt;</span>"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>Defines the types 
+		 of data. See <a href="#Examples" class="selected">example 8</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script" style="text-align: right;">filter=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>Use this option 
+		 to filter the results for display when creating an embedded grid 
+		 in a screen using the &amp;Grid action = "fill". It 
+		 enables the grid to be filtered on a maximum of two grid fields. 
+		 See <a href="#Examples" class="selected">example 16</a>.</p>
+                    <p>When the grid is displayed using the &amp;Grid action=“Display” 
+		 command the filter is still picked up and applied. &#160;See <a href="#Examples" class="selected">example 24</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script" style="text-align: right;">Formats="&lt;ProgressFormat&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>Used to define 
+		 the formats of the data.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script" style="text-align: right;">hidden=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>Use this option 
+		 to hide columns when creating an embedded grid in a screen using 
+		 the &amp;Grid fill. There is no limit on the number of fields 
+		 that can be hidden in the grid, as long as they are separated 
+		 with commas. See <a href="#Examples" class="selected">example 14</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script" style="text-align: right;">selected=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>Use this parameter 
+		 to mark one column as the selected field and to query the grid 
+		 when multi-selects are available. See <a href="#Examples" class="selected">example 
+		 19</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script" style="text-align: right;">sort=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>Use this option 
+		 to sort on a column when creating an embedded grid in a screen 
+		 using the &amp;Grid fill. See <a href="#Examples" class="selected">example 15</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;" colspan="2">
+                    <p colspan="2">[&amp;Grid action="hide-cols", names=&lt;ColumnNameList&gt;]
+</p>
+                    <p colspan="2">Or,</p>
+                    <p colspan="2">[&amp;Grid action="hide-cols", names=&lt;ColumnNameList&gt; ,hide=&lt;yes/no&gt;]
+</p>
+                    <p colspan="2">Where ColumnNameList is an expression that resolves to a comma delimited list of column names.
+The hide parameter is optional. Hide="no" can be used to view previously hidden columns.
+</p>
+                    <p colspan="2">The hide-cols parameter enables hidden columns specified after a grid row has been created.
+ Enables the renaming column titles in grids; for example, when results are returned from a SQL database. See <a href="#Examples" class="selected">example 33</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">[&amp;Grid action = "load"]</p>
+                    <p>Used in Visualfiles Browser to fetch the entire grid back from 
+		 the client PC; for this reason we recommend that large grids (50 
+		 rows +) are not embedded in screens.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> When the command 
+		 [&amp;Grid action="load"... ] is used, the load is performed 
+		 when the user double-clicks in the grid.</p>
+                    <p>This command is also used in Visualfiles GUI to refresh the 
+		 contents of grid.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">,field=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>Each of the grid 
+		 fields on a screen (max. 30) is uniquely identified by the field 
+		 name using the <span style="font-weight: bold;">field</span> parameter. 
+		 See <a href="#Examples" class="selected">example 21</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">norefresh</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>In a screen that 
+		 contains grid fields the user can select a button which reloads 
+		 one of the grid fields, using the &amp;Grid action=“Load” command, 
+		 the grid field is refreshed whether or not it has changed. Which 
+		 can cause problems where the user has selected a number of rows 
+		 because after the load all the rows are deselected.</p>
+                    <p>Use the norefresh parameter so that when the button loads the 
+		 contents of a grid field and then queries the contents of the 
+		 grid there is no unnecessary refreshing of the grid. See <a href="#Examples" class="selected">example 
+		 22</a>.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> This parameter 
+		 is only required for embedded grid fields on screens.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;" colspan="2">
+                    <p colspan="2">[&amp;Grid action="rename-col", From=&lt;OriginalColumnName&gt;, To=&lt;NewColumnName&gt;]
+</p>
+                    <p colspan="2">Where OriginalColumnName is an expression that resolves to the name of one of the grid's columns, and NewColumnName is an expression that resolves to the new name given to the column.
+</p>
+                    <p colspan="2">The rename-col parameter enables column headings to be changed after a grid row has been created; for example, when results are returned from a SQL database. 
+
+ See <a href="#Examples" class="selected">example 34</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">[&amp;Grid action = "retrieve"</p>
+                    <p>Used for the retrieval of cell values from dynamic grids, which 
+		 is useful in the administration of HIP projects.</p>
+                    <p>This retrieve parameter enables the use of a temporary variable to select 
+		 a column field and retrieve the value, see <a href="#Examples" class="selected">example 
+		 10</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;" colspan="2">
+                    <p colspan="2">[&amp;Grid action="set-key", name=&lt;ColumnName&gt;]
+</p>
+                    <p colspan="2">Where ColumnName is an expression that resolves to the name of one of the grid's columns.
+</p>
+                    <p colspan="2">The set-key parameter is functionally equivalent to using the key option with action="create-col" i.e. to specify which column's row value is returned after a grid row is selected. However, the key can be specified after the grid has been created, for example after using &amp;Call to populate the grid from a SQL stored procedure. </p>
+                    <p colspan="2">
+ The set-key parameter enables a key column to be specified after the grid row has been created. The set-key action is functionally equivalent to using the key option with action="create-col" i.e. to specify which column's row value is returned after a grid row is selected. See <a href="#Examples" class="selected">example 35</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="next_action" id="next_action"></a>next-action={text_expression}</p>
+                    <p>This parameter is used to end the script run at this point. 
+		 Any code after the &amp;Grid command is ignored and the script 
+		 specified by the text expression in the next-action parameter 
+		 is run.</p>
+                    <p>Text expressions are used to name the required script and can 
+		 be constructed from any combination of the following:</p>
+                    <ul>
+                        <li value="1"><span class="ScriptChar">"constant text"</span>, 
+			 such as a script name.</li>
+                        <li value="2"><span class="ScriptChar">'User input'</span>.</li>
+                        <li value="3">Database fields.</li>
+                        <li value="4">LF, TF, PI fields. The temporary field specified will contain 
+			 the value entered by the user.</li>
+                    </ul>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> It is not 
+		 possible to reference the GR fields in a script called using the 
+		 <span style="font-weight: bold;">next-action</span> parameter. 
+		 For more information please refer to <a href="../Scripting/Visualfiles_Browser_Environment.htm#Stateless_Scripting_Options">Stateless 
+		 Scripting Options</a>. To reference the GR fields, loop through 
+		 the information held in the result= parameter; for example, result=LF01.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">next-action-inputs={expression};{expression}...</p>
+                    <p>List of semi-colon delimited items to be passed as PI fields 
+		 into the next-action script.</p>
+                </td>
+            </tr>
+        </table>
+        <h2><a name="kanchor1330"></a><a name="kanchor1331"></a><a name="kanchor1332"></a><a name="Multiple" id="Multiple"></a>Multiple selection</h2>
+        <p>To highlight more than one row hold down the <span style="font-weight: bold;">Ctrl</span> 
+ key, move the cursor onto the row and click the left mouse button.</p>
+        <p>It is not possible to use the <span style="font-weight: bold;">multi-select</span> 
+ parameter where the <span style="font-weight: bold;">update</span> parameter 
+ is applied to all columns. Progress does not allow the selection and update 
+ of a browser at the same time. To get around this issue, you can add a 
+ column to your grid that is not updatable.</p>
+        <h2><a name="kanchor1333"></a><a name="kanchor1334"></a><a name="kanchor1335"></a><a name="GRFields" id="GRFields"></a>GR Fields</h2>
+        <p>To simplify scripting, use the &amp;Assign command and GR fields to 
+ assign values to the cells in a row rather than using the <span style="font-weight: bold;">&amp;Grid 
+ action = assign</span> syntax.</p>
+        <p>GR fields refer to each cell of a grid: GR01 being the cell in the first 
+ column data, GR02, the cell in the second column and so on.</p>
+        <p>For example, this code:</p>
+        <p class="Script">[&amp;Grid action = "assign",column = "1",value 
+ = "ABC01"]<br />[&amp;Grid action = "assign",column = "2",value = "ABC02"]</p>
+        <p>Can be written as:</p>
+        <p class="Script">[&amp;Assign GR01 = ABC01]</p>
+        <p class="Script">[&amp;Assign GR02 = ABC02]</p>
+        <h2><a name="Good_Scripting_Practice" id="Good_Scripting_Practice"></a>Good 
+ Scripting Practice</h2>
+        <p>It is good practice to finish &amp;Grid scripting with the "<span style="font-weight: bold;">delete</span>" action parameter, which 
+ removes the grid definition from memory.</p>
+        <p>It is also good practice to use the "<span style="font-weight: bold;">delete</span>" 
+ parameter at the very beginning of a grid definition (before the "<span style="font-weight: bold;">create</span>" parameter) to ensure 
+ that previously-defined grids do not conflict with the new grid. </p>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t33">1 Using 
+ the "create-col" parameter</a>
+        </p>
+        <div MadCap:targetName="t33" style="display: none;">
+            <p class="Script">[&amp;Assign LF01=0] &#160;&#160;* count on relation</p>
+            <p class="Script">[&amp;Grid action="delete"]</p>
+            <p class="Script">[&amp;Grid action="create"]</p>
+            <p class="Script">[&amp;Grid action="create-col",name = "Name",format="x(40)",type="char"]</p>
+            <p class="Script">[&amp;Grid action="create-col",name = "Job 
+	 Title",format="x(30)",type="char"]</p>
+            <p class="Script">[&amp;Grid action="create-col",name = "Phone",format="x(15)",type="char"]</p>
+            <p class="Script">[&amp;Grid action="create-col",name = "Mobile",format="x(15)",type="char"]</p>
+            <p class="Script">[&amp;Grid action="create-col",name = "Email",format="x(30)",type="char"]</p>
+            <p class="Script">[&amp;Grid action="create-col",name = "Main",format="x(4)",type="char"]</p>
+            <p class="Script">[&amp;Grid action="create-col",name = "InternalCode",format="x(5)",type="char",hidden,key]</p>
+            <p class="Script">[&amp;Grid action="create-col",name = "Select",format="x(5)",type="char",selected,hidden]</p>
+            <p class="Script">[&amp;ForEach FILE_CONTACT,noincludeall]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Assign LF01=LF01+1]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;With FILE_CONTACT]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Grid action="create-row"]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 GR01=EN03] &#160;&#160;* name</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 GR02=DAA03] &#160;&#160;* title</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 GR03=DAA04] &#160;&#160;* phone</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 GR04=DAA06] &#160;&#160;* mobile</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 GR05=DAA07] &#160;&#160;* email</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;SelectRelation 
+	 type="MAINCONTACT_FILE", to-ref="thisFile"]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;If status(selectrelation)=""]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 GR06="*"]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Else]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 GR06=""] &#160;&#160;* Main contact - currently not in use</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;EndIf]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 GR07=EN56] &#160;&#160;* internal code</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;EndWith] &#160;&#160;</p>
+            <p class="Script">[&amp;EndFor]</p>
+            <p class="Script">* If not contacts exist, display blank grid</p>
+            <p class="Script">[&amp;If LF01=0]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Grid action="create-row"]</p>
+            <p class="Script">[&amp;EndIf]</p>
+            <p>&#160;</p>
+            <p>This script creates four columns, of varying format, to hold information 
+	 of type "char" (character). The third column is hidden from 
+	 the user.</p>
+            <p class="Script">[&amp;Grid action = "create"]</p>
+            <p class="Script">[&amp;Grid action = "create-col",name = 
+	 "ID",format = "X(10)",type = "char"]</p>
+            <p class="Script">[&amp;Grid action = "create-col",name = 
+	 "Name",format = "X(30)",type = "char",key,index]</p>
+            <p class="Script">[&amp;Grid action = "create-col",name = 
+	 "Age",format = "X(30)",type = "char",hidden]</p>
+            <p class="Script">[&amp;Grid action = "create-col",name = 
+	 "Post Code",format = "X(30)",type = "char"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t32">2 Using 
+ the "create-row" and "assign" parameters</a>
+        </p>
+        <div MadCap:targetName="t32" style="display: none;">
+            <p class="Script">[&amp;Grid action = "create-row"]</p>
+            <p class="Script">[&amp;Grid action = "assign",column = "1",value 
+	 = "ABC01"]</p>
+            <p class="Script">[&amp;Grid action = "assign",column = "2",value 
+	 = "ABC02"]</p>
+            <p class="Script">[&amp;Grid action = "assign",column = "3",value 
+	 = "DEF03"]</p>
+            <p class="Script">[&amp;Grid action = "assign",column = "4",value 
+	 = "TF07"]</p>
+            <h5 class="Script">Insert a LF/TF field into a grid cell</h5>
+            <p class="Script">[&amp;Grid action="create-row"]</p>
+            <p class="Script">&#160;[&amp;Assign GR01=LF01]</p>
+            <p class="Script">&#160;[&amp;Grid action="assign",column="2",value=LF01]</p>
+            <p class="Script">&#160;[&amp;Grid action="display"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t31">3 Using 
+ the "display" parameter</a>
+        </p>
+        <div MadCap:targetName="t31" style="display: none;">
+            <p>This script displays the current grid definition. TF02 stores the 
+	 Button Response. TF04 stores the key of the record selected.</p>
+            <p class="Script">[&amp;Grid action = "display",title = "My 
+	 Grid",button1 = "Cancel",button2 = "Select",result 
+	 = TF04,response = TF02,rows = 14,sort="Name",order = "descending"]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> We recommend including 
+	 the <span style="font-weight: bold;">sort</span> parameter in the 
+	 command when the <span style="font-weight: bold;">order</span> parameter 
+	 is used. It enables you to specify which column to sort on and thereby 
+	 improve the formatting of the results.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t30">4 Sample 
+ &amp;Grid script</a>
+        </p>
+        <div MadCap:targetName="t30" style="display: none;">
+            <p>This script illustrates a simple set of grid commands.</p>
+            <p style="font-weight: bold;">Delete any previously defined grid definitions</p>
+            <p class="Script">[&amp;Grid action = "delete"]</p>
+            <p style="font-weight: bold;">Create the grid</p>
+            <p class="Script">[&amp;Grid action = "create"]</p>
+            <p style="font-weight: bold;">Create the columns for the grid</p>
+            <p class="Script">[&amp;Grid action = "create-col",name = 
+	 "Contact",format = "X(40)",type = "char",key]</p>
+            <p class="Script">[&amp;Grid action = "create-col",name = 
+	 "Job Title",format = "X(40)",type = "char"]</p>
+            <p class="Script">[&amp;Grid action = "create-col",name = 
+	 "Direct Dial",format = "X(20)",type = "char"]</p>
+            <p class="Script">[&amp;Grid action = "create-col",name = 
+	 "Works From",format = "X(40)",type = "char"]</p>
+            <p class="Script">[&amp;Grid action = "create-col",name = 
+	 "Contact Int Code",format = "X(8)",type = "char",hidden]</p>
+            <p style="font-weight: bold;">Create rows in the Grid, and assign values 
+	 to each column</p>
+            <p>In this example a &amp;ForEach loop has been used to populate the 
+	 Grid with all INDIviduals in the system.</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The "create-row" 
+	 syntax must be inside the &amp;ForEach loop to create a new row each 
+	 time.</p>
+            <p class="Script">[&amp;ForEach INDI,NoIncludeAll]</p>
+            <p class="Script">&#160;&#160;[&amp;Grid action = "create-row"]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign GR01 = NAM11]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign GR02 = FIL08]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign GR03 = CON02]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign GR04 = CON03]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign GR05 = EN56]</p>
+            <p class="Script">[&amp;EndFor]</p>
+            <p style="font-weight: bold;">Display the Grid</p>
+            <p>We now define the parameters for displaying the Grid: define the 
+	 nature of buttons, give them labels and ensure we record which button 
+	 was pressed using the <span style="font-weight: bold;">response</span> 
+	 parameter. We also record which row was selected using the <span style="font-weight: bold;">result</span> 
+	 parameter.</p>
+            <p class="Script">[&amp;Grid action = "display",title = "Individuals",button1 
+	 = "Cancel",button2 = "Open",button3 = "Select",result 
+	 = TF01,response = TF02]</p>
+            <h5>Insert a LF/TF field into a grid cell</h5>
+            <p class="Script">[&amp;Grid action="create-row"]</p>
+            <p class="Script">&#160;[&amp;Assign GR01=LF01]</p>
+            <p class="Script">&#160;[&amp;Grid action="assign",column="2",value=LF01]</p>
+            <p class="Script">&#160;[&amp;Grid action="display"]</p>
+            <p style="font-weight: bold;">Display information following selection</p>
+            <p>We then use the &amp;If statement to display a message containing 
+	 the result. Remember, this will be the data held in the column defined 
+	 earlier using the <span style="font-weight: bold;">key</span> parameter 
+	 in the "<span style="font-weight: bold;">create-column</span>" 
+	 section. The message will display the Contact Name of the Individual 
+	 selected.</p>
+            <p class="Script">[&amp;If TF02 = "button1"]</p>
+            <p class="Script">&#160;&#160;[&amp;Message TF01]</p>
+            <p class="Script">[&amp;EndIf]</p>
+            <p style="font-weight: bold;">Delete the Grid Definition</p>
+            <p class="Script">[&amp;Grid action = "delete"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t29">5 Writing 
+ values back to corresponding records after updating them in a grid</a>
+        </p>
+        <div MadCap:targetName="t29" style="display: none;">
+            <p class="Script">[&amp;Grid action = "delete"] &#160;<span style="font-weight: bold;">** Delete any previous grid</span></p>
+            <p class="Script">[&amp;Grid action = "create"] &#160;<span style="font-weight: bold;">** Create the grid</span></p>
+            <p class="Script"><span style="font-weight: bold;">** Create the columns 
+	 for the grid</span>
+            </p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The Key 
+	 field is the field returned when a user selects an item</p>
+            <p class="Script">[&amp;Grid action = "create-col",name = 
+	 "Private Client Name",format = "X(75)",type = 
+	 "char",update]</p>
+            <p class="Script">[&amp;Grid action = "create-col",name = 
+	 "Private Client Type",format = "X(30)",type = 
+	 "char",update]</p>
+            <p class="Script">[&amp;Grid action = "create-col",name = 
+	 "KEY",format = "X(10)",type = "char",hidden,key]</p>
+            <p class="Script"><span style="font-weight: bold;">** Create a row 
+	 in the Grid, and assign values to each column</span>
+            </p>
+            <p class="Script">[&amp;ForEach PRIVMEMBER_PRIV]</p>
+            <p class="Script">&#160;&#160;[&amp;Grid action = "create-row"]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign GR01 = PRIVMEMBER_PRIV.ADD02]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign GR02 = PRIVMEMBER_PRIV.ADD01]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign GR03 = PRIVMEMBER_PRIV.EN56]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign TF05 = TF05+1]</p>
+            <p class="Script">[&amp;EndFor]</p>
+            <p class="Script"><span style="font-weight: bold;">** Display the grid</span>
+            </p>
+            <p class="Script">[&amp;Grid action = "display",button1 = 
+	 "Cancel",button2 = "OK",title = "Current 
+	 privates,rows = TF05,response = TF06,result = TF07]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The following 
+	 code should go after the display command to update the records in 
+	 this case fields ADD01 and ADD02 may have been changed using their 
+	 corresponding GR fields GR01 and GR02.</p>
+            <p class="Script">[&amp;ForEach GR] go through each row of the grid</p>
+            <p class="Script">&#160;&#160;[&amp;SelectEntity int-code = GR03,ref 
+	 = "myPRIV"] <span style="font-weight: bold;">**find the 
+	 corresponding entity using its int-code</span></p>
+            <p class="Script">&#160;&#160;[&amp;With myPRIV] <span style="font-weight: bold;">**go 
+	 to that record</span></p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Assign ADD02 = GR01] <span style="font-weight: bold;">**write the values back to update each 
+	 field with any changes</span></p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Assign ADD01 = GR02] <span style="font-weight: bold;">**write the values back to update each 
+	 field with any changes</span></p>
+            <p class="Script">&#160;&#160;[&amp;EndWith]</p>
+            <p class="Script">[&amp;Endfor]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t28">6 multi-select 
+ grid example</a>
+        </p>
+        <div MadCap:targetName="t28" style="display: none;">
+            <p class="Script">[&amp;Grid action = "delete"]</p>
+            <p class="Script">[&amp;Grid action = "create"]</p>
+            <p class="Script">[&amp;Grid action = "create-col",name = 
+	 "Release Type",format = "X(40)",type = "char"]</p>
+            <p class="Script">[&amp;Grid action = "create-col",name = 
+	 "Release Name",format = "X(40)",type = "char"] 
+	 &#160;</p>
+            <p class="Script">[&amp;Grid Action = "create-col",name = 
+	 "Anticipated Cut Date",format = "X(40)",type = 
+	 "char"]</p>
+            <p class="Script">[&amp;Grid action = "create-col",name = 
+	 "Internal Code",format = "X(8)",type = "char",key,hidden]</p>
+            <p class="Script">[&amp;Grid action = "create-col",name = 
+	 "Selected",format = "X(8)",type = "char",selected,hidden] 
+	 <span style="font-weight: bold;">**This will contain YES if selected</span></p>
+            <p class="Script">[&amp;ForEach VERSION_SOFTWARE]</p>
+            <p class="Script">&#160;&#160;[&amp;Grid action = "create-row"]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign GR01 = VERSION_SOFTWARE.SOF03]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign GR02 = VERSION_SOFTWARE.SOF02] 
+	 &#160;&#160;&#160;&#160;&#160;</p>
+            <p class="Script">&#160;&#160;[&amp;Assign GR03 = VERSION_SOFTWARE.SOF03]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign GR04 = VERSION_SOFTWARE.EN56]</p>
+            <p class="Script">&#160;<span style="font-weight: bold;">&#160;**Nothing 
+	 is allocated to the selected flag field GR05</span></p>
+            <p class="Script">[&amp;EndFor]</p>
+            <p class="Script">[&amp;Grid action = "display",title = "Releases",Button1 
+	 = "Cancel",Button2 = "Select",default = "button2",response 
+	 = TF06,result = TF07,rows = 6,multi-select]</p>
+            <p class="Script"><span style="font-weight: bold;">**At this point 
+	 Visualfiles will assign GR05 &#160;= YES for each row that was selected 
+	 using control clicking.</span>
+            </p>
+            <p class="Script">[&amp;If TF06 = "Button2"]</p>
+            <p class="Script">&#160;&#160;[&amp;ForEach GR]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;[&amp;If GR05 = "YES"] 
+	 if the flag is set to yes</p>
+            <p class="Script">&#160;&#160;<span style="font-weight: bold;">&#160;**This 
+	 loop will now cycle through each item that was selected. Example code 
+	 might look like ...</span></p>
+            <p class="Script">&#160;&#160;&#160;&#160;[&amp;Selectentity int-code 
+	 = GR04,ref = mySOFTWARE] <span style="font-weight: bold;">**find the 
+	 item</span></p>
+            <p class="Script">&#160;&#160;&#160;&#160;[&amp;With mySOFTWARE] <span style="font-weight: bold;">**go to it</span></p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 SOF06 = yes] <span style="font-weight: bold;">**assign a field the 
+	 value yes</span></p>
+            <p class="Script">&#160;&#160;&#160;&#160;[&amp;EndWith]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;[&amp;EndIf]</p>
+            <p class="Script">&#160;&#160;[&amp;EndFor]</p>
+            <p class="Script">[&amp;EndIf]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t27">7 delete 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t27" style="display: none;">
+            <p class="Script">[&amp;Grid action = "display"...] &#160;&#160;** 
+	 display the grid</p>
+            <p class="Script">[&amp;...some other processing ...] ** do not delete 
+	 the grid</p>
+            <p class="Script">[&amp;Grid action = "display"...] &#160;&#160;** 
+	 re-displays the same grid again</p>
+            <p class="Script">[&amp;Grid action = "delete"] &#160;&#160;&#160;&#160;** 
+	 Grid no longer required - delete it</p>
+            <p>Failure to use this command after a grid has been used will result 
+	 in extra memory being consumed. Repeatedly doing this could lead to 
+	 performance problems.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t26">8 fill 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t26" style="display: none;">
+            <p class="Script">[&amp;Grid action = "fill",type = "GROUP",code 
+	 = "ABCD",fields = "ABC01,ABC02",formats = "x(20),x(40)",datatypes 
+	 = "char,char",create]</p>
+            <p>When this command is sent to the application server it loops around 
+	 the group records and creates a row in the grid for each item. It 
+	 creates three columns:</p>
+            <ul>
+                <li class="p-BulletedList" value="1">
+                    <p class="BulletedList">one to contain 
+		 the data held in ABC01</p>
+                </li>
+                <li class="p-BulletedList" value="2">
+                    <p class="BulletedList">one to hold 
+		 data in ABC02</p>
+                </li>
+                <li class="p-BulletedList" value="3">
+                    <p class="BulletedList">one to contain 
+		 the item number (1,2,3,4,5, ...)</p>
+                </li>
+            </ul>
+            <p>All data fields are resolved, although if one of the fields specified 
+	 is a relation, the data returned is in a format friendly to the &amp;Select 
+	 command for faster processing.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t25">9 fill 
+ parameter and GR Fields</a>
+        </p>
+        <div MadCap:targetName="t25" style="display: none;">
+            <p>The data items in the grid can be worked on using GR fields. GR01 
+	 corresponds to the first field placed in the grid, GR02 corresponds 
+	 to the second field and so-on.</p>
+            <p class="Script">[&amp;Assign TF02=""]</p>
+            <p class="Script">[&amp;Grid action="FILL", type="GROUP", 
+	 code="GOPT", fields="OPY17,OPY18", datatypes="char,char", 
+	 formats="x(5),x(5)", create]</p>
+            <p class="Script">[&amp;ForEach GR, GR01 &lt;&gt; ""]</p>
+            <p class="Script">&#160;&#160;[&amp;Select Relation ,grid-relation-field=GR01, 
+	 ref="OTHERPARTY"]</p>
+            <p class="Script">&#160;&#160;[&amp;If OTHERPARTY.EN06="PRIV"]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;[&amp;Assign TF01 = OTHERPARTY.ADD02]</p>
+            <p class="Script">&#160;&#160;[&amp;Else]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;[&amp;Assign TF01 = ""]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;[&amp;If GR02 &lt;&gt; ""]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Select 
+	 Relation,grid-relation-field=GR02,ref="OTHERPARTYOFF"]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 TF01 = OTHERPARTYOFF.OFF11]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;[&amp;EndIf]</p>
+            <p class="Script">&#160;&#160;[&amp;EndIf]</p>
+            <p class="Script">&#160;&#160;[&amp;If TF01 &lt;&gt; ""]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;[&amp;Assign TF02 = TF02 
+	 + TF01 + ","]</p>
+            <p class="Script">&#160;&#160;[&amp;EndIf]</p>
+            <p class="Script">[&amp;EndFor]</p>
+            <p class="Script">[&amp;Assign FIL06 = TF02]</p>
+            <p class="Script">[&amp;Grid action="delete"]</p>
+            <h4>Script Walk Through</h4>
+            <p>It is no longer necessary to count the number of group items.</p>
+            <p>The grid contains the two fields needed from the group screens, 
+	 which are both relation fields in this case. Loop around the grid, 
+	 but only for items where OPY17 (GR01) has a non-blank value.</p>
+            <p>Only one instance of the &amp;SelectRelation command is run because 
+	 the second one is not necessarily needed. A new parameter for the 
+	 &amp;SelectRelation command, grid-relation-field, enables you to work 
+	 with a relation field in the grid.</p>
+            <p>The grid-relation-field parameter can only be used in conjunction 
+	 with GR fields that are relations since the process of building the 
+	 grid created the data for this field in a format that the &amp;SelectRelation 
+	 can recognise.</p>
+            <p>Inside the [&amp;ForEach] loop we are only working with TF fields, 
+	 there is no assigning to database fields.</p>
+            <p>Once you have decided that an item is not a Private entity, you 
+	 can then run the second &amp;SelectRelation command statement.</p>
+            <p>After the loop has ended and the result is assigned to TF02, we 
+	 can update the database field FIL06.</p>
+            <p>Finally, delete the Grid.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t24">10 "retrieve" 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t24" style="display: none;">
+            <p class="Script">[&amp;Grid action="retrieve", column=LF01, 
+	 result="LF02"]</p>
+            <p class="Script">[&amp;Grid action="retrieve", column=column-expr,</p>
+            <p>Where <span style="font-weight: bold;">column-expr</span> 
+	 is an expression that resolves to the grid column number the data 
+	 is to be retrieved from, and <span style="font-weight: bold;">field-expr</span> 
+	 is an expression that resolves to the name of a database or temporary 
+	 field.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t23">11 next-action 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t23" style="display: none;">
+            <p>The next-action parameter expects a text expression which is resolved 
+	 to a script name when the script is run; below are some examples:</p>
+            <p class="Script">next-action="myscript</p>
+            <p class="Script">next-action=LF01</p>
+            <p class="Script">next-action=ABC01</p>
+            <p class="Script">next-action="myscript + LF01</p>
+            <p class="Script">next-action=LF01 + LF02</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t22">12 Embedded 
+ grid</a>
+        </p>
+        <div MadCap:targetName="t22" style="display: none;">
+            <p>A grid that is populated with history data:</p>
+            <p class="Script">[&amp;Grid action="create-col",name = "",type="toggle-box",selected,update]</p>
+            <p class="Script">[&amp;Grid action="create-col",name = "Date",type="date"]</p>
+            <p class="Script">[&amp;Grid action="create-col",name = "Description",format="x(55)",type="char"]</p>
+            <p class="Script">[&amp;Grid action="create-col",name = "HistoryIntCode",format="x(10)",type="char",hidden]</p>
+            <p class="Script">[&amp;Assign LF01 = 0]</p>
+            <p class="Script">[&amp;ForEach HS]</p>
+            <p class="Script">[&amp;Grid action="create-row"]</p>
+            <p class="Script">[&amp;Assign GR02=HS02]</p>
+            <p class="Script">[&amp;Assign GR03=HS01 ]</p>
+            <p class="Script">[&amp;Assign GR04=HS26]</p>
+            <p class="Script">[&amp;Assign GR01 = "no"]</p>
+            <p class="Script">[&amp;Endfor]</p>
+            <p>The script does not need to do a &#160;<span class="ScriptChar">[&amp;Grid 
+	 action="create"]</span> or a &#160;<span class="ScriptChar">[&amp;Grid 
+	 action="display"]</span>.</p>
+            <p>Once the grid has been displayed the user can scroll through the 
+	 data and amend any updatable columns.</p>
+            <p>The GR fields are cleared down once the grid is displayed and need 
+	 to be loaded using the <span class="ScriptChar">[&amp;Grid action="load"]</span> 
+	 command if the grid is to be accessed by a script that has been run 
+	 from the screen.</p>
+            <p>In example above it might be required to allow the user to select 
+	 (using the toggle-box column) a number of history items. A script 
+	 run from a button on the screen would like something like:</p>
+            <p class="Script">[&amp;Grid action="load",field=GRD05] * 
+	 Load a specific embedded grid into the GR fields</p>
+            <p class="Script">[&amp;If status(grid) = ""]</p>
+            <p class="Script">[&amp;Assign LF01 = ""]</p>
+            <p class="Script">[&amp;ForEach GR,GRO1="yes"]</p>
+            <p class="Script">[&amp;Assign LF01 = LF01 + GR04 + "&lt;CR&gt;"]</p>
+            <p class="Script">[&amp;Endfor]</p>
+            <p class="Script">[&amp;Message "SELECTED HISTORY-INT-CODES:" 
+	 + LF01]</p>
+            <p class="Script">[&amp;Else]</p>
+            <p class="Script">[&amp;Message "STATUS:" + status(GRID)]</p>
+            <p class="Script">[&amp;Endif]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> A grid dialog 
+	 field returns blank if referenced; e.g. <span class="ScriptChar">[&amp;Message 
+	 GRD05]</span> in the above examples.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t21">13 Toggle-box 
+ type</a>
+        </p>
+        <div MadCap:targetName="t21" style="display: none;">
+            <p>Grids can have columns defined that display logical data as a toggle-box. 
+	 These can be Updatable and the value is queried from a script by interrogating 
+	 the GR variables.</p>
+            <p>To define a column as a toggle-box the type needs to be set e.g.:</p>
+            <p class="Script">[&amp;Grid action="create"]</p>
+            <p class="Script">[&amp;Grid action="create-col",name = "Date",type="date"]</p>
+            <p class="Script">[&amp;Grid action="create-col",name = "Description",format="x(35)",type="char"]</p>
+            <p class="Script">[&amp;Grid action="create-col",name = "Picked",type="toggle-box"]</p>
+            <p>The format does not need to be specified for a toggle-box.</p>
+            <p>To enable the user to change the value of a toggle-box the <span style="font-weight: bold;">update</span> parameter is used:</p>
+            <p class="Script">[&amp;Grid action="create-col",name = "Picked",type="toggle-box",update]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The value is set 
+	 to yes/no in the GR variables.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t20">14 Grid 
+ action=fill ,hidden</a>
+        </p>
+        <div MadCap:targetName="t20" style="display: none;">
+            <p class="Script">[&amp;Grid action="fill",fields="ABC01,ABC02,ABC03,ABC12", 
+	 formats="x(20),x(40),x(10),x10)", datatypes="char,char,char,char", 
+	 hidden="ABC03", create]</p>
+            <p>There is no limit on the number of fields that can be hidden in 
+	 the grid, as long as the fields are separated with commas.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t19">15 Grid 
+ action=fill ,sort</a>
+        </p>
+        <div MadCap:targetName="t19" style="display: none;">
+            <p class="Script">[&amp;Grid action="fill",fields="ABC01,ABC02,ABC03,ABC12", 
+	 formats="x(20),x(40),x(10),x10)", datatypes="char,char,char,char", 
+	 sort="ABC01;desc", ,create]</p>
+            <p>In this example the grid is sorted on ABC01 descending. Removing 
+	 the <span style="font-weight: bold;">desc</span> option displays values 
+	 in ascending order. Only one column can be sorted on.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t18">16 Grid 
+ action=fill ,filter</a>
+        </p>
+        <div MadCap:targetName="t18" style="display: none;">
+            <p class="Script">[&amp;Assign TF01="Active"]</p>
+            <p class="Script">[&amp;Assign TF02="Live"]</p>
+            <p class="Script">[&amp;Grid action="fill",fields="ABC01,ABC02,ABC03,ABC12", 
+	 formats="x(20),x(40),x(10),x10)", datatypes="char,char,char,char", 
+	 filter="ABC01;TF01,ABC02;TF02", ,create]</p>
+            <p>This code filters the grid for items where ABC01 = “Active” and 
+	 ABC02 = “Live”. Two filter fields are the maximum allowed. If any 
+	 more are included in the command only the first two are used. The 
+	 ability to filter is only for values which equal the filter value 
+	 entered.</p>
+            <p>As an alternative to using temporary or local fields the following 
+	 syntax can be used in the filter:</p>
+            <p class="Script">filter= "ABC01;" + quote + "Active" 
+	 + quote</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t17">17 Embedded 
+ grid</a>
+        </p>
+        <div MadCap:targetName="t17" style="display: none;">
+            <p>When you add a grid field to a screen you need to attach a create 
+	 grid script in the field properties; for example:</p>
+            <p class="Script">[&amp;Assign TF01="Active"]</p>
+            <p class="Script">[&amp;Assign TF02="Live"]</p>
+            <p class="Script">[&amp;Grid action = "delete" ]</p>
+            <p class="Script">[&amp;Grid action="fill",type="group",code="ABCD",fields="ABC01,ABC02,GR03,ABC12",formats="x(20),x(40),x(10),x(10)",datatypes="char,char,char,char",sort="ABC01;desc",hidden="GR03",selected=gr03,filter=ABC02;TF01,ABC12;TF02 
+	 ,create]</p>
+            <p>In this example the grid is filtered on ABC02 and ABC12, sorted 
+	 on ABC01 descending and GR03 is the selected field which is hidden.</p>
+            <p>To test the selected field is updating correctly create a script 
+	 and attach it to a button on the same screen. The syntax of the script 
+	 is:</p>
+            <p class="Script">[&amp;Grid action="load",field=ABC13]</p>
+            <p class="Script">[&amp;ForEach GR]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Message GR03]</p>
+            <p class="Script">[&amp;EndFor]</p>
+            <p>In this case the grid field is ABC13 so the script loads in the 
+	 grid for that field and then messages out the contents of GR03 which 
+	 has been specified as the selected field. Alternatively, you can change 
+	 the &amp;ForEach command to check only for selected items.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t16">18 Create-col 
+ ,sort parameter</a>
+        </p>
+        <div MadCap:targetName="t16" style="display: none;">
+            <p class="Script">[&amp;Grid action= "create-col" , name= 
+	 "Test Column",</p>
+            <p class="Script">format= "X(35)" ,type= "char",sort 
+	 ]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> If the sort parameter 
+	 is added by mistake to more than one <span style="font-weight: bold;">create-col</span> 
+	 command it only applies against the first column it was assigned to.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t15">19 selected 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t15" style="display: none;">
+            <p class="Script">[&amp;Grid Action="fill",type="group",code="ABCD",fields="GR01, 
+	 ABC01,ABC03,ABC12",formats="x(20),x(40),x(10),x(10)", 
+	 datatypes="char,char,char,char",hidden="GR01",selected="GR01" 
+	 ,create]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t14">20 descending 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t14" style="display: none;">
+            <p class="Script">[&amp;Grid action = "create-col",name = 
+	 "field 2",format = "X(40)",type = "char",sort,descending]</p>
+            <p>In this case the grid is displayed sorting on field 2 in descending 
+	 order.</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The <span style="font-weight: bold;">descending</span> 
+	 parameter can only be used in combination with the <span style="font-weight: bold;">sort</span> 
+	 parameter in the same create-col command. If <span style="font-weight: bold;">sort</span> 
+	 and <span style="font-weight: bold;">descending</span> appear on more 
+	 than one create-col command in a script then only the first occurrence 
+	 is picked up and used.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t13">21 field 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t13" style="display: none;">
+            <p class="Script">[&amp;Grid action = "load",field=GRD01]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t12">22 norefresh 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t12" style="display: none;">
+            <p class="Script">[&amp;Grid action="load",field=ABC01,norefresh]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t11">23 Assign 
+ a LF/TF field into a cell in a grid</a>
+        </p>
+        <div MadCap:targetName="t11" style="display: none;">
+            <p class="Script">[&amp;Assign GR01=TF21]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t10">24 Grid 
+ to display all committed charges</a>
+        </p>
+        <div MadCap:targetName="t10" style="display: none;">
+            <p class="Script">[&amp;Grid action="fill",type="relation" 
+	 ,code="FILE_CHARGE,fields=GR01,EN56;Code,EN50;MC 
+	 File Ref,EN34;No.,EN44;Outcome,EN39;Accused,EN03;Description,EN40;Complainant,EN31,EN45,formats=x(6),x(10),x(20),9,x(25),x(30),x(150),x(100),x(1),x(1),datatypes=char,char,char,deci,char,char,char,char,char,char 
+	 ,selected=GR01,hidden=GR01,EN56,EN31,EN45 
+	 ,filter=EN31;tf01,EN45;tf02,create]</p>
+            <p class="Script">[&amp;Grid action="display",title="Select 
+	 Charges you wish to link from PRSB "+MT05+", to Bail file",button1="Cancel",button2="Select",response=LF03,result=LF04,rows=LF01,multi-select]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t9">25 Directory 
+ data type</a>
+        </p>
+        <div MadCap:targetName="t9" style="display: none;">
+            <p>Fill the grid with the contents of a directory (or list of directories). 
+	 The details of all files in each directory specified are listed.</p>
+            <p class="Script">[&amp;Grid action="fill", type="directory", 
+	 code="c:\dir1,c:\dir2"]</p>
+            <p class="Script">GR01 = the directory</p>
+            <p class="Script">GR02 = the fully qualified filename including directory, 
+	 filename and extension</p>
+            <p class="Script">GR03 = the filename including extension</p>
+            <p class="Script">GR04 = the extension only (excluding the dot)</p>
+            <p class="Script">GR05 = the size of the file</p>
+            <p class="Script">GR06 = the file creation date</p>
+            <p class="Script">GR07 = the file creation time</p>
+            <p class="Script">GR08 = the file last modified date</p>
+            <p class="Script">GR09 = the file last modified time</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t8">26 Display 
+ six buttons in grid</a>
+        </p>
+        <div MadCap:targetName="t8" style="display: none;">
+            <p class="Script">[&amp;Grid action = "display",title = "Grid 
+	 Test",button1 = "Cancel",button2 = "Select",button3 
+	 = "Button 3",button4 = "Button 4",button5="Button 
+	 5",button6 = "Button 6",result = TF01,rows="15",response 
+	 = TF02,default = "6"]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> In this example 
+	 the grid is displayed with six buttons and the default is applied 
+	 to the 6th button.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t7">27 Save 
+ column order settings</a>
+        </p>
+        <div MadCap:targetName="t7" style="display: none;">
+            <p class="Script">[&amp;Grid action="create-col", name="Office", 
+	 format="X(120)",type="char",save-settings]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">28 Vertical-scrollbar</a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p>Set the vertical-scrollbar attribute of the grid to “yes” or “no”:</p>
+            <p class="Script">[&amp;Grid action="display", no-vertical-scrollbar]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">29 create-table-row 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p>The following code creates a grid containing data for three tables:</p>
+            <ul>
+                <li class="p-BulletedList" value="1">
+                    <p class="BulletedList">Table1 has 3 
+		 rows and 2 columns of data (Description and DateCreated).</p>
+                </li>
+                <li class="p-BulletedList" value="2">
+                    <p class="BulletedList">Table2 has 3 
+		 rows and 3 columns of data (Title, Forename and Surname).</p>
+                </li>
+                <li class="p-BulletedList" value="3">
+                    <p class="BulletedList">Table3 has 2 
+		 rows and 2 columns of data (LoginID and Email):</p>
+                </li>
+            </ul>
+            <p>View the table <a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">here</a>.</p>
+            <div MadCap:targetName="t4" style="display: none;">
+                <table class="MsoNormalTable" style="border-collapse: collapse;" cellspacing="0">
+                    <tr>
+                        <td style="border: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;"><b style="font-weight: bold;">TableName 
+				 (GR01)</b>
+                            </p>
+                        </td>
+                        <td style="border-top: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;"><b style="font-weight: bold;">TableField 
+				 (GR02)</b>
+                            </p>
+                        </td>
+                        <td style="border-top: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;"><b style="font-weight: bold;">TableValue 
+				 (GR03)</b>
+                            </p>
+                        </td>
+                        <td style="border-top: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;"><b style="font-weight: bold;">TableType 
+				 (GR04)</b>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table1
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Description
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">File 
+				 Created
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Text
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table1
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">DateCreated
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">01/12/2012
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Date
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table1
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Description
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Pre-checks complete
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Text
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table1
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">DateCreated
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">03/12/2012
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Date
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table1
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Description
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Welcome 
+				 Letter
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Text
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table1
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">DateCreated
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">04/12/2012
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Date
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table2
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Title
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Miss
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Text
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table2
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Forename
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Sally
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Text
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table2
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Surname
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Harris
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Text
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table2
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Title
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Mr
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Text
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table2
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Forename
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Paul
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Text
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table2
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Surname
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Davidson
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Text
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table2
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Title
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Mrs
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Text
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table2
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Forename
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Mary
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Text
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table2
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Surname
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Whittle
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Text
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table3
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">LoginID
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">SmithPA
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Text
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table3
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Email
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">PASmith@email.com
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Text
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table3
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">LoginID
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">JonesWR
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Text
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-left: Solid 1px #808080;border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Table3
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Email
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">WRJones@email.com
+                            </p>
+                        </td>
+                        <td style="border-right: Solid 1px #808080;border-bottom: Solid 1px #808080;vertical-align: top;padding: 0cm 5.4pt 0cm 5.4pt;padding-left: 0px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="174">
+                            <p style="line-height: 150%;">Text
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <p>&#160;</p>
+            <p class="Script">[&amp;Grid action="create-table"]</p>
+            <p class="Script">&#160;</p>
+            <p class="Script">‘Create Table1</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table1", tablefield="Description", tablevalue="File 
+	 Created", tabletype="Text"]</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table1", tablefield="DateCreated", tablevalue="01/12/2012", 
+	 tabletype="Date"]</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table1", tablefield="Description", tablevalue="Pre-Checks 
+	 Complete", tabletype="Text"]</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table1", tablefield="DateCreated", tablevalue="03/12/2012", 
+	 tabletype="Date"]</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table1", tablefield="Description", tablevalue="Welcome 
+	 Letter", tabletype="Text"]</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table1", tablefield="DateCreated", tablevalue="04/12/2012", 
+	 tabletype="Date"]</p>
+            <p class="Script">&#160;</p>
+            <p class="Script">‘Create Table2</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table2", tablefield="Title", tablevalue="Miss", 
+	 tabletype="Text"]</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table2", tablefield="Forename", tablevalue="Sally", 
+	 tabletype="Text"]</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table2", tablefield="Surname", tablevalue="Harris", 
+	 tabletype="Text"]</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table2", tablefield="Title", tablevalue="Mr", 
+	 tabletype="Text"]</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table2", tablefield="Forename", tablevalue="Paul", 
+	 tabletype="Text"]</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table2", tablefield="Surname", tablevalue="Davidson", 
+	 tabletype="Text"]</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table2", tablefield="Title", tablevalue="Mrs", 
+	 tabletype="Text"]</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table2", tablefield="Forename", tablevalue="Mary", 
+	 tabletype="Text"]</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table2", tablefield="Surname", tablevalue="Whittle", 
+	 tabletype="Text"]</p>
+            <p class="Script">&#160;</p>
+            <p class="Script">‘Create Table3</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table3", tablefield="LoginID", tablevalue="SmithPA", 
+	 tabletype="Text"]</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table3", tablefield="Email", tablevalue="PASmith@email.com", 
+	 tabletype="Text"]</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table3", tablefield="LoginID", tablevalue="JonesWR", 
+	 tabletype="Text"]</p>
+            <p class="Script">[&amp;Grid action="create-table-row", tablename 
+	 = "Table3", tablefield="Email", tablevalue="WRJones@email.com", 
+	 tabletype="Text"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">30 create-table-row 
+ - Populate a grid with table structures from file history</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>Using the approach indicated in example 29 you can populate a single 
+	 grid with table structures from the file history, the Ledger, Schedule, 
+	 etc. For example:</p>
+            <p class="Script">[&amp;Grid action="create", type="table"]</p>
+            <p class="Script">‘Create Table 1: A list of all history descriptions 
+	 and date created for the current case</p>
+            <p class="Script">[&amp;ForEach hs]</p>
+            <p class="Script">&#160;&#160;[&amp;Grid action="create-table-row", 
+	 tablename = "HS", tablefield="Description", tablevalue=HS01, 
+	 tabletype="Text"]</p>
+            <p class="Script">&#160;&#160;[&amp;Grid action="create-table-row", 
+	 tablename = "HS", tablefield="DateCreated", tablevalue=HS02, 
+	 tabletype="Date"]</p>
+            <p class="Script">[&amp;EndFor]</p>
+            <p class="Script">‘Create Table 2: A list of all schedule descriptions 
+	 and date created for the current case</p>
+            <p class="Script">[&amp;ForEach ad]</p>
+            <p class="Script">&#160;&#160;[&amp;Grid action="create-table-row", 
+	 tablename = "AD", tablefield="Description", tablevalue=AD01, 
+	 tabletype="Text"]</p>
+            <p class="Script">&#160;&#160;[&amp;Grid action="create-table-row", 
+	 tablename = "AD", tablefield="DateCreated", tablevalue=AD02, 
+	 tabletype="Date"]</p>
+            <p class="Script">[&amp;EndFor]</p>
+            <p class="Script">&#160;</p>
+            <p>After generating your tables you can return specific items of data, 
+	 for example all History descriptions:</p>
+            <p class="Script">[&amp;ForEach GR, GR01="HS" &amp;And GR02="Description"]</p>
+            <p class="Script">&#160;&#160;[&amp;Message GR03]</p>
+            <p class="Script">[&amp;EndFor]</p>
+            <p>&#160;</p>
+            <p>Or all creation dates for schedule items:</p>
+            <p class="Script">[&amp;ForEach GR, GR01="AD" &amp;And GR02="DateCreated"]</p>
+            <p class="Script">&#160;&#160;[&amp;Message GR03]</p>
+            <p class="Script">[&amp;EndFor]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">31 fill 
+ parameter add column header names</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p class="Script">[&amp;AssignLF01=""]</p>
+            <p class="Script">&#160;</p>
+            <p class="Script">[&amp;Counttype="GROUP",code="ITEM",result=LF01]</p>
+            <p class="Script">[&amp;IfLF01&gt;0]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Grid action="fill",type="GROUP",code="ITEM",fields="GR01,ITE01;Claimant 
+	 Name,ITE02;Item Description,ITE08;Amount Payable,ITE10;Item Status",formats=",x(10),x(35),x(55),x(25),x(20)",datatypes="toggle-box,char,char,char,char,char",create]</p>
+            <p class="Script">[&amp;EndIf]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">32 fill 
+ parameter, Group screen index</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p>In this example, 13 fields are selected so the result (group screen 
+	 identifier) is returned in GR14.</p>
+            <p>&#160;</p>
+            <p class="Script">[&amp;Grid action = "fill",type = "GROUP",code 
+	 = "GBMA",fields = "BMA02;Contact</p>
+            <p class="Script">Name,BMA03,BMA04,BMA05,BMA06,BMA07,BMA08,BMA09,BMA10,BMA11,BMA12,BMA13,BAM14",formats 
+	 = "x(10),x(10),x(10),x(10),x</p>
+            <p class="Script">(10),x(20),x(20),x(20),x(20),x(20),x(20),x(20),x(20)",datatypes 
+	 =</p>
+            <p class="Script">"char,char,char,char,char,char,char,char,char,char,char,char,char",create]</p>
+            <p class="Script">[&amp;Grid action = "display",title = "Billing 
+	 Addresses",button1 = "Cancel",button2 = "Edit",button3="New",result 
+	 =</p>
+            <p class="Script">LF01,response = LF02]</p>
+        </div>
+        <p colspan="2"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t35">33 hide-cols parameter</a>
+        </p>
+        <div MadCap:targetName="t35" style="display: none;">
+            <p colspan="2">If a grid includes columns with headings of "Gender" and "Age"
+the following code hides the Gender &amp; Age columns when the grid is displayed.</p>
+            <p colspan="2">[&amp;Assign LF01="Gender,Age"]
+[&amp;Grid action="hide-cols", names=LF01]
+</p>
+            <p colspan="2" class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>After using action="hide-cols" no more columns can be added to the grid.
+</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t36">34 rename-col parameter</a>
+        </p>
+        <div MadCap:targetName="t36" style="display: none;">
+            <p colspan="2">Renames grid column RecId1 to File Code.
+</p>
+            <p colspan="2">[&amp;Grid action="rename-col", From="RecId1", To="File Code"]
+
+</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>After using action="rename-col" no more columns can be added to the grid.
+</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t37">35 set-key parameter</a>
+        </p>
+        <div MadCap:targetName="t37" style="display: none;">
+            <p>
+Sets the grid key to the grid's Internal Code column.
+</p>
+            <p>[&amp;Grid action="set-key", name="Internal Code"]
+</p>
+            <p colspan="2" class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>After using action="set-key" no more columns can be added to the grid.</p>
+        </div>
+        <h4>Developers' Tips</h4>
+        <p>The EN56 code within an entity is stored as a decimal (0.00) but the 
+ output from the &amp;Grid command and the &amp;Conflict command, where 
+ an entity has been selected, is of type text (1-n). However, where an 
+ entity has not been selected, the output will be in the form of an empty 
+ string ("").</p>
+        <p>When specifying the key value of a grid as the EN56 of the selected 
+ entity, it is necessary to set the column type as below:</p>
+        <p class="Script">[&amp;Grid action = "create-col",name = "KEY",format 
+ = "X(10)",type = "char",hidden,key]</p>
+        <p>If the column is specified as <span style="font-weight: bold;">type 
+ = deci</span> and <span style="font-weight: bold;">format = 9</span>, 
+ (the correct format for displaying decimal numbers), the returned key 
+ value will always be blank. Consequently, when testing the returned key, 
+ it is necessary to test against a value of type <span style="font-weight: bold;">text</span> 
+ otherwise a <span style="font-weight: bold;">&lt;mismatched data types&gt;</span> 
+ error will be displayed, for example, <span class="ScriptChar">[&amp;if 
+ TF01 = 0]</span>.</p>
+        <p>GR codes can be used within an <a href="&amp;foreach_command.htm">&amp;ForEach</a> 
+ command:</p>
+        <p class="Script">[&amp;ForEach GR]</p>
+        <p class="Script">&#160;&#160;&lt;some processing&gt;</p>
+        <p class="Script">[&amp;EndFor]</p>
+        <h4>Scripting Embedded Grids</h4>
+        <p>The functionality of the &amp;Grid command has been enhanced and reworked 
+ and in some instances this may result in errors when embedded grid scripts 
+ are run, because &amp;Grid parameters that were previously ignored are 
+ now correctly parsed. Please ensure the correct command parameters are 
+ included when coding embedded grids to avoid these errors.</p>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1"><a href="../Scripting/Visualfiles_Browser_Environment.htm#Stateless_Scripting_Options">Stateless 
+	 Scripting Options</a>
+            </li>
+            <li value="2"><a href="../Scripting/Good_Scripting_Practice/&amp;Grid_Fill.htm">&amp;Grid 
+	 Fill</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

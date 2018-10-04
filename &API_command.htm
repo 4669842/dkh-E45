@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;API</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;API</span>
+        </div>
+        <h1><a name="kanchor2025"></a><a name="kanchor2026"></a>&amp;API</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[&amp;API]</p>
+        <p><a href="#Examples" style="font-size: 8pt;font-weight: normal;" class="selected">Example 
+ Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p><a name="kanchor2027"></a>Enables a Visualfiles application to create files in the Windows file 
+ system. The &amp;API command builds these files as structured XML, automatically 
+ inserting the necessary information for the API to call the correct instance 
+ of Visualfiles.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;width: 50%;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Code=&lt;{MatterInternalNumber|EntityInternalNumber|HistoryNumber|ScriptName}&gt;</p>
+                    <p>This value depends on the message being sent. For the <span class="ScriptChar">OpenSchedule</span> and <span class="ScriptChar">ActionSchedule</span> 
+		 messages, the code should be the internal code for the case owning 
+		 the schedule item, MT30.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Fields</p>
+                    <p>Where <span class="ScriptChar">Message=Script</span><span style="font-weight: bold;">,</span> 
+		 setup TF fields in that script. Specify a comma-delimited list 
+		 of values which will become TF01, TF02, TF03 etc.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">File=&lt;{FileName.vfm|FileName.vfc|TF 
+		 or LF}&gt;</p>
+                    <p>The name of the file or variable (TF or LF) that the &amp;API 
+		 command will create: <span class="ScriptChar">type=COM</span>, 
+		 creates files with a .vfc extension.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Message=&lt;{OpenCase|OpenEntity|OpenHistory|OpenSchedule|ActionSchedule|Script}&gt;</p>
+                    <p>Types of calls that can be made through the API.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Type=&lt;{"COM"}&gt;</p>
+                    <p>Type="COM" Select to use Visualfiles COM API.  
+		Creates files with a .vfc extension. See <a href="#Examples" class="selected">example 4</a>.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="kanchor2028"></a><a name="kanchor2029"></a><a name="kanchor2030"></a><a name="Examples" id="Examples"></a>Example Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">1 Override 
+ History and generate an email</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>This code makes use of the &amp;API command and the <span style="font-weight: bold;">ImageFilename</span> 
+	 and <span style="font-weight: bold;">TempDir</span> constants, to 
+	 override the standard behaviour of saving an image into History. It 
+	 generates an email to be sent to the owner of the case and includes 
+	 a copy of the image being saved as well as a shortcut to open the 
+	 case through the API.</p>
+            <p class="Script">[&amp;If DOCTYPE="I"]</p>
+            <p class="Script">&#160;&#160;‘Setup a temporary field to hold a copy 
+	 of the matter code</p>
+            <p class="Script">&#160;&#160;[&amp;Assign TF01=MT05]</p>
+            <p class="Script">&#160;&#160;‘Replace all forward slashes with a dash 
+	 since a slash is invalid in a windows file name</p>
+            <p class="Script">&#160;&#160;[&amp;Assign TF01="replace ( " 
+	 + QUOTE + TF01 + QUOTE + "," + QUOTE + "/" + QUOTE 
+	 + "," + QUOTE + "-" + QUOTE + " )":Proval]</p>
+            <p class="Script">&#160;&#160;‘Build up the complete filename that 
+	 will become the api’s shortcut to the case</p>
+            <p class="Script">&#160;&#160;[&amp;Assign TF01=TEMPDIR + "\Open 
+	 Case " + TF01 + ".vfm"]</p>
+            <p class="Script">&#160;&#160;‘Create a shortcut to the case</p>
+            <p class="Script">&#160;&#160;[&amp;API type="COM", message="OPENCASE", 
+	 code=MT30, file=TF01]</p>
+            <p class="Script">&#160;&#160;‘Save the image to history</p>
+            <p class="Script">&#160;&#160;[&amp;History "Scanned Image",save]</p>
+            <p class="Script">&#160;&#160;‘Send an email to the case holder, attaching 
+	 the image itself and an api shortcut to open the case</p>
+            <p class="Script">&#160;&#160;[&amp;Mail to=MT11(US12), subject="New 
+	 Image", Message = "A new image has been attached to your 
+	 matter " + MT01, file=IMAGEFILENAME + "," + TF01]</p>
+            <p class="Script">[&amp;EndIf]</p>
+        </div>
+        <p style="margin-right: 0px;"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">2 Build attachments and email</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p>This example builds three attachment files (.vfc links) in the user's 
+	 managed temporary directory: one to action the Schedule item; one 
+	 to edit the Schedule item; and another to open the case associated 
+	 with the Schedule item.</p>
+            <p>These files are attached to an email and sent to the Fee Earner 
+	 who owns the item. The recipient of the email can only action the 
+	 attachments if the PC in use has working access to the Visualfiles 
+	 system containing the Schedule items.</p>
+            <p class="Script">[&amp;Assign TF01 = TEMPDIR + "\Action Item 
+	 " + AD14 + ".vfc"]</p>
+            <p class="Script">[&amp;Assign TF02 = TEMPDIR + "\Edit Item " 
+	 &#160;&#160;+ AD14 + ".vfc"]</p>
+            <p class="Script">[&amp;Assign TF03 = TEMPDIR + "\Open Case " 
+	 &#160;&#160;+ MT30 + ".vfc"] ** changed to MT30 as if you 
+	 wished to open a case it would make sense for this attachment to have 
+	 the case number as opposed to a schedule code.</p>
+            <p class="Script">[&amp;API type="COM", message="ActionSchedule", 
+	 code=AD14, file=TF01] ** originally AD14 was specified next to code2.</p>
+            <p class="Script">[&amp;API type="COM", message="OpenSchedule", 
+	 code=AD14, file=TF02]</p>
+            <p class="Script">[&amp;API type="COM", message="OpenCase", 
+	 code=MT30, file=TF03]</p>
+            <p class="Script">[&amp;Assign TF04=TF01 + "," + TF02 + "," 
+	 + TF03]</p>
+            <p class="Script">[&amp;Mail TO="&lt;emailaddress&gt;", Subject 
+	 = "A new task is due", Message="The task '" + 
+	 AD01 + "' on case '" + MT01 + "' is due today.", 
+	 file=TF04]</p>
+        </div>
+        <p style="margin-right: 0px;"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">3 Use attachment to run a System 
+ script</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p style="margin-right: 0px;">This code is used to generate an email 
+	 that runs a System script. Input values are passed into the &amp;API 
+	 command and used in the system script as temporary fields.</p>
+            <p class="Script">[&amp;Assign LF10="C:\Script.vfc"] &#160;&#160;&#160;&#160;&#160;&#160;***Filename 
+	 for attachment</p>
+            <p class="Script">[&amp;Assign LF01="Test1"]</p>
+            <p class="Script">[&amp;Assign LF02="Test2"]</p>
+            <p class="Script">[&amp;Assign TF99=LF01+","+LF02] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;***the 
+	 important part is the comma - The temporary field needs to be a delimited 
+	 list of values</p>
+            <p class="Script">[&amp;API type="COM",message = "script",fields=TF99,code="&lt;System 
+	 Script&gt;",file=LF10] &#160;&#160;&#160;***Where &lt;System 
+	 Script&gt; needs to be replaced with the script name</p>
+            <p class="Script">[&amp;Assign LF03='Please enter email address'] **recipient</p>
+            <p class="Script">[&amp;Assign LF04="Email link test"] **Subject</p>
+            <p class="Script">[&amp;Assign LF05=FIL01+" This is the main email 
+	 content. Please run the script using the above subject line attachment.&lt;br&gt;</p>
+            <p class="Script">&lt;br&gt;</p>
+            <p class="Script">test -"+MT01+"</p>
+            <p class="Script">&lt;br&gt;"] **Message</p>
+            <p class="Script">[&amp;Mail to=LF03,subject=LF04,message=LF05,file=LF10,amend,save,html]</p>
+            <p class="Script">[&amp;OSCommand "DEL"+LF10] **Remove API 
+	 File from Temp location</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> In the &lt;System 
+	 script&gt; TF01 contains “Test1”, and Tf02 contains “Test2”, etc.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="vfc">4 Create .vfc</a>
+        </p>
+        <div MadCap:targetName="vfc" style="display: none;">
+            <p>[&amp;Assign TF01 = TEMPDIR + "\Open Case.vfc"]</p>
+            <p>[&amp;API type="COM", message="OpenCase", code=MT30, file=TF01]</p>
+        </div>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;AccAddr</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;AccAddr</span>
+        </div>
+        <h1><a name="kanchor904"></a>&amp;AccAddr</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[&amp;AccAddr]</p>
+        <p><a href="#Examples" style="font-size: 8pt;font-weight: normal;" class="selected">Example 
+ Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>Used to query/manage addresses held in SOS Practice Manager.</p>
+        <p><a name="kanchor905"></a>The &amp;AccAddr command enables addresses associated with SOS Practice 
+ Manager contacts, clients and matters to be loaded into Visualfiles, from 
+ where they can be created, amended or deleted.</p>
+        <p>The success of any &amp;AccAddr command can be tested using status(AccAddr) 
+ after the command has been actioned.</p>
+        <p>AA codes are used in conjunction with the <a href="&amp;foreach_command.htm">&amp;ForEach</a>, 
+ <a href="&amp;Select_command.htm">&amp;Select</a> and <a href="&amp;assign_command.htm">&amp;Assign</a> 
+ commands.</p>
+        <p>&amp;Select AA supports first, next, last and rec-no=&lt;rec-no&gt;.</p>
+        <p>Where &lt;rec-no&gt; is an expression that resolves to a valid AA11 
+ value e.g:</p>
+        <p class="Script">[&amp;Select AA, rec-no=LF01]</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 21px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 50px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Acc-role=&lt;PM billing 
+		 contact role&gt;</p>
+                    <p>Used to specify the Practice Manager Role code to be given to 
+		 the contact to make it a Billing Contact.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 50px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">,address-type = "all"|"main|"alternative"|"billing"|"statement"|"other"|"DX"</p>
+                    <p>The type of address. Only used with clear, create and get calls.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 50px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">,call-type = "clear"|"create"|"delete"|"get"|"update"</p>
+                    <p style="margin-left: 0px;margin-right: 0px;">Specify action 
+		 to take with addresses.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 50px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Entity-int-code=&lt;entity 
+		 internal code&gt;</p>
+                    <p>Used to specify a Visualfiles contact to create as a Matter 
+		 Billing Contact.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 50px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">,owner-code = &lt;Owner 
+		 Code&gt;</p>
+                    <p style="margin-left: 0px;margin-right: 0px;">Address Owner code. 
+		 Only used with clear, create and get calls.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 53px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">,owner-type = "CL"|"CO"|"MA"|"OR"</p>
+                    <p>Address owner type. Only used with clear, create and get calls.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">1 Retrieve 
+ a set of address from Practice Manager use</a>.</p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p class="Script">[&amp;AccAddr call-type="get", owner-type=&lt;owner-type&gt;, 
+	 owner-code=&lt;owner-code&gt;, address-type=&lt;address-type&gt;]</p>
+            <p>Where:</p>
+            <p>&lt;owner-type&gt; is an expression that resolves to one of "CL", 
+	 "CO", "OR" or "MT". For a contact entity 
+	 the CO or OR value can be obtained from EN65.</p>
+            <p>CL = Client</p>
+            <p>CO = Contact</p>
+            <p>OR = Organisation</p>
+            <p>MT = Matter</p>
+            <p>&lt;owner-code&gt; is an expression that resolves to a valid client 
+	 code (ER01), contact reference (EN64) or matter code (MT05).</p>
+            <p>&lt;address-type&gt; is an expression that resolves to "All", 
+	 "Billing" or "Statement" (for matters, "Bill" 
+	 is the only valid option).</p>
+            <p>ALL = All addresses</p>
+            <p>BILLING = Billing addresses</p>
+            <p>STATEMENT = Statement addresses</p>
+            <p>This populates the <a href="../System_Codes/Account_Address_Codes.htm">Account 
+	 Address (AA) Codes</a>.</p>
+            <p>AA codes can then be used in conjunction with the &amp;Foreach, 
+	 &amp;Select and &amp;Assign commands.</p>
+            <p>&amp;Select AA supports first, next, last and rec-no=&lt;rec-no&gt;.</p>
+            <p>Where &lt;rec-no&gt; is an expression that resolves to a valid AA11 
+	 value e.g:</p>
+            <p class="Script">[&amp;Select AA, rec-no=LF01]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Using call-type="get" 
+	 does not clear any currently held addresses. The addresses returned 
+	 are added to any addresses already held.</p>
+            <p>Where billing addresses are queried for a matter the list will be 
+	 constructed as follows:</p>
+            <ul>
+                <li class="p-BulletedList" value="1">
+                    <p class="BulletedList">If an additional 
+		 billing address has been defined for the (matter) client then 
+		 this will be returned.</p>
+                </li>
+                <li class="p-BulletedList" value="2">
+                    <p class="BulletedList">If no additional 
+		 billing address has been defined for the client then the billing 
+		 address will revert to the main address for the client.</p>
+                </li>
+                <li class="p-BulletedList" value="3">
+                    <p class="BulletedList">Where third 
+		 party billing is being used, main addresses for directly related 
+		 (to the matter) contacts / organisations will be returned.</p>
+                </li>
+            </ul>
+            <p>The definition of a third party billing contact / organisation is 
+	 one where the relationship has a role of “BCON” (Billing Contact) 
+	 or has a role where the “May Indicate Billing Address” option is activated.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">2 Add 
+ a new additional address to a Client, Contact or Organisation use</a>.</p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p>[&amp;AccAddr call-type="create", owner-type=&lt;owner-type&gt;, 
+	 owner-code=&lt;owner-code&gt;, address-type=&lt;address-type&gt;]</p>
+            <p>Where:</p>
+            <p>&lt;owner-type&gt; is an expression that resolves to one of "CL", 
+	 "CO", "OR" or "MT".</p>
+            <p>CL = Client</p>
+            <p>CO = Contact</p>
+            <p>OR = Organisation</p>
+            <p>&lt;owner-code&gt; is an expression that resolves to a valid client 
+	 code (ER01) or contact reference (EN64).</p>
+            <p>&lt;address-type&gt; is an expression that resolves to one of:</p>
+            <p>ALTERNATIVE</p>
+            <p>BILLING</p>
+            <p>STATEMENT</p>
+            <p>OTHER</p>
+            <p>DX</p>
+            <p>or alternatively the address type numbers 1 – 5 can be used.</p>
+            <p>Contacts / organisations cannot have billing or statement addresses.</p>
+            <p>Once the address has been created &amp;Assign can be used to place 
+	 values into the AA fields of the new address.</p>
+            <p>N.B. &#160;The call-type="create" parameter doesn't create 
+	 an address record in SOS Practice Manager, just a placeholder record 
+	 in Visualfiles. To transfer the address to Practice Manager, a separate 
+	 [&amp;AccAddr call-type="update"] command must be used.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">3 Create 
+ a billing contact for a Matter use</a>.</p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p class="Script">[&amp;AccAddr call-type="create", owner-type="MT", 
+	 owner-code=&lt;file code&gt;,entity-int-code=&lt;entity internal code&gt;,acc-role=&lt;PM 
+	 billing contact role code&gt;]</p>
+            <p>Where:</p>
+            <p>&lt;file code&gt; is an expression that resolves to the MT05 value 
+	 for the File the billing contact is being created for.</p>
+            <p>&lt;entity internal code&gt; is an expression that resolves to the 
+	 EN56 value of the entity being created as a billing contact.</p>
+            <p>The Entity type must be either an Individual or Office as defined 
+	 for Practice Manager contact integration.</p>
+            <p>&lt;PM billing contact role code&gt; is an expression that resolves 
+	 to the Practice Manager role code you wish to use to link the contact 
+	 to the Matter in SOS Practice Manager.</p>
+            <p>The role must have its 'May indicate billing address' check box ticked.</p>
+            <p>The address details of a Matter billing contact cannot be updated 
+	 via &amp;AccAddr, instead they should be amended by assigning to the 
+	 EN codes of the Visualfiles entity.</p>
+            <p>As with creating an additional address for a Client, Contact or 
+	 Organisation, no changes are made to Practice Manager until an [&amp;AccAddr 
+	 call-type="update] command is executed.</p>
+            <p>If the Entity specified for the entity-int-code= parameter is not 
+	 linked to a Practice Manager Contact or Organisation, a new Contact/Organisation 
+	 will be created if/when an [&amp;AccAddr call-type="Update"] 
+	 command is executed for the address.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">4 Delete 
+ the currently selected address use</a>.</p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p class="Script">[&amp;AccAddr call-type="delete"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">5 Copy 
+ the currently selected address to Practice Manager use</a>.</p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p class="Script">[&amp;AccAddr call-type="update"]</p>
+            <p>Main addresses cannot be updated. Amendments to these addresses 
+	 should be performed by assigning to the relevant EN code for the client 
+	 or contact.</p>
+            <p>Additional address can only be updated for clients, contacts and 
+	 organisations.</p>
+            <p>A client can only ever have one additional billing and one additional 
+	 statement address at any one time. If either exists and is being replaced 
+	 as a result of an update then the existing address will be retained 
+	 but downgraded to a type 1 (Alternative Correspondence).</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">6 Clear 
+ all address details held by Visualfiles use</a>.</p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p class="Script">[&amp;AccAddr call-type="clear"]</p>
+        </div>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

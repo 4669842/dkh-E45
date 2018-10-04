@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;RTC</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;RTC</span>
+        </div>
+        <h1><a name="kanchor893"></a><a name="kanchor894"></a><a name="kanchor895"></a><a name="kanchor896"></a>&amp;RTC Command</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script" style="margin-bottom: 6pt;">[<span style="font-weight: bold;">{</span>&amp;RTC 
+ action="<a href="#start" class="selected">Start</a>"<span style="font-weight: bold;">|</span>"<a href="#stop" style="font-weight: normal;" class="selected">Stop</a>"<span style="font-weight: bold;">|</span>"<a href="#create" style="font-weight: normal;" class="selected">Create</a>"<span style="font-weight: bold;">|</span>"<a href="#delete" style="font-weight: normal;" class="selected">Delete</a>"<span style="font-weight: bold;">|</span>"<a href="#post" style="font-weight: normal;" class="selected">Post</a>"<span style="font-weight: bold;">|</span>"<a href="#on" style="font-weight: normal;" class="selected">On</a>"<span style="font-weight: bold;">|</span>"<a href="#off" style="font-weight: normal;" class="selected">Off</a>"}]</p>
+        <p class="Script" style="margin-bottom: 6pt;">[<span style="font-weight: bold;">{</span>&amp;RTC 
+ action="<a href="#start" class="selected">Start</a>"<span style="font-weight: bold;">}[</span>int-code=&lt; 
+ &gt;<span style="font-weight: bold;">|</span>, activity=&lt; &gt;<span style="font-weight: bold;">|</span>, create<span style="font-weight: bold;">|</span>, 
+ description=&lt; &gt;<span style="font-weight: bold;">|</span>, notes=&lt; 
+ &gt;<span style="font-weight: bold;">|</span>,prompt<span style="font-weight: bold;">]...</span>]</p>
+        <p class="Script" style="margin-bottom: 6pt;">[<span style="font-weight: bold;">{</span>&amp;RTC 
+ action="<a href="#stop" class="selected">Stop</a>"<span style="font-weight: bold;">}[</span>int-code=&lt; 
+ &gt;<span style="font-weight: bold;">|</span>, activity=&lt; &gt;<span style="font-weight: bold;">|</span>,prompt<span style="font-weight: bold;">]</span>...]</p>
+        <p class="script" style="margin-bottom: 6pt;font-weight: normal;">[<span style="font-weight: bold;">{</span>&amp;RTC action="<a href="#create" style="font-weight: normal;" class="selected">Create</a>"<span style="font-weight: bold;">}</span>[int-code=&lt; 
+ &gt;<span style="font-weight: bold;">|</span>, activity=&lt; &gt;<span style="font-weight: bold;">|</span>, description=&lt; &gt;<span style="font-weight: bold;">|</span>, 
+ notes=&lt; &gt;<span style="font-weight: bold;">|</span>, start<span style="font-weight: bold;">|</span>,prompt<span style="font-weight: bold;">]...</span>]</p>
+        <p class="script" style="margin-bottom: 6pt;font-weight: normal;">[<span style="font-weight: bold;">{</span>&amp;RTC action="<a href="#delete" style="font-weight: normal;" class="selected">Delete</a>"<span style="font-weight: bold;">}</span>[int-code=&lt; 
+ &gt;<span style="font-weight: bold;">|</span>, activity=&lt; &gt;<span style="font-weight: bold;">|</span>, all|, active<span style="font-weight: bold;">|</span>,prompt<span style="font-weight: bold;">]</span>...]</p>
+        <p class="script" style="margin-bottom: 6pt;font-weight: normal;">[<span style="font-weight: bold;">{</span>&amp;RTC action="<a href="#post" style="font-weight: normal;" class="selected">Post</a>"<span style="font-weight: bold;">}[</span>int-code=&lt; 
+ &gt;<span style="font-weight: bold;">|</span>, activity=&lt; &gt;<span style="font-weight: bold;">|</span>, description=&lt; &gt;<span style="font-weight: bold;">|</span>, 
+ notes=&lt; &gt;<span style="font-weight: bold;">|</span>, all<span style="font-weight: bold;">|</span>, 
+ active<span style="font-weight: bold;">|</span>,prompt]...]</p>
+        <p class="Script" style="margin-bottom: 6pt;font-weight: normal;">[<span style="font-weight: bold;">{</span>&amp;RTC action="<a href="#on" style="font-weight: normal;" class="selected">On</a>"<span style="font-weight: bold;">|</span>"<a href="#off" style="font-weight: normal;" class="selected">Off</a>"<span style="font-weight: bold;">}</span>]</p>
+        <p style="font-size: 8pt;font-weight: normal;"><a href="#Examples" style="font-size: 8pt;font-weight: normal;" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>The &amp;RTC command enables timers within a case to be controlled through 
+ scripting. Timers are used to record time against a file and post it to 
+ History for charging to the client. Before real time can be captured a 
+ new timer must be created and attached to an existing file. There can 
+ only ever be one timer running at a time.</p>
+        <p>Within the &amp;RTC command there are options that can be specified 
+ that enable developers to change the behaviour of the selection list that 
+ opens when choosing a timer. These include the title buttons, columns 
+ and user response.</p>
+        <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> This command is not 
+ supported in Visualfiles Browser.</p>
+        <h3>Pick Lists</h3>
+        <p>When more than one timer matches the search criteria, a pick list is 
+ displayed from which users can select the required timers. The pick list 
+ only displays inactive timers.</p>
+        <p>When only one timer matches the search criteria, it is automatically 
+ selected. If you prefer to display the pick list when only one valid result 
+ is available, specify the <span style="font-weight: bold;">,prompt</span> 
+ on your command.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 20%;" />
+            <col style="width: 80%;" />
+            <tr style="vertical-align: top;height: 19px;">
+                <td colspan="2" style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="start" id="start"></a>"Start"</p>
+                    <p>Used to select an existing timer and start it. There are several 
+		 options available which can be included with this parameter to 
+		 fine tune the search and start the required timer.</p>
+                    <p>When more than one timer matches the search criteria, a pick 
+		 list is shown and the selected timer is started. When no matching 
+		 timers are found, the command does not start any timer, unless 
+		 the ,create option is used. This creates and starts a new timer. 
+		 Any values specified in the <span style="font-weight: bold;">int-code</span>, 
+		 <span style="font-weight: bold;">activity</span>, <span style="font-weight: bold;">description</span> 
+		 and <span style="font-weight: bold;">notes</span> options will 
+		 be copied into the new timer.</p>
+                    <p>When using the <span style="font-weight: bold;">create</span> 
+		 option, the <span style="font-weight: bold;">description</span> 
+		 and <span style="font-weight: bold;">notes</span> options can 
+		 be specified to pre-assign values to the new timer. See <a href="#Examples" style="font-size: 8pt;font-weight: normal;" class="selected">examples</a>.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Do not use 
+		 the <span style="font-weight: bold;">"Start"</span> 
+		 parameter in scripts run from a robot or other automated process 
+		 unless you are certain that the pick list will not open.</p>
+                    <p>You can be specific about the timer that starts by passing in 
+		 various options.</p>
+                    <p><span class="ScriptChar">"Start"</span> parameter 
+		 options include:</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script" style="text-align: right;">int-code=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-left: 10px;padding-right: 10px;">
+                    <p>Used 
+		 to find and start a timer already assigned to a specified case. 
+		 When there are no matching timers and the create option is defined, 
+		 a new timer is created and assigned to the case.</p>
+                    <p>When matching timers exist and the create option is included 
+		 in the command, create has no effect.</p>
+                    <p>The int-code corresponds to the case internal-code <a href="../System_Codes/file_details_codes.htm#MT30">MT30</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">activity=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to find and start a timer already assigned to the specified activity 
+		 type. When there are no matching timers and the create parameter 
+		 is specified, a new timer is created and assigned to the activity 
+		 code.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">create</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to create and start a new timer if no matching timers are found. 
+		 Any values specified on the int-code, activity, description and 
+		 notes parameters are copied to the new timer. If an existing timer 
+		 is found, this option has no effect.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">description=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 with the <span style="font-weight: bold;">create</span> option 
+		 (above). This parameter takes effect when there are no matching 
+		 timers to start. The value assigned to the description parameter 
+		 is copied to the description field of the new timer.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">notes=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 with the <span style="font-weight: bold;">create</span> option 
+		 (above). This parameter takes effect when there are no matching 
+		 timers to start. The value assigned to the notes parameter is 
+		 copied to the notes field of the new timer.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="stop" id="stop"></a>"Stop"</p>
+                    <p>Used to select and stop an existing timer. You can be specific 
+		 about selecting the timer that stops by including the <span style="font-weight: bold;">int-code=</span> 
+		 and <span style="font-weight: bold;">activity=</span> options. 
+		 Both these options can be specified to make the search more precise. 
+		 If neither of these options are specified the active timer, irrespective 
+		 of the case it is assigned to or its activity code, is stopped. 
+		 See <a href="#Examples" style="font-size: 8pt;font-weight: normal;" class="selected">examples</a>.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Since there 
+		 can only ever be one active timer running, this parameter never 
+		 result in a pick list being displayed.</p>
+                    <p><span class="ScriptChar">"Stop"</span> parameter options 
+		 include:</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">int-code=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to find and stop a timer already assigned to the specified case. 
+		 When there are no matching timers for the case specified, the 
+		 command fails.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">activity=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to find and stop a timer already assigned to the specified activity 
+		 type. When there are no matching timers for the activity code 
+		 specified, the command fails.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="create" id="create"></a>"Create"</p>
+                    <p>Used to create a new timer and optionally start it. You can 
+		 define the timer that is created by passing in various options. 
+		 User-defined text can be pre-assigned to the new timer using the 
+		 <span style="font-weight: bold;">description</span> and <span style="font-weight: bold;">notes</span> parameters. See <a href="#Examples" style="font-size: 8pt;font-weight: normal;" class="selected">examples</a>.</p>
+                    <p><span class="ScriptChar">"Create"</span> parameter 
+		 options include:</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">int-code=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to assign the new timer directly to a case by specifying its internal 
+		 number <a href="../System_Codes/file_details_codes.htm#MT30">MT30</a>. 
+		 If this option is not specified the timer is created but it is 
+		 not be assigned to a case.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">activity=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to automatically assign the new timer to an activity code by specifying 
+		 specify the code on the activity option. If option is not specified 
+		 the timer is created without an activity code.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">description=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to automatically assign a description to the new timer by specifying 
+		 the text using this option. If this option is not specified the 
+		 timer is created without a description</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">notes=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to automatically assign some notes by specifying the text. If 
+		 this option is not specified the timer is created without notes.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">start</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to make a new timer start automatically; which will automatically 
+		 stop the currently running timer. If this option is not specified 
+		 the timer is created, but it does not start, and any other active 
+		 timer remains active.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="delete" id="delete"></a>"Delete"</p>
+                    <p>Used to delete a timer. You can make the search more specific 
+		 by passing in the <span style="font-weight: bold;">int-code</span> 
+		 and <span style="font-weight: bold;">activity</span> options to 
+		 locate the timer to delete. If there are no matching timers the 
+		 command fails. If there is only one matching timer it is deleted. 
+		 If more than one timer matches the search criteria, a pick list 
+		 is shown from which the timer to be deleted can be chosen. See 
+		 <a href="#Examples" style="font-size: 8pt;font-weight: normal;" class="selected">examples</a>.</p>
+                    <p><span class="ScriptChar">"Delete"</span> parameter 
+		 options include:</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">int-code=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to find and delete a timer already assigned to a specific case. 
+		 When there are no matching timers for the case specified, the 
+		 command fails.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">activity=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to find and delete a timer already assigned to the specified activity 
+		 code. When there are no matching timers for the activity code 
+		 specified, the command fails.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">all</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to delete all the timers that match the search criteria.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">active</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to delete the active timer that matches the search criteria.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="post" id="post"></a>"Post"</p>
+                    <p>Used to post the time from an existing timer to <a href="../History_Screen.htm">History</a> 
+		 or to <a href="../Time_Sheets.htm">Time Sheets</a> if it is switched 
+		 on by selecting the <a href="../File_Holder_User_Properties.htm#Use_Time_Sheet">Use 
+		 Time Sheet</a> option in User Properties. You can specify the 
+		 timer to post by passing in the <span style="font-weight: bold;">int-code</span> 
+		 and the <span style="font-weight: bold;">activity</span> options. 
+		 If there are no matching timers, the command fails. If there is 
+		 only one matching timer, its time is posted. If there is more 
+		 than one timer matching the criteria, a pick list is displayed 
+		 and the selected timer is posted.</p>
+                    <p>For a timer entry to be posted it must have a valid file code 
+		 and activity code. When there are multiple timers matching the 
+		 search criteria, a pick list is shown. It only list items that 
+		 have a valid case and activity codes.</p>
+                    <p>In line with the manual process of posting timers, time values 
+		 are rounded up to their standard unit as defined for the activity 
+		 code. See <a href="#Examples" style="font-size: 8pt;font-weight: normal;" class="selected">examples</a>.</p>
+                    <p><span class="ScriptChar">"Post"</span> parameter options 
+		 include:</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">int-code=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to find and post a timer already assigned to the specified case. 
+		 When there are no matching timers for the case specified the command 
+		 fails.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">activity=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to find and post a timer already assigned to the specified activity 
+		 code. When there are no matching timers for the activity code 
+		 specified the command fails.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">description=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to assign a description to the resulting history item when posting 
+		 a timer.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">notes=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to assign extra notes to the resulting history item when posting 
+		 a timer.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">all</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to post all the timers that match the search criteria.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">active</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p>Used 
+		 to post the active timer that matches the search criteria.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="on" id="on"></a>"On"</p>
+                    <p>Performs the <span style="font-weight: bold;">Power On</span> 
+		 function in the <a href="../Time_Recording_Real_Time_Capture.htm">Real Time Capture</a> 
+		 window.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="off" id="off"></a>"Off"</p>
+                    <p>Performs the <span style="font-weight: bold;">Power Off</span> 
+		 function in the <a href="../Time_Recording_Real_Time_Capture.htm">Real Time Capture</a> 
+		 window.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="prompt" id="prompt"></a>,prompt</p>
+                    <p>Use this command to display the pick-list dialog box when only 
+		 one valid result is available. Normally when only one timer matches 
+		 the search criteria, the single result is automatically picked 
+		 and used as the timer for the action. By including <span style="font-weight: bold;">,prompt</span> 
+		 in the syntax, the pick-list dialog opens with the single result 
+		 displayed.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">TITLE=</p>
+                    <p>Represents the title that opens in the window of the selection 
+		 list. If you want to change the default title to something else 
+		 use this parameter to specify the text.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">BUTTON1=</p>
+                    <p>Represents the standard <span style="font-weight: bold;">Close</span> 
+		 button. If you want to change the text from <span style="font-weight: bold;">Close</span> 
+		 to something else, use this parameter to specify the text.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">BUTTON2=</p>
+                    <p>Represents the <span style="font-weight: bold;">Select Timer</span> 
+		 button. If you want to change the text from <span style="font-weight: bold;">Select 
+		 Timer</span> to something else, use this parameter and specify 
+		 the text.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">BUTTON3=</p>
+                    <p>Represents an additional button. If you want an extra button 
+		 to been shown, then specify this parameter with the text you want 
+		 to show inside that button.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">BUTTON4=</p>
+                    <p>Represents an additional button. If you want an extra button 
+		 to show, then specify this parameter with the text you want inside 
+		 that button.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">BUTTON5=</p>
+                    <p>Represents an additional button. If you want an extra button 
+		 to show, then specify this parameter with the text you want inside 
+		 that button.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">BUTTON-ORDER=</p>
+                    <p>Determines the order in which buttons 1 to 5 show. The default 
+		 order for the two standard buttons is <span style="font-weight: bold;">2,1</span> 
+		 - use a comma delimited list of numbers to specify the order, 
+		 for example <span style="font-weight: bold;">5,4,3,2,1</span>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">COLUMN1=</p>
+                    <p>Represents the text that shows in column 1 of the selection 
+		 list. If you want to replace the default text then specify this 
+		 option along with your text.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">COLUMN2=</p>
+                    <p>Represents the text that shows in column 2 of the selection 
+		 list. If you want to replace the default text then specify this 
+		 option along with your text.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">COLUMN3=</p>
+                    <p>Represents the text that shows in column 3 of the selection 
+		 list. If you want to replace the default text then specify this 
+		 option along with your text.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 17px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">RESPONSE=</p>
+                    <p>Represents the user's response to the selection list. It contains 
+		 <span style="font-weight: bold;">CANCEL</span> if the user pressed 
+		 escape, the Close (<span style="font-weight: bold;">X</span>) 
+		 button or button 1, <span style="font-weight: bold;">SELECT</span> 
+		 if the user pressed F2 or button 2, <span style="font-weight: bold;">BUTTON3</span> 
+		 if the user pressed button 3, <span style="font-weight: bold;">BUTTON4</span> 
+		 if the user pressed button 4, <span style="font-weight: bold;">BUTTON5</span> 
+		 if the user pressed button 5.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t14">1 Start 
+ existing timer and create/start timer</a>
+        </p>
+        <div MadCap:targetName="t14" style="display: none;">
+            <p class="Script">[&amp;RTC action="start"]</p>
+            <p>This command is used to start a timer.</p>
+            <p>If there is only one timer then it is started irrespective of the 
+	 case it is assigned to.</p>
+            <p>If more than one timer is defined, a pick list is displayed for 
+	 the user to select which timer to start.</p>
+            <p>This command fails if there are no timers. Add the <span style="font-weight: bold;">create</span> 
+	 option to resolve this, see below:</p>
+            <p class="Script">[&amp;RTC action="start", create]</p>
+            <p>This command attempts to start a timer, but if it does not exist, 
+	 creates and starts a new one.</p>
+            <p>The timer created is not assigned to a case, or given an activity 
+	 code, description or notes.</p>
+            <p>If one timer already exists then it is started irrespective of the 
+	 case it is assigned to and no new timer is created.</p>
+            <p>If more than one timer is defined, a pick list is displayed for 
+	 the user to select the timer to start. No new timer is started.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t13">2 Start 
+ existing timer specified in MT30, create/start timer</a>
+        </p>
+        <div MadCap:targetName="t13" style="display: none;">
+            <p class="Script">[&amp;RTC action="start", int-code=MT30]</p>
+            <p>This command is used to start a timer assigned to a case specified 
+	 in MT30.</p>
+            <p>If there is only one timer assigned to the specified case in MT30 
+	 then it is started.</p>
+            <p>If more than one timer is assigned to the case specified in MT30, 
+	 a pick list is displayed listing all timers assigned to the case for 
+	 the user to select and start.</p>
+            <p>If there are no timers assigned to the case specified in MT30 the 
+	 command fails. Add the create option to resolve this, see below:</p>
+            <p class="Script">[&amp;RTC action="start", int-code=MT30, 
+	 create]</p>
+            <p>This command attempts to start a timer assigned to a case specified 
+	 in MT30, but if it does not exist, creates and starts a new one.</p>
+            <p>If there are no timers already assigned to the case specified in 
+	 MT30 a new timer is created and assigned to it.</p>
+            <p>If there is only one timer assigned to the case specified in MT30 
+	 then it is started and a new timer is not created.</p>
+            <p>If there is more than one timer assigned to the case specified in 
+	 MT30, a pick list is displayed of all inactive timers assigned to 
+	 case MT30, for the user to select and start. No new timer is created.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t15">3 Start/create timer, assign activity code and description</a>
+        </p>
+        <div MadCap:targetName="t15" style="display: none;">
+            <p>[&amp;RTC action="start", int-code=MT30, activity="ABCD", create, description="New Timer"]</p>
+            <p>This command creates a new timer, assigns it to the case specified in MT30, gives it an activity code, for example, ABCD and a description, for example, New Timer then starts it.</p>
+            <p>If there is one timer assigned to the case specified in MT30 which shares the activity code that is not already active, then it is started. A new timer is not created.</p>
+            <p>If there is more than one inactive timer assigned to the case specified in MT30 which shares the activity code , a pick list is shown with all these timers displayed for the user to select and start. A new timer is not created.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t12">4 Stop 
+ timer</a>
+        </p>
+        <div MadCap:targetName="t12" style="display: none;">
+            <p class="Script">[&amp;RTC action="start", int-code=MT30, 
+	 activity="ABCD", create, description="New Timer"]</p>
+            <p>This command creates a new timer, assigns it to the case specified 
+	 in MT30, gives it an activity code, for example, <span style="font-weight: bold;">ABCD</span> 
+	 and a description, for example, <span style="font-weight: bold;">New 
+	 Timer</span> then starts it.</p>
+            <p>If there is one timer assigned to the case specified in MT30 which 
+	 shares the activity code that is not already active, then it is started. 
+	 A new timer is not created.</p>
+            <p>If there is more than one inactive timer assigned to the case specified 
+	 in MT30 which shares the activity code , a pick list is shown with 
+	 all these timers displayed for the user to select and start. A new 
+	 timer is not created.</p>
+            <p class="Script">[&amp;RTC action="stop"]</p>
+            <p>This command is used to stop the current active timer irrespective 
+	 of the case or activity code it is assigned to.</p>
+            <p>If there is no active timer, the command fails.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t11">5 Stop 
+ specified timer</a>
+        </p>
+        <div MadCap:targetName="t11" style="display: none;">
+            <p class="Script">[&amp;RTC action="stop", int-code=MT30]</p>
+            <p>This command is used to stop an active timer running against the 
+	 case specified in MT30.</p>
+            <p>If there is no active timer the command fails.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t10">6 Stop 
+ timer running against specified activity type</a>
+        </p>
+        <div MadCap:targetName="t10" style="display: none;">
+            <p class="Script">[&amp;RTC action="stop", activity="ABCD"]</p>
+            <p>This command is used to stop any active timer running against the 
+	 specified activity type irrespective of the case.</p>
+            <p>If there is no active timer for the specified activity type the 
+	 command fails.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t9">7 Stop 
+ timer running against specified case &amp; activity type</a>
+        </p>
+        <div MadCap:targetName="t9" style="display: none;">
+            <p class="Script">[&amp;RTC action="stop", int-code=MT30, 
+	 activity="ABCD"]</p>
+            <p>This command is used to stop any active timer running against the 
+	 specified case with the specified activity code. If there is no active 
+	 timer for the specified case and activity code the command fails.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t8">8 Create 
+ a timer, create/start timer</a>
+        </p>
+        <div MadCap:targetName="t8" style="display: none;">
+            <p class="Script">[&amp;RTC action="create"]</p>
+            <p>This command creates a new timer.</p>
+            <p>It is not assigned to a case and has no description, notes or activity 
+	 code. The new timer is not started and any other active timer remains 
+	 active.</p>
+            <p class="Script">[&amp;RTC action="create", start]</p>
+            <p>This command creates and starts a timer.</p>
+            <p>It is not assigned to a case and has no description, notes or activity 
+	 code. When the new timer starts the current active timer is stopped.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t7">9 Create 
+ a timer assigned to a case with a description and activity code, create/start 
+ timer</a>
+        </p>
+        <div MadCap:targetName="t7" style="display: none;">
+            <p class="Script">[&amp;RTC action="create", int-code=MT30, 
+	 description="New Timer", activity="ABCD"]</p>
+            <p>This command creates a new timer assigned to the case defined in 
+	 MT30. It has the description <span style="font-weight: bold;">New 
+	 Timer</span> and is assigned the activity code <span style="font-weight: bold;">ABCD</span>.</p>
+            <p>The new timer is not started so if there is an active timer it remains 
+	 running.</p>
+            <p class="Script">[&amp;RTC action="create", int-code=MT30, 
+	 description="New Timer", activity="ABCD", start]</p>
+            <p>This command creates and starts a timer.</p>
+            <p>The new timer is started and the active timer is automatically stopped.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">10 Delete 
+ timer, delete active timer, delete all timers</a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p class="Script">[&amp;RTC action="delete"]</p>
+            <p>This command is used to delete a timer.</p>
+            <p>If there is only one timer it is deleted. If there is more than 
+	 one timer, a pick list is displayed for the user to select the timer 
+	 to delete.</p>
+            <p>If there are no timers the command fails.</p>
+            <p class="Script">[&amp;RTC action="delete", active]</p>
+            <p>This command is used to delete the active timer irrespective of 
+	 its case code and activity.</p>
+            <p>If there are no active timers the command fails.</p>
+            <p class="Script">[&amp;RTC action="delete", all]</p>
+            <p>This command is used to delete all timers.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">11 Delete 
+ a timer specified in MT30, delete all specified timers</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p class="Script">[&amp;RTC action="delete", int-code=MT30]</p>
+            <p>This command is used to delete a case specified in MT30.</p>
+            <p>If there is only one timer for the case specified in MT30 it is 
+	 deleted.</p>
+            <p>If there is more than one timer for the case specified in MT30, 
+	 a pick list is displayed for the user to select which timer to delete.</p>
+            <p>If there are no timers for the case specified in MT30 the command 
+	 will fail.</p>
+            <p class="Script">[&amp;RTC action="delete", int-code=MT30, 
+	 all]</p>
+            <p>This command deletes all timers assigned to the case defined in 
+	 MT30.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">12 Delete 
+ timers specified in MT30 with defined activity code, delete specified 
+ active timers</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p class="Script">[&amp;RTC action="delete", int-code=MT30, 
+	 activity="ABCD"]</p>
+            <p>This command is used to delete the timer specified in MT30 with 
+	 a defined activity code, for example, <span style="font-weight: bold;">ABCD</span>.</p>
+            <p>If there is only one timer for the case specified in MT30 with the 
+	 defined activity it is deleted.</p>
+            <p>If there is more than one timer for the case, a pick list is displayed 
+	 for the user to select which timer to delete.</p>
+            <p>If there are no matching timers for the case the command fails.</p>
+            <p class="Script">[&amp;RTC action="delete", int-code=MT30, 
+	 activity="ABCD", active]</p>
+            <p>This command is used to delete the active timer for the case specified 
+	 in MT30 and assigned to a defined activity code.</p>
+            <p>If there are no matching timers for the case the command fails.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">13 Post 
+ timer, post all timers, post active timer</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p class="Script">[&amp;RTC action="post"]</p>
+            <p>Use this command to post a timer to History.</p>
+            <p>If there is only one timer with a valid case and activity code it 
+	 is posted to History.</p>
+            <p>If there is more than one timer a pick list is displayed for the 
+	 user to select the timer to post.</p>
+            <p>If there are no timers the command fails.</p>
+            <p class="Script">[&amp;RTC action="post", all]</p>
+            <p>This command is used to post all timers that have a valid file code 
+	 and an activity code assigned to them to History.</p>
+            <p class="Script">[&amp;RTC action="post", active]</p>
+            <p>This command is to post the active timer to History, if it has a 
+	 valid case code and activity code assigned.</p>
+            <p>If there are no active timers then the command fails.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">14 Post 
+ timer specified in MT30</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p class="Script">[&amp;RTC action="post", int-code=MT30]</p>
+            <p>This command is used to post timers assigned to the case specified 
+	 in MT30. If there is only one timer assigned to the case it is posted 
+	 provided it has a valid activity code. If there are multiple timers 
+	 assigned to the case specified in MT30 a pick list of timers with 
+	 valid activity codes is displayed from which the timer to post can 
+	 be selected.</p>
+            <p>If there are no timers assigned to the case defined in MT30 the 
+	 command will fail.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">15 Post 
+ timer specified in MT30 with activity code defined, post active, post 
+ all</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p class="Script">[&amp;RTC action="post", int-code=MT30, 
+	 activity="ABCD"]</p>
+            <p>This command is used to post timers assigned to the case defined 
+	 in MT30 with the activity code specified, for example, ABCD. If there 
+	 is only one timer assigned to the case with the activity code ABCD 
+	 it is posted. If there are multiple timers assigned to the case specified 
+	 in MT30 with activity code ABCD a pick list displayed from where the 
+	 timer to post can be selected.</p>
+            <p>If there are no timers assigned to the case defined in MT30 with 
+	 the activity code ABCD the command fails.</p>
+            <p class="Script">[&amp;RTC action="post", int-code=MT30, 
+	 activity="ABCD", active]</p>
+            <p>This command is to post an active timer for the case specified in 
+	 MT30 with activity code assigned, for example, "ABCD". If 
+	 there is no matching active timer, the command fails.</p>
+            <p class="Script">[&amp;RTC action="post", int-code=MT30, 
+	 activity="ABCD", all]</p>
+            <p>This command is used to post all timers for the case specified in 
+	 MT30 with activity code ABCD. If there are no matching timers, the 
+	 command fails.</p>
+        </div>
+        <h4>Developers' Tips</h4>
+        <p>The standard Real Time Capture open/close case behaviour can be removed 
+ by adding the system option <span style="font-weight: bold;">912 Real 
+ Time Capture</span> in System Parameters. For more information see <a href="../Miscellaneous_Options/Real_Time_Capture_Open_Close_File_Behaviour.htm">Real Time Capture</a>.</p>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1"><a href="../Time_Recording_Real_Time_Capture.htm">Real Time Capture</a>
+            </li>
+            <li value="2"><a href="../System_Codes/Real_Time_Capture_(RT)_Codes.htm">Real 
+	 Time Capture (RT) Codes</a>
+            </li>
+            <li value="3"><a href="../System_Codes/file_details_codes.htm">File Details (MT) 
+	 Codes</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

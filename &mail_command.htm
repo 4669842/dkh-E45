@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;Mail</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;Mail</span>
+        </div>
+        <h1><a name="kanchor1906"></a>&amp;Mail</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[<span style="font-weight: bold;">{</span>&amp;Mail to = Recipient}]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>Sends an email and can be used within scripts and documents.</p>
+        <p><a name="kanchor1907"></a>By default emails are generated in text format. In order for Outlook 
+ to recognize hyperlinks emails need to be generated in HTML format, this 
+ is achieved by adding the HTML parameter to the &amp;Mail command and 
+ add the necessary html code to define a hyperlink. See <a href="#Examples" class="selected">example 
+ 10</a>.</p>
+        <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Some of the parameters 
+ are only available as part of the standard interface to Outlook or Lotus 
+ Notes and cannot be used with GroupWise.</p>
+        <h3>Outlook 2000/2003 Scripts</h3>
+        <p>If you have &amp;Mail scripts designed for use in earlier versions of 
+ Outlook, formatting such as &lt;CR&gt; carriage returns, or Plain and 
+ RTF formats, may not work correctly when the scripts are used in Outlook 
+ 2007 or later. You may also experience a loss of functionality when sending RTF 
+ format emails as HTML in Outlook 2007, which was not available in earlier 
+ versions.</p>
+        <p>There are workarounds to resolve this loss of functionality:</p>
+        <ul>
+            <li class="p-BulletedList" value="1">
+                <p class="BulletedList">If &amp;Mail command 
+	 scripts do not have a mail format defined, for example ,RTF, add this 
+	 parameter to the code. Alternatively, set the default format in Outlook 
+	 to RTF.</p>
+            </li>
+            <li class="p-BulletedList" value="2">
+                <p class="BulletedList">If &lt;CR&gt; formatting 
+	 is not working correctly, add ,HTML to the &amp;Mail command and insert 
+	 a &lt;BR&gt; tag in the message text where line breaks are needed.</p>
+            </li>
+        </ul>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">amend</p>
+                    <p>Launches the Email Message dialog, enabling changes to be made 
+		 to the message before it is sent.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">attach</p>
+                    <p>Causes the document in which the command is embedded to be included 
+		 in the email message as an attachment.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">bcc = "&lt; bccRecipients&gt;"</p>
+                    <p>Specifies the BCC (blind carbon copy) recipients of emails.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Cannot be 
+		 used with <span style="font-weight: bold;">GroupWise</span>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">cc = "&lt;ccRecipients&gt;"</p>
+                    <p>Specifies the CC (carbon copy) recipients of emails.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Cannot be 
+		 used with <span style="font-weight: bold;">GroupWise</span>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">delivery</p>
+                    <p>Request an automatic delivery receipt.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Cannot be 
+		 used with <span style="font-weight: bold;">GroupWise</span>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">encrypt</p>
+                    <p>Set the encryption flag on the email before sending.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Cannot be 
+		 used with <span style="font-weight: bold;">GroupWise</span>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">file = "&lt;path&amp;filename1, 
+		 ...&gt;"</p>
+                    <p>Add file attachments to an email. This parameter defines the 
+		 filename and path. Multiple attachments are comma-delimited. See 
+		 <a href="#Examples" class="selected">example 4</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">from = "&lt;name&gt;"</p>
+                    <p>Specifies the From field value.</p>
+                    <p>Enables the From field value to be amended so that for example, 
+		 a generic email address can be specified rather than an individual, 
+		 i.e. "HelpDesk@Client.co.uk".</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">HTML</p>
+                    <p>Converts output to HTML format. For more information see <a href="../Scripting/Email_Signatures.htm">Email Signatures</a>.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Cannot be 
+		 used with <span style="font-weight: bold;">GroupWise</span>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">importance = "&lt;high&gt;"</p>
+                    <p class="Script">importance = "&lt;low&gt;"</p>
+                    <p>Assign a level of importance.</p>
+                    <p>The following parameter is only available as part of the standard 
+		 interface to Lotus Notes.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">message 
+		 = TextString</p>
+                    <p>The value of this parameter is displayed in the body of the 
+		 email.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">no-wait</p>
+                    <p>The no-wait parameter is for use in Visualfiles Browser only 
+		 to ensure that scripts continue after the mail is generated rather 
+		 than locking up an agent. Ensure that the &amp;Mail command is 
+		 the last interaction in a script otherwise there is the potential 
+		 for two scripts to be running simultaneously which can cause problems.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">nofileopen</p>
+                    <p>Suppress the <span style="font-weight: bold;">Do you want to 
+		 open this file?</span> prompt.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Cannot be 
+		 used with <span style="font-weight: bold;">GroupWise</span>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">nohistoryprompt</p>
+                    <p>Remove the confirmation of the history narrative when saving 
+		 an email to history.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Cannot be 
+		 used with <span style="font-weight: bold;">GroupWise</span>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Plain</p>
+                    <p>Compose the email in plain text format.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">read</p>
+                    <p>Request an automatic read receipt.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Cannot be 
+		 used with <span style="font-weight: bold;">GroupWise</span>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">RTF</p>
+                    <p>Compose the email in rich text format (RTF).</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">save</p>
+                    <p>Saves the email to the History of the current file.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">signature = ""</p>
+                    <p>Used to remove the default signature.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">subject 
+		 = Subject</p>
+                    <p>The value of this parameter is displayed in the <span style="font-weight: bold;">Subject</span> 
+		 line of the mail.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">to 
+		 = Recipient</p>
+                    <p>Email address of the recipient of the email.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">version</p>
+                    <p>Enables versioning of emails when they are saved to history.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t10">1 attach 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t10" style="display: none;">
+            <p class="Script">[&amp;Mail to = "Nick",subject = "Lease 
+	 for Review",message = "Please forward your comments by Friday",attach]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t9">2 amend 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t9" style="display: none;">
+            <p>This example shows the use of temporary fields within the message 
+	 parameter.</p>
+            <p class="Script">[&amp;Mail to = "j.smith@visualfiles.com",subject 
+	 = "Email Confirmation",message = "The meeting will 
+	 go ahead on " +TF01,amend]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t8">3 save 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t8" style="display: none;">
+            <p>The field <span style="font-weight: bold;">CON05</span> holds an 
+	 email address which is then used with the <span style="font-weight: bold;">to</span> 
+	 parameter of the &amp;Mail command.</p>
+            <p class="Script">[&amp;Mail to = "CON05",subject = "Meeting",message 
+	 = "The meeting is confirmed",save]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t7">4 file 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t7" style="display: none;">
+            <p>Attaching the file questionnaire.docto an email.</p>
+            <p class="Script">[&amp;Mail to = "a.taylor@visualfiles.com,subject = Please complete the 
+	 attached questionnaire,message = Complete and return back 
+	 to me by next Monday,file = c:\my</p>
+            <p>Attach multiple files within the &amp;Mail command using temporary 
+	 fields:</p>
+            <p class="Script">[&amp;Assign TF01="C:\my documents\doc1.doc,C:\my 
+	 documents\doc2.doc"]</p>
+            <p class="Script">[&amp;Mail to = "test.user@lexisnexis.co.uk",subject 
+	 = "Please complete the description",message = "Test",file 
+	 = TF01]</p>
+            <p>Attach two temporary fields storing a file location in each:</p>
+            <p class="Script">[&amp;Assign TF01="C:\my documents\doc1.doc"]</p>
+            <p class="Script">[&amp;Assign TF02="C:\my documents\doc2.doc"]</p>
+            <p class="Script">[&amp;Assign TF03=TF01+","+TF02]</p>
+            <p class="Script">[&amp;Mail to = "test.user@lexisnexis.co.uk",subject 
+	 = "Please complete the description",message = "Test",file 
+	 = TF03]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">5 bcc 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p>In this example, the email to Fred will also be sent to Bert and 
+	 Mary but Bert will not know that Mary received the email as well.</p>
+            <p class="Script">[&amp;Mail to = "fred",cc = "bert,bcc = </p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">6 read 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p>This example requests an automatic read receipt and assigns the 
+	 value of the temporary variable <span style="font-weight: bold;">TF02</span> 
+	 to the message parameter.</p>
+            <p class="Script">[&amp;Mail to = "fred",read,subject = "sale 
+	 of house",message = "TF02"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">7 importance 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p>The field <span style="font-weight: bold;">EMP09</span> holds an 
+	 employee's email address which is used with the <span style="font-weight: bold;">to</span> 
+	 parameter of the &amp;Mail command.</p>
+            <p class="Script">[&amp;Mail to = EMP09,importance = "high",subject 
+	 = "Sale of house",message = "Money has been credited 
+	 to your account"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">8 encryption 
+ parameter (Lotus Notes only)</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p class="Script">[&amp;Mail encrypt,to = "fred",importance 
+	 = "low",subject = "sale of house",message = "money 
+	 has been credited to your account"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">9 HTML 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p>This code is used to convert output to HTML format.</p>
+            <p class="Script">[&amp;Mail to="support@visualfiles.com", 
+	 subject="test", message=TF02+TF01,HTML]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">10 HTML 
+ parameter, define a hyperlink</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p class="Script">[&amp;Mail to="test@test.com", subject="Home 
+	 Information Pack", message="</p>
+            <p class="Script">&lt;br&gt;We are pleased to inform you that the Home 
+	 Information Pack is complete. Please be kind enough to contact your 
+	 estate agent should you wish to order any printed copies."+"</p>
+            <p class="Script">&lt;br&gt;</p>
+            <p class="Script">&lt;br&gt;Please click here to view the HIP online:</p>
+            <p class="Script">&lt;br&gt;</p>
+            <p class="Script">&lt;br&gt;&lt;a href="+QUOTE+"http://www.LexisNexis.co.uk/scripts/cgiip.exe/WService=VF_Live/vfxmlsws.p?function=user_login&amp;server_translate=false&amp;xsl=pp_login.xsl&amp;xsl_dir=/vfile_Live&amp;user_id=0005531&amp;password=15est31"+QUOTE+"&gt;Click 
+	 here&lt;/a&gt;</p>
+            <p class="Script">&lt;br&gt;</p>
+            <p class="Script">&lt;br&gt;</p>
+            <p class="Script">&lt;br&gt;Thank you.</p>
+            <p class="Script">&lt;br&gt;</p>
+            <p class="Script">&lt;br&gt; "+FE01+"</p>
+            <p class="Script">&lt;br&gt;</p>
+            <p class="Script">&lt;br&gt;Direct Dial: 01733 ",html,amend,save]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> &lt;br&gt; = carriage 
+	 return.</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> You do not need 
+	 to put the full link URL into the email, the words 'Click here' become 
+	 the hyperlink.<br />	&lt;a href=”+QUOTE+” ……”+QUOTE+”&gt;Click here&lt;/a&gt; is the hyperlink 
+	 formatting.</p>
+        </div>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1"><a href="../Scripting/Email_Signatures.htm">Email Signatures</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

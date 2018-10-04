@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;Webfield</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;Webfield</span>
+        </div>
+        <h1><a name="kanchor806"></a>&amp;Webfield</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[<span style="font-weight: bold;">{</span>&amp;Webfield<span style="font-weight: bold;">}</span>]</p>
+        <p class="Script" style="margin-left: 40px;">[<span style="font-weight: bold;">{</span>code<span style="font-weight: bold;">|</span>action<span style="font-weight: bold;">}</span>]</p>
+        <p class="Script" style="margin-left: 40px;">[<span style="font-weight: bold;">[</span>value<span style="font-weight: bold;">|</span>item<span style="font-weight: bold;">|</span>target<span style="font-weight: bold;">|</span>property<span style="font-weight: bold;">]...</span>]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>This command enables you to <span style="font-weight: bold;">Set</span> 
+ and <span style="font-weight: bold;">Get</span> information from a form 
+ using the web page object type.</p>
+        <p>To Set the check box or a multi-select object value, the items within 
+ the object must be declared selected, for example, true or false, see 
+ <a href="#Examples" class="selected">examples 4 &amp; 5</a>.</p>
+        <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> This command is not 
+ supported in Visualfiles Browser.</p>
+        <h3><a name="Data_Retrieval_from_Web_Page" id="Data_Retrieval_from_Web_Page"></a>Data 
+ Retrieval from Web Page</h3>
+        <p><a name="kanchor807"></a>The &amp;Webfield command can also be used to retrieve the text or HTML 
+ values from an embedded web page for a whole document, or on a form by 
+ form basis. See <a href="#Examples" class="selected">examples 6 to 8</a> below for more 
+ information on how to do this.</p>
+        <p>The source of a web page includes on-screen objects that have a name/id 
+ and a type. These objects include fill-in fields, buttons, images and 
+ hidden fields which &#160;contain data that is not intended for display 
+ to the user. Use the &amp;Webfield command to extract data from any object 
+ on a web page including hidden fields. Use the <span style="font-weight: bold;">action 
+ = get</span> parameter to retrieve the data required; see <a href="#Examples" class="selected">example 
+ 19</a>.</p>
+        <p>Use the &amp;Webfield command to navigate the web page, move back, forward, 
+ home or refresh the page. See <a href="#Examples" class="selected">example 9</a>.</p>
+        <h3>Extract URL</h3>
+        <p style="font-weight: normal;">It is possible to extract the current URL 
+ from an embedded web page and to assign it to a TF or LF field; see <a href="#Examples" class="selected">example 21</a>.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">action = "<span style="font-weight: bold;">&lt;</span>actionname<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p><span class="ScriptChar">Set</span> or &#160;<span class="ScriptChar">Get</span> 
+		 information from a form. <span class="ScriptChar"><br />
+		Click</span> indicates a mouse click to select. <span class="ScriptChar"><br />
+		Navigate</span> loads a Webpage/form using the values <span class="ScriptChar">forward</span>, 
+		 <span class="ScriptChar">backward</span>, <span class="ScriptChar">home</span>, 
+		 <span class="ScriptChar">refresh</span> and/or <span class="ScriptChar">URL</span>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">code = "<span style="font-weight: bold;">&lt;</span>codename<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Temporary field assigned to the Webfield object on the database 
+		 screen.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="File" id="File"></a>File 
+		 = "<span style="font-weight: bold;">&lt;</span>directory<span style="font-weight: bold;">|</span>filename<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Enables the text of a web page to be output to a file.</p>
+                    <p>The data returned from the web page can be returned directly 
+		 to a text file on disk rather than a Visualfiles field, which 
+		 later gets sent in 32k chunks to a text file. This removes much 
+		 of the overhead and complex scripting currently required to generate 
+		 the insertion file.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Form =</p>
+                    <p>This parameter replaces the old method of specifying <span style="font-weight: bold;">ITEM=form:frame:item</span>. 
+		 See <a href="#Examples" class="selected">example 14</a>.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The old method 
+		 using <span style="font-weight: bold;">ITEM=form:frame:item</span><span class="hcp1">,</span> is still supported but we recommend using 
+		 this parameter or the <span class="hcp1" style="font-weight: bold;">Frame</span> 
+		 parameter. </p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Frame =</p>
+                    <p>This parameter replaces the old method of specifying <span style="font-weight: bold;">ITEM=form:frame:item</span>. 
+		 See <a href="#Examples" class="selected">example 14</a>.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The old method 
+		 using <span class="hcp1" style="font-weight: bold;">ITEM=form:frame:item</span><span class="hcp1">,</span> is still supported but we recommend using 
+		 this parameter or the <span class="hcp1" style="font-weight: bold;">Form</span> 
+		 parameter. </p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">item = "<span style="font-weight: bold;">&lt;</span>itemname<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>The ID or name if the field on the form the information is to 
+		 be set or retrieved.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> If the item 
+		 name contains colons use the no-item-path parameter to prevent 
+		 them from being interpreted as specifying the <span style="font-weight: bold;">form:frame</span> 
+		 path to the item see <span style="font-weight: bold;">Form</span> 
+		 and <span style="font-weight: bold;">Frame </span>parameters.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">no-item-path</p>
+                    <p>By default the <span style="font-weight: bold;">item=</span> 
+		 parameter interprets values containing colons as representing 
+		 a form:frame:item path. Add the <span style="font-weight: bold;">no-item-path</span> 
+		 parameter to override this behaviour for item names that contain 
+		 colons.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">property = "<span style="font-weight: bold;">&lt;</span>TEXT|HTML<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Defines the type data to be retrieved, either text or HTML.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Script =</p>
+                    <p>Traps the onclick and onsubmit events.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Tabchild =</p>
+                    <p style="font-weight: normal;"><span style="font-weight: normal;">Enable 
+		 data extract or set data on a frame that is part of a series of 
+		 tabs.</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Tabparent =</p>
+                    <p>Enable data extract from a web page frame that is embedded within 
+		 other frames.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Tag =</p>
+                    <p>Use this parameter to access tags by ID, e.g. Tag="SPAN" 
+		 , Item="LBLFIRSTNAME" this locates the first SPAN with 
+		 this ID. If no <span style="font-weight: bold;">Item</span> is 
+		 specified the first occurrence is retrieved.</p>
+                    <p>&#160;Use the <span style="font-weight: bold;">Tag-Occurrence</span> 
+		 parameter where no ID exists.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Tag-occurrence =</p>
+                    <p>Use this parameter to access tags by their occurrence, e.g. 
+		 search for the third occurrence of the Table tag.</p>
+                    <p>If no <span style="font-weight: bold;">Tag-Occurrence</span> 
+		 is specified the first occurrence is retrieved.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">target = "<span style="font-weight: bold;">&lt;</span>targetname<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Defines the field to retrieve a value to.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">value = "<span style="font-weight: bold;">&lt;</span>valuename<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>The value to set the specified item to.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t22">1 Set 
+ action option</a>
+        </p>
+        <div MadCap:targetName="t22" style="display: none;">
+            <p class="Script">[&amp;Webfield code="TSS01", action="SET", 
+	 item=TSS02, value = TSS03]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t21">2 Get 
+ action option</a>
+        </p>
+        <div MadCap:targetName="t21" style="display: none;">
+            <p class="Script">[&amp;Webfield code="TSS01", action="GET", 
+	 item=TSS02, value = TSS03]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t20">3 Navigate 
+ action option</a>
+        </p>
+        <div MadCap:targetName="t20" style="display: none;">
+            <p class="Script">[&amp;Webfield code="tst01", action="Navigate", 
+	 value="www.visualfiles.com/"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t19">4 Retrieve, 
+ Get, selected values</a>
+        </p>
+        <div MadCap:targetName="t19" style="display: none;">
+            <p>The check box defined below in the HTML form has the options of 
+	 Vanilla, Chocolate, Papaya and Cherry. In this example only the Chocolate 
+	 option is currently checked.</p>
+            <p class="Script">&lt;P&gt;</p>
+            <p class="Script">&lt;FORM action=http://</p>
+            <p class="Script">&lt;P&gt;Try this form. Which flavours do you like? 
+	 Check all that apply.</p>
+            <p class="Script">&lt;UL&gt;</p>
+            <p class="Script">&#160;&#160;&lt;LI&gt;&lt;INPUT type=checkbox</p>
+            <p class="Script">&#160;&#160;&lt;LI&gt;&lt;INPUT type=checkbox 
+	 CHECKED</p>
+            <p class="Script">&#160;&#160;&lt;LI&gt;&lt;INPUT type=checkbox</p>
+            <p class="Script">&#160;&#160;&lt;LI&gt;&lt;INPUT type=checkbox</p>
+            <p class="Script">&lt;P&gt;&lt;INPUT type=submit</p>
+            <p class="Script">&lt;P&gt;&lt;A href="http://www.lehigh.edu/~kaf3/forms/forms.html#check1Return/A 
+	 to</p>
+            <p class="Script">Guide to Forms.</p>
+            <p class="Script">&lt;HR&gt;</p>
+            <p>To get a list of checked items the command is:</p>
+            <p class="Script">[&amp;Webfield &#160;code = "TSS01",action 
+	 = "GET",item = "icecream,target 
+	 = LF01]</p>
+            <p>Where TSS01 is the assigned field to the web page object and ‘Icecream’ is the name of the check box (defined 
+	 in the HTML form).</p>
+            <p>The retrieval of selected object using the ‘Get’ action would return:</p>
+            <p>"Vanilla,Papaya".</p>
+            <p>The Command will only retrieve the selected items. If more than 
+	 one item is selected this command will return a comma delimited list.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t18">5 Set 
+ selected values</a>
+        </p>
+        <div MadCap:targetName="t18" style="display: none;">
+            <p>The check box defined below in the HTML form has the options of 
+	 Vanilla, Chocolate, Papaya and Cherry.</p>
+            <p class="Script">&lt;P&gt;</p>
+            <p class="Script">&lt;FORM action=http://</p>
+            <p class="Script">&lt;P&gt;Try this form. Which flavors 
+	 do you like? Check all that apply.</p>
+            <p class="Script">&lt;UL&gt;</p>
+            <p class="Script">&#160;&#160;&lt;LI&gt;&lt;INPUT type=checkbox</p>
+            <p class="Script">&#160;&#160;&lt;LI&gt;&lt;INPUT type=checkbox 
+	 CHECKED</p>
+            <p class="Script">&#160;&#160;&lt;LI&gt;&lt;INPUT type=checkbox</p>
+            <p class="Script">&#160;&#160;&lt;LI&gt;&lt;INPUT type=checkbox</p>
+            <p class="Script">&lt;P&gt;&lt;INPUT type=submit</p>
+            <p class="Script">&lt;P&gt;&lt;A href="http://www.lehigh.edu/~kaf3/forms/forms.html#check1Return/A 
+	 to</p>
+            <p class="Script">Guide to Forms.</p>
+            <p class="Script">&lt;HR&gt;</p>
+            <p>To select Vanilla,Papaya and unselect 
+	 chocolate the command is:</p>
+            <p class="Script">[&amp;Webfield &#160;code ="TSS01",action="SET",item="icecream, value= vanilla,true,chocolate,false,papaya,true]</p>
+            <p>Where TSS01 is the assigned field to the web page object and ‘Icecream’ is the name of the check box (defined 
+	 in the HTML form).</p>
+            <p>The retrieval of selected object using the ‘Get’ action would return:</p>
+            <p>“Vanilla,Papaya".</p>
+            <p>The command only retrieves the selected items.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t17">6 Retrieve 
+ text on an embedded web page</a>
+        </p>
+        <div MadCap:targetName="t17" style="display: none;">
+            <p>This script demonstrates how to retrieve text or HTML for either 
+	 the whole document or just and individual form.</p>
+            <p class="Script">[&amp;Webfield code ="WEB01",action="GET",item="",property="TEXT",target=LF01]</p>
+            <p>The parameter <span style="font-weight: bold;">item</span> is left 
+	 blank and the parameter <span style="font-weight: bold;">property</span> 
+	 is added with the value of "TEXT". To get the HTML for the 
+	 entire page you would do the same but specify the property as "HTML".</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t16">7 Retrieve 
+ text for a specific form on the web page</a>
+        </p>
+        <div MadCap:targetName="t16" style="display: none;">
+            <p>This script demonstrates how to retrieve text or HTML from a specified 
+	 form.</p>
+            <p class="Script">[&amp;Webfield code ="WEB01",action="GET",item="myformname",property="TEXT",target=LF01]</p>
+            <p>The parameter <span style="font-weight: bold;">item</span> is the 
+	 name of the form and the parameter <span style="font-weight: bold;">property</span> 
+	 is added with the value of "TEXT". To get the HTML for the 
+	 entire page repeat this procedure but specify the property as "HTML".</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> If the value of 
+	 the text or the HTML retrieved is greater than 32000 characters this 
+	 exceeds the limit for a character variable in Progress, so the amount 
+	 of data returned is trimmed to 31000 characters for safety. If the 
+	 amount of data available is greater than 31000 characters then the 
+	 command status will be set to "MORE". This means the user 
+	 can test <span style="font-weight: bold;">status(webfield)</span>. 
+	 If its value is equal to "MORE" this indicates that there 
+	 is more data to retrieve.</p>
+            <p>Use the following code to retrieve the second and subsequent batches 
+	 of information. Add a second entry to the property parameter to specify 
+	 which set of data to retrieve:</p>
+            <p class="Script">[&amp;Webfield code ="WEB01",action="GET",item="",property="TEXT:2",target=LF01] 
+	 would retrieve bytes 31001 to 62000.</p>
+            <p>To loop through and retrieve all data available use the following 
+	 code:</p>
+            <p class="Script">[&amp;Webfield code ="WEB01",action="GET",item="",property="TEXT",target=LF01]</p>
+            <p class="Script">[&amp;Assign LF02 = 1]</p>
+            <p class="Script">[&amp;DoWhile status(webfield) = "MORE"]</p>
+            <p class="Script">[&amp;Assign LF02 = LF02 + 1]</p>
+            <p class="Script">[&amp;Webfield code ="WEB01",action="GET",item="",property="TEXT:" 
+	 + LF02 ,target=LF01]</p>
+            <p class="Script">[&amp;EndDoWhile]</p>
+            <p>This will continue to retrieve the data until status(webfield) no 
+	 longer = "MORE".</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t15">8 Extract 
+ all HTML or text, and data from a specified form</a>
+        </p>
+        <div MadCap:targetName="t15" style="display: none;">
+            <p>The sample script below demonstrates all of the features mentioned 
+	 in examples 6 and 7. It extracts all the HTML or text and the data 
+	 from a form called "samplesecondform":</p>
+            <p class="Script">[&amp; Assign TF01 = 'Get all text for text from 
+	 a particular form'(choose "all":"form")]</p>
+            <p class="Script">[&amp;If TF01 = "all"]</p>
+            <p class="Script">[&amp;Assign TF02 = ""]</p>
+            <p class="Script">[&amp;Else]</p>
+            <p class="Script">[&amp;Assign TF02 = "samplesecondform"]</p>
+            <p class="Script">[&amp;EndIf]</p>
+            <p class="Script">[&amp;Assign TF04 = 'Select text or html'(choose 
+	 "TEXT":"HTML")]</p>
+            <p class="Script">[&amp;If TF04 = "TEXT"] [&amp;Assign TF05 
+	 = "C:\Text-Document.doc"] [&amp;EndIf]</p>
+            <p class="Script">[&amp;If TF04 = "HTML"] [&amp;Assign TF05 
+	 = "C:\Html-Document.html"] [&amp;EndIf]</p>
+            <p class="Script">[&amp;Webfield code ="WEB01",action="GET",item=TF02,property=TF04,target=LF01]</p>
+            <p class="Script">[&amp;If status(Webfield) &lt;&gt; "MORE"]</p>
+            <p class="Script">[&amp;Out TF05:LF01,append]</p>
+            <p class="Script">[&amp;Else]</p>
+            <p class="Script">[&amp;Assign LF02 = 1]</p>
+            <p class="Script">/** Check to see if we exceed 32,000 **/</p>
+            <p class="Script">[&amp;DoWhile status(webfield) = "MORE"]</p>
+            <p class="Script">[&amp; Message LF01]]</p>
+            <p class="Script">[&amp;Out TF05:LF01,append]</p>
+            <p class="Script">[&amp;Assign LF02 = LF02 + 1]</p>
+            <p class="Script">[&amp;Assign LF03 = TF04 + ":" + LF02]</p>
+            <p class="Script">[&amp;Webfield code ="WEB01",action="GET",item="",property=LF03 
+	 ,target=LF01]</p>
+            <p class="Script">[&amp;EndDoWhile]</p>
+            <p class="Script">[&amp;Out TF05:LF01,append]</p>
+            <p class="Script">[&amp;EndIf]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t14">9 Navigate 
+ the web page</a>
+        </p>
+        <div MadCap:targetName="t14" style="display: none;">
+            <p>When you use the <span style="font-weight: bold;">action="navigate"</span> 
+	 parameter you can specify a URL in the value field to move to, or 
+	 you can specify <span style="font-weight: bold;">Back</span>, <span style="font-weight: bold;">Forward</span>, <span style="font-weight: bold;">Home</span>, 
+	 <span style="font-weight: bold;">Refresh</span> to move the current 
+	 page as a normal Internet Explorer frame would move.</p>
+            <p>You can not retrieve the URL unless it is contained in the source 
+	 for the web page, in which case you could extract it from there.</p>
+            <p class="Script">[&amp;Webfield code="tst01", action="Navigate", 
+	 value="Back"]</p>
+            <p class="Script">[&amp;Webfield code="tst01", action="Navigate", 
+	 value="Forward"]</p>
+            <p class="Script">[&amp;Webfield code="tst01", action="Navigate", 
+	 value="Home"]</p>
+            <p class="Script">[&amp;Webfield code="tst01", action="Navigate", 
+	 value="Refresh"]</p>
+            <p class="Script">[&amp;Webfield code="tst01", action="Navigate", 
+	 value=www.google.co.uk]</p>
+        </div>
+        <p style="font-weight: normal;"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t13">10 Searching for text using 
+ a form and a frame</a>
+        </p>
+        <div MadCap:targetName="t13" style="display: none;">
+            <p class="Script">[&amp;Webfield code ="TSS01",action="GET",Form="results_docview_DocumentForm:Frame",property="TEXT",file=LF03]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> FORM:FRAME and 
+	 the frame do not need to be the whole name just the start.</p>
+        </div>
+        <p style="font-weight: normal;"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t12">11 Searching for text where 
+ the frame lives on a series of tabs</a>
+        </p>
+        <div MadCap:targetName="t12" style="display: none;">
+            <p style="font-weight: normal;"><span style="font-weight: normal;">Searching 
+	 for text where the frame lives on a series of tabs and we need to 
+	 ensure we get the document from the correct tab.</span>
+            </p>
+            <p class="Script">[&amp;Webfield code ="TSS01" ,action="GET" 
+	 ,item="results_docview_DocumentForm:fr_resultscontent" ,property="TEXT" 
+	 ,file=LF03 ,tabparent=""framemaintop"" ,tabchild=""tabnumber""]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Tabparent parameter, 
+	 the parent frame that contains the tabs.<br />
+	Tabchild parameter, the child frame of each tab.</p>
+        </div>
+        <p style="font-weight: normal;"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t11">12 View screen script navigating 
+ to a page</a>
+        </p>
+        <div MadCap:targetName="t11" style="display: none;">
+            <p style="font-weight: normal;">View screen script navigating to a 
+	 page. Setting "on click" and "on submit" events 
+	 and pre-setting a field.</p>
+            <p class="Script">[&amp;Webfield code="TSS01" , action="NAVIGATE" 
+	 , value="HTTP://WWW.LEXISNEXIS.COM/HOTTOPICS/KYCID/"]<br />
+	[&amp;Message "I'm in the view screen script again"]<br />
+	[&amp;Webfield code="TSS01" , action="onclick", 
+	 item="searchform:search" , script="onclick" ]<br />
+	[&amp;Webfield code="TSS01" , action="onsubmit", 
+	 item="searchform:search" , script="onsubmit" ]<br />
+	[&amp;Assign LF01 = status(webfield)]<br />
+	[&amp;Assign LF02 = 0]</p>
+            <p class="Script">[&amp;DoWhile LF01 &lt;&gt; ""]<br />
+	[&amp;Assign LF02 = LF02 + 1]<br />
+	[&amp;Webfield code="TSS01" <span style="font-weight: normal;">, 
+	 action="onclick", item="searchform:search" , script="onclick" 
+	 ]<br />
+	[&amp;If status(webfield) = "" ]<br />
+	[&amp;Webfield code="TSS01" , action="onsubmit", 
+	 item="searchform:search" , script=""onsubmit" 
+	 ]<br />
+	[&amp;EndIf]<br />
+	[&amp;Assign LF01 = status(webfield)]<br />
+	[&amp;If LF02 &gt;= 20] [&amp;Assign LF01 = ""] [&amp;EndIf]<br />
+	[&amp;EndDoWhile]<br />
+	[&amp;Webfield code="TSS01" , action="SET" , property="" 
+	 , item="searchform:search:companytext" , value = "VISUALFILES"]</span></p>
+        </div>
+        <p style="font-weight: normal;"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t10">13 Setting a check box on 
+ a form on a frame</a>
+        </p>
+        <div MadCap:targetName="t10" style="display: none;">
+            <p class="Script">[&amp;Webfield code="TSS01" , action="SET" 
+	 , property="" , item="results_listview_ResultsListForm:fr_resultscontent:frm_tagged_documents" 
+	 , value = "1,false,2,true,3,false"</p>
+        </div>
+        <p style="font-weight: normal;"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t9">14 Get text content using 
+ form= &#160;frame= item=; + tab parent and tab child</a>
+        </p>
+        <div MadCap:targetName="t9" style="display: none;">
+            <p>Get text content using form= &#160;frame= item= method; also includes 
+	 tab parent and tab child.</p>
+            <p class="Script">[&amp;Webfield code &#160;="KYC01" ,action="GET" 
+	 ,FRAME=KYC02 ,FORM=KYC03 ,item=KYC04 ,property="TEXT" ,file=KYC18 
+	 ,tabparent=KYC06 ,tabchild=KYC17]</p>
+            <p>Getting text content using old method of item = form:frame:item 
+	 also has a tab parent and tab child.</p>
+            <p class="Script">[&amp;Webfield code ="KYC01",action="GET",item=KYC04 
+	 ,property="TEXT" ,file=KYC18 ,tabparent=KYC06 ,tabchild=KYC17]</p>
+        </div>
+        <p style="font-weight: normal;"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t8">15 Getting a tag using and 
+ outputting to file</a>
+        </p>
+        <div MadCap:targetName="t8" style="display: none;">
+            <p style="font-weight: normal;"><span style="font-weight: normal;">Getting 
+	 a tag using and outputting to file using form= &#160;frame= item=.</span>
+            </p>
+            <p class="Script">[&amp;Webfield code ="KYC01",action="GET",FRAME=KYC02,FORM=KYC03,TAG=KYC05,TAG-OCCURRENCE=KYC16:WHOLE,item=KYC04,property="TEXT",file=KYC18]</p>
+            <p style="font-weight: normal;"><span style="font-weight: normal;">Getting 
+	 a tag using and outputting to file using the old method of item = 
+	 form:frame:item.</span>
+            </p>
+            <p class="Script">[&amp;Webfield code ="KYC01",action="GET",item=KYC04,TAG=KYC05,TAG-OCCURRENCE=KYC16,property="TEXT",file=KYC18]</p>
+        </div>
+        <p style="font-weight: normal;"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t7">16 Getting a tag using and 
+ outputting to a &#160;field</a>
+        </p>
+        <div MadCap:targetName="t7" style="display: none;">
+            <p style="font-weight: normal;"><span style="font-weight: normal;">Getting 
+	 a tag using and outputting to a field using form= &#160;frame= item=.</span>
+            </p>
+            <p class="Script">[&amp;Webfield code ="KYC01",action="GET",FRAME=KYC02,FORM=KYC03,TAG=KYC05,TAG-OCCURRENCE=KYC16:WHOLE,item=KYC04,property="TEXT",target=KYC07]</p>
+            <p style="font-weight: normal;">Getting a tag using and outputting 
+	 to a field using the old method of item = form:frame:item.</p>
+            <p class="Script">[&amp;Webfield code ="KYC01",action="GET",item=KYC04,TAG=KYC05,TAG-OCCURRENCE=KYC16,property="TEXT",target=KYC07]</p>
+        </div>
+        <p style="font-weight: normal;"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">17 Getting an item</a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p style="font-weight: normal;"><span style="font-weight: normal;">Getting 
+	 an item using the new method of form= frame= item=.</span>
+            </p>
+            <p class="Script">[&amp;Webfield code ="KYC01",action="GET",FRAME=KYC02,FORM=KYC03,item=KYC04,property="TEXT",target=KYC07]</p>
+            <p style="font-weight: normal;"><span style="font-weight: normal;">Getting 
+	 an item using the old method of item = form:frame:item.</span>
+            </p>
+            <p class="Script">[&amp;Webfield code ="KYC01",action="GET",item=KYC04,property="TEXT",target=KYC07]</p>
+        </div>
+        <p style="font-weight: normal;"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">18 Set an item</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p style="font-weight: normal;"><span style="font-weight: normal;">Setting 
+	 an item using form= &#160;frame= item=.</span>
+            </p>
+            <p class="Script">[&amp;Webfield code="KYC01" , action="SET" 
+	 , property="" ,FRAME=KYC02,FORM=KYC03, item=KYC04 , value 
+	 = "1,false,2,true,3,false"]</p>
+            <p style="font-weight: normal;"><span style="font-weight: normal;">Setting 
+	 an item using the old method of item = form:frame:item.</span>
+            </p>
+            <p class="Script">[&amp;Webfield code="KYC01" , action="SET" 
+	 , property="" , item=KYC04 , value = "1,false,2,true,3,false"]</p>
+        </div>
+        <p style="font-weight: normal;"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">19 Retrieve data from a web 
+ page (hidden field)</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p class="Script">[&amp;Assign LF99 = ""]</p>
+            <p class="Script">[&amp;Webfield code="KYC01",action="GET" 
+	 ,frame="fr_resultsContent" ,form="results_docview_DocumentForm" 
+	 ,item="SelectedFormat" ,target=LF99 ,tabparent="framemaintop" 
+	 ,tabchild="tabnumber"] [&amp;Message LF99]</p>
+        </div>
+        <p style="font-weight: normal;"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">20 Automated search</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>Set the value in the Google search box and select the Search button 
+	 automatically.</p>
+            <p class="Script">[&amp;Webfield code="TST01" , action ="SET" 
+	 , property="VALUE" , item="Q" , value=TST08 , 
+	 target = ""]</p>
+            <p class="Script">[&amp;Webfield code="TST01" , action="set", 
+	 property="Click" , item="btnG" ]</p>
+        </div>
+        <p style="font-weight: normal;"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">21 Extract a URL and assign 
+ it to a TF or LF field</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p class="Script">[&amp;Webfield code ="get01",action="GET",item="URL",target=LF03]</p>
+        </div>
+        <p style="font-weight: normal;"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">22 Submit a form using a 
+ button</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p class="Script">[&amp;Webfield code="TST01" , action="set", 
+	 property="Click" , item="btnG" ] </p>
+            <p>A web page field type is used to display a web page in a Visualfiles 
+	 screen then click the button on the screen to submit the form.</p>
+        </div>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

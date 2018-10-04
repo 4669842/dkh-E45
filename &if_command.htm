@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;If</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;If</span>
+        </div>
+        <h1><a name="kanchor1574"></a>&amp;If</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[<span style="font-weight: bold;">{</span>&amp;If &lt;<a href="#subject1" class="selected">subject</a>&gt; &lt;<a href="#test1" class="selected">test</a>&gt; 
+ &lt;<a href="#object1" class="selected">object</a>&gt;<span style="font-weight: bold;">}</span></p>
+        <p class="Script"><span style="font-weight: bold;">[</span><a href="#joins" class="selected">&amp;And</a><span style="font-weight: bold;">{</span>&lt;subject&gt; &lt;test&gt; 
+ &lt;object&gt;<span style="font-weight: bold;">}|</span><a href="#joins" class="selected">&amp;Or</a><span style="font-weight: bold;">{</span>&lt;subject&gt; &lt;test&gt; 
+ &lt;object&gt;<span style="font-weight: bold;">}|</span><a href="#joins" class="selected">&amp;Xor</a><span style="font-weight: bold;">{</span>&lt;subject&gt; &lt;test&gt; 
+ &lt;object&gt;<span style="font-weight: bold;">}]...</span>]</p>
+        <p>&lt;Text 
+ or further Visualfiles commands&gt;
+        </p>
+        <p class="Script"><span style="font-weight: bold;">[</span>[<a href="#Else" class="selected">&amp;Else</a>]<span style="font-weight: bold;">]</span></p>
+        <p>&lt;Text or further Visualfiles 
+ commands&gt;</p>
+        <p class="Script">[<span style="font-weight: bold;">{</span><a href="#EndIf" class="selected">&amp;EndIf</a>}]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>A conditional statement that tests the value contained in a field and 
+ then carries out additional commands based upon the result of the test.</p>
+        <p><a name="kanchor1575"></a>Each &amp;If command must have a corresponding &amp;EndIf command.</p>
+        <p>A simple conditional command comprises three components:</p>
+        <ul>
+            <li value="1">&lt;<a href="#subject1" class="selected">subject</a>&gt;</li>
+            <li value="2">&lt;<a href="#test1" class="selected">test</a>&gt;</li>
+            <li value="3">&lt;<a href="#object1" class="selected">object</a>&gt;</li>
+        </ul>
+        <p>Alternative text can be:</p>
+        <ul>
+            <li value="1">Assigned using the <a href="#Else" class="selected">&amp;Else</a> command.</li>
+            <li value="2">Combined using one of the <a href="#joins" class="selected">joins</a>.</li>
+            <li value="3">Added using an <a href="../Functions/input_prompt.htm">Input Prompt</a>.</li>
+        </ul>
+        <h3>Error Trapping</h3>
+        <p>The &amp;If command can be used in combination with the <a href="../Scripting/status,_system_variable_-_error_trapping.htm">Status</a> 
+ system variable to test if a selection exists in order to trap errors 
+ on selected commands when scripts are run.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 20%;" />
+            <col style="width: 80%;" />
+            <tr style="vertical-align: top;height: 19px;">
+                <td colspan="2" style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 64px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p><a name="subject1" id="subject1"></a><span class="ScriptChar">&lt;subject&gt;</span>
+                    </p>
+                    <p>The subject to be tested can be any type of user input: direct 
+		 text/number/date input, a database field, a temporary field, a 
+		 global field, an input parameter or an output parameter.</p>
+                    <p>The &lt;subject&gt; and &lt;object&gt; must be the same type: 
+		 text must be compared to text, numbers to numbers, date to date.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 98px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p><a name="object1" id="object1"></a><span class="ScriptChar">&lt;object&gt;</span>
+                    </p>
+                    <p>The &lt;object&gt; of the test can be any type of user input: 
+		 direct text/number/date input, a database field, a temporary field, 
+		 a global field, an input parameter or an output parameter.</p>
+                    <p>The &lt;subject&gt; and &lt;object&gt; must be the same type: 
+		 text must be compared to text, numbers to numbers, date to date.</p>
+                    <p><span class="ScriptChar">(Question)</span>Where there is not 
+		 a specific database field to test against, a user can be prompted 
+		 for a Yes/No response using the <a name="kanchor1576"></a><a name="kanchor1577"></a><a name="question_modifier" id="question_modifier"></a>question 
+		 modifier, see <a href="#Examples" class="selected">example 6</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 46px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p><a name="test1" id="test1"></a><span class="ScriptChar">&lt;test&gt;</span>
+                    </p>
+                    <p>The <span class="ScriptChar">&lt;test&gt;</span> used may be 
+		 any of the following:</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 162px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p style="text-align: right;"><span class="ScriptChar">=</span>
+                    </p>
+                    <p style="text-align: right;"><span class="ScriptChar">&lt;&gt;</span>
+                    </p>
+                    <p style="text-align: right;"><span class="ScriptChar">&gt;</span>
+                    </p>
+                    <p style="text-align: right;"><span class="ScriptChar">&lt;=</span>
+                    </p>
+                    <p style="text-align: right;"><span class="ScriptChar">&gt;=</span>
+                    </p>
+                    <p style="text-align: right;"><span class="ScriptChar">&amp;Contains</span>
+                    </p>
+                    <p style="text-align: right;"><span class="ScriptChar">&amp;Begins</span>
+                    </p>
+                    <p style="text-align: right;"><span class="ScriptChar"><a name="kanchor1578"></a><a name="kanchor1579"></a><a name="Isoneof" id="Isoneof"></a>&amp;IsOneOf</span>
+                    </p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-bottom: 5pt;">Equal 
+		 to</p>
+                    <p style="margin-bottom: 5pt;">Not equal to</p>
+                    <p style="margin-bottom: 5pt;">Greater than</p>
+                    <p style="margin-bottom: 5pt;">Less than or equal to</p>
+                    <p style="margin-bottom: 5pt;">Greater than or equal to</p>
+                    <p style="margin-bottom: 5pt;">Tests if text in the Subject contains 
+		 the Object value.</p>
+                    <p style="margin-bottom: 5pt;">Tests if text in the Subject begins 
+		 with the Object value.</p>
+                    <p style="margin-bottom: 5pt;">Tests if text in the Subject is 
+		 one of the list of values.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 10px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p><a name="joins" id="joins"></a>The 
+		 following commands can be used to join tests:</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 63px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 20%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;"><span class="ScriptChar"><span class="ScriptChar">&amp;</span>And</span>
+                    </p>
+                    <p class="Script" style="text-align: right;"><span class="ScriptChar">&amp;Or</span>
+                    </p>
+                    <p class="Script" style="text-align: right;"><span class="ScriptChar">&amp;Xor</span>
+                    </p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 80%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-bottom: 5pt;">Condition 
+		 is met if both tests are true.</p>
+                    <p style="margin-bottom: 5pt;">Condition is met if either test 
+		 is true.</p>
+                    <p style="margin-bottom: 5pt;">Condition is met if only one test 
+		 is true.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 57px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="kanchor1580"></a><a name="kanchor1581"></a><a name="Else" id="Else"></a>&amp;Else</p>
+                    <p>An optional part of the &amp;If construct. It offers a second 
+		 group of statements which are executed if the condition is not 
+		 true in the first group of statements.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 44px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="kanchor1582"></a><a name="kanchor1583"></a><a name="EndIf" id="EndIf"></a>&amp;EndIf</p>
+                    <p>Terminates the &amp;If command.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t7">1 Date 
+ testing</a>
+        </p>
+        <div MadCap:targetName="t7" style="display: none;">
+            <p>Tests whether today's date is the date stored in database field 
+	 ABC01.</p>
+            <p class="Script">[&amp;If ABC01 = DATE]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Message "Today's the 
+	 day"]</p>
+            <p class="Script">[&amp;EndIf]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">2 &amp;If/&amp;Else 
+ testing</a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p>Tests whether a file is open (as stored in the database field ABC01), 
+	 and prints an appropriate message.</p>
+            <p class="Script">[&amp;If ABC01 = "Open"]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Message "File Open"]</p>
+            <p class="Script">[&amp;Else]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Message "File Closed"]</p>
+            <p class="Script">[&amp;EndIf]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">3 String 
+ testing</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p>Uses <span style="font-weight: bold;">&amp;IsOneOf</span> to check 
+	 whether the individual has the surname <span style="font-weight: bold;">Smith</span>, 
+	 <span style="font-weight: bold;">Jones</span> or <span style="font-weight: bold;">Patel</span>.</p>
+            <p class="Script">[&amp;If NAM01 &amp;IsOneOf "Smith,Jones,Patel"]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Message "Individual 
+	 has a common surname"]</p>
+            <p class="Script">[&amp;EndIf]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">4 Looking 
+ for text within a notes field</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p><span style="font-weight: bold;">EFG01</span> is a notes field belonging 
+	 to the group code <span style="font-weight: bold;">ABCD</span>, this 
+	 example uses an <a href="&amp;foreach_command.htm">&amp;ForEach</a> 
+	 command to count the number of members that mention <b>Smith</b> 
+	 in the notes field.</p>
+            <p class="Script">[&amp;Assign TF01 = 0]</p>
+            <p class="Script">[&amp;ForEach ABCD]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;If EFG01 &amp;Contains "Smith"]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 TF01 = TF01 + 1]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;EndIf]</p>
+            <p class="Script">[&amp;EndFor]</p>
+            <p class="Script">[&amp;Message TF01+" Smiths were mentioned"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">5 Using 
+ &amp;Or as a join</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>Where <span style="font-weight: bold;">DAY01</span> contains the 
+	 day of the week, this example checks whether the day specified is 
+	 a weekend or working day.</p>
+            <p class="Script">[&amp;If DAY01 = "Saturday" &amp;Or DAY01 
+	 = "Sunday"]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Message "It's the weekend."]</p>
+            <p class="Script">[&amp;Else]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Message "It's a working 
+	 day."]</p>
+            <p class="Script">[&amp;EndIf]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">6 Question 
+ modifier</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p class="Script">[&amp;If 'Is Nick good at golf?'(Question)="Yes"] 
+	 Nick is good at golf!</p>
+            <p class="Script">[&amp;Else] Nick is bad at golf</p>
+            <p class="Script">[&amp;EndIf]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">7 Add 
+ a database field as part of a question via scripting</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p class="Script">[&amp;If 'Do you want to write to an alternative 
+	 address?'(Question)="Yes"]</p>
+            <p>Where the alternative address is held in field ABC08.</p>
+            <p>The contents of field ABC08 can be added as part of the message 
+	 so that the prompt reads:</p>
+            <p>"Do you want to write to alternative address -1 High Street?"</p>
+            <p>This can be achieved using the <span style="font-weight: bold;">prompt</span> 
+	 parameter on the &amp;If command; e.g.:</p>
+            <p class="Script">[&amp;If prompt("Do you want to write to alternative 
+	 address:"+ABC08)(Question)="Yes"]</p>
+            <p class="Script">[&amp;Endif]</p>
+        </div>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1"><a href="../Scripting/status,_system_variable_-_error_trapping.htm">Status, 
+	 System Variable - Error Trapping</a>
+            </li>
+            <li value="2"><a href="../Scripting/Good_Scripting_Practice/Use_&amp;Else.htm">Use 
+	 &amp;Else</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

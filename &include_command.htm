@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;Include</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;Include</span>
+        </div>
+        <h1><a name="kanchor1465"></a>&amp;Include</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[<span style="font-weight: bold;">{</span>&amp;Include<span style="font-weight: bold;">}</span><span style="font-weight: bold;">&lt;</span>DocumentName<span style="font-weight: bold;">&gt;</span><span style="font-weight: bold;">|</span><span style="font-weight: bold;">[</span>Source=<span style="font-weight: bold;">&lt;</span>"SourceName"<span style="font-weight: bold;">&gt;]...</span>]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>Merges one Visualfiles document or script into another.</p>
+        <p>&amp;Include is commonly used to include small header or footer documents 
+ into larger generated documents to minimise coding. When information in 
+ one of these documents changes, it is updated in only one document.</p>
+        <p>The prescript of any included document will not execute: this scripting 
+ must be included in the generated document.</p>
+        <p>Generated documents, containing included documents, will not reflect 
+ changes to those included documents until the agenda containing the documents 
+ has been recompiled.</p>
+        <p>&amp;Include can also be used to chain a number of documents together 
+ into a single agenda item. Chains can be made more flexible by including 
+ conditional statements, so that individual documents in the chain can 
+ be made optional.</p>
+        <h4><a name="Add-ins" id="Add-ins"></a>Add-ins</h4>
+        <p>In an add-in document it is possible to include a document that is located 
+ on the file that the add-in is linked to, or another add-in linked to 
+ that file, using the <span style="font-weight: bold;">source</span> parameter. 
+ However, in order to ensure that the database fields in the source document 
+ work when it is run, it is necessary to include some additional scripting 
+ to the source document.</p>
+        <p>If the document being included is a file level document, all database 
+ fields must be prefixed with the <span style="font-weight: bold;">owner</span> 
+ parameter:</p>
+        <p class="Script" style="margin-left: 40px;">owner.ABC01</p>
+        <p class="Tabletext">Where <span class="ScriptChar">ABC01</span> is the 
+ database code.</p>
+        <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Adding the <span style="font-weight: bold;">owner</span> 
+ parameter to the source document on the file does not affect how the source 
+ document compiles or runs elsewhere in the file.</p>
+        <p>If the document being included is from another add-in, all database 
+ fields must be prefixed with the add-in code:</p>
+        <p class="Script" style="margin-left: 40px;">addincode.ABC01</p>
+        <p>Where <span class="ScriptChar">addincode</span> is the unique code of 
+ the source add-in and ABC01 is the database code.</p>
+        <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Adding the <span style="font-weight: bold;">owner</span> 
+ parameter to the source document on the file does not affect how the source 
+ document compiles or runs elsewhere in the file.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Source</p>
+                    <p>Specify the location of the called document.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">&lt;DocumentName&gt;</p>
+                    <p>Specify the document to be included within another document.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">1 Including 
+ a header document in a letter</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p>This script inserts the&#160;document <span style="font-weight: bold;">L- 
+	 GEN-HD</span><a name="kanchor1466"></a> into a letter to a client in a conveyancing case: the 
+	 document is included at the point where the &amp;Include command is 
+	 located in the letter.</p>
+            <p class="Script">[&amp;Include L-GEN-HD]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The document <span style="font-weight: bold;">L- GEN-HD</span> is a header document that 
+	 contains the following code.</p>
+            <p class="Script">[CLIENT_CLIENT.EN05]<br />	[CLIENT_CLIENT.EN34]<br />	[CLIENT_CLIENT.EN35]<br />	[CLIENT_CLIENT.EN36]<br />	[CLIENT_CLIENT.EN37]<br />	[CLIENT_CLIENT.EN38]</p>
+            <p class="Script">Date: [DATE:ds("dw mw yc ")]</p>
+            <p class="Script">Our Ref: [FE02]/[US03]/[MT05]</p>
+            <p class="Script">Dear [CLIENT_CLIENT.EN05(3)]</p>
+            <p class="Script">re: Your Purchase of Property [PRO01][PRO02][PRO03]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">2 Creating 
+ a chain of documents for an agenda</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>In a conveyancing file, the first letter sent to the client, <span style="font-weight: bold;">S-EN-LET1</span>, may be accompanied by 
+	 a fixtures and fittings form, <span style="font-weight: bold;">S-FFC</span>, 
+	 a form of authority, <span style="font-weight: bold;">S-FOA</span>, 
+	 and a client information form, <span style="font-weight: bold;">CCIF</span>. 
+	 Rather than selecting four different agenda items, a single document 
+	 is set up that includes all four documents. A hard page break has 
+	 been inserted between each document included in the chain.</p>
+            <p class="Script">[&amp;Include S-EN-LET1]</p>
+            <p class="Script">--------------------------page------------------------------</p>
+            <p class="Script">[&amp;Include S-FFC]</p>
+            <p class="Script">--------------------------page------------------------------</p>
+            <p class="Script">[&amp;Include S-FOA]</p>
+            <p class="Script">--------------------------page------------------------------</p>
+            <p class="Script">[&amp;Include CCIF]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">3 Include 
+ the document <span style="font-style: normal;">Header</span> from the 
+ parent directory</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p class="Script">[&amp;Include ..\Header]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">4 Source 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p>When the source parameter is used the called script is retrieved 
+	 from the specified location. But when it is run, the script behaves 
+	 as if it exists in the location it is called from. This example explains 
+	 this using two add-ins:</p>
+            <p>Administration ADMINISTRATIONAA</p>
+            <p>Sale Instructions SALEINSTAA</p>
+            <p>The following document exists on the ADMINISTRATIONAA add-in:</p>
+            <p>Add-in Details L-ADMINISTRATIONAA-DETAILS</p>
+            <p>The document contains the following code:</p>
+            <p>Add-in Name: [AI03]</p>
+            <p>If this document is run from the ADMINISTRATIONAA add-in the result 
+	 would be:</p>
+            <p>Add-in Name: Administration</p>
+            <p>If it is run for the SALEINSTAA add-in using the include command 
+	 with the new source parameter:</p>
+            <p class="Script">[&amp;Include S-ADMINISTRATIONAA-DETAILS, source="ADMINISTRATIONAA"]</p>
+            <p>Then the document is retrieved from the ADMINISTRATIONAA add-in 
+	 but when it is compiled and run it behaves as if it exists on the 
+	 SALEINSTAA add-in so the result is:</p>
+            <p>Add-in Name: Sale Instructions</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="source parameter">5 Call an agenda level document from an add-in using the source parameter</a>
+        </p>
+        <div MadCap:targetName="source parameter" style="display: none;">
+            <p>[&amp;Include D-GEN-BLANK, source=”MATA”]</p>
+            <p> Includes a file-level document header inside an add-in document.</p>
+            <p>This script includes the D-GEN-BLANK from the MATA application agenda when it is run from the add-in agenda.</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>Ensure that you have compiled the add-in and that the document is coming from and the add-in or application it is being included from.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">6 Call Add-in documents from Agenda level documents on the file using the source parameter</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p>The source= parameter has to be used to identify the add-in the document is on. </p>
+            <p>[&amp;Include DOC1,source=”Prospectaa”]</p>
+        </div>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1"><a href="../Add-ins/Add-in_Editor.htm">Add-ins</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

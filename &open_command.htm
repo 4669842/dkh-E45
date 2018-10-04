@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;Open</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;Open</span>
+        </div>
+        <h1><a name="kanchor871"></a>&amp;Open</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[<span style="font-weight: bold;">{</span>&amp;Open<span style="font-weight: bold;">}</span>]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>The &amp;Open command is used to open:</p>
+        <ul>
+            <li value="1">A document/file, held on the file system but external to Visualfiles.</li>
+            <li value="2">A web page, for example, when linking to the SearchFlow web site 
+	 (only using Internet Explorer).</li>
+            <li value="3">Visualfiles files and entities.</li>
+            <li value="4">The initial screen displayed when a Visualfiles file or entity 
+	 is opened.</li>
+            <li value="5">A history item.</li>
+            <li value="6">Data in an excel spreadsheet.</li>
+        </ul>
+        <h3><a name="kanchor872"></a><a name="Specifying_the_Initial_Screen" id="Specifying_the_Initial_Screen"></a>Specifying 
+ the Initial Screen</h3>
+        <p>The &amp;Open command is used to specify the screen that is initially 
+ displayed when a case or entity is opened using the following parameters:</p>
+        <ul>
+            <li value="1"><a href="#add-in" class="selected">Add-in="&lt;add-in-code&gt;"</a>
+            </li>
+            <li value="2"><a href="#group" class="selected">Group="&lt;group-code&gt;"</a>
+            </li>
+            <li value="3"><a href="#role" class="selected">Role="&lt;role-code&gt;"</a>
+            </li>
+            <li value="4"><a href="#screen" class="selected">Screen="&lt;screen-code&gt;"|"&lt;prefix-screen-code&gt;"</a>
+            </li>
+        </ul>
+        <p>When opening a case or entity a nominated entity, role, file or add-in 
+ screen can be displayed rather than the file cover. This functionality 
+ helps applications work more efficiently in Visualfiles Browser, reduces 
+ the number of prompts displayed to users and eliminates the need for the 
+ user to manually navigate to the relevant screen.</p>
+        <p>If the information supplied on the &amp;Open command is invalid and 
+ the nominated screen cannot be found, the entity or file opens as normal 
+ but displays the standard file cover. Make use of the <a href="../Scripting/status,_system_variable_-_error_trapping.htm">Status, 
+ System Variable</a> for this command to indicate if the screen is not 
+ found.</p>
+        <h3>Override-display Parameter and the &amp;Display command &#160;</h3>
+        <p>The <a href="&amp;display_command.htm">&amp;Display</a> command can be 
+ used in Open-Case and Open-Entity scripts. If the user needs to ignore 
+ the &amp;Display commands that are used in these scripts, they can do 
+ so by adding the <a href="#override-display" class="selected">override-display</a> parameter 
+ to the &amp;Open command. See <a href="#Examples" class="selected">example 9</a>.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 21.693%;" />
+            <col style="width: 78.307%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="add-in" id="add-in"></a>add-in = "<span style="font-weight: bold;">&lt;</span>add-in code<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Used to display an add-in screen when opening a file by specifying 
+		 the code of the add-in concerned.</p>
+                    <p>This option is invalid if you are opening an entity, or if the 
+		 <a href="#screen" class="selected">screen=</a> parameter is not present on the 
+		 command. See <a href="#" class="selected">examples 8, 9, 15, 
+		 17, 18</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="case-menu" id="case-menu"></a>case-menu</p>
+                    <p>Display a web page or document in the case menu window with 
+		 a navigation menu: Forward, Back, Home, Refresh or to call another 
+		 URL.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> These scripting 
+		 options are also available within the Visualfiles user interface, 
+		 <span style="font-weight: bold;">Additional Tabs</span> option, 
+		 when you are <a href="../Editing_Application_Details.htm">Editing 
+		 Application Details</a>, <a href="../Editing_Entity_Type_Details.htm">Editing 
+		 Entity Type Details</a>, <a href="../Editing_Role_Details.htm">Editing 
+		 Role Details</a> and <a href="../Add-ins/Editing_Add-ins.htm">Editing 
+		 Add-in Details</a>.</p>
+                    <p>There are three options related to the case-menu parameter that 
+		 are used when opening a web page into a File tab&#160;(see <a href="#" class="selected">examples 19</a>):</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">no-navigation</p>
+                    <p class="Script" style="text-align: right;">no-popups</p>
+                    <p class="Script" style="text-align: right;">silent</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Prevents the 
+		 display of an address bar and forward/backward buttons on the 
+		 web viewer page.</p>
+                    <p>Prevents links on web pages from opening in a new window.</p>
+                    <p>Stops the browser from displaying dialog boxes, e.g. script 
+		 errors on the web page.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">display = "<span style="font-weight: bold;">&lt;</span>{window|dialog|auto}<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>The display parameter enables the developer to specify whether 
+		 the file should be displayed in a window or a dialog box.</p>
+                    <p>By default, files are opened in a dialog box. Consequently, 
+		 no other Visualfiles dialogs or windows may be opened until that 
+		 dialog has been closed. However, if the file is opened in a window, 
+		 other Visualfiles windows may be accessed while the window is 
+		 still open.</p>
+                    <p>The value <span style="font-weight: bold;">"auto"</span> 
+		 will open a file/entity in a window if the command is run from 
+		 a window or in a dialog if the command is run from a dialog.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">doc-view</p>
+                    <p>Opens a History Item dialog in Document view.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">excel</p>
+                    <p>Opens data in an excel spreadsheet.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">file = "<span style="font-weight: bold;">&lt;</span>{FilePath|URL}<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Specify the location and name of the file.</p>
+                    <p>It is good practise to use the <span style="font-weight: bold;">file 
+		 =</span> parameter when opening external files and web pages. 
+		 In this way, these commands may be differentiated from &amp;Open 
+		 commands that are being used to open Visualfiles files and entities. 
+		 So, although [&amp;Open file = "c:\temp\document.doc"] 
+		 and [&amp;Open "c:\temp\document.doc"] essentially behave 
+		 in the same way, it is recommended that the former be used for 
+		 opening external files.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="group" id="group"></a>group = "<span style="font-weight: bold;">&lt;</span>group-code<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Used to display a group screen when opening a file or entity 
+		 by specifying the code of the group concerned. The group code 
+		 is a four character string.</p>
+                    <p>This parameter is invalid if the <a href="#screen" class="selected">screen=</a> 
+		 parameter is not present on the command. See <a href="#" class="selected">examples 
+		 16-18</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">history = <span style="font-weight: bold;">&lt;</span>HS<span style="font-weight: bold;">&gt;</span></p>
+                    <p>Points to a history item using the history system code, e.g. 
+		 HS26.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">main-menu</p>
+                    <p>Display a web page or document in the Visualfiles window rather 
+		 than in a web browser.</p>
+                    <p>A navigation menu is displayed to enable page Forward or Back, 
+		 Home, Refresh or to enter another URL.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">open-document</p>
+                    <p>Open the specified document.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">openwith</p>
+                    <p>Prompt the user to select which application should be used to 
+		 open the file. The <span style="font-weight: bold;">openwith</span> 
+		 parameter should not be used when attempting to open web pages.</p>
+                    <p>Where a PC cannot recognise a file extension, this parameter 
+		 displays the <span style="font-weight: bold;">Open With</span> 
+		 … 
+		 dialog box for the user to select the appropriate application. 
+		 Where it can determine the application, the <span style="font-weight: bold;">Open 
+		 With</span> … 
+		 dialog will not open, even if <span style="font-weight: bold;">openwith</span> 
+		 is included in the coding.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">options = "autofilter"</p>
+                    <p>Enables autofilters in the resulting spreadsheet for sorting 
+		 of the excel data.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="override-display" id="override-display"></a>override-display</p>
+                    <p>Use this parameter to ignore any &amp;Display commands that 
+		 may be included in the OPEN-CASE and OPEN-ENTITY scripts when 
+		 a case or entity is opened.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> When an OPEN-CASE 
+		 or OPEN-ENTITY script includes an &amp;Display command and the 
+		 override-display parameter is not used, it is the &amp;Display 
+		 command screen that is displayed rather than the screen displayed 
+		 with the &amp;Open command.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">popup-height = &lt;popup-height;"</p>
+                    <p>Determines the height of any popup called from an embedded webpage.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">popup-width = &lt;popup-width;"</p>
+                    <p>Determines the width of any popup called from an embedded webpage.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">print</p>
+                    <p>Prints an open document. Some third-party applications do not 
+		 support this feature. The <span style="font-weight: bold;">print</span> 
+		 parameter should not be used when opening web pages.</p>
+                    <p>When documents are produced from scripts, the documents will 
+		 be sent to the Document Review specified by the script. Otherwise, 
+		 the document will be sent to its default Document Review (provided 
+		 one has been set up).</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">ref = "<span style="font-weight: bold;">&lt;</span>EntityReference<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Opens an entity reference.</p>
+                    <p>Unlike the <span style="font-weight: bold;">ref</span> parameter 
+		 for other commands, the <span style="font-weight: bold;">ref</span> 
+		 parameter for the &amp;Open command finds a reference that has 
+		 been specified previously in the script. See <a href="#Examples" class="selected">example 
+		 6</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="role" id="role"></a>role = "<span style="font-weight: bold;">&lt;</span>role-code<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Used to display a role screen when opening an entity by specifying 
+		 the code of the role concerned.</p>
+                    <p>This parameter is invalid if you are opening a file, or if the 
+		 <a href="#screen" class="selected">screen=</a> parameter is not present on the 
+		 command. See <a href="#" class="selected">example 10</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="screen" id="screen"></a>screen = "<span style="font-weight: bold;">&lt;</span>screen-code<span style="font-weight: bold;">&gt;</span>"<span style="font-weight: bold;">|</span>"<span style="font-weight: bold;">&lt;</span>prefix_screen-code<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Used to specify the screen to be displayed.</p>
+                    <p>This parameter is mandatory when switching the screen to display 
+		 at startup. If it is not included then any Role, Add-In and Group 
+		 options coded on the command are ignored.</p>
+                    <p>When specifying this parameter the screen code must represent 
+		 either a three letter screen code, or, for screens on a linked 
+		 case type, the code must start with the prefix for the linked 
+		 case type then an underscore followed by a three letter screen 
+		 code. See <a href="#" class="selected">examples 9 - 17</a></p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">time-view</p>
+                    <p>Opens a History Item dialog on the Time tab.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t19">1 Open 
+ a File or Website</a>
+        </p>
+        <div MadCap:targetName="t19" style="display: none;">
+            <p>The following command will open the word document, <span style="font-weight: bold;">Test</span>.</p>
+            <p class="Script">[&amp;Open file = "c:\program files\my documents\test.doc"] 
+	 &#160;</p>
+            <p>The following command will open the Visualfiles website.</p>
+            <p class="Script">[&amp;Open file = "www.visualfiles.com"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t18">2 Open 
+ an entity</a>
+        </p>
+        <div MadCap:targetName="t18" style="display: none;">
+            <p>This asks the user to select an entity with the role <span style="font-weight: bold;">Introducer</span> 
+	 and open each of the clients they introduced.</p>
+            <p class="Script">[&amp;Select ENTITY,role = "introducer"]</p>
+            <p class="Script">[&amp;ForEach int_client]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;With int_client]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Open]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;EndWith]</p>
+            <p class="Script">[&amp;EndFor]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t17">3 Controlling 
+ whether the entity opens in a window or a dialog box</a>
+        </p>
+        <div MadCap:targetName="t17" style="display: none;">
+            <p>The <span style="font-weight: bold;">display</span> parameter may 
+	 be set to <span style="font-weight: bold;">window</span> (opens the 
+	 entity in a window), <span style="font-weight: bold;">dialog</span> 
+	 (opens the entity in a dialog) or <span style="font-weight: bold;">auto</span> 
+	 (opens the entity in either a window, if the &amp;Open command was 
+	 run from a window, or a dialog, if the &amp;Open command was run from 
+	 a dialog).</p>
+            <p class="Script">[&amp;SelectENTITY,type = "indi"]<br />	[&amp;Open display = "auto"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t16">4 openwith 
+ and print Parameters</a>
+        </p>
+        <div MadCap:targetName="t16" style="display: none;">
+            <p>The <span style="font-weight: bold;">openwith</span> parameter displays 
+	 an open dialog box if it is unable to distinguish which program to 
+	 use to open the file. The <span style="font-weight: bold;">print</span> 
+	 parameter will then print test.doc.</p>
+            <p class="Script">[&amp;Open "c:\temp\test.doc",openwith,print]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t15">5 Opening 
+ a document in time-view and in document-view</a>
+        </p>
+        <div MadCap:targetName="t15" style="display: none;">
+            <p>This script selects the last history item, opens it in Time View 
+	 and then again in Doc-View</p>
+            <p class="Script">[&amp;Select HS:last]</p>
+            <p class="Script">[&amp;OPEN HISTORY = HS26,TIME-VIEW]</p>
+            <p class="Script">[&amp;OPEN HISTORY = HS26,DOC-VIEW]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t14">6 Using 
+ the ref parameter</a>
+        </p>
+        <div MadCap:targetName="t14" style="display: none;">
+            <p>Here all <span style="font-weight: bold;">News Items</span> related 
+	 to the <span style="font-weight: bold;">Commercial</span> entity are 
+	 shown in the finder using the <a href="&amp;selectrelation_command.htm">&amp;SelectRelation</a> 
+	 command. The selected item is given the reference <span style="font-weight: bold;">myNews</span>. 
+	 &#160;This reference is used with ref parameter in the &amp;Open command 
+	 to open the item previously chosen.</p>
+            <p class="Script">[&amp;SelectRelation type = "NEWS_COMM",ref 
+	 = "mynews"]</p>
+            <p class="Script">[&amp;Open ref = "mynews"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t13">7 Create 
+ an .spr file using &amp;Finder and open in Excel, then auto format and 
+ add filter options</a>
+        </p>
+        <div MadCap:targetName="t13" style="display: none;">
+            <p class="Script">[&amp;Finder file-only, type="AGEN",WORD="banking",output="file",filename="C:\dbtest.spr",dbfields="MAT11"]</p>
+            <p class="Script">[&amp;Open excel="c:\dbtest.spr", options="autofilter"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t12">8 Call 
+ add-in from file</a>
+        </p>
+        <div MadCap:targetName="t12" style="display: none;">
+            <p>When the screen <span style="font-weight: bold;">EST</span>, is 
+	 on an Add-in called from a file.</p>
+            <p class="Script">[&amp;Open EST, add-in="SALEAA"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t11">9 override-display 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t11" style="display: none;">
+            <p>Script used for opening a case and ignoring any &amp;Display commands 
+	 in an Open-Case script:</p>
+            <p class="Script">[&amp;Open MyCase, screen="ABC", add-in="Prospectaa", 
+	 override-display]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t10">10 Open 
+ an entity including &amp;Display</a>
+        </p>
+        <div MadCap:targetName="t10" style="display: none;">
+            <p>Script used for opening an entity and allowing &amp;Display commands 
+	 in Open-Entity script to work:</p>
+            <p class="Script">[&amp;Open MyEntity, screen="ABC", role="ALLCLIENTS"]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> This functionality 
+	 also works with linked cases. When referencing a linked case screen 
+	 the linked prefix must be added to the screen e.g.: <span style="font-weight: bold;">S_ABC</span>.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t9">11 Screen 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t9" style="display: none;">
+            <p class="Script">[&amp;SelectEntity int-code=LF01, ref="myCLIENT"]</p>
+            <p class="Script">[&amp;With myCLIENT]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Open screen="ADD"]</p>
+            <p class="Script">[&amp;EndWith]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> <span style="font-weight: bold;">ADD</span> 
+	 is the screen code.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t8">12 Screen 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t8" style="display: none;">
+            <p>This code opens the entity or file and defaults to the screen with 
+	 code <span style="font-weight: bold;">ABC</span> located at entity-type 
+	 or application level.</p>
+            <p>If this screen does not exist at that level then the item opens 
+	 normally and displays the standard file cover.</p>
+            <p class="Script">[&amp;Open screen="ABC"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t7">13 Screen 
+ parameter, prefix_screen-code</a>
+        </p>
+        <div MadCap:targetName="t7" style="display: none;">
+            <p>This code opens the file and defaults to the screen with code <span style="font-weight: bold;">ABC</span> that is located on the linked 
+	 case type with the prefix <span style="font-weight: bold;">A</span>.</p>
+            <p class="Script">[&amp;Open screen="A_ABC"]</p>
+            <p>If the file you are opening is not linked to another case type with 
+	 prefix <span style="font-weight: bold;">A</span> or the screen with 
+	 code <span style="font-weight: bold;">ABC</span> cannot be found on 
+	 the linked case type then the file opens as normal but displays the 
+	 standard file cover.</p>
+            <p>If you attempt to open an entity using this syntax then the entity 
+	 opens and displays the normal file cover, because the syntax is invalid 
+	 for opening entities.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">14 Screen 
+ and role parameters</a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p>This code opens the entity and defaults to the screen with code 
+	 <span style="font-weight: bold;">ABC</span> that lives on the role 
+	 with code <span style="font-weight: bold;">INDI</span>.</p>
+            <p class="Script">[&amp;Open screen="ABC", role="INDI"]</p>
+            <p>If you attempt to open an entity using this syntax but the entity 
+	 does not have that role, then the entity opens as normal and displays 
+	 the standard file cover.</p>
+            <p>If you attempt to open a file using this syntax then the file opens 
+	 and displays the normal file cover, because the syntax is invalid 
+	 for opening files.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">15 Screen 
+ and add-in parameters</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p>This code opens the file and defaults to the screen with code <span style="font-weight: bold;">ABC</span> that lives on the add-in (case 
+	 plan) with code <span style="font-weight: bold;">CCRT</span>.</p>
+            <p class="Script">[&amp;Open screen="ABC", add-in="CCRT"]</p>
+            <p>If you attempt to open a file using this syntax but the file does 
+	 not have that add-in (case plan) then the file opens as normal but 
+	 displays the standard file cover.</p>
+            <p>If you attempt to open an entity using this syntax then the entity 
+	 opens and displays the normal file cover, because the syntax is invalid 
+	 for opening entities.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">16 Screen 
+ and group parameters</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p>This code opens the entity or file and defaults to the screen with 
+	 code <span style="font-weight: bold;">ABC</span> located inside the 
+	 group <span style="font-weight: bold;">CLAI</span>.</p>
+            <p class="Script">[&amp;Open screen="ABC", group="CLAI"]</p>
+            <p>If you attempt to open a file or entity using this syntax but the 
+	 item does not have that group or the screen cannot be found inside 
+	 that group, then the item opens as normal and displays the standard 
+	 file cover.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">17 Screen, 
+ add-in and group parameters</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>This code opens the file and defaults to the screen with code <span style="font-weight: bold;">ABC</span> that is located inside the group 
+	 <span style="font-weight: bold;">WITN</span> in the add-in (case plan) 
+	 with code <span style="font-weight: bold;">CCRT</span>.</p>
+            <p class="Script">[&amp;Open screen="ABC", add-in="CCRT", 
+	 group = "WITN"]</p>
+            <p>If the file you are opening does not have the add-in (case plan) 
+	 <span style="font-weight: bold;">CCRT</span> or the group <span style="font-weight: bold;">WITN</span> 
+	 cannot be found inside add-in <span style="font-weight: bold;">CCRT,</span> 
+	 or the screen <span style="font-weight: bold;">ABC</span> cannot be 
+	 found inside group <span style="font-weight: bold;">WITN,</span> then 
+	 the file opens as normal but displays the standard file cover.</p>
+            <p>If you attempt to open an entity using this syntax then the entity 
+	 opens and displays the normal file cover, because the syntax is invalid 
+	 for opening entities.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">18 Open 
+ file screen parameter excluded</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p class="Script">[&amp;Open add-in="CCRT", group = "WITN"]</p>
+            <p>If you attempt to open an entity or file using this syntax then 
+	 the item opens and displays the normal file cover, because the syntax 
+	 is not specifying a default screen.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">19 case-menu 
+ parameter options</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p class="Script">[&amp;Open file="www.lexisnexis.co.uk", 
+	 case-menu, no-navigation, no-popups, silent]</p>
+        </div>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1"><a href="&amp;display_command.htm">&amp;Display</a>
+            </li>
+            <li value="2"><a href="../Scripting/Good_Scripting_Practice/&amp;Open_Screen_Parameter.htm">&amp;Open 
+	 Screen Parameter</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

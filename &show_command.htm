@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;Show</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;Show</span>
+        </div>
+        <h1><a name="kanchor82"></a>&amp;Show</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[<span style="font-weight: bold;">{</span>&amp;Show &lt;ScreenCode}]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>Displays a database screen to a user during the production of a document 
+ or form or when running a script. This enables the user to verify data 
+ before it is entered into a document. In a script, &amp;Show can present 
+ a screen for data entry.</p>
+        <p>&amp;Show may be used with the following system screens: Ledger (LG); 
+ Payment (PY); Debt Invoices (DB); History (HS); Client Debt Params (FI); 
+ Fee Scale and Interest (DI), Schedule (AD), Recoverable Costs (RC) and 
+ Payment and Arrangement Details (PA).</p>
+        <p>&amp;Show can be used to display the main Visualfiles To-Do list screen 
+ from a system script attached to a button.</p>
+        <p><a name="kanchor83"></a>The &amp;Show command can also be used in conjunction with the AL and 
+ AC codes to display the SOS Practice Manager Ledger screen. SOS Practice 
+ Manager screens that can be used with &amp;Show are:</p>
+        <p style="margin-left: 40px;"><b>AC</b> &#160;Set Matter Charge Band</p>
+        <p style="margin-left: 40px;"><b>AL</b> &#160;View Matter Ledger Screen</p>
+        <p style="margin-left: 40px;"><b>PM</b> &#160;View Matter Details</p>
+        <p style="margin-left: 40px;"><b>VF</b> &#160;Generate Unique File Number</p>
+        <p style="margin-left: 40px;"><b>CH</b> &#160;View CDS11 History</p>
+        <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>The codes used to display SOS Practice Manager screens are documented in the <a href="#screen-variant" class="selected">screen-variant</a> section below.</p>
+        <p><a href="../Billing_Module/Billing_Module.htm">Billing Module</a> codes 
+ BI, BG &amp; BT can also be used with &amp;Show.</p>
+        <p>The &amp;Show command cannot show system screens such as MT or MX as 
+ they are set for textual representation not graphical representation.</p>
+        <p>Visualfiles recommend avoiding the use of the &amp;Show command and 
+ using the <a href="&amp;display_command.htm">&amp;Display Command</a> instead, 
+ unless the <a href="#no-wait" class="selected">no-wait</a> or the <a href="#next_action" class="selected">next-action</a> 
+ parameters are incorporated. This is because while the &amp;Show command 
+ is running, a broker is tied up for the length of time that the screen 
+ is shown, however this is resolved with the inclusion of the no-wait and 
+ the next-action parameters. However, there are situations when it is not 
+ possible to use &amp;Display, for example, the user does not have the 
+ case open, including when a process is run from the To-Do List.</p>
+        <p>The <span style="font-weight: bold;">cancel</span> and <span style="font-weight: bold;">ok</span> 
+ parameters can be used in button definitions to ensure that one of them 
+ will be triggered regardless of how the screen is exited. When this occurs 
+ a script associated with the button can be run.</p>
+        <h2>Document Import</h2>
+        <p>The &amp;Show command can be used to display the Document Import screen 
+ from a script using the following syntax:</p>
+        <p class="Script" style="margin-left: 40px;">[&amp;Show Docimport]</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 21px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading"><a name="Parameters"></a>Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 74px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">:Database Field</p>
+                    <p class="Script">&lt;:FieldNo.1,FieldNo2,&gt;</p>
+                    <p>Specify the fields to be highlighted when the screen is displayed. 
+		 For linked case types, the prefix letter must be included.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 157px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">button</p>
+                    <p class="Script"><a name="button" id="button"></a>&lt;UDScreen&gt;,button="<span style="font-weight: bold;">&lt;</span>buttonlabel<span style="font-weight: bold;">&gt;</span>";"<span style="font-weight: bold;">&lt;</span>scriptname<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>The <span style="font-weight: bold;">button</span> parameter 
+		 enables developers to add buttons to a user-defined screen. Define 
+		 the button label and run the script associated with the button 
+		 when selected by the user.</p>
+                    <p>The button label can be specified and the script associated 
+		 with it runs when the button is selected. See <a href="#Examples" class="selected">examples 
+		 7 &amp; 13</a>.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> When you assign 
+		 a script to a button and the button is selected, processing stops 
+		 in the current &amp;Show script and the button script is run; 
+		 this is the same behaviour as the <span style="font-weight: bold;"><a href="#next_action" class="selected">next-action</a></span> parameter. For more 
+		 information please refer to <a href="../Scripting/Visualfiles_Browser_Environment.htm#Stateless_Scripting_Options">Stateless 
+		 Scripting Options</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 58px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">cancel</p>
+                    <p>When this parameter is used as part of a dialog button definition, 
+		 the button is triggered when <span style="font-weight: bold;">Alt</span> 
+		 + <span style="font-weight: bold;">F4</span> or the <span style="font-weight: bold;">X</span> 
+		 (Close) button are used to exit the dialog. This ensures that 
+		 the button is triggered regardless of how the dialog is exited. 
+		 See <a href="#Examples" class="selected">example 8</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 49px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">highlight-fields=&lt;expression&gt;</p>
+                    <p>Enables you to specify the list of screen fields to highlight. 
+		 Comma delimited list of fields to highlight, user-defined screens 
+		 only.&#160;See <a href="#Examples" class="selected">example 12</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 175px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="next_action" id="next_action"></a>next-action={text_expression}</p>
+                    <p>Used to end the script run at this point. Any code after the 
+		 &amp;Show command is ignored and the script specified by the text 
+		 expression in the next-action parameter is run. See <a href="#Examples" class="selected">example 
+		 6</a>.</p>
+                    <p>Text expressions are used to name the required script and can 
+		 be constructed from any combination of the following:</p>
+                    <ul>
+                        <li value="1"><span class="ScriptChar">"constant text"</span>, 
+			 such as a script name</li>
+                        <li value="2"><span class="ScriptChar">'User input'</span>
+                        </li>
+                        <li value="3">Database fields</li>
+                        <li value="4">LF, TF, PI fields. The temporary field specified will contain 
+			 the value entered by the user.</li>
+                    </ul>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> For more information 
+		 on stateless scripting options go to <a href="../Scripting/Visualfiles_Browser_Environment.htm#no_wait_next_action_Parameters">no-wait 
+		 and next-action Parameters</a>, <a href="../Scripting/Visualfiles_Browser_Environment.htm">Visualfiles 
+		 Browser Environment</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 54px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">next-action-inputs={expression};{expression}...</p>
+                    <p>List of semi-colon delimited items to be passed as PI fields 
+		 into the next-action script.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 140px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="no-cancel" id="no-cancel"></a>no-cancel</p>
+                    <p>Used to hide the <span style="font-weight: bold;">Cancel</span> 
+		 system button and prevent the user cancelling out of a dialog.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> When the no-cancel 
+		 parameter is used it is possible for end users to exit incomplete 
+		 mandatory dialogs and screens using the <span style="font-weight: bold;">Esc</span> 
+		 button, if the hide screen scripts that are used include the &amp;If 
+		 command instead of using a &amp;DoWhile loop after a screen is 
+		 displayed.<br /><span class="MCExpanding"><a href="javascript:void(0);" class="MCExpandingHead_expandspot_0" onclick="FMCExpand( this ); return false;">No-cancel 
+		 and &amp;DoWhile (recommended)</a><span class="MCExpandingBody" style="display: none;">End users are unable to exit a screen using 
+		 the escape button using &amp;DoWhile.<span class="ScriptChar"><br />		[&amp;Show BAA,no-cancel]<br />		[&amp;DoWhile BAA04=""]<br />		&#160;&#160;&#160;[&amp;Message "All highlighted fields MUST 
+		 be completed",title="Attention"]<br />		&#160;&#160;&#160;[&amp;Show BAA,no-cancel]<br />		[&amp;EndDoWhile]<br />		&#160;</span></span></span><br /><span class="MCExpanding"><a href="javascript:void(0);" class="MCExpandingHead_expandspot_0" onclick="FMCExpand( this ); return false;">No-cancel 
+		 and &amp;If (avoid)</a><span class="MCExpandingBody" style="display: none;">End users can exit a screen using the escape 
+		 button using &amp;If.<span class="ScriptChar"><br />		[&amp;Show BAA,no-cancel] **Hide screen script on BAA screen<br />		[&amp;If BAA04=""]<br />		&#160;&#160;&#160;[&amp;Message "All highlighted fields MUST 
+		 be completed",title="Attention"]<br />		&#160;&#160;&#160;[&amp;Show BAA,no-cancel]<br />		[&amp;EndIf]<br />		&#160;</span></span></span><br />		We recommend that using &amp;DoWhile with <span class="ScriptChar">[&amp;Show 
+		 &lt;CODE&gt;, no-cancel]</span> and avoiding the use of &amp;If 
+		 with this parameter.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 66px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Nodelete</p>
+                    <p>Enables you to prevent users from deleting a group screen. This 
+		 parameter is only used with group screens.</p>
+                    <p>When a group screen is displayed using <span class="ScriptChar">[&amp;Show 
+		 ,nodelete]</span>, the group screen is displayed but the <span style="font-weight: bold;">Delete</span> button is disabled. See 
+		 <a href="#Examples" class="selected">example 11</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 50px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">no-help</p>
+                    <p>Used to hide the <span style="font-weight: bold;">Help</span> 
+		 system button from the dialog.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 63px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">no-navigate</p>
+                    <p>View the current iteration of a screen: no previous iterations 
+		 are displayed nor can iterations be added or deleted. Used 
+		 only with <span style="font-weight: bold;">Group</span> screens, 
+		 this parameter determines whether the <span style="font-weight: bold;">Navigation</span>, 
+		 <span style="font-weight: bold;">Add</span> and <span style="font-weight: bold;">Delete</span> 
+		 buttons are displayed.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 131px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="no-wait" id="no-wait"></a>no-wait</p>
+                    <p>Ends the script run at this point.</p>
+                    <p>When a script that includes the <span style="font-weight: bold;">no-wait</span> 
+		 parameter is run and there is no user response to a screen prompt, 
+		 the parameter is executed which ends the script, ignoring all 
+		 subsequent code. This results in agents that would otherwise be 
+		 tied to the unused application, being accessible to other system 
+		 users. See <a href="#Examples" class="selected">example 5</a>.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The <span style="font-weight: bold;">no-wait</span> parameter does not work 
+		 for system screens in Visualfiles Browser, e.g. Show HS, Show 
+		 LG. Currently, the stateless Visualfiles Browser functionality 
+		 only works with user definable screens, e.g. [&amp;Show SCR,no-wait].</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 63px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">OK</p>
+                    <p>When this parameter is used as part of a dialog button definition 
+		 the button is triggered when the <span style="font-weight: bold;">Return</span>/<span style="font-weight: bold;">Enter</span> key is used to exit the 
+		 dialog. This ensures that the button is triggered regardless of 
+		 how the dialog is exited. See <a href="#Examples" class="selected">example 9</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 50px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">screen=&lt;expression&gt;</p>
+                    <p>Enables you to specify the screen to show. See <a href="#Examples" class="selected">example 
+		 12</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 48px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p><a name="screen-variant"></a>screen-variant="<b>&lt;</b>code<b>&gt;</b>"</p>
+                    <p>Enables you to display SOS Practice Manager screens. See <a href="#Examples" class="selected">example 
+		 15</a> for information on the SOS PM screens.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 48px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="show-list" id="show-list"></a>show-list</p>
+                    <p>If screen appears as a list in the database, show the screen 
+		 list. Without this option the screen currently selected from the 
+		 list will be shown. See <a href="#Examples" class="selected">example 10</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 31px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">size-to-fit</p>
+                    <p>Shrinks the dialog size to fit its contents.&#160;See <a href="#Examples" class="selected">example 
+		 14</a>.</p>
+                    <p>This parameter is used in conjunction with <a href="../Database_Screens.htm#Temporary_Field_Screens">Temporary 
+		 Field screens</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 83px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Title="<span style="font-weight: bold;">&lt;</span>screen 
+		 title<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Set the text of the title displayed in the screen.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> This parameter 
+		 cannot be used with hard coded screens such as HS and LG.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 50px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">&lt;ScreenCode&gt;</p>
+                    <p>Specify the screen to be displayed.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t14">1 Using field numbers</a>
+        </p>
+        <div MadCap:targetName="t14" style="display: none;">
+            <p>To display the sale property screen in a Conveyancing 
+	 case, the codesPRO07andPRO08represent purchase price 
+	 and deposit respectively.</p>
+            <p>This code displays the screen with the purchase price and deposit 
+	 highlighted:</p>
+            <p class="Script">[&amp;Show S_PRO:7,8]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t13">2 &amp;Show 
+ command with Schedule screen</a>
+        </p>
+        <div MadCap:targetName="t13" style="display: none;">
+            <p>The Schedule screen may be called from a script using the &amp;Show 
+	 command.</p>
+            <p class="Script">[&amp;Show AD]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t12">3 Using the no-cancel parameter</a>
+        </p>
+        <div MadCap:targetName="t12" style="display: none;">
+            <p>Display the database screen COU and remove the <span style="font-weight: bold;">Cancel</span> 
+	 button from the screen.</p>
+            <p class="Script">[&amp;Show COU,no-cancel]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t11">4 Remove 
+ Cancel button and highlight fields</a>
+        </p>
+        <div MadCap:targetName="t11" style="display: none;">
+            <p>Display the database screen COU, highlight the first, second and 
+	 fourth fields and remove the <span style="font-weight: bold;">Cancel</span> 
+	 button from the screen.</p>
+            <p class="Script">[&amp;Show COU:1,2,4,no-cancel]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t10">5 no-wait 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t10" style="display: none;">
+            <p>The no-wait parameter ends the script run at this point. So in the 
+	 script below <span class="ScriptChar">[&amp;Assign TF01]</span> will 
+	 not be executed:</p>
+            <p class="Script">[&amp;Show NAS,no-wait]</p>
+            <p class="Script">[&amp;Assign TF01]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> <span style="font-weight: bold;">NAS</span> 
+	 is a user-defined screen.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t9">6 next-action 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t9" style="display: none;">
+            <p>The next-action parameter ends the script run at this point. Then 
+	 runs the script AFTERMESSAGE when the user clicks <span style="font-weight: bold;">OK</span> 
+	 in the message dialog. So in the script below <span class="ScriptChar">[&amp;Assign 
+	 TF01]</span> will not be executed:</p>
+            <p class="Script">[&amp;Show NAS,next-action="AfterMessage"]</p>
+            <p class="Script">[&amp;Assign TF01]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> No variables are 
+	 available when the script is run, TF, LF, etc. <span style="font-weight: bold;">NAS</span> 
+	 is a user-defined screen.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t8">7 button 
+ parameter applying labels and attaching scripts</a>
+        </p>
+        <div MadCap:targetName="t8" style="display: none;">
+            <p>A script can be defined for the <span style="font-weight: bold;">Cancel</span> 
+	 button, which runs when the screen is closed using the <span style="font-weight: bold;">Cancel</span> 
+	 button or the <span style="font-weight: bold;">X</span> Close button.</p>
+            <p>This command creates a screen that includes a <span style="font-weight: bold;">Cancel</span> 
+	 button but no <span style="font-weight: bold;">Help</span> button. 
+	 <span style="font-weight: bold;">NAS</span> is a user-defined screen. 
+	 <span style="font-weight: bold;">NEXTACTION</span> and <span style="font-weight: bold;">AFTERMESSAGE</span> 
+	 are scripts.</p>
+            <p class="Script">[&amp;Show NAS,button="Press me";"NEXTACTION",button="Another 
+	 button";"AFTERMESSAGE";CANCEL,no-help]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> No variables are 
+	 available when the script is run, TF, LF etc. <span style="font-weight: bold;">NAS</span> 
+	 is a user-defined screen.</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> When you assign 
+	 a script to a button and the button is selected, processing stops 
+	 in the current &amp;Show script and the button script is run; this 
+	 is the same behaviour as the <span style="font-weight: bold;"><a href="#next_action" class="selected">next-action</a></span> 
+	 parameter.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t7">8 cancel 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t7" style="display: none;">
+            <p>When this parameter is used as part of a dialog button definition, 
+	 the button is triggered when <span style="font-weight: bold;">Alt</span> 
+	 + <span style="font-weight: bold;">F4</span> or the <span style="font-weight: bold;">X</span> 
+	 (Close) button are used to exit the dialog.</p>
+            <p class="Script">[&amp;Show ABC,button= "Cancel" ; S-Test 
+	 ;cancel]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> <span style="font-weight: bold;">ABC</span> 
+	 is a user-defined screen.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">9 OK and 
+ no-help parameters</a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p>When this parameter is used as part of a dialog button definition 
+	 the button is triggered when the <span style="font-weight: bold;">Return</span>/<span style="font-weight: bold;">Enter</span> key is used to exit the dialog.</p>
+            <p class="Script">[&amp;Show ABC ,button= "OK" ; S-Test2 
+	 ;ok,no-help]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> <span style="font-weight: bold;">ABC</span> 
+	 is a user-defined screen.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">10 show-list 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p class="Script">[&amp;Show ABC]</p>
+            <p>Shows the first or currently selected iteration of the screen.</p>
+            <p class="Script">[&amp;Show ABC, show-list]</p>
+            <p>Shows the list of screens created, as it appears in the database.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">11 Nodelete 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p class="Script">[&amp;Show ABCD, nodelete]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">12 screen 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p class="Script">[&amp;Show screen="ABC", highlight-fields="1,4,7"]</p>
+            <p>or</p>
+            <p class="Script">[&amp;Assign LF01="ABC"][&amp;Assign LF02="1,4,7"]</p>
+            <p class="Script">[&amp;Show screen=LF01,highlight-fields=LF02]</p>
+            <p>are the equivalent of</p>
+            <p class="Script">[&amp;Show ABC:"1,4,7"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">13 button 
+ parameter; run button script</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> S-TEST-OK is a 
+	 script.</p>
+            <p class="Script">[&amp;Show INP,button= OK ; S-TEST-OK ,no-cancel,no-help,no-navigate]</p>
+            <p class="Script">[&amp;Message "After show"]</p>
+            <p style="font-weight: bold;">S-TEST-OK</p>
+            <p class="Script">[&amp;Message "Testing OK"]</p>
+            <p>When the first script is run and the <span style="font-weight: bold;">OK</span> 
+	 button is selected, the S-TEST-OK script is run and the “Testing OK” 
+	 message is displayed.</p>
+            <p>The &amp;Message command is not run because processing stops when 
+	 the button is clicked and the script runs; this is the same behaviour 
+	 as the <span style="font-weight: bold;"><a href="#next_action" class="selected">next-action</a></span> 
+	 parameter. For more information please refer to <a href="../Scripting/Visualfiles_Browser_Environment.htm#Stateless_Scripting_Options">Stateless 
+	 Scripting Options</a>.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">14 Size-to-fit 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p class="Script">[&amp;Show ABC ,size-to-fit]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="Show SOS PM screens ">15 Show SOS PM screens - screen-variant parameter</a>
+        </p>
+        <div MadCap:targetName="Show SOS PM screens ">
+            <p>[&amp;Show PM, screen-variant="BILL_LIST"]</p>
+            <p style="text-indent: 0.5in;">"BILL_LIST": displays the Practice Manager matter bills list.</p>
+            <p>[&amp;Show PM, screen-variant="LA"]</p>
+            <p style="text-indent: 0.5in;">"LA": displays the Practice Manager matter enquiry LA tab.</p>
+            <p>[&amp;Show PM, screen-variant="RELS"]</p>
+            <p style="text-indent: 0.5in;">"RELS": displays the Practice Manager matter enquiry Relations tab.</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>These codes can be used with either [&amp;Show AL ... ] or [&amp;Show PM ... ] the same screens are displayed when AL or PM is used.</p>
+        </div>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1"><a href="../Scripting/Visualfiles_Browser_Environment.htm#Stateless_Scripting_Options">Stateless 
+	 Scripting Options</a>
+            </li>
+            <li value="2"><a href="../Scripting/Visualfiles_Browser_Environment.htm">Visualfiles 
+	 Browser Environment</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

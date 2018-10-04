@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;CommObject</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;CommObject</span>
+        </div>
+        <h1><a name="kanchor804"></a>&amp;CommObject</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[&amp;CommObject type = "&lt;InterfaceID&gt;",action 
+ = "&lt;FunctionOfCommand&gt;",names = "&lt;1st name|2nd 
+ name|3rd name...&gt;",values = "&lt;1st value|2nd value|3rd 
+ value ...&gt;"]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>Sends commands to iManage Work  and can also be used within the <a href="../Document_Bundling/Document_Bundling.htm">Document Bundling</a> integration.</p>
+        <p><a name="kanchor805"></a>Integrated documents can be accessed and opened via Visualfiles scripting 
+ using the &amp;CommObject command. See <a href="#Examples" class="selected">example 8</a> 
+ for more information.</p>
+        <h2>Prerequisites</h2>
+        <p>The iManage Work  integration must be fully defined in Visualfiles. 
+ For more information go to <a href="../Worksite/Setup_Link_Between_WorkSite_Visualfiles.htm">Set 
+ up the Link Between iManage Work  and Visualfiles</a>.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 37.042%;" />
+            <col style="width: 62.958%;" />
+            <tr style="vertical-align: top;height: 19px;">
+                <td colspan="2" style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 39px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">action = "&lt;FunctionOfCommand&gt;"</p>
+                    <p>The <span style="font-weight: bold;">action</span> parameter 
+		 defines the function of the &amp;CommObject command. The available 
+		 actions are:</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 23px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 37.042%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="margin-left: 48px;">AddProtectiveMarkings</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 62.958%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-bottom: 5pt;">Adds markings to a Class, Folder 
+		 or Document in xml</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 23px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 37.042%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="margin-left: 48px;">DeclareRecord</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 62.958%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-bottom: 5pt;">Declare item as a record</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 23px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 37.042%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-left: 48px;">CreateFolder</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 62.958%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-bottom: 5pt;">Create a folder</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 23px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 37.042%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-left: 48px;"><span class="ScriptChar">CancelCheckOut</span>
+                    </p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 62.958%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-bottom: 5pt;">Close the document without saving 
+		 changes</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 23px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 37.042%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-left: 48px;"><span class="ScriptChar">CheckInDoc</span>
+                    </p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 62.958%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-bottom: 5pt;">Close the document and save changes</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 23px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 37.042%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-left: 48px;"><span class="ScriptChar">CheckOutDoc</span>
+                    </p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 62.958%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-bottom: 5pt;">Open the document for editing</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 23px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 37.042%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-left: 48px;"><span class="ScriptChar">DeleteDoc</span>
+                    </p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 62.958%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-bottom: 5pt;">Delete the document</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 23px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 37.042%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="margin-left: 48px;">GetAccess</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 62.958%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-bottom: 5pt;">Update access control lists in 
+		 xml. See <a href="#Examples" class="selected">example 8</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 23px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 37.042%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-left: 48px;"><span class="ScriptChar">GetDoc</span>
+                    </p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 62.958%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-bottom: 5pt;">Open the document read-only</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 23px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 37.042%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="margin-left: 48px;"><span class="ScriptChar">GetLookup</span>
+                    </p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 62.958%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-bottom: 5pt;">Constant value</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> You can specify 
+		 this parameter to display a iManage Work lookup table and retrieve 
+		 a value from it.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 23px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 37.042%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="margin-left: 48px;">GetMetaData</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 62.958%;padding-right: 10px;padding-left: 10px;">
+                    <p>View 
+		 Metadata associated with the item</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 23px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 37.042%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="margin-left: 48px;">EditMetaData</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 62.958%;padding-right: 10px;padding-left: 10px;">
+                    <p>Edit 
+		 Metadata associated with the item</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 23px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 37.042%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="margin-left: 48px;">OpenDoc</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 62.958%;padding-right: 10px;padding-left: 10px;">
+                    <p>Access 
+		 and open integrated documents</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 23px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 37.042%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="margin-left: 48px;">PlaceDocument</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 62.958%;padding-right: 10px;padding-left: 10px;">
+                    <p>Adds 
+		 a document to a particular file plan</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 23px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 37.042%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="margin-left: 48px;">S<span class="ScriptChar">toreDoc</span></p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 62.958%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-bottom: 5pt;">To save the document</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 23px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 37.042%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-left: 48px;"><span class="ScriptChar">SearchDoc</span>
+                    </p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 62.958%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-bottom: 5pt;">Open search dialog</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 23px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 37.042%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-left: 48px;"><span class="ScriptChar">Logout</span>
+                    </p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 62.958%;padding-right: 10px;padding-left: 10px;">
+                    <p style="margin-bottom: 5pt;">Kill a session</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 96px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">names = "&lt;1st 
+		 name|2nd name|3rd name...&gt;"</p>
+                    <p>The name of the parameter passed to the <span style="font-weight: bold;">action</span>. 
+		 Names must be delimited by a pipe symbol '<span style="font-weight: bold;">|</span>'. 
+		 The <span style="font-weight: bold;">names</span> parameter and 
+		 number of names required, is dependant on the action being called. 
+		 &#160;Some actions, such as Deletedoc, require no names or values.</p>
+                    <p>In the case of iManage, the <span style="font-weight: bold;">names</span> 
+		 parameter is used to list the profile details being passed: Author, 
+		 Operator, Class, Description, etc.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 46px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">type = "&lt;InterfaceID&gt;"</p>
+                    <p>A three-digit code identifying the interface used.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 109px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">values = "&lt;1st 
+		 value|2nd value|3rd value...&gt;"</p>
+                    <p>A list of values associated with the names delimited by a pipe 
+		 symbol (|). &#160;The number and format of the values required 
+		 is dependant on the <span style="font-weight: bold;">action</span> 
+		 and <span style="font-weight: bold;">name</span> supplied. &#160;For 
+		 each <span style="font-weight: bold;">name</span> specified, a 
+		 corresponding value must be supplied - even if that value is blank 
+		 (where the default value will be used, if allowed). &#160;Some 
+		 <span style="font-weight: bold;">actions</span> and <span style="font-weight: bold;">names</span> 
+		 will require valid, specific values.</p>
+                    <p>The <span style="font-weight: bold;">values</span> can be separate: 
+		 as text enclosed in quotes; contained in a temporary field; or 
+		 a concatenation of temporary fields.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t9">1 Using 
+ the <span style="font-style: normal;">deletedoc</span> action with iManage Work</a>
+        </p>
+        <div MadCap:targetName="t9" style="display: none;">
+            <p class="Script">[&amp;CommObject type = "IMA",action = 
+	 "deletedoc"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t8">2 Using 
+ the <span style="font-style: normal;">storedoc</span> action with iManage Work</a>
+        </p>
+        <div MadCap:targetName="t8" style="display: none;">
+            <p>This script will save a document and set the class, author and operator 
+	 profile details as doc, a.lewis and c.white respectively. As no dbname 
+	 is specified, the default value will be used.</p>
+            <p class="Script">[&amp;CommObject type = "IMA", action = 
+	 "storedoc",names = "class|author|operator|dbname", 
+	 values = "doc|a.lewis|c.white|"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t7">3 Using 
+ the <span style="font-style: normal;">storedoc</span> action with iManage Work  
+ and a temporary field containing the values</a>
+        </p>
+        <div MadCap:targetName="t7" style="display: none;">
+            <p>This script will save a document and the class, author, operator 
+	 and dbname profile settings are read in from a temporary field.</p>
+            <p class="Script"><span style="color: #000000;">[&amp;CommObject type 
+	 = "IMA",action = "storedoc",names = "class|author|operator|dbname", 
+	 values = TF01]</span>
+            </p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">4 Using 
+ the <span style="font-style: normal;">checkoutdoc</span> action with iManage Work</a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p>This script collects the username and password required by the integration 
+	 for performing actions such as checking out documents.</p>
+            <p class="Script">[&amp;Assign DM06 = ""]<br />	[&amp;CommObject type = "IMA",action = "checkoutdoc",names 
+	 = "user|password", values = "n.person|Abc123"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">5 Using 
+ the <span style="font-style: normal;">createfolder</span> action with 
+ Meridio</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p>This script creates a folder on the Document Management system to 
+	 store the documents. &#160;</p>
+            <p class="Script">[&amp;CommObject Type="MER" , Action="CREATEFOLDER" 
+	 , Names="FOLDER|PARENT|COMMENT" , Values = TF300 + "|" 
+	 + TF400 + "|FOLDER CREATED BY " + US01]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">6 Use 
+ the <span style="font-style: normal;">destination</span> parameter to 
+ specify two folders to which emails will be saved in iManage Work</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p>A semicolon is used to separate the names of two folders to which 
+	 email will be saved. &#160;Sub-categories can be specified using a 
+	 "/", for example, "Emails;Letters/Sub Category"</p>
+            <p class="Script">[&amp;ASSIGN DM06 = ""]</p>
+            <p class="Script">[&amp;IF US01="SARAHBELL"]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Assign TF03="S.BELL"]</p>
+            <p class="Script">[&amp;Else]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Assign TF03=""]</p>
+            <p class="Script">[&amp;EndIf]</p>
+            <p class="Script">[&amp;assign tf01 = &#160;"Emails;Letters|DOC|"+TF03+"|"+TF03+"|no|ansi|another 
+	 test desc"]</p>
+            <p class="Script">[&amp;Assign TF02=""]</p>
+            <p class="Script">[&amp;COMMOBJECT TYPE="IMA" , ACTION="STOREDOC" 
+	 ,NAMES="destination|CLASS|AUTHOR|OPERATOR|Profile|type|description" 
+	 , VALUES=tf01]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">7 iManage 
+ custom2 table parentalias</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>The following command filters the <span class="ScriptChar">custom2</span> 
+	 table where the <span class="ScriptChar">parentalias</span> field 
+	 = <span class="ScriptChar">test</span>:</p>
+            <p class="Script">[&amp;CommObject type = "ima",action = 
+	 "getlookup",names = "parentalias|table|destination|profile",values 
+	 = "test|custom2|Roo02|no"]</p>
+            <p><span style="font-weight: normal;">Within iManage, the tables custom2, 
+	 custom30 and subclass require that a parentalias is specified.</span>
+            </p>
+            <p>The element <span class="ScriptChar">parentalias</span> can be specified. 
+	 It is a parent value from which the table results are built (subclassing).</p>
+            <p>The element <span class="ScriptChar">table</span> is the name of 
+	 the iManage table.</p>
+            <p>The element <span class="ScriptChar">destination</span> is the Document 
+	 Category in which the document/email is to be stored.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">8 Using 
+ the OpenDoc action</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p>Documents in History can be viewed from running an Agenda item but 
+	 not edited.</p>
+            <p>Documents in History can be checked out and edited from running 
+	 an Agenda item. They are marked as Checked Out within iManage Work  and 
+	 within the case History.</p>
+            <p class="Script">[&amp;Assign LF03="1139"] **history number 
+	 (HS26)</p>
+            <p class="Script">[&amp;Assign LF01="history-ID|Mode"] **names</p>
+            <p class="Script">[&amp;Assign LF02=LF03 + "|edit"] **values 
+	 (Mode can be EDIT or VIEW)</p>
+            <p class="Script">[&amp;COMMObject Type="ima", Action="OpenDoc", 
+	 Names=LF01, Values=LF02]</p>
+            <p class="Script">[&amp;If DM06&lt;&gt;""] **error</p>
+            <p class="Script">[&amp;Message DM06]</p>
+            <p class="Script">[&amp;EndIf]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">9 Update 
+ Access Control Lists in Meridio</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p>To update Access Control Lists in Meridio you can run the following 
+	 function:</p>
+            <p class="Script">[&amp;CommObject type="MER" , action="GETACCESS" 
+	 ,names="PARENTID|OBJECTID|PARENTTYPE|OBJECTTYPE",values= 
+	 TF05 ]</p>
+            <p class="Script">This has been wrapped up in the attached Script Mer-Access. 
+	 This functionality has been in the product for some time.</p>
+            <p class="Script">The purpose of the function is to copy the ACL from 
+	 one object to another.</p>
+            <p class="Script">Add &#160;the following code to the end of the ADD 
+	 document script:</p>
+            <p class="Script">[&amp;Call SYSTEM.MER-ACCESS, input = MER02 , input 
+	 = DM09 , input = "Folder" , input = "Document"]</p>
+            <p class="Script">This copies the ACL from the parent folder onto the 
+	 Document (only required if inheritance does not occur between the 
+	 folder and document)</p>
+            <p class="Script">At the start of the Declare Record script you can 
+	 add:</p>
+            <p class="Script">[&amp;Assign LF09 = DM09] /* Store the original document 
+	 ID */</p>
+            <p class="Script">At the end of the Declare Record script you can add:</p>
+            <p class="Script">&#160;[&amp;iF LF09 &lt;&gt; &#160;DM09] /* Only 
+	 updates if Declare and Delete used as IDs will be different */</p>
+            <p class="Script">[&amp;Call SYSTEM.MER-ACCESS, input = LF09 , input 
+	 = DM09 , input = "Document" , input = "Document"]</p>
+            <p class="Script">[&amp;Endif]</p>
+            <p>This copies the ACL from the deleted document to the new record.</p>
+        </div>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1"><a href="../Worksite/iManage_Work_Integration.htm">iManage Work  Integration</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;Request</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;Request</span>
+        </div>
+        <h1><a name="kanchor2013"></a>&amp;Request</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[&amp;Request URL = URLaddress]</p>
+        <p><a href="#Examples" class="selected">Example Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p><a name="kanchor2014"></a>The &amp;Request command is used to call a <a name="kanchor2015"></a><a name="webservice" id="webservice"></a><span class="MCPopup"><a href="javascript:void(0);" MadCap:src="../Web_Service_popup.htm" onclick="FMCPopup( event, this ); return false;" class="MCPopupSpot">web 
+ service</a></span>. The command takes the contents of an XML file, sends this 
+ information to the specified URL and receives the response. This functionality 
+ is achieved by packaging the XML document as a SOAP message and invoking 
+ the specified SOAP action. The format of the XML that is sent and received 
+ and the SOAP actions supported will be dependent on the web services being 
+ used and will be documented by the service provider.</p>
+        <p>The &amp;Request command can be used in conjunction with database fields, 
+ including temporary fields.</p>
+        <p><a name="kanchor2016"></a><a name="QAS" id="QAS"></a>Parameters relating to the use of <a href="#QAS_Parameters" class="selected">QAS</a> 
+ (Quick Address Search) software's web services are given towards the end 
+ of the list of parameters below.</p>
+        <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span><a name="kanchor2017"></a><a name="kanchor2018"></a><a name="kanchor2019"></a><a name="kanchor2020"></a><a name="HTTPS" id="HTTPS"></a> 
+ HTTPS in not supported by &amp;Request but you can make use of the &amp;Script 
+ command to achieve this; &amp;Script enables developers to integrate with 
+ third party products by calling and running external scripts. HTTPS can 
+ also be supported indirectly through a third party server.</p>
+        <h3>Closing connections</h3>
+        <p>Progress will stop waiting for a response from a &amp;Request command 
+ when one of the following occurs:</p>
+        <ul>
+            <li class="p-BulletedList" value="1">
+                <p class="BulletedList">The server closes 
+	 the connection.</p>
+            </li>
+            <li class="p-BulletedList" value="2">
+                <p class="BulletedList">The size of the 
+	 response matches the Content-Size passed as part of the response header</p>
+            </li>
+            <li class="p-BulletedList" value="3">
+                <p class="BulletedList">The End-Element 
+	 is reached.</p>
+            </li>
+        </ul>
+        <p>Whichever condition is satisfied first will close the connection. Where 
+ none of these conditions are met, Visualfiles may hang and crash the user 
+ out of the system.</p>
+        <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> <a name="QAS_Parameters" id="QAS_Parameters"></a>Some 
+ parameters relate to using QAS (Quick Address Search) software's web services.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 19px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">attach-element = &lt;Element&gt;</p>
+                    <p>Element of the XML data with which to store the document.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">attach-file = &lt;FileName</p>
+                    <p>The file to attach as part of the request (file is <span class="MCTextPopup"><span class="MCTextPopupBody_popupBody_2_0" style="display: none; ">A group of similar encoding schemes that represent binary data in an ASCII string format by translating it into a radix-64 representation. The Base64 term originates from a specific MIME content transfer encoding.</span><a class="MCTextPopupSpot_popupspot_0" href="javascript:void(0);" onclick="FMCTextPopup( event, this ); return false;">B64</a></span> 
+		 encoded automatically).</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Binding = &lt;binding 
+		 name&gt;</p>
+                    <p>Alternative to the parameter "service", depending 
+		 on the web service - see <a href="#Examples" class="selected">example 4</a>.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Relates to 
+		 QAS.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 53px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">BindingNamespace 
+		 = binding</p>
+                    <p>Alternative to "ServiceNamespace when the parameter binding 
+		 is used, depending on the web service - seeexample 
+		 4.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Relates to 
+		 QAS.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 53px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">content-type = "&lt;ContentType</p>
+                    <p>Used to explicitly define a content type such as “application/x-www-form-urlencoded rather 
+		 than using the default text/xml.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 105px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">end-element = "&lt;LastNode</p>
+                    <p>Used to define the last expected node of an XML response so 
+		 that Progress can detect if the whole of the response has been 
+		 received. This is only required if the server sending the response 
+		 does not send <span style="font-weight: bold;">Close Connection</span>. 
+		 It is recommended that developers use the End-Element parameter 
+		 to force a connection to close rather than relying on a response 
+		 from the remote server to close the connection. Where the connection 
+		 is left open, Progress does not know when to stop waiting for 
+		 a response: adding an End-Element parameter enables Progress to 
+		 parse the response and quit as soon as it hits the end tag.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">full-response</p>
+                    <p>Return all of a Web Service response to the XL field rather 
+		 than just the Body-Text.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">hdr-xml 
+		 = </p>
+                    <p>Specifies a block of XML to place in the SOAP header.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">no-element</p>
+                    <p>Don't include the attach element tags, just the document.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">operation = &lt;operation&gt;</p>
+                    <p>Determines the operation in the Web Service to call.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">output =</p>
+                    <p>The XL field code for the web service response.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">output-element = &lt;LocationOfDocumentInResponse</p>
+                    <p>The location of the encoded document in the XML response.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">output-file = &lt;LocationForResponse</p>
+                    <p>The file and location in which to store any document passed 
+		 back in the response (file is <span class="popupspot">B64</span> 
+		 unencoded automatically).</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">port = &lt;port name&gt;</p>
+                    <p>The port being used to connect to the web service.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Relates to 
+		 QAS.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 53px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">post-process</p>
+                    <p>Used to ensure that where the response being received from a 
+		 web service command is incomplete, the response will be stored 
+		 and processed once the socket connection is closed.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 66px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">request = &lt;XMLDataOrFieldThatHoldsIt</p>
+                    <p>Holds the XML data or else specifies the field that holds the 
+		 XML data. This parameter may be set equal to the XML data itself, 
+		 in which case the data should be enclosed in speech marks, otherwise, 
+		 it should be set to the name of the field in which the XML data 
+		 is held, for example, TF01.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">response = &lt;response&gt;</p>
+                    <p>Used to specify the XL field to hold any response from the call.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">service = &lt;service 
+		 name&gt;</p>
+                    <p>The name of the service being called.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Relates to 
+		 QAS.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">ServiceNamespace 
+		 = </p>
+                    <p>Namespace of the service being called.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Relates to 
+		 QAS.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">soap</p>
+                    <p>This parameter specifies that the web services request is a 
+		 SOAP package.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 53px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">SoapAction = "&lt;ActionOrFieldThatHoldsIt</p>
+                    <p>Specifies the action to be performed: this may be the action 
+		 itself, in which case the action should be enclosed in quotes, 
+		 or, it may be a temporary field that currently holds the action, 
+		 for example, TF02.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">SoapEndpoint 
+		 = URL Endpoint</p>
+                    <p>Specifies the end point of the web service.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Relates to 
+		 QAS.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">SoapEndpointPassword 
+		 = Password</p>
+                    <p>Password for the web service end point.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Relates to 
+		 QAS.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">SoapEndpointUserid 
+		 = User id</p>
+                    <p>User ID for the web service end point.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Relates to 
+		 QAS.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">soap-version = &lt;SoapVersion</p>
+                    <p>Soap version to use.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 28px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">TargetNamespace 
+		 = target namespace</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Relates to 
+		 QAS.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 66px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">URL = "&lt;URL&gt;"</p>
+                    <p>Specifies the URL to which the web services request should be 
+		 directed. This address should be written in full and be enclosed 
+		 in double quotation marks. The URL parameter may be set equal 
+		 to a database or temporary field that holds the URL.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 53px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">WSDL = &lt;WSDL-Document&gt;</p>
+                    <p>The web service being called. &#160;At the very least only the 
+		 WSDL parameter maybe specified with all the other parameters optional.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Relates to 
+		 QAS.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">WSDL-Password = &lt;password&gt;</p>
+                    <p>Password for the web service being called.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Relates to 
+		 QAS.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">WSDL-Userid = &lt;user-id&gt;</p>
+                    <p>User-id for the web service being called.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Relates to 
+		 QAS.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">1 Using 
+ a temporary field</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p class="Script">[&amp;Assign TF01 = "http://2000template/services1.2/ClientService.asmx"]</p>
+            <p class="Script">.</p>
+            <p class="Script">.</p>
+            <p class="Script">[&amp;Request URL = TF01]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">2 Call 
+ a web service</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p class="Script">[&amp;Request URL = "http://2000template/services/MatterLoadService.asmx", 
+	 output = XL02, request = TF01, soap, soapaction = "http://www.elite.com/openapi/matterload/Create", 
+	 hdr-xml = "&lt;user&gt;demo&lt;/user&gt;"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">3 A sample 
+ web service</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>You can view this web service at: http://www.swanandmokashi.com/</p>
+            <p class="Script">[&amp;Assign tf02 = 'Select Stock Market'(choose 
+	 YHOO:MSFT:GE)]</p>
+            <p class="Script">[&amp;Assign tf01 = "&lt;GetQuotes xmlns = " 
+	 + quote +"http://swanandmokashi.com" + quote +"&gt;&lt;QuoteTicker&gt;" 
+	 + tf02 + "&lt;/QuoteTicker&gt;&lt;/GetQuotes&gt;"]</p>
+            <p class="Script">&lt;GetQuotesResponse xmlns = "http://swanandmokashi.com"&gt;</p>
+            <p class="Script">&lt;GetQuotesResult&gt; &lt;Quote&gt;</p>
+            <p class="Script">&lt;CompanyName&gt;string&lt;/CompanyName&gt;</p>
+            <p class="Script">&#160;&lt;StockTicker&gt;string&lt;/StockTicker&gt;</p>
+            <p class="Script">&#160;&lt;StockQuote&gt;string&lt;/StockQuote&gt;</p>
+            <p class="Script">&#160;&lt;LastUpdated&gt;string&lt;/LastUpdated&gt;</p>
+            <p class="Script">&lt;Change&gt;string&lt;/Change&gt;</p>
+            <p class="Script">&#160;&lt;OpenPrice&gt;string&lt;/OpenPrice&gt;</p>
+            <p class="Script">&#160;&lt;DayHighPrice&gt;string&lt;/DayHighPrice&gt;</p>
+            <p class="Script">&#160;&lt;DayLowPrice&gt;string&lt;/DayLowPrice&gt;</p>
+            <p class="Script">&#160;&lt;Volume&gt;string&lt;/Volume&gt;</p>
+            <p class="Script">&lt;MarketCap&gt;string&lt;/MarketCap&gt;</p>
+            <p class="Script">&#160;&lt;YearRange&gt;string&lt;/YearRange&gt;</p>
+            <p class="Script">[&amp;Request URL = "http://www.swanandmokashi.com/HomePage/WebServices/StockQuotes.asmx",</p>
+            <p class="Script">&#160;Output = XL01,Request = TF01,SOAP,post-process, 
+	 SoapAction = quote + "http://swanandmokashi.com/GetQuotes" 
+	 + quote,soap-version = soap:]</p>
+            <p class="Script">[&amp;Message xl01]</p>
+            <p class="Script">[&amp;Select XL,type = XL01,Element = CompanyName,first,parent]</p>
+            <p class="Script">[&amp;Select XL,type = XL01,Element = StockTicker,first,parent]</p>
+            <p class="Script">[&amp;Select XL,type = XL01,Element = StockQuote,first,parent]</p>
+            <p class="Script">[&amp;Select XL,type = XL01,Element = LastUpdated,first,parent]</p>
+            <p class="Script">[&amp;Select XL,type = XL01,Element = Change,first,parent]</p>
+            <p class="Script">[&amp;Select XL,type = XL01,Element = OpenPrice,first,parent]</p>
+            <p class="Script">[&amp;Select XL,type = XL01,Element = DayHighPrice,first,parent]</p>
+            <p class="Script">[&amp;Select XL,type = XL01,Element = DayLowPrice,first,parent]</p>
+            <p class="Script">[&amp;Select XL,type = XL01,Element = Volume,first,parent]</p>
+            <p class="Script">[&amp;Select XL,type = XL01,Element = MarketCap,first,parent]</p>
+            <p class="Script">[&amp;Select XL,type = XL01,Element = YearRange,first,parent]</p>
+            <p class="Script">[&amp;Assign tf90 = XL01(Element = CompanyName,current,parent)]</p>
+            <p class="Script">[&amp;Assign tf91 = XL01(Element = StockTicker,current,parent)]</p>
+            <p class="Script">[&amp;Assign tf92 = XL01(Element = StockQuote,current,parent)]</p>
+            <p class="Script">[&amp;Assign tf93 = XL01(Element = LastUpdated,current,parent)]</p>
+            <p class="Script">[&amp;Assign tf94 = XL01(Element = Change,current,parent)]</p>
+            <p class="Script">[&amp;Assign tf95 = XL01(Element = OpenPrice,current,parent)]</p>
+            <p class="Script">[&amp;Assign tf96 = XL01(Element = DayHighPrice,current,parent)]</p>
+            <p class="Script">[&amp;Assign tf97 = XL01(Element = DayLowPrice,current,parent)]</p>
+            <p class="Script">[&amp;Assign tf98 = XL01(Element = Volume,current,parent)]</p>
+            <p class="Script">[&amp;Assign tf99 = XL01(Element = MarketCap,current,parent)]</p>
+            <p class="Script">[&amp;Assign tf100 = XL01(Element = YearRange,current,parent)]</p>
+            <p class="Script">[&amp;Message tf90]</p>
+            <p class="Script">[&amp;Message tf91]</p>
+            <p class="Script">[&amp;Message tf92]</p>
+            <p class="Script">[&amp;Message tf93]</p>
+            <p class="Script">[&amp;Message tf94]</p>
+            <p class="Script">[&amp;Message tf95]</p>
+            <p class="Script">[&amp;Message tf96]</p>
+            <p class="Script">[&amp;Message tf97]</p>
+            <p class="Script">[&amp;Message tf98]</p>
+            <p class="Script">[&amp;Message tf99]</p>
+            <p class="Script">[&amp;Message tf100]</p>
+            <p class="Script">[&amp;Message "end"]</p>
+        </div>
+        <p><a name="4"></a> <a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">4 &amp;Request “Connection" or “binding" 
+ parameters</a></p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p>This method is considered the recommended way of calling web services 
+	 from Progress. The 'connection' parameters for the &amp;Request command 
+	 are wrappers around the actual Progress parameters to provide a generic 
+	 solution.</p>
+            <p>This example shows the different options for binding to the <span class="MCExpanding"><a href="javascript:void(0);" class="MCExpandingHead_expandspot_0" onclick="FMCExpand( this ); return false;">WSDL</a><span class="MCExpandingBody" style="display: none;">(Web Services Description 
+	 Language)</span></span>. At the very least only the WSDL parameter may be 
+	 specified with all the other parameters optional. The example shows 
+	 two methods of binding. The method of connection is purely dependent 
+	 on the Web Service. &#160;</p>
+            <p>All other 'locator' parameters to do with &amp;Request are not used 
+	 when this method is chosen (such as URL= &amp;SOAPACTION=).</p>
+            <p style="font-weight: bold;">Example 1</p>
+            <p class="Script">WSDL=wsdl-document [WSDL-Userid=user-id [WSDL-Password=password]]</p>
+            <p class="Script">&#160;&#160;[Service=service-name [ServiceNamespace=service-namespace]][Port=port-name]</p>
+            <p class="Script">&#160;&#160;[SOAPEndpointUserid=user-id [SOAPEndpointPassword=password]]</p>
+            <p class="Script">[TargetNamespace=targetNamespace]</p>
+            <p style="font-weight: bold;">Example 2</p>
+            <p class="Script">WSDL=wsdl-document [WSDL-Userid=user-id [WSDL-Password=password]]</p>
+            <p class="Script">&#160;&#160;[[Binding=binding-name [BindingNamespace=binding-namespace]] 
+	 SOAPEndpoint=URL-endpoint]</p>
+            <p class="Script">&#160;&#160;[SOAPEndpointUserid=user-id [SOAPEndpointPassword=password]]</p>
+            <p class="Script">[TargetNamespace=targetNamespace]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">5 Call 
+ a web service</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p class="Script">[&amp;Request WSDL="http://awebservice.com/somewhere.wsdl", 
+	 SERVICE="ProWeb", PORT="QAPortType", OPERATION="DoSearch", 
+	 REQUEST=TF01, RESPONSE=XL01]</p>
+        </div>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

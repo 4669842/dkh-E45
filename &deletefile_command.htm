@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" /><title>&amp;DeleteFile</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;DeleteFile</span>
+        </div>
+        <h1><a name="kanchor1293"></a>&amp;DeleteFile</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[<span style="font-weight: bold;">{</span>&amp;DeleteFile 
+ int-code="&lt;MT30&gt;"<span style="font-weight: bold;"> |</span> 
+ ref="&lt;Reference&gt;"<span style="font-weight: bold;">}</span>]</p>
+        <p class="Script" style="margin-left: 40px;">[<span style="font-weight: bold;">[</span>(,noprompt)<span style="font-weight: bold;">&#160;|</span> (,user="&lt;userid&gt;")<span style="font-weight: bold;">]...</span>]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p><a name="kanchor1294"></a>The &amp;DeleteFile command is used to delete completed files.</p>
+        <p>The default behaviour for this command:</p>
+        <ul>
+            <li value="1">Prompts the user to confirm the deletion of the selected file.</li>
+            <li value="2">
+                <p>Only a user with administration permissions can execute this command.</p>
+                <p>Select the <b><a href="../General_Details.htm#Administrator">Administrator</a></b> user access right in the User Properties dialog.</p>
+            </li>
+        </ul>
+        <p>This behaviour can be overridden to allow selected users or all users 
+ to execute the command and to remove the prompt, enabling the batch deletion 
+ of completed files.</p>
+        <p>The command must include either <span style="font-weight: bold;">Int-code</span> 
+ or <span style="font-weight: bold;">Ref</span> to identify the file for 
+ deletion and optionally the <span style="font-weight: bold;">Noprompt</span> 
+ and <span style="font-weight: bold;">User</span> parameters.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Int-code = "&lt;MT30&gt;"</p>
+                    <p>Select a file for deletion by specifying the file’s unique internal 
+		 matter reference number, available in scripting variable <a href="../System_Codes/file_details_codes.htm">MT30</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Ref = "&lt;Reference&gt;"</p>
+                    <p>Select a file for deletion by specifying a reference string 
+		 you created earlier in the script.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Noprompt</p>
+                    <p>By default the &amp;DeleteFile command prompts the user for 
+		 confirmation to delete the file. You can override this safety 
+		 feature by specifying this parameter.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">User = "&lt;UserId&gt;"</p>
+                    <p>By default the &amp;DeleteFile command only executes for users 
+		 with administration permission. </p>
+                    <p>Specifying the <span style="font-weight: bold;">User=</span> 
+		 parameter enables you to override this safety feature by setting 
+		 a condition for its use, in order to permit other system users 
+		 to delete specified files.</p>
+                    <p>Enter a specific User ID and the command executes only for the 
+		 logged in user with the matching User ID and for users with administration 
+		 permission. </p>
+                    <p>Specify a semi-colon delimited list of User IDs and the command 
+		 executes for any user logged in with a User ID in the list and 
+		 for users with administration permission. </p>
+                    <p>Specify a blank User ID and the command executes for all users.</p>
+                </td>
+            </tr>
+        </table>
+        <h2>Important Information</h2>
+        <p>When records are deleted from a database the disk space is not released. 
+ In order to free up the space a dump and load of the database is required.</p>
+        <p>The &amp;DeleteFile command calls the functionality also available as 
+ a button in the ribbon bar of the Finder. Checks are made in a linked 
+ SOS system and also for linked files (such as Sales/Purchase) where applicable. 
+ Where an error is generated, the 'status' facility within the scripting 
+ language contains the exception.</p>
+        <h2>SOS Integration</h2>
+        <p>For systems linked with SOS, a QM002 call is sent to validate that the 
+ file can be deleted from the accounts system. If SOS indicates the file 
+ cannot be deleted, the scripting status facility contains a message and 
+ the file is not deleted in either SOS or Visualfiles.</p>
+        <p>If SOS believes the file can be deleted, a second DM001 call is sent 
+ and the file is deleted in SOS. If SOS indicates a problem deleting its 
+ file, the scripting status facility contains a message and the file is 
+ not deleted in Visualfiles.</p>
+        <p>If SOS successfully deletes its file, an attempt is then made in Visualfiles 
+ to delete its copy of the file. If this fails the scripting status facility 
+ contains a message.</p>
+        <h2>Linked Files</h2>
+        <p>For systems that contain linked files (such as Sale and Purchase) Visualfiles 
+ first checks both files are suitable for deletion. </p>
+        <p>They must both be completed and if they are linked to SOS, they must 
+ both be available for deletion in the accounts system. If this fails the 
+ scripting status facility contains a message and neither file is deleted.</p>
+        <h2>Deleted Data</h2>
+        <p>The following is a list of data items that are deleted with the file:</p>
+        <p style="margin-left: 40px;">Accanal (Accounts Analysis)</p>
+        <p style="margin-left: 40px;">Alloc (Debt Payment Allocation)</p>
+        <p style="margin-left: 40px;">Debt (Debts/Invoices)</p>
+        <p style="margin-left: 40px;">Schedule (Scheduled Tasks)</p>
+        <p style="margin-left: 40px;">History and History-Docs (History, Time and 
+ Documents)</p>
+        <p style="margin-left: 40px;">Ledger (Visualfiles accounts ledger)</p>
+        <p style="margin-left: 40px;">Payment (Debt Payments)</p>
+        <p style="margin-left: 40px;">Mstone-History (Milestone status)</p>
+        <p style="margin-left: 40px;">Timeanal (Time Analysis)</p>
+        <p style="margin-left: 40px;">Udscreen and Udindex (file, add-In and Metadata 
+ screen/field data)</p>
+        <p style="margin-left: 40px;">Category-Tree &amp; Category-Xref (History 
+ categories)</p>
+        <p style="margin-left: 40px;">Link (Relationships to/from the file)</p>
+        <p style="margin-left: 40px;">Matdb-Add-In (add-ins associated with the 
+ file)</p>
+        <p style="margin-left: 40px;">Matdb (the file)</p>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">1 Use 
+ Finder to select file, then delete</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>Use the <a href="../Finder.htm">Finder</a> to select a completed 
+	 file of type 'Agen – Matter Management' and then delete it, ensuring 
+	 only an administrator can perform the deletion and that they receive 
+	 a warning prompt:</p>
+            <p class="Script">[&amp;Finder file-only, type="agen", status="completed"]</p>
+            <p class="Script">[&amp;DeleteFile int-code=MT30]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">2 Use 
+ loop to select files, then delete without prompts</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p>Use a loop to find all completed files of type 'Agen – Matter Management' 
+	 and delete them without prompts, ensuring only users with User ID 
+	 'John' or 'Mary' can perform the deletion:</p>
+            <p class="Script">[&amp;ForEach MT, MT06="agen", noincludeall]</p>
+            <p class="Script">&#160;&#160;[&amp;If MT08="COMP"]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;[&amp;DeleteFile int-code=MT30, 
+	 noprompt, user="john;mary"] &#160;</p>
+            <p class="Script">&#160;&#160;[&amp;EndIf]</p>
+            <p class="Script">[&amp;EndFor]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">3 Create 
+ reference to a file's internal code, then delete without prompts </a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p>Create a reference to the completed file with unique internal number 
+	 663 and allow it to be deleted by all users without prompt:</p>
+            <p class="Script">[&amp;Assign LF01=663]</p>
+            <p class="Script">[&amp;SelectFile int-code=LF01, ref ="myFile"]</p>
+            <p class="Script">[&amp;If myFile.MT08="COMP"]</p>
+            <p class="Script">&#160;&#160;[&amp;DeleteFile ref="myFile", 
+	 noprompt, user=""] &#160;</p>
+            <p class="Script">[&amp;EndIf]</p>
+        </div>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1"><a href="../System_Codes/file_details_codes.htm">File Details (MT) 
+	 Codes</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

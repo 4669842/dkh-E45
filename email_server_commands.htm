@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>Email Server commands</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">Email Server Commands</span>
+        </div>
+        <h1><a name="kanchor1132"></a>Email Server Commands</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">Command = <span style="font-weight: bold;">&lt;</span>CommandName<span style="font-weight: bold;">&gt;</span></p>
+        <p class="Script">Script = <span style="font-weight: bold;">&lt;</span>ScriptName<span style="font-weight: bold;">&gt;</span></p>
+        <h2>Description</h2>
+        <p>All email server commands are entered in the subject field of the incoming 
+ email.</p>
+        <p style="margin-bottom: 0;">Quotation marks are not necessary unless the 
+ values for parameters contain spaces.</p>
+        <table style="margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 25%;" />
+            <col style="width: 75%;" />
+            <tr style="vertical-align: top;">
+                <td colspan="2" style="border: Solid 1px #c0c0c0;width: 100%;background-attachment: scroll;padding-left: 10px;padding-right: 10px;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 0px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script">command = get</p>
+                    <p>Retrieve file(s) from the attachments directory and return to 
+		 the calling email address without running a script.</p>
+                    <p><span class="ScriptChar">command = get</span> parameter options 
+		 include:</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 0px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 25%;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script" style="text-align: right;">return-file 
+		 = <span style="font-weight: bold;">&lt;</span>FileName1.txt<span style="font-weight: bold;">&gt;</span></p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 75%;padding-left: 10px;padding-right: 10px;">
+                    <p>Name(s) 
+		 of the file(s) to be returned.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 0px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 25%;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script" style="text-align: right;">subject 
+		 = "<span style="font-weight: bold;">&lt;</span>String<span style="font-weight: bold;">&gt;</span>"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 75%;padding-left: 10px;padding-right: 10px;">
+                    <p>Text 
+		 for the Subject field of the email.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 0px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script">command = <span style="font-weight: bold;">&lt;</span>logfile<span style="font-weight: bold;">&gt;</span></p>
+                    <p>Return a log file as an attachment.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 0px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script">command = <span style="font-weight: bold;">&lt;</span>script<span style="font-weight: bold;">&gt;</span></p>
+                    <p>Remotely run a system script and return the result to the calling 
+		 email address.</p>
+                    <p><span class="ScriptChar">command = script</span> parameter options 
+		 include:</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 0px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 25%;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script" style="text-align: right;">script 
+		 = &lt;<span style="font-weight: bold;">{</span>VisualfilesSystemScript<span style="font-weight: bold;">|</span>message<span style="font-weight: bold;">}&gt;</span></p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 75%;padding-left: 10px;padding-right: 10px;">
+                    <p>Script 
+		 can be either a system script or the contents of an email message 
+		 field.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 0px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 25%;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script" style="text-align: right;">script-output 
+		 = &lt;<span style="font-weight: bold;">{</span>attachment<span style="font-weight: bold;">|</span>message<span style="font-weight: bold;">}</span>&gt;</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 75%;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script">Return 
+		 the result of the script to the calling email address as either 
+		 an attachment or an email message.</p>
+                    <p>The expression script-output = attachment will always return 
+		 as <span style="font-weight: bold;">script.txt</span>. In the 
+		 example above, the text 'You are logged in as Visualfiles user 
+		 [US01]' is returned as the email message.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 0px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 25%;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script" style="text-align: right;">return-file 
+		 = <span style="font-weight: bold;">&lt;</span>FileName1,FileName2,FileName...<span style="font-weight: bold;">&gt;</span></p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 75%;padding-left: 10px;padding-right: 10px;">
+                    <p>Return 
+		 a file, generated by a script, to the user.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 0px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 25%;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script" style="text-align: right;">subject 
+		 = "<span style="font-weight: bold;">&lt;</span>String<span style="font-weight: bold;">&gt;</span>"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 75%;padding-left: 10px;padding-right: 10px;">
+                    <p>Specify 
+		 the subject field text of the returned email. If not specified, 
+		 the text 'Visualfiles Email Server - Script Completed' is used.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 0px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script">command = test</p>
+                    <p>Will return an email to the calling email address to confirm 
+		 that the email server is running - no parameters are required.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 0px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-left: 10px;padding-right: 10px;">
+                    <p class="Script">command = verification</p>
+                    <p>Specify verification for the sending address.</p>
+                    <p>The email server will generate a unique code which will be returned 
+		 to the calling email address. This code must then be specified 
+		 as a parameter of the next command sent from the email address 
+		 to the Visualfiles server.</p>
+                    <p>The email server will not process any commands for a user with 
+		 verification switched on who does not include a verification code.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">1 Command 
+ verification</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>Send an email to the server with the command <span style="font-weight: bold;">command = verification</span> in the Subject field. 
+	 The email server will reply with a verification code. Copy/paste the 
+	 verification from the server into the subject field of a new email 
+	 and enter the command details. Send the email to the server to be 
+	 processed.</p>
+            <p class="Script">Command 
+	 = verification</p>
+            <p class="Script" style="color: #000000;">Command 
+	 = script,</p>
+        </div>
+        <p><a name="Run_a_Script_with_Email_Verification_Enabled" id="Run_a_Script_with_Email_Verification_Enabled"></a><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">2 Run a 
+ Script with Email Verification Enabled</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <ol style="list-style-type: decimal;">
+                <li class="p" value="1">
+                    <p>Send an email to the server with the subject of 
+		 <span style="font-weight: bold;">Command=verification</span>.</p>
+                </li>
+                <li class="p" value="2">
+                    <p>Wait for the email server to reply with a verification 
+		 code, for example: <span style="font-weight: bold;">verification=irjflbhreoivbwofkrg</span>.</p>
+                </li>
+                <li class="p" value="3">
+                    <p>Copy and paste the verification code from the 
+		 returned email into the subject line of a new email.</p>
+                </li>
+                <li class="p" value="4">
+                    <p>Enter the command details, for example:</p>
+                </li>
+            </ol>
+            <p class="Script" style="margin-left: 40px;">Command = script,script 
+	 = test,verification = irjflbhreoivbwofkrg.</p>
+            <ol start="5" style="list-style-type: decimal;">
+                <li class="p" value="5">
+                    <p>Send the email back to the email server to be 
+		 processed.</p>
+                </li>
+            </ol>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">3 Using 
+ the get command</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p class="Script">Command=Get,return-file 
+	 = myfile1.txt,return-file = myfile2.txt, subject = Here are 
+	 the daily exported files</p>
+        </div>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

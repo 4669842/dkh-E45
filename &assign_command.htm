@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;Assign</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;Assign</span>
+        </div>
+        <h1><a name="kanchor1508"></a>&amp;Assign</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[<span style="font-weight: bold;">{</span>&amp;Assign 
+ Code = &lt;Value&gt;<span style="font-weight: bold;">}</span>]</p>
+        <p><a href="#Examples" style="font-size: 8pt;font-weight: normal;" class="selected">Example 
+ Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p><a name="kanchor1509"></a>The &amp;Assign command is used in documents and scripts to assign a 
+ value to a field. It can also be used to:</p>
+        <ul>
+            <li class="p-BulletedList" value="1">
+                <p class="BulletedList">Assign properties 
+	 to elements such as buttons.</p>
+            </li>
+            <li class="p-BulletedList" value="2">
+                <p class="BulletedList">Assign characters 
+	 from strings using the <a href="../Modifiers/char_modifier.htm">:char 
+	 modifier</a>.</p>
+            </li>
+            <li class="p-BulletedList" value="3">
+                <p class="BulletedList">Assign words from 
+	 strings using the <a href="../Modifiers/word_modifier.htm">:word modifier</a>.</p>
+            </li>
+            <li class="p-BulletedList" value="4">
+                <p class="BulletedList">Access SOS supplier 
+	 code lookup (see <a href="#Examples" class="selected">example 19</a>).</p>
+            </li>
+        </ul>
+        <h3>Assigning Button Properties</h3>
+        <p>Some of the properties of a button can be assigned from a script. The 
+ button's label, its associated script and its current state may be overwritten 
+ by an assigned value. See examples below.</p>
+        <h3>History Notes Field, HS14</h3>
+        <p>You can assign a value to the History Notes Field HS14 using the &amp;Assign 
+ command, either by default or by flagging another field; i.e., a System 
+ Default or another HS field which makes HS14 writable. This enables you 
+ to write back to HS14 when importing data.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">&lt;FieldCode&gt; = 
+		 "&lt;Value&gt;"</p>
+                    <p>When the value is a number it does not need to be enclosed in 
+		 double quotation marks.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">:proval&lt;&gt;</p>
+                    <p>Converts string into a Progress command.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">quote &lt;&gt;</p>
+                    <p>Used to represent a double quote when adding text together.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t18">1 Assign 
+ a gender type to a field</a>
+        </p>
+        <div MadCap:targetName="t18" style="display: none;">
+            <p class="Script">[&amp;Assign NAM15 = "Female"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t17">2 Prompt 
+ to enter a price and assign value to a field</a>
+        </p>
+        <div MadCap:targetName="t17" style="display: none;">
+            <p>Prompt a user to enter a purchase price and assign that value to 
+	 the PRO07 field.</p>
+            <p class="Script">[&amp;Assign PRO07 = 'Enter Purchase Price of Property'(number)]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t16">3 Assign 
+ a user's choice to a field</a>
+        </p>
+        <div MadCap:targetName="t16" style="display: none;">
+            <p>Assign a user's choice to the PRO06 field.</p>
+            <p class="Script">[&amp;Assign PRO06 = 'Specify whether a mortgage 
+	 is required'(Choose unknown:yes:no)]</p>
+            <p><b>Tip</b>: You can include an 
+	 ampersand in the choose label, for example one of the choices could 
+	 be "Black &amp; White".</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t15">4 Assign 
+ a telephone number to a file from a related entity</a>
+        </p>
+        <div MadCap:targetName="t15" style="display: none;">
+            <p class="Script">[&amp;Assign CLIENT_CLIENT.EN47 = "0113 226 
+	 2020"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t14">5 Assign 
+ temporary fields and make calculations</a>
+        </p>
+        <div MadCap:targetName="t14" style="display: none;">
+            <p class="Script">[&amp;Assign TF01 = 1.175]</p>
+            <p class="Script">[&amp;Assign TF02 = ABC01*TF01]</p>
+            <p>ABC01 is the cost of a stock item excluding VAT. The temporary field 
+	 TF01 is given the value of 1.175, which can then be multiplied by 
+	 ABC01 and allocated to TF02, to give the price inclusive of VAT at 
+	 17.5%. &#160;</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t13">6 Amend 
+ the Fee-Earner (AD10) associated with a Schedule Item</a>
+        </p>
+        <div MadCap:targetName="t13" style="display: none;">
+            <p>The command accepts any string, User-Defined field, Database field 
+	 or Temporary field which resolves to either a valid Fee-Earner ID 
+	 or Fee-Earner Name. If an invalid ID or Name is specified then the 
+	 current Fee-Earner associated with the Item is retained.</p>
+            <p class="Script">[&amp;Assign AD10 = ABC01]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t12">7 Modify 
+ a date to be output in text</a>
+        </p>
+        <div MadCap:targetName="t12" style="display: none;">
+            <p class="Script">[&amp;Assign TF01="29-01-04"] &#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 <span style="font-weight: bold;">Set your date field here</span> ***</p>
+            <p class="Script">[&amp;Assign TF02=TF01:ds("dd")] &#160;*** 
+	 <span style="font-weight: bold;">Get the day number</span> ***</p>
+            <p class="Script">[&amp;Assign TF03="First,Second,Third,Forth,Fifth,Sixth,Seventh,Eighth,Ninth,Tenth,Eleventh,Twelfth,Thirteenth" 
+	 +</p>
+            <p class="Script">",Fourteenth,Fifteenth,Sixteenth,Seventeenth,Eighteenth,Nineteenth,Twentieth" 
+	 +</p>
+            <p class="Script">",Twenty First,Twenty Second,Twenty Third,Twenty 
+	 Fourth,Twenty Fifth,Twenty Sixth,Twenty Seventh,Twenty Eight,Twenty 
+	 Ninth,Thirtieth,Thirty First"]</p>
+            <p class="Script">[&amp;Assign TF04 = word( TF03, first=(TF02:number), 
+	 delimiter=",")]</p>
+            <p class="Script">[&amp;Message TF04]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t11">8 Assigning 
+ button properties</a>
+        </p>
+        <div MadCap:targetName="t11" style="display: none;">
+            <p class="Script">[&amp;Assign OPY11 = "Office,OPOffice,Greyed"]</p>
+            <p><span class="ScriptChar">OPY11</span> represents the button code 
+	 in a user-defined screen, <span class="ScriptChar">Office</span> is 
+	 the label, <span class="ScriptChar">OPOffice</span> is the associated 
+	 script and the button has been <span class="ScriptChar">Greyed</span> 
+	 to prevent its selection.</p>
+            <p class="Script">[&amp;Assign CLI03="Office,,Greyed"]</p>
+            <p><span class="ScriptChar">CLI03</span> represents the button code 
+	 in a user-defined screen, <span class="ScriptChar">Office</span> is 
+	 the label and the button has been <span class="ScriptChar">Greyed</span> 
+	 to prevent its selection.&#160;The second parameter has been left 
+	 blank: the script will default to the value in the Screen Builder.</p>
+            <p class="Script">[&amp;Assign CLI02="Commercial Client,S-GEN-201,"]</p>
+            <p><span class="ScriptChar">CLI02</span> represents the button code 
+	 in a user-defined screen, <span class="ScriptChar">Commercial Client</span> 
+	 is the new label, <span class="ScriptChar">S-GEN-201</span> is the 
+	 new associated script and the button is not <span class="ScriptChar">Greyed</span>.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t10">9 Wrap 
+ a long text string over several lines of defined length</a>
+        </p>
+        <div MadCap:targetName="t10" style="display: none;">
+            <p>Format a long text string into lines of 30 characters maximum:</p>
+            <p class="Script">[&amp;Assign LF02=LF01:down(30,"|")]</p>
+            <p class="Script">[&amp;Assign LF03=word(LF02, first=1, delimiter="|"]</p>
+            <p class="Script">[&amp;Assign LF04=word(LF02, first=2, delimiter="|"]</p>
+            <p>For example:</p>
+            <p>Large Bank International Limited</p>
+            <p>becomes:</p>
+            <p>Large Bank</p>
+            <p>International Limited</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t9">10 Specify 
+ the location when selecting a document</a>
+        </p>
+        <div MadCap:targetName="t9" style="display: none;">
+            <p class="Script">[&amp;Assign TF02="C:\temp"]</p>
+            <p class="Script">[&amp;Assign TF01='Select a file'(filename,default=TF02)]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t8">11 Count 
+ the characters in a word or text string</a>
+        </p>
+        <div MadCap:targetName="t8" style="display: none;">
+            <p class="Script">[&amp;Assign LF02=length(LF01)]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t7">12 Locate 
+ function</a>
+        </p>
+        <div MadCap:targetName="t7" style="display: none;">
+            <p>Search for a phrase in a string rather than just a single word.</p>
+            <p class="Script">[&amp;Assign LF998=Locate("upon", text=once upon a time, delimiter= 
+	 )]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">13 Enter 
+ Password - bulleted text</a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p>Text entered in the password field are represented as bullets.</p>
+            <p class="Script">[&amp;Assign LF01='Enter Password'(password)]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">14 Assign 
+ a string to a TF field that contains speech marks</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p class="Script">[&amp;Assign TF01="md "+Quote+"c:\test 
+	 one\test two"+Quote]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">15 Prompt 
+ to enter a price and assign default value to the field</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p class="Script">[&amp;Assign TF01 = 'enter price'(number,default 
+	 = 10000)]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Use default= without 'number' to define a text string 
+	 in the field.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">16 Test 
+ against a time limit</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>To test against a time limit in hours entered in a number field 
+	 against <a href="../System_Codes/time_analysis_codes.htm">TA03</a> 
+	 (total time), and warn end users when files are approaching their 
+	 time limits.</p>
+            <p class="Script">[&amp;Assign TF01=TA03:hrs]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> This code returns 
+	 the number of hours only. Use the :mins modifier if you need to calculate 
+	 a more accurate figure, go to <a href="../Modifiers/Time_Modifier.htm">Time 
+	 Modifier</a> for more information.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">17 Add 
+ leading zeros</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p>Add leading zeroes for example when creating a reference number:</p>
+            <p class="Script">[&amp;Assign LF01="123"]</p>
+            <p class="Script">[&amp;Assign LF01=LF01:number:text("99999999")]</p>
+            <p class="Script">[&amp;Message LF01]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">18 Test 
+ if field is numeric</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p>Script to test if a field is numeric.</p>
+            <p class="Script">[&amp;Assign TF01="test 123"]</p>
+            <p class="Script">[&amp;Assign TF01=123]</p>
+            <p class="Script">&#160;</p>
+            <p class="Script">[&amp;Assign TF01=TF01:number]</p>
+            <p class="Script">[&amp;If TF01&gt;0]</p>
+            <p class="Script">[&amp;Message "Has characters"]</p>
+            <p class="Script">[&amp;Else]</p>
+            <p class="Script">[&amp;Message "Is all numbers"]</p>
+            <p class="Script">[&amp;Endif]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="Suppliers">19 Query SOS suppliers</a>
+        </p>
+        <div MadCap:targetName="Suppliers" style="display: none;">
+            <p>[&amp;Assign LF01=’ ’(supplier)]</p>
+            <p>Calls the SOS Suppliers query, enabling users to select the supplier code in the Supplier dialog which is returned in a local field.</p>
+        </div>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1"><a href="../Scripting/status,_system_variable_-_error_trapping.htm">Status, 
+	 System Variable - Error Trapping</a>
+            </li>
+            <li value="2"><a href="../Address_Book_Field_Type.htm">Address Book Fields</a>
+            </li>
+            <li value="3"><a href="../Scripting/Good_Scripting_Practice/Use_Efficient_&amp;Assigns.htm">Use 
+	 Efficient &amp;Assigns</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;MetaData</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;MetaData</span>
+        </div>
+        <h1><a name="kanchor1452"></a>&amp;MetaData</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[&amp;MetaData &lt;type&gt;]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>Opens the metadata screen for the current item of the selected history 
+ item type.</p>
+        <p><a name="kanchor1453"></a>It enables metadata to be added and amended. In the script the history 
+ item you want to add metadata for must be selected first and then the 
+ &amp;Metadata command is applied.</p>
+        <h2>History Plus Scripting Options </h2>
+        <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Additional History 
+ Plus scripting information is available at <a href="../History_Plus/Developer_Information.htm">Developer 
+ Information</a>.</p>
+        <h3>Bulk Update Custom Metadata Fields</h3>
+        <p>In <a href="../History_Plus/History_Plus.htm">History Plus</a> you can 
+ bulk update all items for custom metadata fields in a file via scripting. 
+ Three optional parameters are available on the &amp;Metadata command that 
+ enable you to do this:</p>
+        <ul>
+            <li value="1"><a href="#mt-int-code" class="selected">mt-int-code=</a>
+            </li>
+            <li value="2"><a href="#name" class="selected">name=</a>
+            </li>
+            <li value="3"><a href="#value" class="selected">value=</a>
+            </li>
+        </ul>
+        <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> These parameters are 
+ only used for updating metadata held in History Plus.</p>
+        <h3>Store Time and Document Metadata in File History</h3>
+        <p>It is possible to store both Time and Document metadata against file 
+ history items. When a history item is created manually with time attached 
+ then a document is imported to the history item, you can create and update 
+ both Time and Document metadata.</p>
+        <p>The <a href="#Document" class="selected">document</a> parameter and the parameter <span style="font-weight: bold;">:D</span> (that is used in conjunction 
+ with the 99 system codes) enable you to control which metadata screen 
+ fields are updated.</p>
+        <h3>Update Metadata in History Plus</h3>
+        <p>The <a href="#Submit" class="selected">submit</a> parameter is used to control when metadata 
+ is updated for history documents in History Plus. When metadata is created 
+ and updated via scripting, each field on the metadata screen is updated 
+ individually (HS99(1) etc.). To avoid updating History Plus metadata every 
+ time we assign to a metadata screen field, the <span style="font-weight: bold;">submit</span> 
+ parameter is used to control when History Plus is updated.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Create</p>
+                    <p>Create metadata screens with no user input.</p>
+                    <p>Enables you to create a new blank metadata screen with no screen 
+		 display and with no user involvement. The metadata screen created 
+		 in this way can then be updated with the relevant '99' system 
+		 code (see <a href="../Display_and_Update_Metadata_Fields.htm">Display 
+		 and Update Metadata Fields</a>), e.g. for history items:</p>
+                    <p class="Script">[&amp;Assign HS99(1)="First field"].</p>
+                    <p>The create parameter can only used to add metadata screens silently. 
+		 If a metadata screen already exists then the &amp;Metadata command 
+		 is ignored when the create parameter is included.</p>
+                    <p>If the &amp;Metadata command is used with no create parameter 
+		 and there is no existing metadata, the metadata screen is displayed 
+		 as before.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Debt</p>
+                    <p>Debt invoice.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="Document" id="Document"></a>Document</p>
+                    <p>Enables you to specify document metadata. See <a href="#Examples" class="selected">example 
+		 4</a>.</p>
+                    <p>It is used in conjunction with the <span style="font-weight: bold;">:D</span> 
+		 parameter that accompanies 99 codes. See <a href="../Display_and_Update_Metadata_Fields.htm">Display 
+		 and Update Metadata Fields</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">History</p>
+                    <p>History item.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Ledger</p>
+                    <p>Ledger item. See <a href="#Examples" class="selected">example 5</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="mt-int-code" id="mt-int-code"></a>mt-int-code="<span style="font-weight: bold;">&lt;</span>FileInternalCode<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Holds the internal code of the file (MT30) to search the&#160;<a href="../History_Plus/History_Plus.htm">History Plus</a>.</p>
+                    <p>This is an optional parameter that is used for running a bulk 
+		 update of metadata held in the&#160;History Plus. See <a href="#Examples" class="selected">example 
+		 3</a>.</p>
+                    <p>If this parameter is not specified the current MT30 value is 
+		 used.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="name" id="name"></a>name="<span style="font-weight: bold;">&lt;</span>Field_name<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Holds the custom metadata fields that are to be updated.</p>
+                    <p>This is an optional parameter that is used for updating metadata 
+		 held in History Plus.&#160;See <a href="#Examples" class="selected">example 3</a>.</p>
+                    <p>If this parameter is missing from your script the bulk update 
+		 of metadata is not performed because there is no field defined 
+		 to update.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Payment</p>
+                    <p>Payment item.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Schedule</p>
+                    <p>Schedule item.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="Submit" id="Submit"></a>Submit</p>
+                    <p>Forces an update of history document metadata in History Plus. 
+		 See <a href="#Examples" class="selected">example 4</a>.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The submit 
+		 parameter is only required for systems connected to History Plus 
+		 because its sole purpose is to control when HS99 assigns are updated 
+		 on History Plus.</p>
+                    <p>In order to update custom metadata in History Plus, use the 
+		 command <span class="ScriptChar">[&amp;Metadata history ,submit]</span> 
+		 to bulk update documents with edited metadata. This method prevents 
+		 each individual piece of metadata being updated after every &amp;Assign 
+		 statement. Refer to <a href="#Examples" class="selected">example 3</a></p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="value" id="value"></a>value="<span style="font-weight: bold;">&lt;</span>value<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Holds the value to assign to the <span style="font-weight: bold;">name=</span> 
+		 field. If <span style="font-weight: bold;">value=</span> is not 
+		 specified then blank is assigned.</p>
+                    <p>This is an optional parameter that is used for updating metadata 
+		 held in History Plus. See <a href="#Examples" class="selected">example 3</a>.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">1 Display 
+ metadata screen</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p>Display the metadata screen for the most recently added history 
+	 item.</p>
+            <p class="Script">[&amp;MetaData history]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">2 Create 
+ a new history item with attached metadata</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p>Assign metadata fields:</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;History "Test", 
+	 save]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Select History:last]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Metadata History, 
+	 create]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Assign HS99(1)="Metadata 
+	 created"]</p>
+            <p>This code creates a metadata screen for the selected history item 
+	 and populates the second field.</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> A history item 
+	 can have both a Time Metadata screen and a Document Metadata screen 
+	 attached. When this occurs the Time Metadata screen is the default 
+	 metadata screen and can be created using the standard [&amp;Metadata 
+	 history, create] command, to create or access the Document metadata 
+	 screen use the additional ,document parameter, e.g. <span class="ScriptChar">[&amp;Metadata 
+	 history, document, create]</span>.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">3 History 
+ Plus parameters</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>Bulk update of all history items in a file with the specified metadata 
+	 field and value via scripting:</p>
+            <p class="Script">[&amp;Metadata history, mt-int-code=LF01, name="Standard 
+	 Metadata", value="Metadata Testing"]</p>
+            <p>&#160;</p>
+            <p>The following syntax looks in History Plus for all metadata on the 
+	 'Standard Metadata' customer field for the file with MT30 = 100 and 
+	 assign 'Metadata test' to it.</p>
+            <p class="Script">[&amp;Metadata History ,mt-int-code="100",name="Standard 
+	 Metadata",value="Metadata test"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">4 History 
+ Plus Document and Submit parameters</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p><span class="ScriptChar">I</span>n this example the last history 
+	 item is selected and a document metadata screen attached to it:</p>
+            <p class="Script" style="margin-left: 40px;"><span class="ScriptChar">[&amp;Select 
+	 HS:last]</span>
+            </p>
+            <p class="Script" style="margin-left: 40px;"><span class="ScriptChar">[&amp;MetaData 
+	 history, document, create]</span>
+            </p>
+            <p class="Script" style="margin-left: 40px;"><span class="ScriptChar">[&amp;Assign 
+	 HS99(1:D)="Metadata field 1"]</span>
+            </p>
+            <p class="Script" style="margin-left: 40px;"><span class="ScriptChar">[&amp;Assign 
+	 HS99(2:D)="Metadata field 2"]</span>
+            </p>
+            <p class="Script" style="margin-left: 40px;"><span class="ScriptChar">[&amp;MetaData 
+	 history, Submit]</span>
+            </p>
+            <p>The two assigns populate the data on the document metadata screen.</p>
+            <p>In the event that the history item has Time attached to it, these 
+	 <span style="font-weight: bold;">document</span> and <span style="font-weight: bold;">:D</span> 
+	 parameters ensure that the metadata is stored for Document not Time.</p>
+            <p>The addition of the <span style="font-weight: bold;">submit</span> 
+	 parameter updates the Document Repository when this line is processed.</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The <span style="font-weight: bold;">submit</span> 
+	 parameter is only required for systems connected to Document Repository 
+	 as its sole purpose is to control when HS99 assigns are updated on 
+	 the Document Repository.</p>
+            <p>&#160;</p>
+            <p>Edit metadata using the submit parameter to commit the changes to 
+	 metadata in one hit:</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Select history:last]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Metadata history, 
+	 create]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Assign HS99(1)="A1 
+	 /E1"]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Assign HS99(2)="01/01/2017"]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Assign HS99(3)="Leeds"]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Assign HS99(4)="Debt"]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Metadata history 
+	 ,submit]</p>
+            <p>&#160;</p>
+            <p>Manually edit metadata to display the metadata screen to the users 
+	 and commit the changes made by the user to metadata using the submit 
+	 parameter:</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Select history:last]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Metadata history]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Metadata history 
+	 ,submit]</p>
+            <p>&#160;</p>
+            <p>Edit and update metadata to display to the user for verification 
+	 and submit to metadata:</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Select history:last]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Metadata history, 
+	 create]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Assign HS99(1)="A1 
+	 /E1"]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Assign HS99(2)="01/01/2017"]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Assign HS99(3)="Meta 
+	 test"]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Assign HS99(4)="Test"]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Metadata history]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Metadata history 
+	 ,submit]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">5 ledger 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p>The &amp;Metadata command can also be used to display the metadata 
+	 screen to the user:</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Select ledger:last]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Metadata ledger]</p>
+            <p>&#160;</p>
+            <p>Metadata codes can be used to retrieve metadata:</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Select payment:first]</p>
+            <p class="Script" style="margin-left: 40px;">[&amp;Message PY99(01)] 
+	 </p>
+            <p>This code returns the data stored in the first field of the metadata 
+	 screen associated with the selected payment item.</p>
+        </div>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1"><a href="../Metadata_Screens.htm">Metadata Screens</a>
+            </li>
+            <li value="2"><a href="../Display_and_Update_Metadata_Fields.htm">Display and 
+	 Update Metadata Fields</a>
+            </li>
+            <li value="3"><a href="../History_Plus/History_Plus.htm">History Plus</a>
+            </li>
+            <li value="4"><a href="../Document_Bundling/Document_Bundling.htm">Document Bundling</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

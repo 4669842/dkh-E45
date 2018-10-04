@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;NewAppointment</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;NewAppointment</span>
+        </div>
+        <h1><a name="kanchor1875"></a>&amp;NewAppointment</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[&amp;NewAppointment subject="&lt;Subject&gt;",to="&lt;Recipient&gt;"]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>Creates an email requesting an appointment and to send the email to 
+ all recipients in the recipient list.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">allday</p>
+                    <p>Flags the appointment as an all day event.</p>
+                    <p>If you do not specify <span class="ScriptChar">start-date</span> 
+		 and <span class="ScriptChar">end-date</span>, the appointment 
+		 will be for today.</p>
+                    <p>If you specify an <span class="ScriptChar">end-date</span> without 
+		 a <span class="ScriptChar">start-date</span>, the allday appointment 
+		 will start and end on the end date.</p>
+                    <p>If you specify a <span class="ScriptChar">start-date</span> 
+		 but not the <span class="ScriptChar">end-date</span>, the allday 
+		 appointment will start and end on the start date.</p>
+                    <p>The start-time and end-time will be set to 00:00 for allday 
+		 appointments.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">amend</p>
+                    <p>Amend the appointment before sending it.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">category = "&lt;Category1,Category2,...&gt;"</p>
+                    <p>Comma separated list of categories for the appointment.</p>
+                    <p>The category of a new appointment can be specified from within 
+		 Visualfiles so you can set a new appointment as Urgent so this 
+		 is colour coded as urgent within Outlook.</p>
+                    <p>This functionality is not standard in Outlook so in order to 
+		 activate this functionality the following steps are required:</p>
+                    <ul>
+                        <li class="p-BulletedList" value="1">
+                            <p class="BulletedList">An additional 
+			 registry setting is required to enable categories to be sent 
+			 from Outlook:</p>
+                        </li>
+                    </ul>
+                    <p style="margin-left: 40px;">Add ‘SendPersonalCategories’, with 
+		 a DWord Value of 1 to allow (0 to block).</p>
+                    <p style="margin-left: 40px;">The registry path for to enter this 
+		 setting varies depending on the version of Office you are running. 
+		 For example for Office 2010:</p>
+                    <p style="margin-left: 40px;">HKEY_CURRENT_USER/Software/Microsoft/Office/14.0/Outlook/Preferences</p>
+                    <p style="margin-left: 40px;">Or,</p>
+                    <p style="margin-left: 40px;">HKEY_CURRENT_USER/Software/Policies/Microsoft/Office/14.0/Outlook/Preferences</p>
+                    <p class="note" style="margin-left: 40px;" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> 
+		 The \14.0\ entry in the path above is the Office 2010 version 
+		 number installed on your local PC.</p>
+                    <ul>
+                        <li class="p-BulletedList" value="1">
+                            <p class="BulletedList">Remove the 
+			 Outlook rule <span style="font-weight: bold;">Clear categories 
+			 on mail</span> to allow new appointments to be received with 
+			 categories attached.</p>
+                        </li>
+                    </ul>
+                    <p style="margin-left: 40px;">Without both of these settings you 
+		 will only be able to see categories on new appointments created 
+		 locally.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">end-date = &lt;EndAppointmentDate&gt;</p>
+                    <p>Sets the end date for the appointment. Unlike some other parameters, 
+		 these values should not be enclosed in quotation marks, for example: 
+		 <span class="ScriptChar">end-date = 22/08/03</span>.<br />
+		If no end-date is entered, the default value will be today's date.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">end-time = "&lt;TimeAppointmentEnds&gt;"</p>
+                    <p>Sets the end time for the appointment, in the format hh:mm. 
+		 The start-time parameter defines the time the appointment will 
+		 start. These values must be enclosed in quotation marks, for example, 
+		 ,start-time = "13:00". If ,start-time is not defined, 
+		 the value defaults to the current time.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The Start-Time 
+		 and End-Time are specified in a 24 hour format.<br />
+		If the specified time is 9am or earlier, ensure that you enter 
+		 the leading '0' e.g. &#160;Start-Time=09:00.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> If the start-time 
+		 or end-time parameters are not included, start-time defaults to 
+		 the current time and end-time defaults to the current-time plus 
+		 30 minutes. As a result the appointment is created for the nearest 
+		 appointment slot.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">file = <span style="font-weight: bold;">&lt;</span>Attachment1,Attachment2,...<span style="font-weight: bold;">&gt;</span></p>
+                    <p>Comma-separated list of attachments.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">location =</p>
+                    <p>Enables the assignment of locations, such as meeting rooms, 
+		 to an appointment. See <a href="#Examples" class="selected">examples 10 and 11</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">message = "TextString"</p>
+                    <p>Text for the body of the appointment message.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">reminder = n</p>
+                    <p>Gives you the option to set the reminder on or off, and to set 
+		 the duration before the reminder in minutes.</p>
+                    <p><span style="font-weight: bold;">n</span> = the number of minutes 
+		 before the start of the appointment to display the reminder.</p>
+                    <p>If you do not add <span class="ScriptChar">reminder=n</span> 
+		 then default Outlook 2007 behaviour applies.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> This feature 
+		 applies to Outlook 2007 only, due to it having new function/API 
+		 calls for setting reminders. Supplying the same functionality 
+		 as Outlook appointments.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">resource =</p>
+                    <p>Enables the assignment of resources, such as projectors or phones, 
+		 to an appointment. See <a href="#Examples" class="selected">examples 9 and 11</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">save</p>
+                    <p>Where specified in a script run within a case, a copy of the 
+		 appointment will be saved into that file history.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">start-date = &lt;StartAppointmentDate&gt;</p>
+                    <p>Sets the start date for the appointment. Unlike some other parameters, 
+		 these values should not be enclosed in quotation marks, for example, 
+		 <span class="ScriptChar">start-date = 22/08/03</span>. If no start-date 
+		 is entered, the default value will be today's date.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">start-time = "&lt;TimeAppointmentStarts&gt;"</p>
+                    <p>Sets the start time for the appointment, in the format hh:mm. 
+		 The start-time parameter defines the time the appointment will 
+		 start. These values <span style="font-weight: bold;">should</span> 
+		 be enclosed in quotation marks, for example, start-time = "13:00". 
+		 If start-time is not defined, the value defaults to the current 
+		 time.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The Start-Time 
+		 and End-Time are specified in a 24 hour format.<br />
+		If the specified time is 9am or earlier, ensure that you enter 
+		 the leading '0' e.g. &#160;Start-Time=09:00.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> If the start-time 
+		 or end-time parameters are not included, start-time defaults to 
+		 the current time and end-time defaults to the current-time plus 
+		 30 minutes. As a result the appointment is created for the nearest 
+		 appointment slot.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">subject = "&lt;Subject&gt;"</p>
+                    <p>Text for the subject field of the appointment request email.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">To="&lt;Recipient&gt;"</p>
+                    <p>List of recipients: each separated by a semi-colon.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t11">1 Simple 
+ appointment request email</a>
+        </p>
+        <div MadCap:targetName="t11" style="display: none;">
+            <p class="Script">[&amp;NewAppointment subject = "Test",To 
+	 = "J.Bloggs@Visualfiles.com",Message = "Test Appointment"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t10">2 Specifying 
+ a start/end date and a start/end time</a>
+        </p>
+        <div MadCap:targetName="t10" style="display: none;">
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The Start-Time 
+	 and End-Time are specified in a 24 hour format.<br />
+	If the specified time is 9am or earlier, ensure that you enter the 
+	 leading '0' e.g. &#160;Start-Time=09:00.</p>
+            <p class="Script">[&amp;NewAppointment Subject = "Test",To 
+	 = "J.Bloggs@visualfiles.com" ,Message = "Test Appointment" 
+	 ,Start-Date = 05/04/2005 ,End-Date=05/04/2005 ,Start-Time = "15:00", 
+	 End-Time = "15:30"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t9">3 Specifying 
+ a file attachment</a>
+        </p>
+        <div MadCap:targetName="t9" style="display: none;">
+            <p class="Script">[&amp;NewAppointment Subject = "Test",To 
+	 = "J.bloggs@visualfiles.com",Message = "Test Appointment",File 
+	 = "G:\users\J.Bloggs\Commands\&amp;NewTask_command.htm",Start-Date 
+	 = 05/04/2005,End-Date = 05/04/2005,Start-Time = "15:00",End-Time 
+	 = "15:30"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t8">4 Creating 
+ an all-day appointment</a>
+        </p>
+        <div MadCap:targetName="t8" style="display: none;">
+            <p class="Script">[&amp;NewAppointment Subject = "Test",To 
+	 = "J.bloggs@visualfiles.com",Message = "Test Appointment",File 
+	 = "G:\users\J.Bloggs\Commands\&amp;NewTask_command.htm",Start-Date 
+	 = 05/04/2005,End-Date = 05/04/2005,allday]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t7">5 Amending 
+ an appointment</a>
+        </p>
+        <div MadCap:targetName="t7" style="display: none;">
+            <p class="Script">[&amp;NewAppointment Subject = "Test",To 
+	 = "J.bloggs@visualfiles.com",Message = "Test Appointment",File 
+	 = "G:\users\J.Bloggs\Commands\&amp;NewTask_command.htm",Start-Date 
+	 = 05/04/2005,End-Date = 05/04/2005,Start-Time = "15:00",End-Time 
+	 = "15:30",amend]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">6 Saving 
+ an appointment</a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p class="Script">[&amp;NewAppointment Subject = "Test",To 
+	 = "J.bloggs@visualfiles.com",Message = "Test Appointment",File 
+	 = "G:\users\J.Bloggs\Commands\&amp;NewTask_command.htm",Start-Date 
+	 = 05/04/2005,End-Date = 05/04/2005,Start-Time = "15:00",End-Time 
+	 = "15:30",save]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">7 Sending 
+ to multiple recipients</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p class="Script">[&amp;NewAppointment Subject = "Test",To 
+	 = "J.bloggs@visualfiles.com; J.Smith@visualfiles.com; J.Doe@visualfiles.com,Message 
+	 = Test Appointment,File = G:\users\J.Bloggs\Commands\NewTask_command.htm,Start-Date 
+	 = 05/04/2005,End-Date = 05/04/2005,Start-Time = 15:00,End-Time 
+	 = 15:30,save]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">8 Creating 
+ an appointment</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p>Creating an appointment in Outlook via the COM Link. &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
+            <p class="Script">[&amp;Assign REP12='Enter date of appointment'(date)]</p>
+            <p class="Script">[&amp;Assign REP15='Enter time of appointment'(time)]</p>
+            <p class="Script">[&amp;NewAppointment subject=CLI03+" - Appointment 
+	 to Sign contract",to=GCF05+"@solicitorname.co.uk",message=CLI03+" 
+	 - Appointment to Sign contract",start-date=REP12,end-date=REP12,start-time=REP15,end-time=REP15+.30,amend]</p>
+            <h5>Setting the end time for an appointment</h5>
+            <p>In the script above <span style="font-weight: bold;">REP15</span> 
+	 is set as a time field. The number after the time field <span style="font-weight: bold;">+.30</span> 
+	 is interpreted as a time value and added to the value in the time 
+	 field.</p>
+            <p>The internal code converts the number before the decimal point to 
+	 hours and after the decimal point to minutes.</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> In order to use 
+	 a time database field (ABC01 = 8:00) to populate Start-Time=ABC01, 
+	 the time must be in 24 hour format.<br />
+	If the specified time is 9am or earlier, ensure that you enter the 
+	 leading '0' e.g. &#160;Start-Time=09:00.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">9 Assign 
+ a resource to an appointment</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>To assign a camera and a projector to an appointment:</p>
+            <p class="Script">[&amp;NewAppointment to="a.person@business.co.uk", 
+	 subject = "test", message="test", resource="camera1@business.co.uk;projector2@business.co.uk", 
+	 start-date="25/12/08", end-date="25/12/08", start-time="04:30", 
+	 end-time="05:16", amend]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">10 Assign 
+ a location to an appointment</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p>To assign a meeting room to an appointment:</p>
+            <p class="Script">[&amp;NewAppointment to="a.person@business.co.uk", 
+	 subject = "test", message="test", location="meetingroom3@business.co.uk", 
+	 start-date="25/12/08", end-date="25/12/08", start-time="04:30", 
+	 end-time="05:16", amend]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">11 Assign 
+ a resource and a location to an appointment</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p>To assign a resource (camera and projector) and a meeting room to 
+	 an appointment:</p>
+            <p class="Script">[&amp;NewAppointment to="a.person@business.co.uk", 
+	 subject = "test", message="test", resource="camera1@business.co.uk;projector2@business.co.uk", 
+	 location="meetingroom3@business.co.uk", start-date="25/12/08", 
+	 end-date="25/12/08", start-time="04:30", end-time="05:16", 
+	 amend]</p>
+        </div>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

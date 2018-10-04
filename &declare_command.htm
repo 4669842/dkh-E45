@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;Declare</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;Declare</span>
+        </div>
+        <h1><a name="kanchor910"></a>&amp;Declare</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[&amp;Declare &lt;VariableName&gt; = "&lt;Value&gt;"]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p><a name="kanchor911"></a>Declares variable names and assigns constant values to those variables. 
+ &#160;A variable assigned a value using the &amp;Declare command cannot 
+ subsequently have that value amended.</p>
+        <p>If a variable is declared without a value, an &amp;Assign command can 
+ be used to assign a value to that variable.</p>
+        <p>The &lt;VariableName&gt; must be enclosed in braces to be evaluated: 
+ {&lt;VariableName&gt;}.</p>
+        <p class="Warning"><span class="WarningColor">Caution</span>: When using 
+ the &amp;Declare command, ensure that any temporary fields used have a 
+ number lower than TF499. The &amp;Declare command makes use of unused 
+ temporary fields with a number greater than TF500: there is the potential 
+ to overwrite a temporary field, used by the &amp;Declare command, with 
+ an &amp;Assign command using the same temporary field number. See <a href="#Examples" class="selected">example 
+ 5</a>.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">&lt;VariableName&gt; 
+		 = "&lt;Value&gt;"</p>
+                    <p style="font-weight: normal;color: #000000;">Name a variable 
+		 and, optionally, assign a constant value to that variable.</p>
+                    <p>If this parameter is omitted, the following error message  is displayed 'An invalid 
+		 declare statement has been found. The format should be: [&amp;Declare 
+		 name = Expression]'.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">1 Numeric 
+ values</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p>Declare the value of the temporary variable, <span style="font-weight: bold;">CurrentVATRate</span>, 
+	 as 17.5 and display the message '17.5'.</p>
+            <p class="Script">[&amp;Declare CurrentVATRate = 17.5][Message {CurrentVAT</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">2 Calculating 
+ a constant</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p>Declare a temporary field, <span style="font-weight: bold;">Total-Cost</span>. 
+	 Later in the script, it is assigned the data fields <span style="font-weight: bold;">COS01</span> 
+	 + <span style="font-weight: bold;">DEF04</span>.</p>
+            <p class="Script">[&amp;Declare Total-Cost]</p>
+            <p style="margin-left: 40px">Further Visualfiles 
+	 commands</p>
+            <p class="Script">[&amp;Assign {Total-Cost} = COS01+DEF04]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">3 Repeated 
+ use of a reference</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>Where a value was not assigned to a variable when it was declared, 
+	 a value can be assigned later in a script using the &amp;Assign command.</p>
+            <p class="Script">[&amp;Declare counter]</p>
+            <p class="Script">[&amp;Assign {counter} = 10]</p>
+            <p class="Script">[&amp;DoWhile {counter} &gt; 0]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Message {counter},title = 
+	 "Countdown"]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Assign {counter} = {counter} 
+	 - 1]</p>
+            <p class="Script">[&amp;EndDoWhile]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">4 Displaying 
+ variable content</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p>This code in script 2 will not work because the value of Field3 
+	 is text and the reference has not been enclosed in quotes. When evaluating 
+	 the command, &amp;Declare strips the quotes out: effectively, this 
+	 script says [&amp;Message Sample Text]. To have the last line of Script 
+	 2 work, the code should read [&amp;Message "{field3}"].</p>
+            <h3>Script1</h3>
+            <p class="Script">[&amp;Declare Field1 = "TST01"] &#160;&#160;*** 
+	 DB Field</p>
+            <p class="Script">[&amp;Declare Field2 = "100"] &#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Number</p>
+            <p class="Script">[&amp;Declare Field3 = "Sample Text"] &#160;&#160;&#160;*** 
+	 Text</p>
+            <h3>Script2</h3>
+            <p class="Script">[&amp;Declarefrom Script1]</p>
+            <p class="Script">[&amp;Message {Field1}] &#160;&#160;*** Works</p>
+            <p class="Script">[&amp;Message {Field2}] &#160;&#160;*** Works</p>
+            <p class="Script">[&amp;Message {Field3}] &#160;&#160;*** [Error: Unknown 
+	 Code [Sample Text]]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">5 Using 
+ temporary fields</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p>This example will produce unexpected results.</p>
+            <p>The &amp;Declare command will assign the value of {myfield} to TF501; 
+	 this is subsequently overwritten by the &amp;Assign command. The issue 
+	 can be resolved by using a TF number lower than 501 for the &amp;Assign 
+	 command.</p>
+            <p class="Script">[&amp;Declare myfield]</p>
+            <p class="Script">[&amp;Assign {myfield} = "hello"]</p>
+            <p class="Script">[&amp;Assign TF501 = "goodbye"]</p>
+            <p class="Script">[&amp;Message {myfield}]</p>
+            <p>This code will give the results expected:</p>
+            <p class="Script">[&amp;Declare myfield]</p>
+            <p class="Script">[&amp;Assign {myfield} = "hello"]</p>
+            <p class="Script">[&amp;Assign TF499 = "goodbye"]</p>
+            <p class="Script">[&amp;Message {myfield}]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">6 Declared Variables - LF Fields</a></a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p>Explicit substitution: use of &amp;Declare with LF fields</p>
+            <p>Using this method you can code with meaningful variable names.</p>
+            <p>[&amp;Declare iLoop="LF01"]</p>
+            <p>[&amp;Assign {iLoop}=0]</p>
+            <p>[&amp;DoWhile {iLoop}&lt;5]</p>
+            <p>[&amp;Message "iLoop="+{iLoop}:text:r-remove(".00")]</p>
+            <p>[&amp;Assign {iLoop}={iLoop}+1]</p>
+            <p>[&amp;EndDoWhile]</p>
+            <p>You can reassign a variable when it was assigned it at declaration because you are assigning to {iLoop} which is LF01, which can be assigned to LF01 as often as required.</p>
+            <p>You cannot &amp;Declare {iLoop} to be something other than LF01 later in the script, because &amp;Declares are processed before other statements in the script.</p>
+        </div>
+        <h4>Developers' tips</h4>
+        <ul>
+            <li class="p-BulletedList" value="1">
+                <p class="BulletedList">Where a variable 
+	 has not had a value assigned or the variable name is misspelled, the 
+	 error message Temporary field XXX has not been assigned will be displayed.</p>
+            </li>
+            <li class="p-BulletedList" value="2">
+                <p class="BulletedList">If a reference is 
+	 initialised as a given value, subsequent attempts to declare the constant 
+	 as a different value will have no effect.</p>
+            </li>
+            <li class="p-BulletedList" value="3">
+                <p class="BulletedList">Where a value contains 
+	 text or a date, it must be enclosed in quotes: "{Field1}". 
+	 See <a href="#Examples" class="selected">Example 4</a>.</p>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

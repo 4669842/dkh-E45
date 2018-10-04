@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;Select</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;Select</span>
+        </div>
+        <h1><a name="kanchor725"></a>&amp;Select</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[&amp;Select <span style="font-weight: bold;">{</span>&lt;GroupCode&gt;<span style="font-weight: bold;">|</span>&lt;SystemCode&gt;<span style="font-weight: bold;">}</span>]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>Selects a component of an application type on which to perform an action.</p>
+        <p>&amp;Select automatically selects either the first, next or last occurrence 
+ of a data item.&#160;This is essential in documents and scripts set up 
+ to be actioned without user input by the <span style="font-weight: bold;">To-Do</span> 
+ batch facility.</p>
+        <p>&amp;Select can also be used with system codes:</p>
+        <table cellspacing="0">
+            <col />
+            <col />
+            <col />
+            <tr style="vertical-align: top;">
+                <td style="padding-left: 0px;padding-right: 0px;">
+                    <ul>
+                        <li class="p-BulletedList" value="1">
+                            <p class="BulletedList"><a href="&amp;Select_HS_command.htm">&amp;Select 
+			 HS</a>
+                            </p>
+                        </li>
+                        <li class="p-BulletedList" value="2">
+                            <p class="BulletedList"><a href="&amp;Select_LG_command.htm">&amp;Select 
+			 LG</a>
+                            </p>
+                        </li>
+                        <li class="p-BulletedList" value="3">
+                            <p class="BulletedList"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t10">&amp;Select AA</a>
+                            </p>
+                            <div MadCap:targetName="t10" style="display: none;">
+                                <p>&amp;Select AA supports first, next, last and rec-no=&lt;rec-no&gt;.</p>
+                                <p>Where &lt;rec-no&gt; is an expression that resolves 
+				 to a valid AA11 value e.g:</p>
+                                <p class="Script">[&amp;Select AA, rec-no=LF01]</p>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+                <td style="padding-left: 0px;padding-right: 0px;">
+                    <ul>
+                        <li class="p-BulletedList" value="1">
+                            <p class="BulletedList"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t11">&amp;Select PY</a>
+                            </p>
+                            <p MadCap:targetName="t11" style="display: none;">The &amp;Select PY command is used to select Payment items.</p>
+                        </li>
+                        <li class="p-BulletedList" value="2">
+                            <p class="BulletedList"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t9">&amp;Select DB</a>
+                            </p>
+                            <div MadCap:targetName="t9" style="display: none;">
+                                <p>The &amp;Select DB command is used to select Debt items.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+                <td style="padding-left: 0px;padding-right: 0px;">
+                    <ul>
+                        <li class="p-BulletedList" value="1">
+                            <p class="BulletedList"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t8">&amp;Select SL</a>
+                            </p>
+                            <div MadCap:targetName="t8" style="display: none;">
+                                <p>The &amp;Select SL command is used to select SIM Log 
+				 items.</p>
+                            </div>
+                        </li>
+                        <li class="p-BulletedList" value="2">
+                            <p class="BulletedList"><a href="&amp;Select_XL_command.htm">&amp;Select 
+			 XL</a>
+                            </p>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 30%;" />
+            <col style="width: 70%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border: Solid 1px #c0c0c0;width: 100%;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">:first</p>
+                    <p>Select the first iteration of a group or system code.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">:last</p>
+                    <p>Select the last iteration of a group or system code.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">:lookup</p>
+                    <p>Select the iteration of the group specified, pointed to by the 
+		 currently selected lookup pointer field.</p>
+                    <p class="Script"><span style="font-weight: bold;">&lt;</span>GroupCode<span style="font-weight: bold;">&gt;</span>:lookup</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">:new</p>
+                    <p>Create and select a new iteration of a specified group.</p>
+                    <p class="Script"><span style="font-weight: bold;">&lt;</span>GroupCode<span style="font-weight: bold;">&gt;</span>:new</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">:next</p>
+                    <p>Select the next iteration of a group or system code.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Forwards navigation 
+		 through payment (&amp;Select PY) and ledger (&amp;Select LG) groups 
+		 is not currently possible. For example [&amp;Select PY:next] focuses 
+		 on the ‘last’ entry in the group so no navigation between items 
+		 is possible.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">:prev</p>
+                    <p>Select the previous iteration of a group or system code.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Backwards 
+		 navigation through payment (&amp;Select PY) and ledger (&amp;Select 
+		 LG) groups is not currently possible. For example [&amp;Select 
+		 PY:prev] focuses on the ‘last’ entry in the group so no navigation 
+		 between items is possible.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">field1 = "<span style="font-weight: bold;">&lt;</span>Field<span title="This parameter will only accept database fields or temporary fields as input." style="cursor: hand;font-weight: bold;">&gt;</span>"</p>
+                    <p>The first field to be displayed.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">field2 = "<span style="font-weight: bold;">&lt;</span>Field<span title="This parameter will only accept database fields or temporary fields as input." style="cursor: hand;font-weight: bold;">&gt;</span>"</p>
+                    <p>The second field to be displayed.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Group</p>
+                    <p>Use this parameter to confirm that the item to be selected is 
+		 a group code. This avoids possible conflicts with Entity Types 
+		 on the system that share the same code as the file level Group.</p>
+                    <p><a name="kanchor726"></a>The group parameter can be appended to a &amp;Select command 
+		 after the group code is entered or after the <span style="font-weight: bold;">:new</span> 
+		 parameter. See <a href="#Examples" class="selected">examples 5 &amp; 6</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">label1 = "<span style="font-weight: bold;">&lt;</span>TextString<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>The label for field1.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">label2 = "<span style="font-weight: bold;">&lt;</span>TextString<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>The label for field2.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="type" id="type"></a>type 
+		 = <span style="font-weight: bold;">&lt;</span>payment-type<span style="font-weight: bold;">&gt;</span></p>
+                    <p>Used to specify the payment type i.e. payments direct to Client 
+		 and Ledger items. This parameter overrides the default system 
+		 behaviour in which new payments default to payment of the solicitor, 
+		 resulting in the temporary creation of a client receipt ledger 
+		 posting. See <a href="#Examples" class="selected">example 7</a>. See below for 
+		 the available payment types:</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 30%;padding-right: 10px;padding-left: 10px;">
+                    <p style="text-align: right;font-weight: bold;">Payment 
+		 type values</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 70%;padding-right: 10px;padding-left: 10px;">
+                    <p style="font-weight: bold;">Payment 
+		 type codes</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 30%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">Solicitor</p>
+                    <p class="Script" style="text-align: right;">Court</p>
+                    <p class="Script" style="text-align: right;">Client</p>
+                    <p class="Script" style="text-align: right;">Pre-payment</p>
+                    <p class="Script" style="text-align: right;">Write-off</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 70%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">S</p>
+                    <p class="Script">C</p>
+                    <p class="Script">D</p>
+                    <p class="Script">P</p>
+                    <p class="Script">W</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">title = "<span style="font-weight: bold;">&lt;</span>TextString<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>User-defined title of the screen displaying group details.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><span style="font-weight: bold;">&lt;</span>GroupCode<span style="font-weight: bold;">&gt;</span></p>
+                    <p>Specify the group screen to be selected.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><span style="font-weight: bold;">&lt;</span>GroupCode<span style="font-weight: bold;">&gt;</span>:lookup = <span style="font-weight: bold;">&lt;</span>LookupPointerField<span style="font-weight: bold;">&gt;</span></p>
+                    <p>Select the iteration of the group specified (pointed to by the 
+		 currently selected lookup pointer field).</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><span style="font-weight: bold;">&lt;</span>GroupCode<span style="font-weight: bold;">&gt;</span>:new</p>
+                    <p>Create and select a new iteration of a specified group.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><span style="font-weight: bold;">&lt;</span>SystemCode<span style="font-weight: bold;">&gt;</span></p>
+                    <p>Specify the system screen to be selected.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t7">1 Linked Files</a>
+        </p>
+        <div MadCap:targetName="t7" style="display: none;">
+            <p>The &amp;Select PY command is used to select Payment 
+				 items.</p>
+            <p class="Script">[&amp;Select P_PMOR:last]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> For linked files 
+	 the group code must include the prefix letter.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">2 Customising 
+ the Display of a Group</a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p>When using the &amp;Select command to find a group the user can 
+	 set the title of this dialog, determine which fields are displayed 
+	 and set their labels. All the additional parameters are optional but 
+	 quotation marks around values are mandatory.</p>
+            <p class="Script">[&amp;Select ABCD, title = "Solicitor Details", 
+	 field1 = "ABC01", field2 = "ABC02", label1 = "Name", 
+	 label2 = "Address"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">3 New 
+ Parameter</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p>In this example a new iteration in a group is selected by using 
+	 the parameter <span style="font-weight: bold;">:new</span>. This code 
+	 creates and selects a new iteration of the group <span style="font-weight: bold;">EVIS</span>.</p>
+            <p class="Script">[&amp;Select EVIS:new]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">4 Assigning 
+ Values</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p>This code will select the occurrence/iteration of group <span style="font-weight: bold;">EVIS</span>, 
+	 pointed to by the currently selected lookup pointer field <span style="font-weight: bold;">SDM01</span>.</p>
+            <p class="Script">[&amp;Select EVIS:lookup = SDM01]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">5 Group 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>Used to confirm that the group code selected is a group code to 
+	 avoid conflict; see <span style="font-weight: bold;">group</span> 
+	 parameter.</p>
+            <p class="Script">[&amp;Select PROP, Group]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">6 Group 
+ and :new parameter</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p>Used to confirm that the group code selected is a group code to 
+	 avoid conflict; see <span style="font-weight: bold;">group</span> 
+	 parameter.</p>
+            <p class="Script">[&amp;Select PROP:new,Group]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">7 type= 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p class="Script">[&amp;Select PY, new, type="Client"]</p>
+        </div>
+        <h4>Developers' Tips</h4>
+        <p>If the <b>first</b>, <b>next</b> or <b>last</b> parameters are not included in the syntax, the &amp;Select command selects the last referenced screen, either a previous &amp;Select command or viewing 
+ in the GUI.
+        </p>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;RM8</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix">  <![CDATA[ ]]></span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;RM8</span>
+        </div>
+        <h1>&amp;RM8</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[<span style="font-weight: bold;">{</span>&amp;RM8<span style="font-weight: bold;">} </span>ObjectType="<b>&lt; &gt;</b>",Action="<b>&lt; &gt;</b>"]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>This command is used to manipulate specific objects within <a href="../RM8/RM8%20Integration.htm">RM8</a> using <span class="MCTextPopup"><span class="MCTextPopupBody_0" style="display: none; ">Visualfiles Business language</span><a class="popupHead_1" href="javascript:void(0);" onclick="FMCTextPopup( event, this ); return false;" style="font-weight: normal;">VBL</a></span>.</p>
+        <p>All commands take an <b>ObjectType</b> parameter which defines the object in RM8 that will be manipulated, and an <b>Action</b> parameter which defines what will be done with that object.</p>
+        <h4>[&amp;RM8 ObjectType="CaseSearchCriteria",Action="Create"]</h4>
+        <p>Allows the user to define the scope of the History document search within RM8. At least one of the parameters must be supplied.</p>
+        <p>If this has not been specified within the Case Open Script, then the History Screen on the file will not allow Content searching within RM8; see <a href="#Examples" class="selected">example 8</a>.</p>
+        <p>Documents can be finalised in RM8 from the file History screen to stop documents being edited using the Finalise Document Script; see <a href="#Examples" class="selected">example 10</a>.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>,ClassificationURI="&lt;value&gt;"	</p>
+                    <p>Defines the  history document classification scope.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>,FolderURI="&lt;value&gt;"	</p>
+                    <p>Defines the  history document folder scope.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>,ClientCode="&lt;value&gt;"	</p>
+                    <p>Defines the  history document clientcode scope.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>,MatterCode="&lt;value&gt;"	</p>
+                    <p>Defines the  history document mattercode scope.</p>
+                </td>
+            </tr>
+        </table>
+        <h4>[&amp;RM8 ObjectType="CaseSearchCriteria",Action="Reset"]</h4>
+        <p>Allows the user to clear the current History document search scope.   See <a href="#Examples" class="selected">example 9</a>.</p>
+        <h4>[&amp;RM8 ObjectType="Classification",Action="Query"]</h4>
+        <p>Allows you to search for one or more classification objects within RM8. The classification object ID is needed either to associate a classification with a record when storing a document, or to provide a parent ID when creating a new classification to maintain the structure correctly.    See <a href="#Examples" class="selected">example 4</a>.</p>
+        <p>The details on the matching classifications are returned within a grid to allow the developer to further select and manipulate the results.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>,Topmost</p>
+                    <p>Returns only 'Top Level' classifications within RM8.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>,Code=&lt;code&gt;</p>
+                    <p>Searches for a classification with this code. Using wild cards is allowed to find all matches with a specific start to the code (e.g. QA* ).</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="owner" id="owner"></a>
+                    </p>
+                    <p>,Uri=&lt;URI&gt;</p>
+                    <p>Returns a specific classification from RM8 by the unique identifier, or an empty grid if the classification does not exist.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>,ParentCode=&lt;code&gt;</p>
+                    <p>Returns classifications from RM8 where the parent classification matches the specified code (i.e. they are *direct* children of the parent classification). This allows for the traversal of the classification tree to find the desired classification.</p>
+                </td>
+            </tr>
+        </table>
+        <h4>[&amp;RM8 ObjectType="Classification",Action="Create"]</h4>
+        <p>Allows you to create a classification within RM8. You can create top level classifications or child classifications. When a classification is created, the unique identifier (URI) for the classification is returned to Visualfiles and can be stored in a user defined field.  See <a href="#Examples" class="selected">example 3</a>.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>,Toplevel</p>
+                    <p>Creates a top level classification. Creating a top level requires a unique value for <b>LevelNo</b>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>,LevelNo="&lt;value&gt;"</p>
+                    <p>Supplies the unique level number for the creation of a top level classification object. This level number is used as the basis for the numbering scheme for any sub classifications. Required for top level creates.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>,ClassificationName="&lt;value&gt;</p>
+                    <p>Unique name for the new classification (mandatory).</p>
+                    <p class="Script"><a name="owner" id="owner"></a>
+                    </p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>,ClassificationParent="&lt;value&gt;"</p>
+                    <p>URI of the parent classification to associate the newly created child classification (required for child creates).</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>,ReturnField=&lt;value&gt;</p>
+                    <p>Scripting variable which is updated with the URI for the newly created classification.</p>
+                </td>
+            </tr>
+        </table>
+        <h4>ObjectType="Folder",Action="Query"</h4>
+        <p>Allows you to query the available folders within RM8, to allow for the selection of a folder to store a document within.</p>
+        <p>The details of the matching folders are returned within a grid to allow the developer to manipulate the results if required.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>,Uri=&lt;value&gt;
+</p>
+                    <p>
+Searches for a folder with a specific URI within RM8 and returns a single folder.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>,Code="&lt;value&gt;"
+</p>
+                    <p>
+Searches for a folder with a specific folder name. Wild cards are supported but the RM8 search finds the word within the Name so it can find folders with the folder name out of Position.</p>
+                </td>
+            </tr>
+        </table>
+        <h4>ObjectType="Folder",Action="Create"</h4>
+        <p>Allows you  to create a folder within RM8 and return the URI of this folder to be stored for future use.  See <a href="#Examples" class="selected">example 1</a>.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>,Name="&lt;Value&gt;"</p>
+                    <p>Name for the new folder (mandatory).</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>,ReturnField=&lt;Value&gt;</p>
+                    <p>Scripting variable which is updated with the URI for the new folder.</p>
+                </td>
+            </tr>
+        </table>
+        <h4>ObjectType="Record",Action="Select"</h4>
+        <p>Allows for the selection of a record from RM8 prior to either querying or updating the record fields. A successful selection of a record is required before any Access or Update methods are required.  See <a href="#Examples" class="selected">example 2</a>.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>HistoryNumber="&lt;Value&gt;"</p>
+                    <p>Select the record in RM8 using the Visualfiles HistoryNumber for this record (one of HistoryNumber or URI must be supplied; if both are supplied URI takes precedence). </p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>This is the .hst field History Number.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>URI="&lt;value&gt;"</p>
+                    <p>Select the record in RM8 Using the RM8 Unique Identifier.</p>
+                </td>
+            </tr>
+        </table>
+        <h4>ObjectType="Record",Action="Access" ,Field =" "</h4>
+        <p>The Access parameter is further split by the Field parameter, which is used to determine which field on the record is to be accessed.    See <a href="#Examples" class="selected">example 5</a>.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" width="100%">
+            <col width="236" />
+            <col width="612" />
+            <tbody>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td colspan="2" style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                        <p class="TableBannerHeading">Parameters</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                        <p colspan="2">Classification</p>
+                        <p>Allows access to Classification Fields. On the record the classification is not held directly, but is held as a reference, so all fields of a Classification are not accessible.  At least one Field must be present. When a record has no classification applied, the fields are set to "No Record Classification".</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                        <p>NameField="&lt;value&gt;"</p>
+                    </td>
+                    <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                        <p>Scripting variable that is updated with the Name of the Classification of the record.</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                        <p>URIField="&lt;value&gt;"
+</p>
+                    </td>
+                    <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                        <p>Scripting variable that is updated with the URI of the Classification of the record.</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                        <p colspan="2">Notes</p>
+                        <p>Allows access the record Notes.</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                        <p>NotesField="&lt;value&gt;"</p>
+                    </td>
+                    <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                        <p>Scripting variable that is updated with the Notes from the record.</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                        <p colspan="2">Title</p>
+                        <p>Allows access to the record Title.</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                        <p>TitleField="&lt;value&gt;
+</p>
+                    </td>
+                    <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                        <p>TitleField="&lt;value&gt;
+Scripting variable that is updated with the Title of the record.</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                        <p colspan="2">Author</p>
+                        <p>Allows access to Author Fields. On the record the Author is not held directly, but is held as a reference, so all fields of a Location are not accessible. At least one Field needs to be present. When a record has no author applied, the fields are set to "No Author Specified".</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                        <p>NameField="&lt;value&gt;"</p>
+                    </td>
+                    <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                        <p>Scripting variable that is updated with the Formatted name of the Author of the record.</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                        <p>URIField="&lt;value&gt;"</p>
+                    </td>
+                    <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                        <p>Scripting variable that is updated with the URI of the Author of the record.</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                        <p colspan="2">Folder</p>
+                        <p>Allows access to Container fields. On the record the Container is not held directly, but is held as a reference, so all fields of a record are not accessible. At least one field needs to be present. When a record has no author applied, the fields are set to "No Folder Specified".</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;text-align: right;">
+                        <p>NameField="&lt;value&gt;"</p>
+                    </td>
+                    <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                        <p>Scripting variable that is updated with the Formatted name of the Container of the record.</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;text-align: right;">
+                        <p>URIField="&lt;value&gt;"</p>
+                    </td>
+                    <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                        <p>Scripting variable that is updated with the URI of the Container of the record.</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;" colspan="2">
+                        <p colspan="2">Addressee</p>
+                        <p>Allows access to Addressee Fields. On the record the Addressee is not held directly, but is held as a reference, so all fields of a record are not accessible. At least one field needs to be present. When a record has no author applied, the fields are set to "No Addressee Specified".</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                        <p>NameField="&lt;value&gt;"</p>
+                    </td>
+                    <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                        <p>Scripting variable that is updated with the Formatted name of the Addressee of the record.</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                        <p>URIField="&lt;value&gt;"</p>
+                    </td>
+                    <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                        <p>Scripting variable that is updated with the URI of the Addressee of the record.</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;" colspan="2">
+                        <p>AdditionalField</p>
+                        <p>Allows access to Additional Fields on the record. Only String and DateTime values are supported.</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                        <p>FieldName="&lt;value&gt;"</p>
+                    </td>
+                    <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                        <p>Name of the Additional Field to access. </p>
+                        <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>This is the field name not the Title, the two can be different.</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                        <p>
+FieldValue="&lt;value&gt;"</p>
+                    </td>
+                    <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                        <p>Scripting variable that is updated with value of the selected AdditionalField on the record.</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;" colspan="2">
+                        <p>RecordType</p>
+                        <p>Allows access to the URI of the RecordType for this record. When not set the field is updated with "No RecordType URI specified.", otherwise the field is updated with the URI of the Record Type for this record.</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                        <p>RecordTypeURI="&lt;value&gt;"</p>
+                    </td>
+                    <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                        <p>Scripting variable that is updated with the URI of the RecordType for the record.</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;" colspan="2">
+                        <p>RecordNumber</p>
+                        <p>Allows access to the Number of this record. If a record is created, this field is blank. If a new version is created this field contains the record number for the *new* version. When overwriting a document, this field contains the number of the current record.	
+</p>
+                    </td>
+                </tr>
+                <tr style="vertical-align: top;height: 18px;">
+                    <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                        <p>NumberField="&lt;value&gt;"</p>
+                    </td>
+                    <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                        <p>Scripting variable that is updated with the Record Number of the current record.    See <a href="#Examples" class="selected">example 12</a>.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4><a name="ObjectType=&quot;Record&quot;,Action=&quot;Create&quot;"></a>ObjectType="Record",Action="Create"</h4>
+        <p>This creates a record object as the current record to update. The record is not actually created in RM8, this is merely the in memory representation of the record before the record is created by uploading the document.</p>
+        <p>This allows the record creation to set profile fields, change the record type and setup metadata within the Document Import Script, before the record is created in RM8 by the upload of the document.    See <a href="#Examples" class="selected">example 7</a>.</p>
+        <h4>ObjectType="Record",Action="Release"</h4>
+        <p>This releases the current record object being accessed by scripting without submitting any changes through to RM8. This is useful for aborting any script changes to the record object.</p>
+        <h4>ObjectType="Record",Action="Update"</h4>
+        <p>The Update parameter is further split by the Field parameter, which is used to determine which field on the record to update.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col width="236" />
+            <col width="612" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p colspan="2">Classification</p>
+                    <p>Allows you to set the Classification on a record.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                    <p>ClassificationURI="&lt;value&gt;"
+</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>URI of the Classification to associate the record with.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p colspan="2">Notes</p>
+                    <p>Allows you to set the Notes of the record,</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                    <p>Notes="&lt;value&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>New notes for the record object.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p colspan="2">Title</p>
+                    <p>Allows you to set the Title of the record.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                    <p>Title="&lt;value&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>New title for the record object.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p colspan="2">Author</p>
+                    <p>Allows you to set the Author of the record. If the Author does not exist within RM8, a new Location is created.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                    <p>Author="&lt;value&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Name of the Author to change the record's author to.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p colspan="2">Folder</p>
+                    <p>Allows you to set the Container of the record. This should be a folder object.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;text-align: right;">
+                    <p>FolderURI="&lt;value&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>URI of the folder to associate the record to.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;" colspan="2">
+                    <p colspan="2">Addressee</p>
+                    <p>Allows you to set the Addressee of the record. If the Addressee does not exist within RM8, a new Location is created.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                    <p>Addressee="&lt;value&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>Name of the Addressee to change the record's addressee to.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;" colspan="2">
+                    <p>AdditionalField</p>
+                    <p>Allows you to set the Additional Fields on a record. Only String  fields are supported.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                    <p>FieldName="&lt;value&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>Name of the Additional field to Update.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                    <p>FieldValue="&lt;value&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>Value to set to the Additional Field.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;" colspan="2">
+                    <p>RecordType</p>
+                    <p>Allows you to set the RecordType. Expects the URI for the Record Type to be supplied. Can only be used after an Initial Create of the record object; once it is set, it cannot be changed.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;text-align: right;">
+                    <p>RecordTypeURI="&lt;value&gt;"</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-right: 10px;">
+                    <p>URI of the Record Type to use for this record.</p>
+                </td>
+            </tr>
+        </table>
+        <h4>ObjectType="Record",Action="Save"</h4>
+        <p>Perform the update of the record to RM8, committing any changes to Records Manager. This allows the scripter to control how many round trips to RM8 are made, and perform error trapping at opportune points in the logic.</p>
+        <p>Performing the Save command whether successful or not, clears the currently selected record; this forces the scripter to reload the record object from RM8 in order to reflect any changes made by the system automatically (e.g. Auto classification, security policies, etc.).</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>DetailedError="&lt;value&gt;"</p>
+                    <p>Scripting field to be updated with the detailed error messages from RM8. If an error occurs when saving the record to RM8, this field is updated with the detailed error message supplied by RM8.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>
+UriField="&lt;value&gt;"</p>
+                    <p>Scripting field that is updated with the URI of the created/updated record.</p>
+                </td>
+            </tr>
+        </table>
+        <h4>ObjectType="Record",Action="Finalise"</h4>
+        <p>Used to finalise the currently selected record in RM8. This action also marks the history item in Visualfiles as a record.   See <a href="#Examples" class="selected">example 11</a>.</p>
+        <p>By default all other versions of the document are marked as 'Inactive' within RM8, making them available for disposal. </p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>Inactive-Versions="NO"</p>
+                    <p>If this field is provided and set to "NO" then previous versions of the document are not marked as 'Inactive', which allows earlier versions to be retained.   See <a href="#Examples" class="selected">example 10 &amp; 11</a>.</p>
+                </td>
+            </tr>
+        </table>
+        <h4>ObjectType="Record",Action="MarkActive"</h4>
+        <p>Used to mark a record that is currently 'Inactive' in RM8 as active again. Once called it releases the record in memory, so the record would need to be reselected if further actions are required.</p>
+        <p>Has no effect on a record that is already active.</p>
+        <h4>ObjectType="Record",Action="MarkInactive"</h4>
+        <p>Used to mark a record 'Inactive' in RM8, and set the InactiveDate to Today. Once called it releases the record in memory, so the record would need to be reselected if further actions are required. 
+
+</p>
+        <p>Has no effect on a record that is already inactive.</p>
+        <h4>ObjectType="Record",Action="Reprofile"</h4>
+        <p>Reprofiles the selected record, i.e. the <a href="../RM8/Configure%20RM8%20Integration.htm#Records_Manager_Profile_Script">Records Manager profile script</a> is rerun on this document. Afterwards the record needs to be saved to commit the changes to RM8.
+</p>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="ex1">1 Create a folder</a>
+        </p>
+        <div MadCap:targetName="ex1" style="display: none;">
+            <p>The script below creates a folder with a name of "New Folder" and returns the URI of the freshly created folder into TF01.</p>
+            <p>[&amp;RM8 ObjectType="Folder",Action="Create",Name="New Folder",ReturnField=TF01]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="ex2">2 Select the first record in the RM8 system</a>
+        </p>
+        <p MadCap:targetName="ex2" style="display: none;">[&amp;RM8 ObjectType="Record",Action="Select",URI=1]</p>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="ex3">3 Create a Classification</a>
+        </p>
+        <div MadCap:targetName="ex3" style="display: none;">
+            <p>[&amp;RM8 objecttype="Classification",action="CREATE", classificationparent="2", classificationname="Created from script 3", returnfield=TF01]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message TF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Classification",action="CREATE", classificationparent=LF03, classificationname=LF01, returnfield=LF02]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="ex4">4 Classification Query</a>
+        </p>
+        <div MadCap:targetName="ex4" style="display: none;">
+            <p>[&amp;RM8 objectType="Classification",action="Query",toponly]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Grid action="display",title="Top Level Classifications"]</p>
+            <p>[&amp;Grid action="delete"]</p>
+            <p>[&amp;RM8 objectType="Classification",action="Query",parentcode="2"]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Grid action="display",title="Child Categories of 2"]</p>
+            <p>[&amp;Grid action="delete"]</p>
+            <p>[&amp;RM8 objectType="Classification",action="Query",uri="2"]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Grid action="Display",title="Classification with ID of 2"]</p>
+            <p>[&amp;Grid action="delete"]</p>
+            <p>[&amp;RM8 objectType="Classification",action="query",code="2Q2_1"]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Grid action="Display",title="Classification with Code of QA2"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="ex5">5 Access Record Properties:</a>
+        </p>
+        <div MadCap:targetName="ex5" style="display: none;">
+            <p>This script selects the first record by Visualfiles History ID and displays the fields from the record.</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="select",historyNumber=1(this is the .HST number)]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="access",field="Classification",namefield=TF01,URIField=TF02]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Classification NameField: "  +  TF01]</p>
+            <p>[&amp;Message "Classification URIField: " + TF02]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="access",field="Notes",notesfield=TF01]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Notes: " + TF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="access",field="Title",titlefield=TF01]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Title :" + TF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record", action="access", field="Author",namefield=TF01,URIField=TF02]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Author NameField: "  +  TF01]</p>
+            <p>[&amp;Message "Author URIField: " + TF02]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record", action="access", field="Folder",namefield=TF01,URIField=TF02]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Folder NameField: "  +  TF01]</p>
+            <p>[&amp;Message "Folder URIField: " + TF02]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record", action="access", field="Addressee", namefield=TF01, URIField=TF02]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Addressee NameField: "  +  TF01]</p>
+            <p>[&amp;Message "Addressee URIField: " + TF02]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record", action="access", field="AdditionalField", fieldName="MetadataField1", fieldValue=TF01]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Metadata Field 1: "  +  TF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record", action="access", field="RecordType", URIField=TF01]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Record Type URI: "  +  TF01]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="ex6">6 Create a record</a>
+        </p>
+        <div MadCap:targetName="ex6" style="display: none;">
+            <p> [&amp;RM8 objecttype="Record",action="create"]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="Access",field="RecordType",URIField=TF01]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Record Type:" + TF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="Update",field="RecordType",RecordTypeURI=2]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="Access",field="RecordType",URIField=TF01]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Record Type:" + TF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="Access",field="Title",titlefield=TF01]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Record Title: " + TF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="Update",field="Title",title="This is the new Title"]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="Access",field="Title",titlefield=TF01]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Record Title: " + TF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="Update",field="Notes",notes="Record Notes"]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="Access",field="Notes",notesfield=TF01]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Record Notes: " + TF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="Access",field="Author",namefield=TF01, urifield=TF02]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Record Author: " + TF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="Update",field="Author",author="Raymond Chandler"]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="Access",field="Author",namefield=TF01, urifield=TF02]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Record Author: " + TF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="Access",field="Addressee",namefield=TF01, urifield=TF02]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Record Addressee: " + TF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="Update",field="Addressee", addressee="Sir Arthur Conan Doyle"]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="Access",field="Addressee",namefield=TF01, urifield=TF02]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Record Addressee: " + TF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record", action="access", field="Folder",namefield=TF01,URIField=TF02]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Folder NameField: "  +  TF01]</p>
+            <p>[&amp;Message "Folder URIField: " + TF02]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record", action="Update", field="Folder",folderURI=19]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record", action="access", field="Folder",namefield=TF01,URIField=TF02]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Folder NameField: "  +  TF01]</p>
+            <p>[&amp;Message "Folder URIField: " + TF02]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="access",field="Classification",namefield=TF01,URIField=TF02]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Classification NameField: "  +  TF01]</p>
+            <p>[&amp;Message "Classification URIField: " + TF02]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="update",field="Classification",classificationURI=3]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="access",field="Classification",namefield=TF01,URIField=TF02]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Classification NameField: "  +  TF01]</p>
+            <p>[&amp;Message "Classification URIField: " + TF02]</p>
+            <p>&#160;</p>
+            <p>[&amp;Assign TF01=""]</p>
+            <p>[&amp;RM8 objecttype="Record", action="access", field="AdditionalField", fieldName="MetadataField1", fieldValue=TF01]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Metadata Field 1: "  +  TF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record", action="update", field="AdditionalField", fieldname="MetadataField1", fieldValue="Changed by Script"]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record", action="access", field="AdditionalField", fieldName="MetadataField1", fieldValue=TF01]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Metadata Field 1: "  +  TF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record", action="access", field="AdditionalField", fieldName="MetadataDate", fieldValue=TF01]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Metadata Date: "  +  TF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record", action="update", field="AdditionalField", fieldname="MetadataDate", fieldValue="01/01/1999",datefield]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record", action="access", field="AdditionalField", fieldName="MetadataDate", fieldValue=TF01]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Metadata Date: "  +  TF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record", action="save", detailederror=TF01, urifield=TF02]</p>
+            <p>[&amp;Message status(RM8)]</p>
+            <p>[&amp;Message "Exception Messages:" + TF01]</p>
+            <p>[&amp;Message "Record Uri:" + TF02]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="ex7">7 Document Import Script</a>
+        </p>
+        <div MadCap:targetName="ex7" style="display: none;">
+            <p> [&amp;Message "Running Document Import Script"]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="create"]</p>
+            <p>[&amp;RM8 objecttype="Record",action="Update",field="Classification",classificationuri=3]</p>
+            <p>[&amp;RM8 objecttype="Record",action="Update",field="Folder",folderuri=19]</p>
+            <p>[&amp;RM8 objecttype="Record",action="Update",field="RecordType",RecordTypeURI=2]</p>
+            <p>&#160;</p>
+            <p>[&amp;UserInput prompt="Please enter an Author for this document", result=LF01]</p>
+            <p>[&amp;RM8 objecttype="Record",action="Update",field="Author",author=LF01]</p>
+            <p>[&amp;UserInput prompt="Please enter a Title for this document",result=LF01]</p>
+            <p>[&amp;RM8 objecttype="Record",action="Update",field="Title",title=LF01]</p>
+            <p>[&amp;UserInput prompt="Please enter any Notes for this document",result=LF01]</p>
+            <p>[&amp;RM8 objecttype="Record",action="Update",field="Notes",notes=LF01]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="ex8">8 Create a CaseSearchCriteria</a>
+        </p>
+        <div MadCap:targetName="ex8" style="display: none;">
+            <p>[&amp;RM8 objecttype="CaseSearchCriteria",action="create",classificationuri="1",folderuri="2",clientcode="3",mattercode="4"]</p>
+            <p>[&amp;Message status(RM8)]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="ex9">9 CaseSearchCriteria Reset</a>
+        </p>
+        <div MadCap:targetName="ex9" style="display: none;">
+            <p>[&amp;RM8 objecttype="CaseSearchCriteria",action="reset"]</p>
+            <p>[&amp;Message status(RM8)]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="Finalise Document Script">10 Finalise Document Script</a>
+        </p>
+        <div MadCap:targetName="Finalise Document Script" style="display: none;">
+            <p>Documents can be finalised in RM8 from the file History screen to stop documents being edited.</p>
+            <p>[&amp;UserInput 'Enter the URI of the document to Finalise', result=LF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="select",uri=LF01]</p>
+            <p>[&amp;RM8 objecttype="Record",action="finalise"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="Finalise Document without Marking Subversions as Inactive">11 Finalise Document without Marking Subversions as Inactive</a>
+        </p>
+        <div MadCap:targetName="Finalise Document without Marking Subversions as Inactive" style="display: none;">
+            <p>[&amp;UserInput 'Enter the URI of the document to Finalise', result=LF01]</p>
+            <p>&#160;</p>
+            <p>[&amp;RM8 objecttype="Record",action="select",uri=LF01]</p>
+            <p>[&amp;RM8 objecttype="Record",action="finalise",INACTIVATE-VERSIONS="no"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="ex12">12 RecordNumber parameter</a>
+        </p>
+        <p MadCap:targetName="ex12" style="display: none;">[&amp;RM8 objecttype="Record",Action="Access",Field="RecordNumber",NumberField=TF01]</p>
+        <p class="RelatedInfoHead"><span style="font-weight: bold;"><img src="../redboxes.GIF" alt="" style="border: none;" /></span><b> See also:</b>
+        </p>
+        <ul>
+            <li value="1"><a href="../RM8/RM8%20Integration.htm">RM8 Integration</a>
+            </li>
+            <li value="2"><a href="../RM8/Configure%20RM8%20Integration.htm">Configure RM8 Integration</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

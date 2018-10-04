@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;DotNet</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;DotNet</span>
+        </div>
+        <h1><a name="kanchor1879"></a>&amp;DotNet</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[<span style="font-weight: bold;">{</span>&amp;DotNet 
+ Action = &lt;Value&gt;<span style="font-weight: bold;">}</span>]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>The &amp;DotNet command enables you to invoke .NET functionality and 
+ allows interoperability with the Visualfiles macro language.</p>
+        <p>The &amp;DotNet command is used to call custom built .NET dlls that 
+ enable you to extend your Visualfiles system by integrating with .NET 
+ based applications, third party software and targeted/bespoke user interfaces 
+ for specific tasks and groups of users. Please refer to the Visualfiles 
+ help file for more information on configuring and using this feature.</p>
+        <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Go to <a href="#Installation_and_Configuration" class="selected">Installation 
+ and Configuration</a> for information on setting up the &amp;DotNet Command.</p>
+        <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>The &amp;DotNet command is compatible with .NET Framework 4.0 which means that you can target these .NET assemblies in your customisations.</p>
+        <h2>Use Cases</h2>
+        <p>The &amp;DotNet command enables you to work within Visual Studio which 
+ opens up many developmental possibilities. Here are a few use cases:</p>
+        <ul>
+            <li value="1"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t11">Advanced 
+	 User Interfaces</a>
+            </li>
+            <div MadCap:targetName="t11" style="display: none;">
+                <p>It is likely that certain groups of users perform tasks that 
+		 would benefit from an advanced user interface. For example, a 
+		 claims centre handling RTA cases would benefit from a data input 
+		 screen incorporating a diagram of a vehicle on which they can 
+		 click the areas of damage. They may also benefit from a dynamic 
+		 input screen where sections of the screen expand, collapse or 
+		 morph based on the sections already answered, similar to an on-line 
+		 insurance quotation form.</p>
+            </div>
+            <li value="2"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t10">Aggregated 
+	 User Interfaces</a>
+            </li>
+            <div MadCap:targetName="t10" style="display: none;">
+                <p>Many workflows written in Visualfiles are a collection of screens 
+		 chained together; the user completes one screen before another 
+		 appears, then another and so on. These processes would benefit 
+		 from a single screen with data combined from a number of sources, 
+		 perhaps data from the case, some data from the client, some from 
+		 a number of different related entities and some additional data 
+		 from external applications.</p>
+                <p>Using Visual Studio and control providers such as Infragistics, 
+		 it is possible to produce attractive user interfaces using Winform 
+		 or WPF objects such as the ribbon bar, advanced grids, carousels, 
+		 docking panes, Outlook navigation bars, etc. These applications 
+		 can be used to replace a chained set of Visualfiles screens with 
+		 a single 'intelligent' window containing aggregated data, which 
+		 has clear time saving benefits and can therefore increased productivity 
+		 for volume firms in particular.</p>
+            </div>
+            <li value="3"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t9">Greater 
+	 than 30 fields per screen</a>
+            </li>
+            <div MadCap:targetName="t9" style="display: none;">
+                <p>Each Visualfiles screen has a limit of 30 data fields; it is 
+		 a restriction of the schema design that is built into the database. 
+		 By building a screen in Visual Studio it is possible to have as 
+		 many user input screens as you require.</p>
+            </div>
+            <li value="4"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t8">Integrations with third party applications</a>
+            </li>
+            <div MadCap:targetName="t8" style="display: none;">
+                <p>Visualfiles integrates with many third party applications but 
+		 as more service providers are appearing in the Legal market it 
+		 is difficult to build hard-coded links with each one. This is 
+		 compounded when Law firms create their own in-house applets for 
+		 bespoke items of work.</p>
+                <p>Visualfiles is a toolkit and offers a wealth of features to 
+		 enable customers to create their own integrations. However, there 
+		 are limits. The Visual Studio .NET environment offers a developer 
+		 the ultimate path for creating their own integrations with pretty 
+		 much any current software application. Data can be passed from 
+		 Visualfiles into the .NET program and then onto the third party 
+		 application. Any resulting data returned from the third party 
+		 application can be preprocessed before being passed back to Visualfiles. 
+		 This methodology allow for advanced enterprise level integrations.</p>
+            </div>
+            <li value="5"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="a10">Complex XML</a>
+            </li>
+            <div MadCap:targetName="a10" style="display: none;">
+                <p>Related to integration with third party applications, many of 
+					today’s software applications use XML as a method to transfer 
+					data or instructions; almost entirely where web services, message 
+				bus and middleware technology is in use.</p>
+                <p>Visualfiles has XML capabilities in its scripting language but 
+					for some situations it can be limited in what it can do. Visual 
+					Studio and .NET have no such limitations and lends themselves 
+					well to processing complex messages such as XML. It is feasible 
+					to write XML parsers in .NET which can be called from Visualfiles 
+				seamlessly as and when required.</p>
+            </div>
+        </ul>
+        <h2>Scripting Command and Options</h2>
+        <p>The &amp;DotNet command is used to perform the following functions:</p>
+        <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> 
+ The syntax used in the examples uses the sample DLL provided as part of 
+ the Visualfiles installation.
+        </p>
+        <ul>
+            <li value="1"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t7">Loading a .NET DLL for use within a Visualfiles script, Action = "Load"</a>
+                <div MadCap:targetName="t7" style="display: none;">
+                    <p class="Script">[&amp;DotNet Action = "Load",</p>
+                    <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Dll 
+		 &#160;&#160;= "LexisNexis.Visualfiles.Script.Example.dll,</p>
+                    <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Class 
+		 = "LexisNexis.Visualfiles.Script.Example.VFExampleClass]</p>
+                    <p>The <span style="font-weight: bold;">Action 
+		 = "Load"</span>option 
+		 loads the .NET DLL into the Visualfiles workflow engine. It remains 
+		 available to the workflow engine until it is specifically removed 
+		 (see Action=”unload”) allowing the workflow to jump in and out 
+		 of the DLL throughout the life of the Visualfiles session.
+                    </p>
+                    <p>The workflow 
+		 developer could choose to load the DLL at the point of sign in 
+		 to Visualfiles and remove at the point of logout, or alternatively 
+		 if a number of different DLLs have been written, take the approach 
+		 of load &gt; use &gt; unload within a single script.
+                    </p>
+                    <p>When loading 
+		 the DLL you must specify its file name using the <span lang="EN-US" style="font-weight: bold;">DLL = 
+		 "&lt;filename.dll&gt;"</span> option.</p>
+                    <p><a name="kanchor1880"></a>The file 
+		 itself must exist in a directory that can be found by the Visualfiles 
+		 application (is referenced on the PROPATH) or alternatively you 
+		 can specify the full absolute path name. If you prefer you can 
+		 create a scripting variable to hold the filename and reference 
+		 that in the command instead. For example, <span style="font-weight: bold;">DLL = TF01</span> where TF01 contains the name 
+		 of the DLL.
+                    </p>
+                    <p>When loading 
+		 the DLL you must also specify the class by using the <span style="font-weight: bold;">Class 
+		 = "&lt;classname&gt;"</span>option. 
+		 The value of "&lt;classname&gt;" is taken from the source 
+		 code of your .NET project.
+                    </p>
+                </div>
+            </li>
+            <li value="2"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">Calling 
+	 a method inside the .NET DLL and passing data from Visualfiles</a>
+            </li>
+            <div MadCap:targetName="t6" style="display: none;">
+                <p class="Script">[&amp;DotNet Action = "Invoke", Method 
+		 = "VFExampleMethod", Fields = "TF01,TF02", 
+		 Response = TF03]</p>
+                <p>The <b>Action = "Invoke"</b>option is used to execute 
+		 your .NET program once it has been successfully loaded.
+                </p>
+                <p>When you invoke a DLL you 
+		 must specify <b>Method 
+		 = "&lt;methodname&gt;"</b> to 
+		 tell Visualfiles which method is inside the .NET program you want 
+		 to execute. Please note, the method you call must have a certain 
+		 signature, please see <a href="#Examples" class="selected">Example 2</a>.
+                </p>
+                <p>If you want to pass data 
+		 from Visualfiles into your .NET program you need to include the <b>Fields 
+		 = "&lt;fieldlist&gt;"</b> option 
+		 on the command. This is a comma delimited list of Visualfiles 
+		 codes, for example,
+                </p>
+                <p class="Script">Fields = 
+		 "myfile.ABC01,myclient.XYZ25,LF09,TF10".
+                </p>
+                <p>If you wish to return a 
+		 response message (such as an error or return value) from your 
+		 own DLL, you can catch the return value in a Visualfiles field 
+		 by specifying<b>response 
+		 = &lt;field&gt;</b>(note 
+		 no quotes).
+                </p>
+                <p>When Visualfiles executes 
+		 the Action = "Invoke" command Visualfiles pauses whilst 
+		 the .NET program executes. Once the method has completed and returned 
+		 Visualfiles releases itself and the next line of script is executed.
+                </p>
+            </div>
+            <li value="3"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">Returning 
+	 data back from your DLL into Visualfiles</a>
+            </li>
+            <div MadCap:targetName="t5" style="display: none;">
+                <p class="Script">[&amp;DotNet action="update", result="TF03,TF04"]</p>
+                <p>If you wish to return data back from your DLL into Visualfiles 
+		 you use the <span style="font-weight: bold;">action="update"</span> 
+		 option.</p>
+                <p>If you want the data to be returned into its original fields 
+		 you do not need any other option.</p>
+                <p>Alternatively, if you want the data to be returned into new 
+		 Visualfiles fields you can specify the new fields using the <span style="font-weight: bold;">result="&lt;fieldlist&gt;"</span> 
+		 option. If you use this method your &lt;fieldlist&gt; must contain 
+		 the same number of items as passed in when invoking the method 
+		 using Fields = "&lt;fieldlist&gt;".</p>
+            </div>
+            <li value="4"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">Releasing 
+	 the DLL from Visualfiles Workflow, Action="unload"</a>
+            </li>
+            <div MadCap:targetName="t4" style="display: none;">
+                <p class="Script">[&amp;DotNet action="unload"]</p>
+                <p>The <span style="font-weight: bold;">Action="unload"</span> 
+		 option is used to release your DLL from the Visualfiles Workflow 
+		 engine. No further calls to that DLL can be made without re-loading.</p>
+            </div>
+            <li value="5"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">Trapping 
+	 for errors - STATUS parameter</a>
+            </li>
+            <div MadCap:targetName="t3" style="display: none;">
+                <p class="Script">[&amp;If status (DotNet) &lt;&gt; ""]</p>
+                <p class="Script">&#160;&#160;[&amp;Message status (DotNet)]</p>
+                <p class="Script">[&amp;EndIf]</p>
+                <p>It is always recommended to trap for errors in your Visualfiles 
+		 scripts. Any errors that are raised due to problems with the &amp;DotNet 
+		 command itself (rather than your own DLL code) are returned in 
+		 the STATUS scripting object.</p>
+                <p>You can then test STATUS for a non-blank value and take appropriate 
+		 action.</p>
+            </div>
+        </ul>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Action 
+		 = "&lt;{Invoke|Load|Unload|Update}</p>
+                    <p>Determines what action to perform 
+		 with the .NET dll; either Invoke, Load, Unload or Update. <span>This parameter is mandatory.</span></p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Class 
+		 = "&lt;NamespaceClass&gt;"</p>
+                    <p><span>Defines the name of the class 
+		 within the .NET dll. Mandatory for Action = Load.</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Dll&#160;= 
+		 "&lt;DllFileName&gt;"</p>
+                    <p><span>Defines the name of the dll 
+		 to invoke. Mandatory for Action = Load.</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Fields &#160;= "&lt;FieldList&gt;"</p>
+                    <p><span>Defines the list of Visualfiles 
+		 data fields to pass into the dll method.</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Method = "&lt;MethodName&gt;"</p>
+                    <p><span>Defines the name of the method 
+		 to invoke. Mandatory for Action = Invoke. The method must take 
+		 one parameter of the type VFData.</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Response = "&lt;FieldList&gt;"</p>
+                    <p>Catch the return value in a Visualfiles field by specifying.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Result = "&lt;FieldList&gt;"</p>
+                    <p>Defines a list of Visualfiles fields 
+		 to return data back into (if not the original fields).</p>
+                </td>
+            </tr>
+        </table>
+        <h2><a name="Installation_and_Configuration" id="Installation_and_Configuration"></a>Installation 
+ and Configuration</h2>
+        <h3><b style="font-weight: bold;">.NET Framework 
+ 3.5 &amp; OpenEdge 10.2B Service Pack 6</b>
+        </h3>
+        <p>In order to execute this functionality all user PC’s must have the Microsoft 
+ .NET 3.5 Framework and of OpenEdge 10.2B Service Pack 6 installed.</p>
+        <h3><b style="font-weight: bold;">.NET Assemblies</b>
+        </h3>
+        <p><span>All users must be able to access 
+ a set of .NET assemblies that are supplied with each release of Visualfiles. 
+ The Visualfiles Client Installer creates an <b>Assemblies</b> 
+ directory in the Visualfiles Program Files directory which is used for 
+ other components such as the API. The following files are stored</span><span style="font-size: 10.0pt;line-height: 150%;font-family: Arial, sans-serif;">i</span><span lang="EN-US" style="font-size: 10.0pt;line-height: 150%;font-family: Arial, sans-serif;">nside the 
+ Assemblies directory:</span>
+        </p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 30.708%;" />
+            <col style="width: 69.292%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">File name</p>
+                </td>
+                <td style="border-top: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Description</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>&#160;LexisNexis.Visualfiles.Script.Command.DLL</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>This DLL is the 
+		 code that executes the [&amp;DotNet] command.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>&#160;LexisNexis.Visualfiles.Script.Data.DLL</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>This DLL handles 
+		 the transfer of data between Visualfiles and .NET. It is the DLL 
+		 you reference in your own .NET projects.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>&#160;<span>LexisNexis.Visualfiles.Script.Example.DLL</span></p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>This DLL contains 
+		 the example described in section 4 and can be used to test your 
+		 installation.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>&#160;<span>Assemblies.XML</span></p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>This file is 
+		 used by OpenEdge at the startup of Visualfiles to load the necessary 
+		 .NET assemblies.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>&#160;<span>ExampleSystemScript.TXT</span></p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>This text file 
+		 contains the example code for the Visualfiles System Script described 
+		 in section 4 to call our example .NET DLL.</p>
+                </td>
+            </tr>
+        </table>
+        <h3><b style="font-weight: bold;">Configuration 
+ Changes</b>
+        </h3>
+        <ul>
+            <li value="1">You need to modify your PROPATH environment setting, typically 
+	 found in an .INI file referenced on your start-up icon. The PROPATH 
+	 must include the Assemblies directory. Below is an example PROPATH 
+	 containing Procedure Library 1 followed by Procedure Library 2 followed 
+	 by the Current Working Directory followed by the Assemblies directory, 
+	 followed by a local directory on the user’s PC as an example where 
+	 you might save your own custom DLL’s. Unless you are linked with SOS 
+	 Practice Manager you should not need any other item.</li>
+        </ul>
+        <p class="Script" style="margin-left: 40px;font-family: 'Courier New', monospace;"><span style="line-height: 150%;">P</span>ROPATH 
+ = .\VFProGui1.pl,.\VFProGui2.pl,.,C:\Program Files (x86)\Visualfiles Limited\Visualfiles\V2\Assemblies,C:\dotnet</p>
+        <ul>
+            <li value="1">You also need to add an additional option to your startup parameters, 
+	 typically defined in a .PF file referenced on your start-up icon. 
+	 OpenEdge needs to know specifically where the assembly files can be 
+	 found, you do this by adding the option “-assemblies &lt;directory&gt;”.For 
+	 example:</li>
+        </ul>
+        <p class="Script" style="margin-left: 40px;"><span><b style="font-weight: normal;">-assemblies 
+ "C:\Program Files (x86)\Visualfiles Limited\Visualfiles\V2\Assemblies"</b></span>
+        </p>
+        <p class="note" style="margin-left: 40px;" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> 
+ This is a case sensitive option; use lower case only. You should use quotes 
+ around any path that contains spaces. &#160;</p>
+        <h3><b style="font-weight: bold;">Licencing</b>
+        </h3>
+        <p>This feature requires a new Licence Key to activate the <b><span>ASCR Advanced Scripting</span></b><span> System Module. Go to <a href="../System_Parameters.htm">Licence 
+ &amp; Setup - System Parameters</a> for more information.</span> Please 
+ contact your LexisNexis Account Manager to obtain a new licence key.</p>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">1 Testing 
+ Sample DLL provided by Visualfiles</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p>To help with the deployment of this feature and prove that all components 
+	 have been successfully installed and licensed, you can create a test 
+	 system script to call the example DLL that ships with Visualfiles. 
+	 Here is the Visualfiles code required to run the example:</p>
+            <p class="MsoNormal" style="text-align: left;line-height: normal;text-autospace: none;"><span class="MCExpanding"><a href="javascript:void(0);" class="MCExpandingHead_expandspot_0" onclick="FMCExpand( this ); return false;">System script:</a><span class="MCExpandingBody" style="display: none;"><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">********************************************************************************</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">***&#160;&#160;Script: 
+	 DOTNETEXAMPLE&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;***</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">***&#160;&#160;Created 
+	 By: Marcus Hutchinson On 19/09/12&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;***</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">********************************************************************************</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">'Setup 
+	 a variable with data to pass into the example .Net DLL and another 
+	 to receive the result back</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">Assign</span></b><span style="color: #408080;font-size: 10pt;font-family: 'Courier New', monospace;">TF01</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">='Please 
+	 enter some text for the VF variable'</span><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">Assign</span></b><span style="color: #408080;font-size: 10pt;font-family: 'Courier New', monospace;">TF02</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">=""</span><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">'Load 
+	 the .Net class into Visualfiles</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">DotNet</span></b><span style="color: #0000ff;font-size: 10pt;font-family: 'Courier New', monospace;">action</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">= "Load",</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span><span style="color: #0000ff;font-size: 10pt;font-family: 'Courier New', monospace;">dll&#160;&#160;</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">= "LexisNexis.Visualfiles.Script.Example.dll",</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span><span style="color: #0000ff;font-size: 10pt;font-family: 'Courier New', monospace;">class</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">= 
+	 "LexisNexis.Visualfiles.Script.Example.VFExampleClass"</span><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /><br /></span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">If</span></b><span style="color: #0000ff;font-size: 10pt;font-family: 'Courier New', monospace;">status</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">(DotNet) 
+	 = ""</span><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">&#160;&#160;'Call 
+	 the example method in the DLL and wait for it to complete, passing 
+	 in the data from TF01</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">DotNet</span></b><span style="color: #0000ff;font-size: 10pt;font-family: 'Courier New', monospace;">action</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">="invoke",</span><span style="color: #0000ff;font-size: 10pt;font-family: 'Courier New', monospace;">method</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">="VFExampleMethod",</span><span style="color: #0000ff;font-size: 10pt;font-family: 'Courier New', monospace;">fields</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">="TF01"</span><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">If</span></b><span style="color: #0000ff;font-size: 10pt;font-family: 'Courier New', monospace;">status</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">(DotNet) 
+	 = ""</span><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;'Ask 
+	 the DLL to pass back the data and assign the results into TF02</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">&#160;&#160;&#160;</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">DotNet</span></b><span style="color: #0000ff;font-size: 10pt;font-family: 'Courier New', monospace;">action</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">="update",</span><span style="color: #0000ff;font-size: 10pt;font-family: 'Courier New', monospace;">result</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">="TF02"</span><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">'Note, 
+	 leaving result=”TF02” off this command would auto-update TF01</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">&#160;&#160;&#160;</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">If</span></b><span style="color: #0000ff;font-size: 10pt;font-family: 'Courier New', monospace;">status</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">(DotNet) 
+	 = ""</span><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">Message</span></b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">"Back 
+	 in Visualfiles, TF02=" +</span><span style="color: #408080;font-size: 10pt;font-family: 'Courier New', monospace;">TF02</span><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">&#160;&#160;&#160;</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">Else</span></b><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">'Something 
+	 went wrong retrieving the data back from the DLL&#160;&#160;&#160;</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">&#160;&#160;&#160;&#160;&#160;</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">Message</span></b><span style="color: #0000ff;font-size: 10pt;font-family: 'Courier New', monospace;">status</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">(DotNet)</span><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">&#160;&#160;&#160;</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">EndIf</span></b><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">&#160;&#160;</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">Else</span></b><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">'Something 
+	 went wrong invoking the method</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">&#160;&#160;&#160;</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">Message</span></b><span style="color: #0000ff;font-size: 10pt;font-family: 'Courier New', monospace;">status</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">(DotNet)</span><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">EndIf</span></b><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /><br /></span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">Else</span></b><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">'Something 
+	 went wrong loading the DLL into Visualfiles</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;">&#160;</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">Message</span></b><span style="color: #0000ff;font-size: 10pt;font-family: 'Courier New', monospace;">status</span><span style="font-size: 10pt;font-family: 'Courier New', monospace;">(DotNet)</span><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">EndIf</span></b><b><span style="font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /><br /></span><i><span style="color: #c0c0c0;font-size: 10pt;font-family: 'Courier New', monospace;">'Remove 
+	 the DLL from Visualfiles</span></i><span style="font-size: 10pt;font-family: 'Courier New', monospace;"><br /></span><span style="line-height: 150%;font-size: 10pt;font-family: 'Courier New', monospace;"><b style="font-size: 10pt;font-family: 'Courier New', monospace;">[</b>&amp;</span><b><span style="line-height: 150%;color: #ff0000;font-size: 10pt;font-family: 'Courier New', monospace;">DotNet</span></b><span style="line-height: 150%;color: #0000ff;font-size: 10pt;font-family: 'Courier New', monospace;">action</span><span style="line-height: 150%;font-size: 10pt;font-family: 'Courier New', monospace;">="unload"</span><b><span style="line-height: 150%;font-size: 10pt;font-family: 'Courier New', monospace;">]</span></b></span></span>
+            </p>
+            <p class="MsoNormal" style="line-height: 150%;">When you execute this system script 
+	 a Visualfiles prompt is displayed asking you to assign some data into 
+	 variable TF01.
+            </p>
+            <p class="MsoNormal" style="line-height: 150%;">Enter some text and press<b>OK</b>.
+            </p>
+            <p><span><img src="../clip_image002.jpg" alt="" width="370" height="111" border="0" /></span>
+            </p>
+            <p>Another message prompt is then displayed which 
+	 is generated by the example C#.NET DLL that includes the data you 
+	 entered in the Visualfiles prompt.
+            </p>
+            <p><span><img src="../clip_image004.jpg" alt="" width="378" height="147" border="0" /></span>
+            </p>
+            <p>When you click<b> OK</b>, the example C#.NET DLL appends the text “(This 
+	 data item has been changed by the C# example dll)” to the data you 
+	 entered in the Visualfiles prompt and returns it back to the Visualfiles 
+	 script.
+            </p>
+            <p>A standard Visualfiles prompt is displayed 
+	 showing you the amended data now held in variable TF02.
+            </p>
+            <p><span><img src="../clip_image006.jpg" alt="" width="511" height="112" border="0" /></span>
+            </p>
+            <p>This confirms that all required components are correctly installed and properly licensed.
+            </p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">2 Build 
+ your own .NET program</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p>In order to build your own .NET DLL using C# that works with Visualfiles 
+	 there a couple of prerequisites for your solution:</p>
+            <ol style="list-style-type: decimal;">
+                <li class="p" value="1">
+                    <p>You need to add a reference to the Visualfiles 
+		 Scripting Data collection, LexisNexis.Visualfiles.Script.Data.dll</p>
+                </li>
+                <li class="p" value="2">
+                    <p>For ease of coding you should add a “Using LexisNexis.Visualfiles.Script.Data;”</p>
+                </li>
+                <li class="p" value="3">
+                    <p>You need to create a method in your class with 
+		 an input parameter to receive the Visualfiles data:</p>
+                </li>
+            </ol>
+            <p style="margin-left: 40px;">public string VFExampleMethod(VisualfilesData[] 
+	 myData)</p>
+            <ol start="4" style="list-style-type: decimal;">
+                <li class="p" value="4">
+                    <p>You must deploy your .DLL in a directory that 
+		 Visualfiles can find using its PROPATH otherwise you will need 
+		 to specify its full path name on your [&amp;DotNet action=”load”] 
+		 command. It is recommended that you deploy your DLL to a directory 
+		 on each user’s PC.</p>
+                </li>
+            </ol>
+            <p>Below is the source code for the example .DLL that ships with Visualfiles.</p>
+            <p><span class="MCExpanding"><a href="javascript:void(0);" class="MCExpandingHead_expandspot_0" onclick="FMCExpand( this ); return false;">Source 
+	 code:</a><span class="MCExpandingBody" style="display: none;"><span style="font-size: 10pt;font-family: 'Courier New', monospace;">using 
+	 System;<br />	using System.Collections.Generic;<br />	using System.Linq;<br />	using System.Text;<br />	using System.Windows.Forms;<br />	using LexisNexis.Visualfiles.Script.Data;<br /><br />	namespace LexisNexis.Visualfiles.Script.Example<br />	{<br />	&#160;&#160;&#160;&#160;public class VFExampleClass<br />	&#160;&#160;&#160;&#160;{<br />	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;public string VFExampleMethod(VisualfilesData[] 
+	 pVFDataSet)<br />	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br /><br />	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;foreach 
+	 (VisualfilesData dataItem in pVFDataSet)<br />	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{<br />	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;MessageBox.Show(string.Format("DotNet 
+	 method invoked by Visualfiles: {0} = {1}", dataItem.DataLabel, 
+	 dataItem.DataValue), "Visualfiles Example Using &amp;DotNet Command", 
+	 MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);<br /><br />	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;dataItem.DataValue 
+	 = dataItem.DataValue + " (This data item has been changed by 
+	 the C# example dll)";<br />	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br /><br />	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;return 
+	 “”;<br />	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}<br />	&#160;&#160;&#160;&#160;}<br />	}</span></span></span>
+            </p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> 
+	 In our example DLL we return a blank value<span style="font-size: 9.0pt;line-height: 150%;font-family: 'Courier New';color: #0000ff;"> return</span><span style="font-size: 9.0pt;line-height: 150%;font-family: 'Courier New';">“”</span><span lang="EN-US" style="line-height: 150%;"> back to the Visualfiles script. If you 
+	 wish to pass back a response then replace </span><span style="font-size: 9.0pt;line-height: 150%;font-family: 'Courier New';color: #0000ff;">return</span><span style="font-size: 9.0pt;line-height: 150%;font-family: 'Courier New';">“” </span><span lang="EN-US" style="line-height: 150%;">with</span><span style="font-size: 9.0pt;line-height: 150%;font-family: 'Courier New';color: #0000ff;"> return</span><span style="font-size: 9.0pt;line-height: 150%;font-family: 'Courier New';">“&lt;my 
+	 response text&gt;”. </span><span lang="EN-US" style="line-height: 150%;">Your Visualfiles 
+	 script can then store that response in a scripting field using the 
+	 syntax </span><span style="font-size: 9.0pt;line-height: 150%;font-family: 'Courier New';color: #0000ff;">Response</span><span style="font-size: 9.0pt;line-height: 150%;font-family: 'Courier New';">= 
+	 &lt;Field&gt;</span><span lang="EN-US" style="line-height: 150%;"> on the invoke command.</span></p>
+            <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="Example code">Example code</a>:</p><span style="font-size: 10pt; font-family: 'Courier New', monospace; display: none;" MadCap:targetName="Example code">[&amp;DotNet&#160;&#160;Action 
+				= "Invoke", Method = "VFExampleMethod", Fields 
+			= "TF01,TF02", Response = TF03]<br /><br />	[&amp;If TF03 &lt;&gt; ""]<br />	&#160;&#160;[&amp;Message "Response from DLL = " + TF03]<br />	[&amp;EndIf]</span>
+        </div>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1"><a href="../System_Parameters.htm">Licence &amp; Setup - System 
+	 Parameters</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

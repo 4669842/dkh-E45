@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;UserInput</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;UserInput</span>
+        </div>
+        <h1><a name="kanchor2077"></a><a name="kanchor2078"></a>&amp;UserInput</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[<b>{</b>&amp;UserInput<b> </b>Choices= Default= Format= next-action= next-action-inputs= No-cancel prompt= Result= type="text expression"<b>|</b>"supplier" help= help-label= tooltip=<b>}</b>]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p><a name="kanchor2079"></a>The &amp;UserInput command replicates the functionally of the existing 
+ user input specified with single quotes, for example, ‘Enter your name’.</p>
+        <p>This command enables standard user input functionality to be extended 
+ by using the scripting parameters defined below.</p>
+        <p>It also enables user input in a <a href="../Scripting/Visualfiles_Browser_Environment.htm#Stateless_Scripting_Options">stateless 
+ environment</a> using the <span style="font-weight: bold;">next-action</span> 
+ parameter.</p>
+        <h3><a name="Values_Input_Prompt" id="Values_Input_Prompt"></a>Values Input 
+ Prompt</h3>
+        <p>The <span style="font-weight: bold;">values</span> option is available 
+ as an input prompt and on the &amp;UserInput command. <a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="Values Input Prompt">Example</a>:</p>
+        <div MadCap:targetName="Values Input Prompt" style="display: none;">
+            <p class="Script">[&amp;Userinput Result=&lt;Field Code&gt;, Values=&lt;value-list&gt;]</p>
+            <p>Or,</p>
+            <p class="Script">'Prompt text'(values &lt;value-list&gt;)</p>
+            <p>Where &lt;value-list&gt; resolves to a colon separated list of label=value pairs.</p>
+        </div>
+        <h3>Input Prompt Help Text</h3>
+        <p>Make use of the help text input prompts to display a help button on 
+ the input screen and supply tooltips to the end user. Go to <a href="#Input_Prompt_Help_Text_Parameters" class="selected">Input 
+ Prompt Help Text Parameters</a>. See <a href="#Examples" class="selected">example 5</a>.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;margin-bottom: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Choices={text_expression} 
+		 &#160;</p>
+                    <p>Evaluating to a colon delimited list.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> If only one 
+		 option is required insert a colon after the first choice to display 
+		 one radio button, see <a href="#Examples" class="selected">example 4</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Default={text_expression}</p>
+                    <p>Enter the default text you want shown.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Format={text_expression}</p>
+                    <p>Default is no fixed format.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">next-action={text_expression}</p>
+                    <p>The <span style="font-weight: bold;">next–action</span> parameter 
+		 is used to end the script run at this point. Any code after the 
+		 &amp;UserInput command is ignored and the script specified by 
+		 the text expression in the next-action parameter is run. See <a href="#Examples" class="selected">example 2</a>.</p>
+                    <p>Text expressions are used to name the required script and can 
+		 be constructed from any combination of the following:</p>
+                    <ul>
+                        <li class="p-BulletedList" value="1">
+                            <p class="BulletedList"><span class="ScriptChar">"constant 
+			 text"</span>, such as a script name</p>
+                        </li>
+                        <li class="p-BulletedList" value="2">
+                            <p class="BulletedList"><span class="ScriptChar">'User 
+			 input'</span>
+                            </p>
+                        </li>
+                        <li class="p-BulletedList" value="3">
+                            <p class="BulletedList">Database 
+			 fields</p>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="p-BulletedList" value="1">
+                            <p class="BulletedList">LF, TF, 
+			 PI fields. The temporary field specified will contain the 
+			 value entered by the user.</p>
+                        </li>
+                    </ul>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> For more information 
+		 on stateless scripting options go to <a href="../Scripting/Visualfiles_Browser_Environment.htm#no_wait_next_action_Parameters">no-wait 
+		 and next-action Parameters</a>, <a href="../Scripting/Visualfiles_Browser_Environment.htm">Visualfiles 
+		 Browser Environment</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">next-action-inputs={expression};{expression}...</p>
+                    <p>List of semi-colon delimited items to be passed as PI fields 
+		 into the next-action script.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">No-cancel</p>
+                    <p>Default is to show the <span style="font-weight: bold;">Cancel</span> 
+		 button.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">prompt={text_expression}</p>
+                    <p>Default is blank.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="Result_Values" id="Result_Values"></a>Result={Temporary_Field}</p>
+                    <p>This can be TF, LF, PI and will be the field that the user input 
+		 is stored into.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> There is a 
+		 <span class="ScriptChar">Values</span> input option available, 
+		 see <a href="#Examples" class="selected">example 3</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Type={text_expression}</p>
+                    <p>Evaluating to one of text, number, whole, date, question, choose, 
+		 filename, time, timeofday or notes. The default is text.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> To format 
+		 the output and to perform tests you need to insert additional 
+		 code after the &amp;UserInput command, e.g.: <span class="ScriptChar">&amp;Assign 
+		 LF01=LF01:date</span> or <span class="ScriptChar">&amp;Assign 
+		 LF01=LF01:number</span>.</p>
+                    <p>type="supplier"</p>
+                    <p> Access SOS supplier 
+	 code lookup. See <a href="#Examples" class="selected">example 7</a>.</p>
+                </td>
+            </tr>
+        </table>
+        <table style="left: 0px;top: 13px;margin-top: 10px;margin-bottom: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading"><a name="kanchor2080"></a><a name="Input_Prompt_Help_Text_Parameters" id="Input_Prompt_Help_Text_Parameters"></a>Input Prompt Help Text 
+		 Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">help=&lt;text expression&gt;:</p>
+                    <p>When a value for the help parameter is specified, a help button 
+		 appears on the input screen. Click the help button to display 
+		 the specified text.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">help-label=&lt;text 
+		 expression&gt;:</p>
+                    <p>The tooltip on the help button can be changed from its default 
+		 of ‘Help’ by specifying the help-label= parameter.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">tooltip=&lt;text expression&gt;:</p>
+                    <p>When text is specified for the tooltip= parameter, this tooltip 
+		 appears when the cursor hovers over the input field.</p>
+                    <p>Tooltip and Help text can be displayed across more than one 
+		 line by use of &lt;cr&gt; &#160;within the specified text, e.g.:</p>
+                    <p class="Script">tooltip="line1&lt;cr&gt;line2&lt;cr&gt;line3"</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">1 prompt 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p class="Script">[&amp;UserInput prompt="Enter your name",result=LF01]</p>
+            <p class="Script">[&amp;Message "You entered:" + LF01]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">2 next-action 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p>Any code after the next-action parameter is ignored.</p>
+            <p>The script specified with the next-action parameter is run after 
+	 the &amp;UserInput command.</p>
+            <p>The temporary field specified contains the value entered by the 
+	 user.</p>
+            <p class="Script">[&amp;UserInput prompt="Enter your age",type="whole",result=LF45,next-action="nextScript"]</p>
+            <p class="Script">[&amp;Message "This line will never be reached"]</p>
+            <p>The script <span style="font-weight: bold;">nextScript</span> includes 
+	 the command:</p>
+            <p class="Script">[&amp;Message "Your age is:" + LF45]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">3 Values 
+ input option</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p class="Script">[&amp;UserInput prompt="Please choose",result=LF01,values="First 
+	 Option=A:Second Option=B:Third Option=C"]</p>
+            <p class="Script">[&amp;Message LF01]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The value list 
+	 resolves to a colon separated list of label=value pairs.</p>
+            <p>See also <a href="../Functions/input_prompt.htm#Values_Input_Prompt">Values 
+	 Input Prompt</a>.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">4 Choices 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p class="Script">[&amp;UserInput prompt="Select A Colour",choices="red:green:blue",default="red",result=TF01]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> If only one option 
+	 is required insert a colon after the first choice to display one radio 
+	 button, e.g.:<span class="ScriptChar"><br />	[&amp;Assign LF03 ="choiceone:"]<br />	[&amp;UserInput prompt="Option 1",choices=LF03,result=LF05,no-cancel]</span></p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">5 Input 
+ Prompt Help Text</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p class="Script">[&amp;Assign LF01='Enter details of ID provided'(tooltip="Click 
+	 on Help for guidance",help="See ML Regs")]</p>
+            <p class="Script">&#160;</p>
+            <p class="Script">[&amp;Userinput prompt="Choose value", 
+	 choices="choice1:choice2:choice3", result=LF01, help=LF99,help-label="Click 
+	 here for &amp;help on selecting"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">6 Type 
+ parameter - timeofday</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p>Use the timeofday input prompt to input a time value for the time 
+	 of day rather than a period of time.</p>
+            <p>The value entered must be between 0.00 and 23.59. It is entered 
+	 in the format HH.MM.</p>
+            <p class="Script">[&amp;Userinput prompt="Enter Time", type="timeofday", 
+	 result=LF01]</p>
+            <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="Suppliers">7 Query SOS suppliers</a>
+            </p>
+            <div MadCap:targetName="Suppliers" style="display: none;">
+                <p>[&amp;UserInput type=”supplier”]</p>
+                <p>Calls the SOS Suppliers query, enabling users to select the supplier code in the Supplier dialog which is returned in a local field.</p>
+            </div>
+        </div>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1"><a href="../Scripting/Visualfiles_Browser_Environment.htm#Stateless_Scripting_Options">Stateless 
+	 Scripting Options</a>
+            </li>
+            <li value="2"><a href="../Scripting/Visualfiles_Browser_Environment.htm">Visualfiles 
+	 Browser Environment</a>
+            </li>
+            <li value="3"><a href="../Functions/input_prompt.htm">Input Prompt</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

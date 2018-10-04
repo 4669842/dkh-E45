@@ -1,0 +1,1224 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;Field</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;Field</span>
+        </div>
+        <h1><a name="kanchor655"></a>&amp;Field</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[&amp;Field code = "{<b>&lt;</b>DBScreenCode<b>&gt;</b>"|"<b>&lt;</b>DBFieldCode<b>&gt;</b>"},attribute 
+ = "<b>&lt;</b>Attribute<b>&gt;</b>",value = "<b>&lt;</b>ValueString<b>&gt;</b>"]&#160;</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>This command is used to manipulate database fields on a screen.</p>
+        <p>&amp;Field can be used in a <span style="font-weight: bold;">View Screen</span> 
+ script, a field and a button.</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 33.082%;" />
+            <col style="width: 66.918%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border: Solid 1px #c0c0c0;width: 100%;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">attribute = <b>&lt;</b><span class="ScriptChar">Attribute<b>&gt;</b></span></p>
+                    <p>Specifies the attribute &#160;to be manipulated:</p>
+                    <p style="margin-left: 40px;"><span class="ScriptChar">Backcolour</span>
+                    </p>
+                    <p style="margin-left: 40px;"><span class="ScriptChar">Forecolour</span>
+                    </p>
+                    <p style="margin-left: 40px;"><span class="ScriptChar">Hidden</span>
+                    </p>
+                    <p style="margin-left: 40px;"><span class="ScriptChar">Image</span>: 
+		 Used in conjunction with the value parameter to specify an image 
+		 for a Static Image field type (<a href="#Property_Type" class="selected">Property 
+		 type</a>), see <a href="#Examples" class="selected">example 8</a>.</p>
+                    <p style="margin-left: 40px;"><span class="ScriptChar">Label-Backcolour</span>
+                    </p>
+                    <p style="margin-left: 40px;"><span class="ScriptChar">Label-Forecolour</span>
+                    </p>
+                    <p style="margin-left: 40px;"><span class="ScriptChar">Label-Visible</span>
+                    </p>
+                    <p style="margin-left: 40px;"><span class="ScriptChar">List-Items</span>: 
+		 Enables you to create a new selection list for a screen field. 
+		 See <a href="#Examples" class="selected">example 7</a>.</p>
+                    <p style="margin-left: 40px;"><span class="ScriptChar">List-Items-Append</span>: 
+		 Enables you to add a number of items to an existing selection 
+		 list.</p>
+                    <p style="margin-left: 40px;"><span class="ScriptChar">Navigate</span>: 
+		 Used in conjunction with the value parameter to manipulate the 
+		 properties of a web page field type.</p>
+                    <p style="margin-left: 40px;"><span class="ScriptChar">Read-only</span>
+                    </p>
+                    <p style="margin-left: 40px;"><span class="ScriptChar">Tooltip</span>
+                    </p>
+                    <p style="margin-left: 40px;"><span class="ScriptChar">Vertical-scrollbar</span>: 
+		 Used to show or hide the vertical scrollbar in an embedded grid, 
+		 see <a href="#Examples" class="selected">example 10</a>.</p>
+                    <p style="margin-left: 40px;"><span class="ScriptChar">Visible</span>: 
+		 Used to hide embedded grid screen fields, see <a href="#Examples" class="selected">example 
+		 9</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">code = <b>&lt;</b>{DBScreenCode|DBFieldCode}<b>&gt;</b></p>
+                    <p>Specify a database screen code to change all fields on the screen 
+		 or a database field code to change only that field.</p>
+                    <p>The code parameter may be expressed as the screen code plus 
+		 the expression TEXT or RECT plus the field number to adjust the 
+		 properties of screen text or rectangles respectively, for example, 
+		 ABCTEXT02 is the screen code ABC plus the expression TEXT and 
+		 field code 02.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">value = <b>&lt;</b>ValueString<span style="font-weight: bold;">&gt;</span></p>
+                    <p>Specifies the value of the corresponding attribute:</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 33.082%;padding-right: 10px;padding-left: 10px;">
+                    <p>Visible</p>
+                    <p>Read-only</p>
+                    <p>Forecolour</p>
+                    <p>Backcolour</p>
+                    <p>Tooltip</p>
+                    <p>Label-Visible</p>
+                    <p>Label-Forecolour</p>
+                    <p>Label-Backcolour</p>
+                    <p>Image</p>
+                    <p>Forward</p>
+                    <p>Back</p>
+                    <p>Home</p>
+                    <p>Refresh</p>
+                    <p>URL</p>
+                    <p>Label</p>
+                    <p>Script</p>
+                    <p>Text</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 66.918%;padding-right: 10px;padding-left: 10px;">
+                    <p>YES, 
+		 Y, No, N</p>
+                    <p>YES, Y, No, N</p>
+                    <p>a number from 0 to 15</p>
+                    <p>a number from 0 to 15</p>
+                    <p>any text value</p>
+                    <p>YES, Y, No, N</p>
+                    <p>a number from 0 to 15</p>
+                    <p>a number from 0 to 15</p>
+                    <p>a file path and image filename, see <a href="#Examples" class="selected">example 
+		 8</a>.</p>
+                    <p>adds a forward button to a web page field type</p>
+                    <p>adds a back button to a web page field type</p>
+                    <p>adds a home button to a web page field type</p>
+                    <p>adds a refresh button to a web page field type</p>
+                    <p>specify the default URL</p>
+                    <p>the label for a field can be modified at run-time as part of 
+		 a View Screen script. If the field has a hyperlink attached to 
+		 the label, the hyperlink script can also be changed. Use the <span class="ScriptChar">Label</span> and <span class="ScriptChar">Script</span> 
+		 attributes to change the label and attached script. See <a href="#Examples" class="selected">example 
+		 11</a>.</p>
+                    <p>screen text field can be modified at run-time as part of a View 
+		 Screen script. Use the Text and Script &#160;attributes to change 
+		 the text and attached scrip.&#160;See <a href="#Examples" class="selected">example 
+		 12</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td colspan="2" style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>The list below illustrates the value 
+		 of each colour, for example, red has a value of '12' and would 
+		 be represented as ,value = "12".</p>
+                    <table cellspacing="0" width="100%">
+                        <col style="width: 8.087%;" />
+                        <col style="width: 26.812%;" />
+                        <col style="width: 9.219%;" />
+                        <col style="width: 55.435%;" />
+                        <tr style="vertical-align: top;">
+                            <td style="border-top: Solid 1px #c0c0c0;border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;width: 8.087%;padding-right: 10px;padding-left: 10px;">
+                                <p>
+                                    <img src="../Images/Colour_0.gif" alt="" style="border: none;" width="34" height="23" border="0" />
+                                </p>
+                            </td>
+                            <td style="border-top: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;width: 26.812%;padding-right: 10px;padding-left: 10px;">
+                                <p>Colour 
+				 0</p>
+                            </td>
+                            <td style="border-top: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;width: 9.219%;padding-right: 10px;padding-left: 10px;">
+                                <p>
+                                    <img src="../Images/Colour_8.gif" alt="" style="border: none;" width="33" height="22" border="0" />
+                                </p>
+                            </td>
+                            <td style="border-top: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;width: 55.435%;padding-right: 10px;padding-left: 10px;">
+                                <p>Colour 
+				 8</p>
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: top;">
+                            <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;width: 8.087%;padding-right: 10px;padding-left: 10px;">
+                                <p>
+                                    <img src="../Images/Colour_1.gif" alt="" style="border: none;" width="33" height="22" border="0" />
+                                </p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 26.812%;padding-right: 10px;padding-left: 10px;">
+                                <p>Colour 
+				 1</p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 9.219%;padding-right: 10px;padding-left: 10px;">
+                                <p>
+                                    <img src="../Images/Colour_9.gif" alt="" style="border: none;" width="33" height="22" border="0" />
+                                </p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 55.435%;padding-right: 10px;padding-left: 10px;">
+                                <p>Colour 
+				 9</p>
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: top;">
+                            <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;width: 8.087%;padding-right: 10px;padding-left: 10px;">
+                                <p>
+                                    <img src="../Images/Colour_2.gif" alt="" style="border: none;" width="33" height="22" border="0" />
+                                </p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 26.812%;padding-right: 10px;padding-left: 10px;">
+                                <p>Colour 
+				 2</p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 9.219%;padding-right: 10px;padding-left: 10px;">
+                                <p>
+                                    <img src="../Images/Colour_10.gif" alt="" style="border: none;" width="34" height="22" border="0" />
+                                </p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 55.435%;padding-right: 10px;padding-left: 10px;">
+                                <p>Colour 
+				 10</p>
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: top;">
+                            <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;width: 8.087%;padding-right: 10px;padding-left: 10px;">
+                                <p>
+                                    <img src="../Images/Colour_3.gif" alt="" style="border: none;" width="33" height="22" border="0" />
+                                </p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 26.812%;padding-right: 10px;padding-left: 10px;">
+                                <p>Colour 
+				 3</p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 9.219%;padding-right: 10px;padding-left: 10px;">
+                                <p>
+                                    <img src="../Images/Colour_11.gif" alt="" style="border: none;" width="34" height="22" border="0" />
+                                </p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 55.435%;padding-right: 10px;padding-left: 10px;">
+                                <p>Colour 
+				 11</p>
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: top;">
+                            <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;width: 8.087%;padding-right: 10px;padding-left: 10px;">
+                                <p>
+                                    <img src="../Images/Colour_4.gif" alt="" style="border: none;" width="34" height="22" border="0" />
+                                </p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 26.812%;padding-right: 10px;padding-left: 10px;">
+                                <p>Colour 
+				 4</p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 9.219%;padding-right: 10px;padding-left: 10px;">
+                                <p>
+                                    <img src="../Images/Colour_12.gif" alt="" style="border: none;" width="34" height="22" border="0" />
+                                </p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 55.435%;padding-right: 10px;padding-left: 10px;">
+                                <p>Colour 
+				 12</p>
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: top;">
+                            <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;width: 8.087%;padding-right: 10px;padding-left: 10px;">
+                                <p>
+                                    <img src="../Images/Colour_5.gif" alt="" style="border: none;" width="34" height="22" border="0" />
+                                </p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 26.812%;padding-right: 10px;padding-left: 10px;">
+                                <p>Colour 
+				 5</p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 9.219%;padding-right: 10px;padding-left: 10px;">
+                                <p>
+                                    <img src="../Images/Colour_13.gif" alt="" style="border: none;" width="34" height="22" border="0" />
+                                </p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 55.435%;padding-right: 10px;padding-left: 10px;">
+                                <p>Colour 
+				 13</p>
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: top;">
+                            <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;width: 8.087%;padding-right: 10px;padding-left: 10px;">
+                                <p>
+                                    <img src="../Images/Colour_6.gif" alt="" style="border: none;" width="34" height="22" border="0" />
+                                </p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 26.812%;padding-right: 10px;padding-left: 10px;">
+                                <p>Colour 
+				 6</p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 9.219%;padding-right: 10px;padding-left: 10px;">
+                                <p>
+                                    <img src="../Images/Colour_14.gif" alt="" style="border: none;" width="34" height="22" border="0" />
+                                </p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;width: 55.435%;padding-right: 10px;padding-left: 10px;">
+                                <p>Colour 
+				 14</p>
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: top;">
+                            <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 8.087%;padding-right: 10px;padding-left: 10px;">
+                                <p>
+                                    <img src="../Images/Colour_7.gif" alt="" style="border: none;" width="34" height="22" border="0" />
+                                </p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 26.812%;padding-right: 10px;padding-left: 10px;">
+                                <p>Colour 
+				 7</p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 9.219%;padding-right: 10px;padding-left: 10px;">
+                                <p>
+                                    <img src="../Images/Colour_15.gif" alt="" style="border: none;" width="34" height="22" border="0" />
+                                </p>
+                            </td>
+                            <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 55.435%;padding-right: 10px;padding-left: 10px;">
+                                <p>Colour 
+				 15</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <p>&#160;</p>
+                </td>
+            </tr>
+        </table>
+        <p>Some attributes can only be used with particular field types: the table 
+ below shows which attributes can be used with each field types.</p>
+        <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Navigate can only 
+ be used with the <a href="../Web_Page_Field_Type.htm">Web Page</a> field 
+ type.</p>
+        <table style="margin-top: 10px;" cellspacing="0" width="100%">
+            <col width="65" />
+            <col width="73" />
+            <col width="98px" />
+            <col width="73" />
+            <col width="73" />
+            <col width="73" />
+            <col width="73" />
+            <col width="73" />
+            <col width="73" />
+            <col width="73" />
+            <tr style="vertical-align: middle;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-left: 10px;padding-top: 0px;padding-bottom: 0px;padding-right: 10px;" background="../BckgrdBCT.gif" width="65" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading" style="font-weight: bold;"><strong><span style="font-weight: bold;"><a name="Property_Type" id="Property_Type"></a>Property 
+		 Type</span></strong>
+                    </p>
+                </td>
+                <td style="border-top: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-left: 10px;padding-top: 0px;padding-bottom: 0px;padding-right: 10px;" background="../BckgrdBCT.gif" width="73" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading"><b>Image</b>
+                    </p>
+                </td>
+                <td style="border-top: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-left: 10px;padding-top: 0px;padding-bottom: 0px;padding-right: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading"><strong style="font-weight: bold;">Visible</strong>
+                    </p>
+                </td>
+                <td style="border-top: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-left: 10px;padding-top: 0px;padding-bottom: 0px;padding-right: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading"><strong style="font-weight: bold;">Read-only</strong>
+                    </p>
+                </td>
+                <td style="border-top: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-left: 10px;padding-top: 0px;padding-bottom: 0px;padding-right: 10px;" background="../BckgrdBCT.gif" width="73" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading"><strong style="font-weight: bold;">Forecolour</strong>
+                    </p>
+                </td>
+                <td style="border-top: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-left: 10px;padding-top: 0px;padding-bottom: 0px;padding-right: 10px;" background="../BckgrdBCT.gif" width="73" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading"><strong style="font-weight: bold;">Backcolour</strong>
+                    </p>
+                </td>
+                <td style="border-top: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-left: 10px;padding-top: 0px;padding-bottom: 0px;padding-right: 10px;" background="../BckgrdBCT.gif" width="73" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading"><strong style="font-weight: bold;">Tooltip</strong>
+                    </p>
+                </td>
+                <td style="border-top: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-left: 10px;padding-top: 0px;padding-bottom: 0px;padding-right: 10px;" background="../BckgrdBCT.gif" width="73" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading"><strong style="font-weight: bold;">Label-forecolour</strong>
+                    </p>
+                </td>
+                <td style="border-top: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-left: 10px;padding-top: 0px;padding-bottom: 0px;padding-right: 10px;" background="../BckgrdBCT.gif" width="73" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading"><strong style="font-weight: bold;">Label-backcolour</strong>
+                    </p>
+                </td>
+                <td style="border-top: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-left: 10px;padding-top: 0px;padding-bottom: 0px;padding-right: 10px;" background="../BckgrdBCT.gif" width="73" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading"><strong style="font-weight: bold;">Label-visible</strong>
+                    </p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Address</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Aggregate</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>N/A</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Button</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Checkbox</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N/A</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N/A</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Datalink</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>N/A</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Date</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Interest</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>N/A</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Linkeddoc</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Lookup</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Notes</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Number</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Pointer</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Rectangle</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>N/A</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N/A</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N/A</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N/A</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N/A</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Relation</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Screen 
+		 text</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>N/A</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N/A</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N/A</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N/A</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Static 
+		 image</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>N/A</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N/A</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N/A</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N/A</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N/A</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N/A</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Text</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Time</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">UD 
+		 lookup</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: middle;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;font-weight: bold;" width="65">
+                    <p style="font-weight: bold;">Updatable 
+		 Pointer</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>N</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-left: 10px;padding-top: 0px;padding-right: 0px;padding-bottom: 0px;" width="73">
+                    <p>Y</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t11">1 Modify all the fields in the screen ABC, to have a yellow background colour</a>
+        </p>
+        <div MadCap:targetName="t11" style="display: none;">
+            <p class="Script">[&amp;Field code = "ABC",attribute = "backcolour",value = "14"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t10">2 Hide the database field ABC04</a>
+        </p>
+        <div MadCap:targetName="t10" style="display: none;">
+            <p class="Script">[&amp;Field code = "ABC04",attribute = "visible",value = "No"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t9">3 Create red text on ABC06 and make it read-only</a>
+        </p>
+        <div MadCap:targetName="t9" style="display: none;">
+            <p class="Script">[&amp;Field code = "ABC06",attribute = "forecolour,read-only",value = "12,yes"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t12">4 Modify ABCTEXT02 &#160;to have a blue background</a>
+        </p>
+        <div MadCap:targetName="t12" style="display: none;">
+            <p>[&amp;Field code = "ABCTEXT02",attribute = "backcolour",value = "9"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t8">5 Modify Rectangle 03 on ABCRECT03, to have a green background</a>
+        </p>
+        <div MadCap:targetName="t8" style="display: none;">
+            <p class="Script">[&amp;Field code = "ABCRECT03",attribute 
+	 = "backcolour",value = "10"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t7">6 Create 
+ navigation buttons for a web page field type</a>
+        </p>
+        <div MadCap:targetName="t7" style="display: none;">
+            <p class="Script">[&amp;Field code="web01",Attribute="navigate",Value="BACK"]</p>
+            <p class="Script">[&amp;Field code="web01",Attribute="navigate",Value="FORWARD"]</p>
+            <p class="Script">[&amp;Field code="web01",Attribute="navigate",Value="REFRESH"]</p>
+            <p class="Script">[&amp;Field code="web01",Attribute="navigate",Value="HOME"]</p>
+            <p class="Script">[&amp;Field code="web01",Attribute="navigate",Value="http://www.visualfiles.com/"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">7 List-Items 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p class="Script">[&amp;Field code="ABC01", attribute="List-Items", 
+	 value="One;Two;Three;Four;Five"]</p>
+            <p>The value must be semi-colon delimited.</p>
+            <p>This command is added to the view script that runs when screen ABC 
+	 is displayed and results in field 01 having a new selection list.</p>
+            <p>It is also possible to set up the selection list using temporary 
+	 fields and user-defined screen fields, for example:</p>
+            <p class="Script">[&amp;Assign LF01="Red;Green;White"]</p>
+            <p>[&amp;Field code=”ABC01”, attribute=”List-Items”, value=LF01 + “;” + AAA03]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The List-Items 
+	 parameter and the List-Items-Agenda parameter only work when 
+	 they are used from the view script, and they can only be applied to 
+	 a field which already has a selection list applied to it in its field 
+	 properties.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">8 Specify 
+ an image for a screen</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p class="Script">[&amp;Field code="RAA05", attribute="image", 
+	 value="lnimg\letter.jpg"]</p>
+            <p>The image file must be held in your <b>LNimg</b> folder, and the field type needs to be a static image.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">9 Hide 
+ the embedded grid field</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p>To hide the embedded grid field, where TST01 in the script below 
+	 is the embedded grid:</p>
+            <p class="Script">[&amp;Field code = "TST01",attribute = 
+	 "visible",value = "No"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">10 Vertical-scrollbar</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>Set the vertical scrollbar attribute of a grid to “yes” or “no”.</p>
+            <p class="Script">[&amp;Field code="ABC01", attribute="vertical-scrollbar", 
+	 value="no"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">11 label 
+ and script attributes</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p>To change the field label on the first screen field on screen ABC 
+	 use the following syntax:</p>
+            <p class="Script">[&amp;Field code= "abc01" ,attribute= "label" 
+	 ,value= "New field label here" ]</p>
+            <p>To change the script attached to the field label use the following syntax:</p>
+            <p class="Script">[&amp;Field code= "abc01" ,attribute= "script" 
+	 ,value= "script name here" ]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The script name 
+	 (code) needs to be entered, not the full description.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">12 text 
+ and script attributes</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p>To change the text displayed on the first screen text field on screen 
+	 ABC use the following syntax:</p>
+            <p class="Script">[&amp;Field code= "abctext01" ,attribute= 
+	 "text" ,value= "New screen text here" ]</p>
+            <p>To change the script attached to the screen text on the same field 
+	 the &#160;syntax would be:</p>
+            <p class="Script">[&amp;Field code= "abctext01" ,attribute= 
+	 "script" ,value= "script name here" ]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The script name 
+	 (code) needs to be entered, not the full description.</p>
+        </div>
+        <h4>Developers' Tip</h4>
+        <p>There must be a matching value for each attribute specified and the 
+ values must be separated by commas.</p>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

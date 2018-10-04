@@ -1,0 +1,1071 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;History</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;History</span>
+        </div>
+        <h1><a name="kanchor1992"></a><a name="kanchor1993"></a>&amp;History</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[&amp;History "<span style="font-weight: bold;">&lt;</span>MessageText<span style="font-weight: bold;">&gt;</span>"]</p>
+        <p><a href="#Examples" class="selected">Example&#160;Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p>Creates a new history item and saves it to the history of a file.</p>
+        <p>Parameters used in conjunction with this command include functionality 
+ such as saving documents, charging for time, setting the date, setting 
+ the category, activating document versions, setting access level, recording 
+ timer information, etc.</p>
+        <p><a name="kanchor1994"></a>An &amp;History command includes message text (contained in double quotes 
+ " ") &#160;that is posted to the History screen of the selected 
+ file along with the date of the action. This message can contain up to 
+ 259 characters but only 32 are displayed on the File History screen. If 
+ the required history message is longer than 50 characters, then this extra 
+ information may be added to the history item as additional text.</p>
+        <p>When saving an email into file history you can edit the <a href="../Import_Document_Script.htm" style="font-weight: normal;">Import Document Script</a> in the application 
+ editor to override the standard behaviour; for example, to prompt users 
+ for additional information or to create a reminder.</p>
+        <h3>Document Bundling</h3>
+        <p>During the save to file history process when using <a href="../Document_Bundling/Document_Bundling.htm">Document 
+ Bundling</a> the <a href="../Import_Document_Script.htm">Import Document 
+ Script</a> of the file is run which incorporates the &amp;History command 
+ and relevant parameters, which are used to create the required document 
+ bundle versions. These parameters are <a href="#auto" class="selected">auto</a>, <a href="#auto-save" class="selected">auto-save</a>, 
+ <a href="#docid" class="selected">docid</a>, <a href="#KeyDate" class="selected">keydate</a>, <a href="#master" class="selected">master</a> 
+ and <a href="#versions" class="selected">versions</a>. See <a href="#Examples" class="selected">examples 
+ 15-20</a>.</p>
+        <p>The parameters list below is organised into <a href="#General_Parameters" class="selected">General 
+ Parameters</a> and <a href="#Email_Parameters" class="selected">Email Parameters</a>. </p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading"><a name="General_Parameters"></a>General 
+		 Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">access = <span style="font-weight: bold;">&lt;</span>AccessLevelCode<span style="font-weight: bold;">&gt;</span></p>
+                    <p>Attaches a condition to the history item: where a user has an 
+		 access level lower than the one required, they cannot view the 
+		 history item.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="activity"></a>activity</p>
+                    <p>Enables an activity type to be associated with the history item 
+		 and allows time to be recorded against that item.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The Activity 
+		 type must already be setup in Administration using <a href="../Activity_Codes.htm">Activity 
+		 Codes</a>.</p>
+                    <p>The charge is applied against the Active File Holder specified 
+		 by the <span style="font-weight: bold;">fee-earner</span> parameter, 
+		 or subsequently selected in the History Item dialog box.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">amend</p>
+                    <p>Displays the History Item dialog so that users can add or amend 
+		 some of the history item details including Time units.</p>
+                    <p>Once the agenda item containing the &amp;History command has 
+		 been actioned, the History Time Item window is displayed.</p>
+                    <p>This dialog box is not displayed if the File Holder has <a href="../Time_Sheets.htm">Time 
+		 Sheets</a> enabled; the item is saved directly to their time sheet.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> When the [&amp;History 
+		 ,amend] command is used the history item added is date for the 
+		 history item is checked. If the date for the history item is greater 
+		 than one year old the user is asked to confirm this is correct, 
+		 'Date entered is greater than 1 year old. Is this correct?'</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="auto" id="auto"></a>auto</p>
+                    <p>Automatically creates a new version of a document on closing 
+		 when used in conjunction with versions. </p>
+                    <p>This parameter is used in <a href="../Document_Bundling/Document_Bundling.htm">Document 
+		 Bundling</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="auto-save" id="auto-save"></a>auto-save</p>
+                    <p>Automatically saves the document when a DocId is also supplied. 
+		 Prevents the version dialog or save prompt from appearing. The 
+		 history item is saved silently. </p>
+                    <p>This parameter is used in <a href="../Document_Bundling/Document_Bundling.htm">Document 
+		 Bundling</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">billable = "{Y,Yes,True,X}"</p>
+                    <p>Allows a user to specify that the history item should be excluded 
+		 from bills when they are compiled.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">call = <span style="font-weight: bold;">&lt;</span>scriptname<span style="font-weight: bold;">&gt;</span></p>
+                    <p>This parameter enables you to &#160;specify a script to run 
+		 when a document has been closed by a user. It can only be used to capture 
+		 information that is to be stored as 		 <a href="../Metadata.htm">metadata</a> after the document has been edited by the end user. Although a 
+		 postscript is provided with each document, they are run prior 
+		 to the document being displayed. See&#160;<a href="#Examples" class="selected">example 
+		 23</a>.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>This parameter can only be used in conjunction with documents run from the agenda.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">category = "<span style="font-weight: bold;">&lt;</span>CategoryCode<span title="This parameter can accept any type of user input: direct text/number/date input, a database field, a temporary field, a global field, an input parameter or an output parameter." style="font-weight: bold;cursor: hand;">&gt;</span>"</p>
+                    <p>Sets the history item as being of a particular category when 
+		 used in conjunction with the <span style="font-weight: bold;">save</span>, 
+		 <span style="font-weight: bold;">scan</span> or <span style="font-weight: bold;">read</span> 
+		 parameters. The category can then be used as a means of filtering 
+		 history items. A maximum of 15 categories can be assigned to a 
+		 history item.</p>
+                    <p>The category does not need to be setup before it is specified 
+		 in the &amp;History command.</p>
+                    <p>Use this parameter to store the generated document in a specified 
+		 existing category and create the category entry if required. Multiple 
+		 categories and multi-layered categories can be created; see also 
+		 <a href="&amp;Category_command.htm">&amp;Category</a>. See <a href="#Examples" class="selected">examples 
+		 4 - 6</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p>           CSB-Stage="<b>&lt;</b>csb stage<b>&gt;</b>"</p>
+                    <p>Used to specify the case stage budgeting stage.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">date ="<span style="font-weight: bold;">&lt;</span>dd/mm/yyyy<span title="Input a date in dd/mm/yy format." style="cursor: hand;font-weight: bold;">&gt;</span><span title="Input a date in dd/mm/yy format." style="cursor: hand;">"</span></p>
+                    <p>By default, the history item is created with today's date. This 
+		 parameter is used within an &amp;History command to set a specific 
+		 date (by supplying the date in dd/mm/yyyy format). Also used to 
+		 prompt the user for a date by not specifying a date after the 
+		 <span style="font-weight: bold;">date</span> parameter.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">docdate = "<span style="font-weight: bold;">&lt;</span>dd/mm/yyyy<span title="Input a date in dd/mm/yy format." style="cursor: hand;font-weight: bold;">&gt;</span><span title="Input a date in dd/mm/yy format." style="cursor: hand;">"</span></p>
+                    <p>Allows a user to specify a date which is recorded as the amended 
+		 date for the history item.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="docid" id="docid"></a>docid 
+		 =</p>
+                    <p>The ID of the history document to save. Indicates that a previous 
+		 version of a history item is being saved. </p>
+                    <p>This parameter is used in <a href="../Document_Bundling/Document_Bundling.htm">Document 
+		 Bundling</a>.</p>
+                    <p>This parameter enables you to use the &amp;History command to 
+		 save a version of a document rather than using it to create a 
+		 new item; the DocID parameter lets you specify which Item to update.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">fee-earner = "<span style="font-weight: bold;">&lt;</span>FileHolder/FeeEarner<span title="This parameter can accept any type of user input: direct text/number/date input, a database field, a temporary field, a global field, an input parameter or an output parameter." style="font-weight: bold;cursor: hand;">&gt;</span>"</p>
+                    <p>Specifies the fee-earner for a history item. Use this parameter 
+		 to override the allocated fee earner for the history item; by 
+		 default the allocated the fee earner for the matter is recorded.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="Important" id="Important"></a>Important</p>
+                    <p>Used to auto-flag history items as 'Important' when they are 
+		 created, and displayed on the History screen where you can filter 
+		 items on this status. It is used to record significant stages 
+		 in the life cycle of a file. For more information go to <a href="../System_Codes/history_codes.htm#HS46">HS46</a>. 
+		 See <a href="#Examples" class="selected">example 7</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">index</p>
+                    <p>This parameter is used in a <a href="../Index_Server/Profile_Script.htm">Profile 
+		 Script</a> to force Visualfiles to profile documents. When it 
+		 is included, the custom properties <span style="font-weight: bold;">FileCode</span> and <span style="font-weight: bold;">FileHolder</span> are automatically added 
+		 to the document. See <a href="../Index_Server/Microsoft_index_server.htm">Microsoft 
+		 Index Server</a> overview for more information.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> This parameter 
+		 is only relevant if the <a href="../Index_Server/Microsoft_index_server.htm">Microsoft 
+		 Index Server</a> integration is activated.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="KeyDate" id="KeyDate"></a>KeyDate 
+		 = "<span style="font-weight: bold;">&lt;</span>date<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Add a document date to the history item. </p>
+                    <p>This parameter is used in <a href="../Document_Bundling/Document_Bundling.htm">Document 
+		 Bundling</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">level 
+		 = UserAccessLevelCode</p>
+                    <p>Where a user has a hierarchy level lower than the one specified, 
+		 they cannot view the history item.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">location = "<span style="font-weight: bold;">&lt;</span>FilePath<span title="This parameter can accept any type of user input: direct text/number/date input, a database field, a temporary field, a global field, an input parameter or an output parameter." style="cursor: hand;font-weight: bold;">&gt;</span><span title="This parameter can accept any type of user input: direct text/number/date input, a database field, a temporary field, a global field, an input parameter or an output parameter." style="cursor: hand;">"</span></p>
+                    <p>Allows a user to specify an alternative FILEPATH that overrides 
+		 the default file location for history documents. Used where distributed 
+		 document locations are set up. Enables users to override a central 
+		 location and save to a local drive.</p>
+                    <p class="Script">[&amp;History 'Description for History', save, 
+		 location = ""]</p>
+                    <p>This script prompts the user to enter text into the history 
+		 description. The user is then prompted to select a file location 
+		 from the tree view which is initialised to the appropriate file 
+		 location for the user. This is the best method for users who normally 
+		 save documents to their local file-server, but on occasion would 
+		 want to save the document elsewhere.</p>
+                    <p class="Script">[&amp;History 'Description for History', save, 
+		 location = "HAR"]</p>
+                    <p>This script also prompts the user to enter a history description, 
+		 then saves the document into file location <span style="font-weight: bold;">HAR</span>. 
+		 If <span style="font-weight: bold;">HAR</span> is a valid location, 
+		 the user is not prompted to select a location.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="master" id="master"></a>master</p>
+                    <p>Indicates that the item is a master version. Used in conjunction 
+		 with <a href="#versions" class="selected">versioning</a>.</p>
+                    <p>This parameter is used in <a href="../Document_Bundling/Document_Bundling.htm">Document 
+		 Bundling</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">metadata</p>
+                    <p>Used within a document/form to attach <a href="../Metadata_Screens.htm">metadata</a> 
+		 to the history item. Used in combination with the save parameter.</p>
+                    <p>If this parameter is used when saving documents to history, 
+		 the <a href="../Metadata_Screens.htm">metadata screen</a> is displayed 
+		 after the document has been edited to enable the user to enter 
+		 details in the configured metadata fields. If the document is 
+		 being created from a robot or in batch mode then the metadata 
+		 screen is not displayed. See <a href="#Examples" class="selected">example 21</a>.</p>
+                    <p>This parameter is useful because the &amp;Metadata command does 
+		 not work in this situation, because the document would not have 
+		 been created when the &amp;Metadata command was processed.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">noconfirm</p>
+                    <p>The user is not prompted for confirmation before the item is saved to file history.</p>
+                    <p>This parameter is used in conjunction with <a href="../Time_Recording_Real_Time_Capture.htm">Time 
+		 Recording - Real Time Capture</a> against a history item. If Time Recording is not used, the user is prompted to choose to post the time recorded using the History Item Confirmation dialog.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">noedit</p>
+                    <p>Ensures that users viewing the agenda item from the Document Review cannot edit the document or form.</p>
+                    <p>When this parameter is selected, the warning message 'This document is read only. Any changes will not be saved' is displayed before the item is opened. The item is set as read-only in the history item properties.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">no-warn</p>
+                    <p>Suppresses either of the two error messages that can be displayed when using this command. The error messages are a warning regarding the date, or a warning that the grade being used has not been flagged as <span style="font-weight: bold;">Selected</span>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">preview</p>
+                    <p>This parameter enables documents to be run and previewed but not stored, when a <span class="MCTextPopup"><span class="MCTextPopupBody_0" style="display: none; ">Document Management System</span><a class="MCTextPopupSpot_0" href="javascript:void(0);" onclick="FMCTextPopup( event, this ); return false;">DMS</a></span> such as <a href="../Worksite/iManage_Work_Integration.htm">iManage Work</a> is switched on.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> This parameter 
+		 is only relevant when the iManage Work  integration is activated.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="read_Filename"></a>read 
+		 = "<span style="font-weight: bold;">&lt;</span>Filename<span title="This parameter can accept any type of user input: direct text/number/date input, a database field, a temporary field, a global field, an input parameter or an output parameter." style="cursor: hand;font-weight: bold;">&gt;</span><span title="This parameter can accept any type of user input: direct text/number/date input, a database field, a temporary field, a global field, an input parameter or an output parameter." style="cursor: hand;">"</span></p>
+                    <p>This parameter is used to automatically open a web browser to select a file. Alternatively, if the file name is supplied in the script by assigning the file name, and the read parameter 
+		 references this field, no file selection browser is displayed, see <a href="#Examples" class="selected">example 25</a>. When the &amp;History command is run, the original document is copied to the Visualfiles 
+		 directory structure. </p>
+                    <p>When you drag and drop documents onto a file and the <a href="../Import_Document_Script.htm">Import Document Script</a> is used, ensure that the <span style="font-weight: bold;">read</span> 		 parameter is specified in order to attach the imported documents to the file, see <a href="#Examples" class="selected">example 24</a>.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Read-only documents can be imported into file history.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="kanchor1995"></a><a name="rtc" id="rtc"></a>,rtc</p>
+                    <p>This parameter improves accuracy when recording timer information 
+		 on files and delivers more streamlined document production process 
+		 to the user. The ,rtc parameter enables any timer information 
+		 on a file to be passed from the <a href="../Time_Recording_Real_Time_Capture.htm">Real 
+		 Time Capture module</a> to the History screen where document and 
+		 time information are combined in a single entry. This prompt can 
+		 be used in documents and standard agenda scripts. See <a href="#Examples" class="selected">example 
+		 12</a>.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> This parameter 
+		 is used to control the <a href="../Time_Recording_Real_Time_Capture.htm">Real 
+		 Time Capture</a> timer.</p>
+                    <p>Ensure that the <span style="font-weight: bold;">amend</span> 
+		 parameter is added whenever the <span style="font-weight: bold;">rtc</span> 
+		 parameter is included in an &amp;History command. When the document 
+		 is closed the History Time Item dialog opens and the time for 
+		 the document is posted, if a timer was running when the document 
+		 was opened. A new timer then starts automatically.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The time posted 
+		 is rounded up to the next standard unit as defined for the <a href="../Activity_Codes.htm">Activity code</a> in Administration.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="save"></a>save</p>
+                    <p>Used within a document/form to save the document/form to the 
+		 history item.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> If documents 
+		 are produced in a Chain, only one save is performed. This saves 
+		 the full sequence of documents as one item.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">scan</p>
+                    <p>Prompts the scanning of a document or form into a file history.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">storename = "<span style="font-weight: bold;">&lt;</span>DocID<span title="This parameter can accept any type of user input: direct text/number/date input, a database field, a temporary field, a global field, an input parameter or an output parameter." style="cursor: hand;font-weight: bold;">&gt;</span><span title="This parameter can accept any type of user input: direct text/number/date input, a database field, a temporary field, a global field, an input parameter or an output parameter." style="cursor: hand;">"</span></p>
+                    <p>Allows a user to specify a document ID to replace the system-generated 
+		 document ID.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> This parameter 
+		 is only used when <a href="../Worksite/iManage_Work_Integration.htm">iManage Work<![CDATA[
+	]]></a> integration is switched on.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">time="<span style="font-weight: bold;">&lt;</span>hh:mm:ss<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>Specify posting time. Use this parameter to override the posting 
+		 time.</p>
+                    <p>Specifying the <span style="font-weight: bold;">time</span> 
+		 parameter alone prompts the user to enter the time. 24-hour format 
+		 and seconds cannot be specified (the value is 0).</p>
+                    <p>Where a history item already has the specified date and time, 
+		 a second is added to the time until a unique date/time value is 
+		 created.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><span style="color: #000000;">units</span>
+                    </p>
+                    <p>Records the number of standard units of time spent upon the 
+		 activity type. Where no number is specified for units, a default 
+		 value of 1 unit is inserted. The total amount of time recorded 
+		 against the history item is calculated by multiplying the activity's 
+		 standard unit by the number of units specified in the command.</p>
+                    <p>This parameter is used in conjunction with the <a href="#activity" class="selected">activity</a> 
+		 parameter.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><span style="color: #000000;">user="&lt;user_login&gt;"</span>
+                    </p>
+                    <p>Enables history to be saved against a user other than the current 
+		 user.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="user_data" id="user_data"></a>user-data1 
+		 = "<span style="font-weight: bold;">&lt;</span>NewUserDataValue<span title="This parameter can accept any type of user input: direct text/number/date input, a database field, a temporary field, a global field, an input parameter or an output parameter." style="font-weight: bold;cursor: hand;">&gt;</span>"</p>
+                    <p class="Script">user-data2 
+		 = "<span style="font-weight: bold;">&lt;</span>NewUserDataValue<span title="This parameter can accept any type of user input: direct text/number/date input, a database field, a temporary field, a global field, an input parameter or an output parameter." style="font-weight: bold;cursor: hand;">&gt;</span>"</p>
+                    <p>Two additional user-defined fields can be added to the History Item dialog: 
+		 User-Data1 and User-Data2. End users can enter text into these fields 
+		 or the values can be specified using scripts.</p>
+                    <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t27">,user-data 
+		 parameter and S-HS-HELP scripts</a>
+                    </p>
+                    <div MadCap:targetName="t27" style="display: none;">
+                        <p>When they are configured, two <span style="font-weight: normal;">user-defined data</span> fields are displayed at the bottom of the History Item dialog are 
+			 with buttons to run associated scripts alongside each. For more information on configuring these fields go to <a href="../User-defined_History_Fields.htm">User-defined History Fields</a>.</p>
+                        <p>If you have <a href="../Time_Recording_Real_Time_Capture.htm">Real 
+			 Time Capture</a> or <a href="../Time_Sheets.htm">Time Sheets</a> 
+			 enabled, the User Data fields are not shown in the History 
+			 Item dialog. The functionality provided by the User Data fields 
+			 can only be used in documents.</p>
+                        <p>Data can be written to these fields either by entering data 
+			 into them directly or by using the ,<span style="font-weight: bold;">user-data1</span> 
+			 and <span style="font-weight: bold;">,user-data2</span> parameters 
+			 in a script. The data is assigned to database fields using 
+			 the <span style="font-weight: bold;">HS30</span> and <span style="font-weight: bold;">HS31</span> fields respectively. 
+			 The User Data fields can be used to store any data values: 
+			 a document reference code; guidance for a user; or, the fields 
+			 can offer a user a range of valid values.</p>
+                        <p>The drop-down buttons run system scripts <span style="font-weight: bold;">S-HS-HELP-1</span> 
+			 for the first field, and <span style="font-weight: bold;">S-HS-HELP2</span> 
+			 for the second. These scripts are not included in the installation 
+			 of Visualfiles, developers must create them. The scripts can 
+			 either overwrite the data in the field or process the data 
+			 elsewhere in the system.</p>
+                        <p>For example, when processing a billing cycle, the values 
+			 'approved' and 'not approved' could be offered to the user 
+			 in the ,user-data1 field. Selecting 'approved' could send 
+			 the record for billing and 'not approved' could forward the 
+			 record to a supervisor for review. Those records with the 
+			 value 'approved' could be assigned to a report of bills issued. 
+			 The script to run this process would be called S-HS-HELP-1 
+			 and the values 'approved' or 'not approved' could be assigned 
+			 to the field HS30.</p>
+                    </div>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="versions" id="versions"></a>versions</p>
+                    <p>Allows multiple documents to be stored against a single history 
+		 item.</p>
+                    <p>This parameter is used to activate versioning on a document 
+		 and is used in conjunction with the <a href="#save" class="selected">save</a> parameter.</p>
+                    <p>This functionality is used for both new and existing history 
+		 items: any document stored in file history may be versioned. Versioning 
+		 can be turned on or off on a single history item basis.</p>
+                    <p>When Visualfiles is integrated with <a href="../RM8/RM8%20Integration.htm">RM8</a>, the creation of a new document version finalises the previous versions and prevents them from being changed.</p>
+                    <p>This parameter is used in <a href="../Document_Bundling/Document_Bundling.htm">Document 
+		 Bundling</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">workspace=</p>
+                    <p>Enables the overriding of the documents target workspace by 
+		 specifying the desired workspace name. Normally documents are 
+		 stored within the linked workspace to the matter for which the 
+		 document is being run. Use this parameter to specify a different 
+		 workspace and folder. See <a href="#Examples" class="selected">example 21</a>.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> This parameter 
+		 is only relevant when the <a href="../Worksite/iManage_Work_Integration.htm">iManage Work</a> 
+		 integration is activated.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">"<span style="font-weight: bold;">&lt;</span>MessageText<span title="This parameter can accept any type of user input: direct text/number/date input, a database field, a temporary field, a global field, an input parameter or an output parameter." style="font-weight: bold;cursor: hand;">&gt;</span>"</p>
+                    <p>The specified text is displayed to the file history as the description 
+		 for the history item. If <span class="ScriptChar">MessageText</span> 
+		 is not specified, 'Unknown item' errors may be produced when the 
+		 script is run.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">"<span style="font-weight: bold;">&lt;</span>AdditionalText<span title="This parameter can accept any type of user input: direct text/number/date input, a database field, a temporary field, a global field, an input parameter or an output parameter." style="font-weight: bold;cursor: hand;">&gt;</span>"</p>
+                    <p>This parameter displays the specified text in the Additional 
+		 Text column (the &gt;&gt; column in the summary view or the Notes 
+		 field for an open record) in the record.</p>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;width: 100%;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading"><a name="Email_Parameters"></a>Email 
+		 Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">attachmentcount</p>
+                    <p>When using the Import Document Script to override the <span style="font-weight: bold;">Save to History</span> functionality 
+		 of emails, this parameter is used to add the number of email attachments 
+		 to the history item narrative.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">cc</p>
+                    <p>When saving emails to history, this creates a history item with 
+		 a description that includes a list of people who received the 
+		 email.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="kanchor1996"></a><a name="email-status" id="email-status"></a>email-status 
+		 = "<span style="font-weight: bold;">&lt;</span>Sent|Received|Draft<span style="font-weight: bold;">&gt;</span>"</p>
+                    <p>This parameter is used to override the original status on an 
+		 email being stored and gives greater flexibility when assigning 
+		 an email status. So an email saved with a status of 'Received' 
+		 can be set to have a status of 'Sent' or 'Draft'. This parameter 
+		 is specified on a &amp;History command within the <a href="../Import_Document_Script.htm">Import Document Script</a>.</p>
+                    <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="a22">Categorisation of emails saved to history</a>
+                    </p>
+                    <div MadCap:targetName="a22" style="display: none;">
+                        <p>The default categorisation of emails is dependent upon the 
+			 'Send' event in Outlook and on the senders email address. 
+			 Categorisations are independent of any mailbox or folder locations 
+			 in Outlook.</p>
+                        <p>The rules applied to determine which Visualfiles email category 
+			 applies by default are as follows:</p>
+                        <ul>
+                            <li value="1">Any email saved on pressing the <span style="font-weight: bold;">Send</span> 
+				 button in Outlook (i.e. the send event) is automatically 
+				 saved as 'Sent'.</li>
+                            <li value="2">On sign in to Visualfiles the user's email address, 
+				 as stored in Visualfiles User Properties is cached. Any 
+				 email saved using the <span style="font-weight: bold;">Save 
+				 Item to History</span> button, or via drag and drop, where 
+				 the sender matches that address is saved as 'Sent'.</li>
+                            <li value="3">Any email saved using the <span style="font-weight: bold;">Save 
+				 Item to History</span> button, or via drag and drop, where 
+				 the sender is blank is saved as 'Sent'. &#160;</li>
+                        </ul>
+                        <p class="note" style="margin-left: 40px;" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> 
+			 This condition was added specifically to work around a bug in 
+			 Outlook 2003.</p>
+                        <ul>
+                            <li value="1">Any new email (open, prior to sending) saved using 
+				 the <span style="font-weight: bold;">Save Item to History</span> 
+				 button is saved as 'Draft'.</li>
+                            <li value="2">Any other email saved using the <span style="font-weight: bold;">Save 
+				 Item to History</span> button, or via drag and drop, button 
+				 is saved as 'Received'.</li>
+                        </ul>
+                        <p>The Visualfiles email categorization is not intended to 
+			 mirror the Outlook category structure, since it can be user
+			-defined, and emails can be moved to, and saved from, any Outlook 
+			 folder, so the source folder is irrelevant to Visualfiles.</p>
+                        <p class="Tabletext">The <span class="ScriptChar">email-status</span> 
+			 parameter enables the default status to be overridden by logic 
+			 in the Import Document script. It gives you flexibility through 
+			 scripting to determine how emails are saved, overriding the 
+			 default behaviour; for example if you are in an environment 
+			 where a rule states that all emails from a given domain name 
+			 can be considered as 'Sent' you have the opportunity to detect 
+			 this.</p>
+                    </div>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">MessageID=</p>
+                    <p>Used to assign the MessageID keyword to the iManage Work  email when 
+		 it is stored.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> This parameter 
+		 is only relevant when the <a href="../Worksite/iManage_Work_Integration.htm">iManage Work</a> 
+		 integration is activated.</p>
+                    <p>This parameter, which is available when the iManage Work 
+		 integration is used, enables the exposure of an email conversation 
+		 index (unique message identifier) within the Import Document Script. 
+		 See <a href="#Examples" class="selected">example 26</a>.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">nofileopen</p>
+                    <p>Suppress the <span style="font-weight: bold;">Do you want to 
+		 open this file?</span> prompt that is displayed when a user is 
+		 saving emails into the file history.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">recipients</p>
+                    <p>When saving emails to history, this creates a history item with 
+		 a description that includes the email recipients.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 18px;">
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">sender</p>
+                    <p>When saving emails to history, this creates a history item with 
+		 a description that includes the name of the person who sent the 
+		 email.</p>
+                </td>
+            </tr>
+            <tr>
+                <td style="border-left: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;width: 100%;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">subject</p>
+                    <p>When saving emails to history, this creates a history item with 
+		 a description that includes the email subject.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example&#160;Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t26">1 Message 
+ text and additional text</a>
+        </p>
+        <div MadCap:targetName="t26" style="display: none;">
+            <p>In this example the (notes) modifier is used in conjunction with 
+	 the input prompt to present a dialog box to the user to store Additional 
+	 Text against the item.</p>
+            <p class="Script">[&amp;History "Wrote to Other Side Solicitor";'Enter 
+	 subject of letter'(notes)]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Additional notes 
+	 text and details can be added in the 'Enter subject of letter' section 
+	 of the command.</p>
+            <p>&#160;</p>
+            <p>Below, is a similar example that combines a field codes with text.</p>
+            <p class="Script">[&amp;History "Wrote to " + SOL01;'Enter 
+	 subject of letter'(notes)]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The field SOL01 
+	 must exist in your application for this command to work.</p>
+            <p>&#160;</p>
+            <p>This example below records two units of time for the Fee Earner 
+	 carrying out the activity and records it as a Letter Out (LETO). </p>
+            <p>For this script to work the code LETO must be setup in <a href="../Activity_Codes.htm" style="font-weight: normal;">Activity Codes</a>, and the Fee Earner 
+	 needs to have a Charge Out Rate Setup in their user record to associate 
+	 a charge with the history item. </p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Before this feature 
+	 can be used you need to select the <a href="../File_Holder_User_Properties.htm#Use_Time_Sheet" style="font-weight: normal;">Use 
+	 Time Sheet</a> option in the <a href="../File_Holder_User_Properties.htm">File 
+	 Holder</a> screen of the User Properties dialog which adds the Time Sheet option to 
+	 the navigation bar.</p>
+            <p class="Script">[&amp;History "Wrote to Other Side Solicitor",LETO,2]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t25">2 Noconfirm 
+ and noedit parameters</a>
+        </p>
+        <div MadCap:targetName="t25" style="display: none;">
+            <p>Creates a read-only item without confirmation from the user.</p>
+            <p class="Script">[&amp;History "Wrote to Other Side Solicitor",noconfirm,noedit]</p>
+            <p>&#160;</p>
+            <p>The noconfirm parameter provides a silent time record and does not 
+	 prompt the user to confirm.</p>
+            <p class="Script">[&amp;History "Wrote to Other Side Solicitor",LETO,2,noconfirm]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t24">3 Save 
+ and amend parameters</a>
+        </p>
+        <div MadCap:targetName="t24" style="display: none;">
+            <p>Include this code in a document script or postscript of a document 
+	 or a form. </p>
+            <p>This script saves the document against a History time that 
+	 the user can amend using the History Item dialog, before saving.</p>
+            <p class="Script">[&amp;History "Wrote 
+	 to Other Side Solicitor",save,amend]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> If documents are 
+	 produced in a Chain, only one save is performed. This saves the full 
+	 sequence of documents as one item.</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> If the ,save parameter 
+	 is not used with a document or form then the document or form will 
+	 not be stored in history, you will simple get the history text.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t23">4 Category 
+ and save parameters</a>
+        </p>
+        <div MadCap:targetName="t23" style="display: none;">
+            <p class="Script">[&amp;History "Phone Call to Other Side Solicitor",category="Solicitor"]</p>
+            <p>Include this code in a document script or postscript of a document 
+	 or a form. </p>
+            <p class="Script">[&amp;History "Test Document",save,amend]</p>
+            <p>&#160;</p>
+            <p>We recommend that this syntax is used for the <span style="font-weight: bold;">save</span> 
+	 and <span style="font-weight: bold;">category</span> parameters, where 
+	 "LETOC" is a user-defined category code.</p>
+            <p class="Script">[&amp;History "Wrote to "+SOL01;'Enter 
+	 subject of letter'(notes),LETO,2,save,category="LETOC"]</p>
+            <p>For backward compatibility, the &amp;History command still supports 
+	 the previous, bracketed, syntax for these parameters, example below 
+	 (LETOC is a user-defined category code):</p>
+            <p class="Script">[&amp;History "Wrote to "+SOL01;'Enter 
+	 subject of letter'(notes),LETO,2,save("LETOC")]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t22">5 Store 
+ document in specified category</a>
+        </p>
+        <div MadCap:targetName="t22" style="display: none;">
+            <p class="Script">[&amp;History "Document Test 1" ,category 
+	 = "Scripts", save]</p>
+            <p>Adding a category to the command stores the generated document in 
+	 the specified category and if necessary creates the category entry. 
+	 Multiple categories and multi-layered categories can be created; see 
+	 also <a href="&amp;Category_command.htm">&amp;Category</a>.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t21">6 Add 
+ a document to multiple categories</a>
+        </p>
+        <div MadCap:targetName="t21" style="display: none;">
+            <p>To add a document to more than one category:</p>
+            <p class="Script">category="cat1;cat2;cat3"</p>
+            <p>This syntax adds the document to three categories.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t20">7 important 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t20" style="display: none;">
+            <p class="Script">[&amp;History "my sample item" , save , 
+	 important]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t19">8 Read 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t19" style="display: none;">
+            <p>The example below demonstrates reading a file whose location is 
+	 stored in a database field, and turns on automatic change recording 
+	 for the history item, meaning that future revisions to attached documents 
+	 will automatically be saved as new versions of the document.</p>
+            <p class="Script">[&amp;History "Database field",read=ABC01]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t18">9 Access 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t18" style="display: none;">
+            <p>Asks the user how many time units should be recorded against the 
+	 item, and prevents users with an access level lower than 10 accessing 
+	 the history item.</p>
+            <p class="Script">[&amp;History "File Opened",LETI'Enter 
+	 number of standard units to charge'(number),access=10,]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t17">10 Level 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t17" style="display: none;">
+            <p>Allows only Supervisors and above in the User Hierarchy to access 
+	 a history item.</p>
+            <p class="Script" style="color: #000000;"><span style="color: #000000;">[&amp;History 
+	 "File Opened",level="supervisors"]</span>
+            </p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t16">11 Subject, 
+ sender, recipients and cc fields</a>
+        </p>
+        <div MadCap:targetName="t16" style="display: none;">
+            <p>This example creates a history item with a description that includes 
+	 the email subject, who sent it and a list of people who received it; 
+	 used in the Import document Script on an application.</p>
+            <p class="Script">[&amp;History "Email: " + subject + ", 
+	 from " + sender + ", to " + recipients + ", cc’d 
+	 to " + cc]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> An email can be 
+	 identified in the Import document script by using a condition for 
+	 example, <span class="ScriptChar">&amp;If DOCTYPE = "E"</span>.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t15">12 Copy 
+ timer in RTC for a file to history</a>
+        </p>
+        <div MadCap:targetName="t15" style="display: none;">
+            <p>This command will copy any timer currently running in Real Time 
+	 Capture for a case to the History screen, rounding up to the value 
+	 to the next standard unit.</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The <span style="font-weight: bold;">amend</span> 
+	 parameter must be added whenever the <span style="font-weight: bold;">rtc</span> 
+	 parameter is used in the post script of a document.</p>
+            <p class="Script">[&amp;History "Letter to client", save, 
+	 rtc, amend]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> The activity code 
+	 is not copied over. The timer is then deleted.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t14">13 Preview 
+ parameter with iManage Work</a>
+        </p>
+        <div MadCap:targetName="t14" style="display: none;">
+            <p class="Script">[&amp;History, "iManage Work  Test",preview]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t13">14 Time 
+ recording</a>
+        </p>
+        <div MadCap:targetName="t13" style="display: none;">
+            <p>Time recording onto a file from a script to record time for the 
+	 last working day.</p>
+            <p class="Script">[&amp;Assign LF01='Please enter number of time units']</p>
+            <p class="Script">[&amp;Assign LF02='Please enter description']</p>
+            <p class="Script">[&amp;Assign LF03='Please enter notes']</p>
+            <p class="Script">[&amp;Assign LF04=date-1(working day)]</p>
+            <p class="Script">[&amp;History LF02;LF03,p,LF01,amend,date=LF04]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t12">15 Create 
+ a new history record</a>
+        </p>
+        <div MadCap:targetName="t12" style="display: none;">
+            <p class="Script">[&amp;History subject ,read=file,save]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t11">16 Create 
+ a version of an imported document silently</a>
+        </p>
+        <div MadCap:targetName="t11" style="display: none;">
+            <p class="Script">[&amp;History,read=file,save,versions,docid=docid,auto-save]</p>
+            <p>Or for an email:</p>
+            <p class="Script">[&amp;History subject,read=file,save,docid=docid,versions,auto-save]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t10">17 Overwrite 
+ a version of an imported document silently</a>
+        </p>
+        <div MadCap:targetName="t10" style="display: none;">
+            <p class="Script">[&amp;History ,read=file,save,docid=docid,auto-save]</p>
+            <p>Or for an email:</p>
+            <p class="Script">[&amp;History subject,read=file,save,docid=docid,auto-save]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t9">18 Create 
+ a version of an imported document</a>
+        </p>
+        <div MadCap:targetName="t9" style="display: none;">
+            <p class="Script">[&amp;History,read=file,save,versions]</p>
+            <p>Or for an email:</p>
+            <p class="Script">[&amp;History subject,read=file,save,docid=docid,versions]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> When this script 
+	 is run the 'Version' prompt appears.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t8">19 Overwrite 
+ a version of an imported document</a>
+        </p>
+        <div MadCap:targetName="t8" style="display: none;">
+            <p class="Script">[&amp;History,read=file,save,auto-save]</p>
+            <p>Or for an email:</p>
+            <p class="Script">[&amp;History subject,read=file,save,docid=docid,auto-save]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> When this script 
+	 is run the 'Save' prompt appears.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t7">20 Key 
+ Date</a>
+        </p>
+        <div MadCap:targetName="t7" style="display: none;">
+            <p>Used in <a href="../Document_Bundling/Document_Bundling.htm">Document 
+	 Bundling</a>.</p>
+            <p class="Script">[&amp;History "CoverDocument" , save , 
+	 category="Bundle",keydate="01/01/2005"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">21 workspace 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p>Use the <span style="font-weight: bold;">workspace</span> parameter 
+	 to specify a different workspace and folder; for example, save the 
+	 document in the folder “folder1” under the workspace of “Workspace2”:</p>
+            <p class="Script">[&amp;History "doc1", category="folder1", 
+	 workspace="Workspace2",save]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> If more 
+	 than one workspace exists with the specified name then the document 
+	 is rejected.</p>
+            <p>If the workspace parameter is omitted then the document is saved 
+	 to the default target workspace as before.</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> This parameter 
+	 is only relevant when the <a href="../Worksite/iManage_Work_Integration.htm">iManage Work</a> 
+	 integration is activated.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">22 metadata 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p class="Script">[&amp;History "Create metadata document", 
+	 metadata, save]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">23 call 
+ parameter</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p>It is currently possible to add prescripts and postscripts to a 
+	 precedent document in Visualfiles. However, when a document is produced 
+	 by the end user, first the prescript is processed, then the code in 
+	 the document itself, then the postscript and finally the document 
+	 is presented to the user to edit. The only command Visualfiles runs 
+	 after the document has been closed is the &amp;History command. Therefore 
+	 it was not easy to capture information to be stored after the document 
+	 was edited by the end user. So in order to profile a document after 
+	 the document has been stored <span style="font-weight: bold;">Call=scriptname</span> 
+	 can be added to the &amp;History command which allows you to action 
+	 a script once the history item has been created and to capture metadata 
+	 that is stored against the document after the user has completed drafting 
+	 their document.</p>
+            <p class="Script">[&amp;History "Doc Save Test", call=test-script,save]</p>
+            <p>If this &amp;History command is assigned to a document that is then 
+	 actioned, when all processing is complete the script <span style="font-weight: bold;">test-script</span> 
+	 is run.</p>
+            <p><span style="font-weight: bold;">test-script</span> syntax:</p>
+            <p class="Script">[&amp;Select HS:last]</p>
+            <p class="Script">[&amp;MetaData history, create]</p>
+            <p class="Script">[&amp;Assign HS99(1)="Metadata 1"]</p>
+            <p class="Script">[&amp;Assign HS99(2)="Metadata 2"]</p>
+            <p>This script is run after the document is complete and attaches a 
+	 metadata screen to the history item with the first two metadata fields 
+	 populated.</p>
+            <p>The advantage of this is that when all processing is complete the 
+	 history is available for scripting which then enables metadata to 
+	 be attached to the history item. See <a href="../Metadata.htm">Document 
+	 Metadata</a>.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">24 Import 
+ documents to a file, read parameter</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p class="Script">[&amp;History "document_name",read=file]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">25 File 
+ name supplied to ,read parameter</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p class="Script"><span style="text-autospace: none;">[&amp;Assign 
+	 LF02='Select file...'(filename)]</span>
+            </p>
+            <p class="Script">[&amp;Import filename=LF02,delimiter=","]</p>
+            <p class="Script">&#160;</p>
+            <p class="Script">[&amp;EndImport]</p>
+            <p class="Script">[&amp;History "Imported File",save,noconfirm,read=LF02]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1">26 Import 
+ Document Script with the MessageID assigned</a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p class="Script">[&amp;Assign LF01=Subject]</p>
+            <p class="Script">[&amp;Assign LF02=MessageID] // MessageID Keyword</p>
+            <p class="Script">[&amp;Assign LF04="E-Mail"]</p>
+            <p class="Script">&#160;</p>
+            <p class="Script">[&amp;Assign LF07="substring('"+ReceivedTime+"',1,19)":Proval 
+	 ]</p>
+            <p class="Script">[&amp;Assign LF08="substring('"+SentTime+"',1,19)":Proval 
+	 ]</p>
+            <p class="Script">&#160;</p>
+            <p class="Script">[&amp;History LF01, Save, NoConfirm, Category=LF04, 
+	 Class="E-MAIL", Profile="no", Custom13=Sender,Custom14=Recipient,Custom21=LF07,Custom22=LF08,Custom23=LF07,Custom24=LF07,MessageID=LF02]</p>
+            <p>When the &amp;History command is encountered the iManage Work  integration 
+	 first checks if an email with the specified email has not already 
+	 been assigned under the target workspace. If it has already been stored 
+	 then the import is rejected and messaged to the user. If no email 
+	 exists with the MessageID then it is stored as normal with its MessageID.</p>
+            <p>This mechanism allows the rejection of potential duplicate storage 
+	 of emails under a workspace.</p>
+        </div>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1"><a href="../User-defined_History_Fields.htm">User-defined History Fields</a>
+            </li>
+            <li value="2"><a href="../Time_Recording_Real_Time_Capture.htm">Real Time Capture</a>
+            </li>
+            <li value="3"><a href="&amp;RTC_Command.htm">&amp;RTC Command</a>
+            </li>
+            <li value="4"><a href="../Time_Sheets.htm">Time Sheets</a>
+            </li>
+            <li value="5"><a href="../Document_Bundling/Document_Bundling.htm">Document Bundling</a>
+            </li>
+            <li value="6"><a href="../Import_Document_Script.htm">Import Document Script</a>
+            </li>
+            <li value="7"><a href="../System_Codes/history_codes.htm">History (HS) Codes</a>
+            </li>
+            <li value="8"><a href="../Worksite/iManage_Work_Integration.htm">iManage Work  Integration</a>
+            </li>
+            <li value="9"><a href="../Metadata_Screens.htm">Metadata Screens</a>
+            </li>
+            <li value="10"><a href="../History_Plus/History_Plus.htm">History Plus</a>
+            </li>
+            <li value="11"><a href="../Metadata_Screens.htm">Metadata Screens</a>
+            </li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>

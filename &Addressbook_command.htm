@@ -1,0 +1,969 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:ignoredWords="essupport" MadCap:tocPath="Development|Commands Reference|Commands" MadCap:InPreviewMode="false" MadCap:PreloadImages="false" MadCap:RuntimeFileType="Topic" MadCap:TargetType="HtmlHelp" MadCap:PathToHelpSystem="../" MadCap:HelpSystemFileName="vfiles.xml" MadCap:SearchType="Stem">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=7,8,9,10" />
+        <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+        <meta http-equiv="Content-Language" content="en-UK" /><title>&amp;Addressbook</title>
+        <link href="../SkinSupport/Slideshow.css" rel="stylesheet" />
+        <link href="../SkinSupport/MadCap.css" rel="stylesheet" />
+        <link href="../Resources/TableStyles/SimpleDarkBackground.css" rel="stylesheet" />
+        <link href="../Resources/Stylesheets/styles.css" rel="stylesheet" />
+        <script src="../SkinSupport/jquery.js">
+        </script>
+        <script src="../SkinSupport/MadCapGlobal.js">
+        </script>
+        <script src="../SkinSupport/MadCapSlideshow.js">
+        </script>
+        <script src="../SkinSupport/MadCapMerging.js">
+        </script>
+        <script src="../SkinSupport/MadCapAliasFile.js">
+        </script>
+        <script src="../SkinSupport/MadCapUtilities.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffects.js">
+        </script>
+        <script src="../SkinSupport/MadCapEffectsMenu.js">
+        </script>
+        <script src="../SkinSupport/MadCapBody.js" type="text/javascript">
+        </script>
+        <script src="../SkinSupport/MadCapHighlighter.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <div class="MCBreadcrumbsBox_0"><span class="MCBreadcrumbsPrefix"> </span><a class="MCBreadcrumbsLink" href="../Development.htm">Development</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="../Commands_Reference.htm">Commands Reference</a><span class="MCBreadcrumbsDivider"> &gt; </span><a class="MCBreadcrumbsLink" href="Commands.htm">Commands</a><span class="MCBreadcrumbsDivider"> &gt; </span><span class="MCBreadcrumbs">&amp;Addressbook</span>
+        </div>
+        <h1><a name="kanchor138"></a>&amp;Addressbook</h1>
+        <h2>Syntax &#160;&#160;&#160;<a href="../Scripting/Syntax_Notation.htm" title="Syntax Notation"><img src="../Images/Icon_Info.png" alt="" style="border: none;" /></a></h2>
+        <p class="Script">[&amp;Addressbook search = "&lt;SearchString,</p>
+        <p><a href="#Examples" style="font-size: 8pt;font-weight: normal;" class="selected">Example 
+ Scripts</a>
+        </p>
+        <h2>Description</h2>
+        <p><a name="kanchor139"></a><a name="kanchor140"></a>To perform a search of the address data, regardless of the system in 
+ use, a common interface is defined. The search is always performed using 
+ the &amp;Addressbook command which is used exclusively with the <a href="../Miscellaneous_Options/Postcode_Integration.htm#AFD_Postcode_Everywhere">postcode 
+ database</a> and is not related to the Visualfiles address book.</p>
+        <p><a name="kanchor141"></a>The postcode integration is driven by the &amp;AddressBook command using 
+ two main options, <span style="font-weight: bold;">search=&lt;search text&gt;</span> 
+ and <span style="font-weight: bold;">result=&lt;field list&gt;</span>.</p>
+        <p>The <span style="font-weight: bold;">search=</span> parameter can take 
+ a single address item such as a postcode, street, town or organisation 
+ name. Alternatively, you can enter a two part search in the format, postcode 
+ comma house number.</p>
+        <p>The <span style="font-weight: bold;">result=</span> parameter must contain 
+ a comma delimited list of up to 12 local (LF), temporary (TF) or screen 
+ field codes that contain the selected address details.</p>
+        <h2><span style="margin-bottom: 14pt;"><a name="AFD_Postcode_Integration" id="AFD_Postcode_Integration"></a>A</span>FD 
+ Postcode Integration</h2>
+        <p>The &amp;Addressbook command enables you to develop your integration 
+ with <a href="../Miscellaneous_Options/Postcode_Integration.htm#AFD_Postcode_Everywhere">AFD 
+ Postcode Everywhere XML</a>. Make use of the AFD parameters to report 
+ on DX data and other information you need.</p>
+        <p><a name="kanchor142"></a>Additional data is provided by the AFD Postcode Integration than is 
+ displayed in the default view provided to the user in the Select Address 
+ dialog. You can make use of this data, which includes a unique key for 
+ the address in AFD or the absolute coordinates of the address on a map, 
+ through scripting to export the data to an xml file.</p>
+        <p>The &amp;Addressbook <span style="font-weight: bold;">result=</span> 
+ parameter includes two options related to the AFD integration; the first 
+ holds the DX Number for the selected address and the second holds the 
+ DX Exchange. These fields enable you to specify which fields are returned 
+ from AFD (this is dependent on the type of licence you have with AFD).<span>&#160;</span></p>
+        <p>For backwards compatibility and to ensure existing Visualfiles scripting can execute 
+ against AFD without modification, the <span style="font-weight: bold;">result=</span> 
+ parameter has been modified to work with AFD data (returned as XML in 
+ the XL01 field).</p>
+        <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>All &amp;Addressbook commands in 
+ existing scripts will work as before.</p>
+        <h3><span>&amp;</span>Addressbook Status Property</h3>
+        <p><span>Use t</span>he <span style="font-weight: bold;">status</span> 
+ property for the &amp;AddressBook command to warn you if the command fails, 
+ e.g.:</p>
+        <p class="Script" style="margin-left: 40px;">[&amp;Message status(Addressbook)]</p>
+        <h3>Calling AFD Postcode</h3>
+        <p>When the &amp;AddressBook command is executed, a call is made to the 
+ AFD Server passing in the serial number, postcode and search string. Where 
+ multiple results are returned the <a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t12">Select Address screen</a> 
+ is displayed. Where a single result is returned the address data is passed 
+ back silently to the script.</p>
+        <div MadCap:targetName="t12" style="display: none;">
+            <h3>Select Address Screen</h3>
+            <p style="font-size: 8.0pt;">The number of results displayed defaults 
+	 to the <span style="font-weight: bold;">Max Rows</span> setting specified 
+	 in the Maintain Postcode Integration dialog when you <a href="../Miscellaneous_Options/Postcode_Integration.htm">Configure 
+	 Postcode Integration</a>.</p>
+            <p style="font-size: 8.0pt;"><span style="font-size: 8.0pt;">When using 
+	 AFD the content of the List field for the selected row is displayed 
+	 in the grid</span>
+            </p>
+            <p style="font-size: 8.0pt;">The <span style="font-weight: bold;">OK</span> 
+	 button is only enabled when a row is selected in the grid. Click <span style="font-weight: bold;">OK</span> to return selected address to 
+	 the script.</p>
+            <p style="font-size: 8.0pt;">When <span style="font-weight: bold;">Cancel</span> 
+	 is clicked the dialog is closed without returning an address to the 
+	 script. This is the same behaviour as pressing the <span style="font-weight: bold;">Close</span> 
+	 button '<span style="font-weight: bold;">X</span>'.</p>
+            <p>
+                <img src="../image5.jpg" alt="" style="border: none;" border="0" />
+            </p>
+        </div>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 19.206%;" />
+            <col style="width: 80.794%;" />
+            <tr style="vertical-align: top;height: 19px;">
+                <td colspan="2" style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading">Parameters</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">nodisplay</p>
+                    <p>Prevent the Finder postcode lookup from displaying if no results 
+		 are found.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">result=</p>
+                    <p>A comma-delimited list of Screen Fields (SF) that define where 
+		 to return the search result.</p>
+                    <p>The following additional options are available if you are integrate 
+		 with <a href="../Miscellaneous_Options/Postcode_Integration.htm#AFD_Postcode_Everywhere">AFD 
+		 Postcode Everywhere XML</a>:</p>
+                    <h3 class="Script">Result List - Field Order</h3>
+                    <p>The following table lists the 
+		 data returned which can be assigned to the required fields using 
+		 the result=parameter:<a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t11"> Result 
+		 List - Field Order Table</a></p>
+                    <div MadCap:targetName="t11" style="display: none;">
+                        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+                            <col style="width: 10.623%;" />
+                            <col style="width: 44.688%;" />
+                            <col style="width: 44.688%;" />
+                            <tr style="vertical-align: top;height: 21px;">
+                                <td style="border: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                                    <p class="TableBannerHeading">Field</p>
+                                </td>
+                                <td style="border-top: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                                    <p class="TableBannerHeading">Description</p>
+                                </td>
+                                <td style="border-top: Solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                                    <p class="TableBannerHeading">AFD XML Node</p>
+                                </td>
+                            </tr>
+                            <tr style="vertical-align: top;height: 5px;">
+                                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>1</p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>Organisation Name or Building 
+					 Name or Sub-Building Name or Blank
+                                    </p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>&lt;Organisation&gt; 
+					 or &lt;Property&gt;</p>
+                                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>If the address contains an 
+					 Organisation Name this is used. If no Organisation 
+					 Name is available then the building name is used if 
+					 available, otherwise the field is blank.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr style="vertical-align: top;height: 27px;">
+                                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>2</p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>Street
+                                    </p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>&lt;Street&gt;</p>
+                                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>The 
+					 AFD XML contains the house number where applicable 
+					 followed by street name. This is different to the 
+					 <a href="../Miscellaneous_Options/Postcode_Integration.htm">Royal 
+					 Mail Postcode integration</a> which provides house 
+					 number and street as two separate results. Therefore 
+					 field 2 contains both house number and street name. 
+					 Field 7 is always blank.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr style="vertical-align: top;height: 27px;">
+                                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>3</p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>Locality
+                                    </p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>&lt;Locality&gt;
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr style="vertical-align: top;height: 27px;">
+                                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>4</p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>Post Town
+                                    </p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>&lt;Town&gt;
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr style="vertical-align: top;height: 27px;">
+                                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>5</p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>County
+                                    </p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>&lt;County&gt;
+                                    </p>
+                                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>The county returned is 
+					 determined by the configuration Preferred<span style="font-weight: bold;"> County 
+					 setting </span>in 
+					 <a href="../Miscellaneous_Options/Postcode_Integration.htm#Configure_Postcode_Integration">Postcode 
+					 Integration configuration screen</a>.                                    </p>
+                                </td>
+                            </tr>
+                            <tr style="vertical-align: top;height: 27px;">
+                                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>6</p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>Postcode
+                                    </p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>&lt;Postcode&gt;
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr style="vertical-align: top;height: 27px;">
+                                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>7</p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>House Number
+                                    </p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>Blank
+                                    </p>
+                                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>The AFD XML contains the house 
+					 number where applicable followed by street name. This 
+					 is different to the <a href="../Miscellaneous_Options/Postcode_Integration.htm">Royal 
+					 Mail PAF Postcode integration</a> which provides house 
+					 number and street as two separate results. Therefore 
+					 field 2 contains both house number and street name. 
+					 Field 7 is always blank.                                    </p>
+                                </td>
+                            </tr>
+                            <tr style="vertical-align: top;height: 27px;">
+                                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>8</p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>Building Name
+                                    </p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>&#160;&lt;Property&gt;</p>
+                                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>If the AFD XML building details 
+					 contains two comma delimited items (e.g. Caretakers 
+					 Flat, The Office), the building name is the 2nd item 
+					 in the list (The Office).
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr style="vertical-align: top;height: 27px;">
+                                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>9</p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>Building-Sub Name
+                                    </p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>&#160;&lt;Property&gt;
+                                    </p>
+                                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>
+                                        If 
+					 the AFD XML building details contains only one item 
+					 (there are no commas) then the sub-building name is 
+					 blank. If there are two items in the node (separated 
+					 by a comma) then the sub-building name is item 1 in 
+					 the list.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr style="vertical-align: top;height: 27px;">
+                                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>10</p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>Organisation Name
+                                    </p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>&lt;Organisation&gt;
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr style="vertical-align: top;height: 27px;">
+                                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>11</p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>PO Box
+                                    </p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>&lt;Street&gt;
+                                    </p>
+                                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>When 
+					 an address is a PO Box the PO Box value is the same 
+					 as the Street.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr style="vertical-align: top;height: 27px;">
+                                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>12</p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>Street (duplicate)
+                                    </p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>Duplicate</p>
+                                </td>
+                            </tr>
+                            <tr style="vertical-align: top;height: 27px;">
+                                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>13</p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>DX Number
+                                    </p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>&lt;DX Number&gt;
+                                    </p>
+                                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>The 
+					 DX Number and Exchange if the user site has access 
+					 to DX data in their licensing. These fields are not 
+					 available to users of the <a href="../Miscellaneous_Options/Postcode_Integration.htm">Royal 
+					 Mail Postcode Integration</a>.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr style="vertical-align: top;height: 27px;">
+                                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>14</p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>DX Exchange
+                                    </p>
+                                </td>
+                                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                                    <p>&lt;DX Exchange&gt;
+                                    </p>
+                                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>The 
+					 DX Number and Exchange if the user site has access 
+					 to DX data in their licensing. These fields are not 
+					 available to users of the <a href="../Miscellaneous_Options/Postcode_Integration.htm">Royal 
+					 Mail Postcode Integration</a>.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">userfields=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>Allows 
+		 user to enter a comma delimited list of fields to retrieve from 
+		 the AFD xml file e.g. mailsortcode, latitude. See <a href="#Examples" class="selected">example 
+		 12</a>.
+                    </p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span>The fields 
+		 that can be retrieved will be determined by the AFD licence on 
+		 site. If this parameter is used the command must also include 
+		 a userresults parameter with the same number of entries.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 40px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script" style="text-align: right;">userresults=</p>
+                </td>
+                <td style="border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p>A comma delimited list of TF or screen fields to return the data returned from userfields to e.g. LF01,TF02.
+                    </p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> If this 
+		 parameter is used the command must also include a <span style="font-weight: bold;">userfields=</span>parameter with the same number of entries.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 20px;">
+                <td colspan="2" style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">Search=</p>
+                    <p>Contains the string to search for: a field on a screen or a 
+		 temporary field.</p>
+                </td>
+            </tr>
+        </table>
+        <p>AFD Everywhere software returns data from a programmatic search in XML 
+ file format. Visualfiles extracts the data from the XML to display the 
+ information in the Select Address screen. The user is unaware of the XML. 
+ Developers can build a fully functional integration without ever using 
+ the XML. However, if you wish to return additional data for each address, 
+ you can work with the XML results.</p>
+        <p>To return the full XML results into your Visualfiles script you can 
+ specify the <span style="font-weight: bold;"><a href="#output" class="selected">output="XL01"</a></span> 
+ parameter on the &amp;AddressBook command. This loads the full document 
+ into the XL fields which you can then parse. There are useful nodes that 
+ can be returned on the &amp;AddressBook command:</p>
+        <ul>
+            <li class="p-BulletedList" value="1">
+                <p class="BulletedList"><span style="font-weight: bold;">Key="LF02"</span> 
+	 returns the unique address identifier held in the &lt;Key&gt; node 
+	 into a Visualfiles field. This could be useful to store in Visualfiles 
+	 alongside the address and potentially used to identify duplicate records.</p>
+            </li>
+            <li class="p-BulletedList" value="2">
+                <p class="BulletedList"><span style="font-weight: bold;">List="LF03"</span> 
+	 returns the formatted address string held in the &lt;List&gt; node 
+	 into a Visualfiles field, this information is displayed when an address 
+	 is highlighted in the Select Address screen (See Figure 4).</p>
+            </li>
+        </ul>
+        <h3>Extending the &amp;AddressBook Command</h3>
+        <p>The following parameters can be added to the &amp;AddressBook command 
+ as comma separated items:</p>
+        <table style="left: 0px;top: 13px;margin-top: 10px;" cellspacing="0" width="100%">
+            <col style="width: 100%;" />
+            <tr>
+                <td style="border-top: Solid 1px #c0c0c0;border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;background-attachment: scroll;background-image: url('../BckgrdBCT.gif');background-repeat: Repeat-X;padding-right: 10px;padding-left: 10px;" background="../BckgrdBCT.gif" bgcolor="#FFFFFF">
+                    <p class="TableBannerHeading"><a name="AFD_Parameters1" id="AFD_Parameters1"></a>AFD Parameters</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> AFD parameters 
+		 are only applicable to the AFD integration. The fields that can 
+		 be searched on depend on the type licence you have purchased from 
+		 AFD.</p>
+                    <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> When any 
+		 of the AFD parameters below are specified on the &amp;AddressBook 
+		 command, the<span style="font-weight: bold;">Search=</span>option 
+		 is ignored.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 20px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">host=</p>
+                    <p>Override the default host setting.
+                    </p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 20px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">serial=</p>
+                    <p>Override the default serial 
+		 number.
+                    </p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 20px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">password=</p>
+                    <p>Override the default password.
+                    </p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 20px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">maxquantity=</p>
+                    <p>Override the default maximum 
+		 number of results.
+                    </p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 20px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script"><a name="output" id="output"></a>output=</p>
+                    <p>Load an 
+		 XL field with the complete XML result for the selected address 
+		 (for subsequent parsing in the script or saving as an XML file).
+                    </p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 20px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">list=</p>
+                    <p>Return the List field from 
+		 the address data (the formatted address as a comma delimited list).
+                    </p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 20px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">key=</p>
+                    <p>Return the Key field from the 
+		 address data (the unique ID for the address).
+                    </p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 20px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">postcode=</p>
+                    <p>Search on postcode. Must 
+		 be entered as either a local, temporary or screen field.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 20px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">organisation=</p>
+                    <p>Search on organisation name.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 20px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">street=</p>
+                    <p>Search on street name.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 20px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">town=</p>
+                    <p>Search on town.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 20px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">forename=</p>
+                    <p>Search on first name.</p>
+                </td>
+            </tr>
+            <tr style="vertical-align: top;height: 20px;">
+                <td style="border-left: solid 1px #c0c0c0;border-right: Solid 1px #c0c0c0;border-bottom: Solid 1px #c0c0c0;padding-right: 10px;padding-left: 10px;">
+                    <p class="Script">surname=</p>
+                    <p>Search on last name.</p>
+                </td>
+            </tr>
+        </table>
+        <h4><a name="Examples" id="Examples"></a>Example Scripts</h4>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t13">1 Sample 
+ search</a>
+        </p>
+        <div MadCap:targetName="t13" style="display: none;">
+            <p class="Script">[&amp;Addressbook search="BOO05",result="SF01,SF02,SF03,SF04,..."]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t10">2 Prevent 
+ the Finder postcode lookup display; nodisplay parameter</a>
+        </p>
+        <div MadCap:targetName="t10" style="display: none;">
+            <p class="Script">[&amp;AddressBook search="LF30",result="LF31,LF32,LF33,LF34,LF35,LF36,LF37,LF38,LF39,LF40,LF41,LF42", 
+	 nodisplay]</p>
+            <p>Run the script with LF30 set to a postcode value which returns no 
+	 results and Postcode Finder is not displayed.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t9">3 Search 
+ returning all the default data for the selected address into local fields</a>
+        </p>
+        <div MadCap:targetName="t9" style="display: none;">
+            <p class="Script">[&amp;Assign LF99 = "LS6 2UU"]</p>
+            <p class="Script">[&amp;AddressBook search="LF99",result="LF01,LF02,LF03,LF04,LF05,LF06,LF07,LF08,LF09,LF10,LF11,LF12,LF13,LF14"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t14">4 Search returning all default data for the selected address</a>
+        </p>
+        <div MadCap:targetName="t14" style="display: none;">
+            <p>Search returning all default data for the selected address, the 
+	 full XML, Key and List:</p>
+            <p class="Script">[&amp;AddressBook search="LF01",output="XL01",key="LF02",list="LF03"]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t8">5 Find 
+ the first 5 addresses</a>
+        </p>
+        <div MadCap:targetName="t8" style="display: none;">
+            <p>To find the first five addresses for Starbucks 
+	 in Leeds:</p>
+            <p class="Script">[&amp;Assign LF99 =25"]</p>
+            <p class="Script">[&amp;AddressBook result="LF01,LF02,LF03,LF04,LF05,LF06",MaxQuantity 
+	 ="LF99", Town="Leeds", Organisation="Starbucks"]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> If the MaxQuantity 
+	 parameter is not included in the &amp;AddressBook command the number 
+	 of records returned defaults to the maximum number specified in the 
+	 configuration screen.<span>&#160;</span>&#160;You 
+	 can use TF fields in the result parameters and assign the data to 
+	 database fields in the usual way.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t7">6 Find 
+ all addresses for postcode area</a>
+        </p>
+        <div MadCap:targetName="t7" style="display: none;">
+            <p>Find all the addresses for a postcode area:</p>
+            <p class="Script">[&amp;Assign LF99 ="Enter postcode here"]</p>
+            <p class="Script">[&amp;AddressBook Postcode="LF99",result="LF01,LF02,LF03,LF04,LF05,LF06"]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> When using the 
+	 Postcode parameter the search criteria must be a local, temporary 
+	 or screen field. Actual values are not permitted with this parameter 
+	 as they could be confused with genuine Visualfiles screen fields.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t6">7 Select 
+ an address by surname</a>
+        </p>
+        <div MadCap:targetName="t6" style="display: none;">
+            <p>To select an address for people with surname Smith in Huddersfield:</p>
+            <p class="Script">[&amp;AddressBook Town="Huddersfield",Surname="Smith",result="LF01,LF02,LF03,LF04,LF05,LF06"]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> This example does 
+	 not return the correct results if the AFD Licence is the Postcode 
+	 Plus version as Names and Numbers are not enabled in this instance.</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> All parameters 
+	 on the &amp;AddressBook command require values to be passed in as 
+	 a local or temporary field (LF01, TF01) or as a screen field (ABC01). 
+	 The only exceptions are the new AFD search parameters (Organisation, 
+	 Town, Street, Surname, Forename) which can be entered as string values 
+	 but the values must be entered within quotes (e.g. ”Leeds”).</p>
+        </div>
+        <p style="line-height: 150%;"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t5">8 
+ Return selected address to an XL field XL01</a>
+        </p>
+        <div MadCap:targetName="t5" style="display: none;">
+            <p class="Script"><span>[&amp;Assign 
+	 LF99 = "Enter postcode here"]</span>
+            </p>
+            <p class="Script"><span>[&amp;AddressBook 
+	 result="</span>LF01,LF02,LF03,LF04,LF05,LF06"<span>, 
+	 Postcode ="LF99", output ="XL01"]</span></p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> Normally when 
+	 returning address data from AFD the number of fields returned is restricted 
+	 to those fields we report on, this helps reduce the volume of data 
+	 that is passed through the network. If the <span style="font-weight: bold;">output=</span> 
+	 parameter is used then all available fields for the selected address 
+	 are read in as part of the XML file and are copied into the XL field 
+	 specified. The extra data available includes Grid References, Census 
+	 data, etc.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t4">9 Combine 
+ search parameters</a>
+        </p>
+        <div MadCap:targetName="t4" style="display: none;">
+            <p>Combine several parameters in one search:</p>
+            <p class="Script">[&amp;Assign LF99="S70 6RN,18"]</p>
+            <p class="Script">[&amp;Addressbook search="LF99",result="LF01,LF02,LF03,LF04,LF05,LF06"]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> If you use any 
+	 of the other &amp;Addressbook command parameters such as postcode, 
+	 town, organisation etc it will not work as it builds up a different 
+	 search string which does not allow for postcode and house number.</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t3">10 Return 
+ the standard 14 address components</a>
+        </p>
+        <div MadCap:targetName="t3" style="display: none;">
+            <p>Return the standard 14 address components and the &lt;AuthorityCode&gt; 
+	 into LF90 and &lt;Affluence&gt; into LF91:</p>
+            <p class="Script">[&amp;Addressbook search="LF99",result="LF01,LF02,LF03,LF04,LF05,LF06,LF07,LF08,LF09,LF10,LF11,LF12,LF13,LF14",UserFields="AuthorityCode,Affluence",UserResults="LF90,LF91"]</p>
+            <p class="note" MadCap:autonum="&lt;b&gt;&lt;span style=&quot;color: #bed230;&quot; class=&quot;mcFormatColor&quot;&gt;Note: &lt;/span&gt;&lt;/b&gt;"><span class="autonumber"><span><b><span style="color: #bed230;" class="mcFormatColor">Note: </span></b></span></span> If you wish to 
+	 retrieve additional data without having to navigate the XML, you can 
+	 specify the relevant tags using UserFields="&lt;ListOfTags&gt;" 
+	 and UserResults="&lt;ListOfVariables&gt;".</p>
+        </div>
+        <p style="line-height: 150%;"><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t2">11 
+ Return XML using a button on a screen</a>
+        </p>
+        <div MadCap:targetName="t2" style="display: none;">
+            <p>Here is an example of how to use the &amp;Addressbook command in 
+	 a working system.</p>
+            <p>You 
+	 may want to make use of the XML data, such as a unique key for the 
+	 address in AFD, or the absolute coordinates of the address on a map.
+            </p>
+            <p>You can add a button is to the Data Input Screen on a Commercial 
+	 Entity to allow the user to search the AFD software each time a new 
+	 address is created in Visualfiles using the standard entity set.</p>
+            <h3>Script Behind the Postcode Button on the DIN Screen</h3>
+            <p>[&amp;Assign LF99=""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Postcode</p>
+            <p>[&amp;Assign LF01 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Company Name/Building Name/Sub-Name</p>
+            <p>[&amp;Assign LF02 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Formatted Address</p>
+            <p>[&amp;Assign LF03 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Locality</p>
+            <p>[&amp;Assign LF04 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Town</p>
+            <p>[&amp;Assign LF05 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 County</p>
+            <p>[&amp;Assign LF06 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Postcode</p>
+            <p>[&amp;Assign LF07 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 House Number</p>
+            <p>[&amp;Assign LF08 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 House/Building Name</p>
+            <p>[&amp;Assign LF09 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Sub-Name</p>
+            <p>[&amp;Assign LF10 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Organisation Name</p>
+            <p>[&amp;Assign LF11 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 PO Box</p>
+            <p>[&amp;Assign LF12 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Street Name</p>
+            <p>[&amp;Assign LF20=""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Key</p>
+            <p>[&amp;Assign LF21=""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 List</p>
+            <p>[&amp;Assign LF30=""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Longitude</p>
+            <p>[&amp;Assign LF31=""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Latitude</p>
+            <p>[&amp;Assign LF32=""]</p>
+            <p>[&amp;If DIN21=""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Postcode field on the screen is blank</p>
+            <p>&#160;&#160;&#160;[&amp;UserInput prompt="Enter Postcode",result=LF99]</p>
+            <p>[&amp;Else]</p>
+            <p>&#160;&#160;&#160;[&amp;Assign LF99=DIN21] &#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Use postcode in postcode field on DIN screen if not blank</p>
+            <p>[&amp;EndIf]</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Run the Addressbook command returning all address information into 
+	 local fields and the whole XML result into XL01</p>
+            <p>[&amp;Addressbook postcode="LF99",result="LF01,LF02,LF03,LF04,LF05,LF06,LF07,LF08,LF09,LF10,LF11,LF12,LF13,LF14",output="XL01"]</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Check for any errors with the command</p>
+            <p>[&amp;If status(Addressbook) &lt;&gt; ""]</p>
+            <p>&#160;&#160;[&amp;Message "There is an issue with searching 
+	 the for the Address please see your Administrator and provide the 
+	 following details:"+status (Addressbook)]</p>
+            <p>&#160;&#160;[&amp;Quit]</p>
+            <p>[&amp;EndIf]</p>
+            <p>[&amp;If LF06&lt;&gt;""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;** 
+	 Verify the Postcode Returned isn't blank and populate the DIN screen</p>
+            <p>&#160;&#160;[&amp;If LF09&lt;&gt;"" &amp;And LF08&lt;&gt;""]</p>
+            <p>&#160;&#160;&#160;&#160;[&amp;Assign DIN15 = LF09 + ", "+LF08]</p>
+            <p>&#160;&#160;[&amp;Else]</p>
+            <p>&#160;&#160;&#160;&#160;[&amp;If LF09="" &amp;And LF08&lt;&gt;""]</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign DIN15 = LF08]</p>
+            <p>&#160;&#160;&#160;&#160;[&amp;Else]</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;[&amp;If LF09&lt;&gt;"" 
+	 &amp;And LF08=""]</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign DIN15 
+	 = LF09]</p>
+            <p>&#160;&#160;&#160;&#160;&#160;&#160;[&amp;EndIf]</p>
+            <p>&#160;&#160;&#160;&#160;[&amp;EndIf]</p>
+            <p>&#160;&#160;[&amp;EndIf]</p>
+            <p>&#160;&#160;</p>
+            <p>&#160;&#160;[&amp;Assign DIN16 = LF07]</p>
+            <p>&#160;&#160;[&amp;Assign DIN17 = LF12]</p>
+            <p>&#160;&#160;[&amp;Assign DIN18 = LF03]</p>
+            <p>&#160;&#160;[&amp;Assign DIN19 = LF04]</p>
+            <p>&#160;&#160;[&amp;Assign DIN20 = LF05]</p>
+            <p>&#160;&#160;[&amp;Assign DIN21 = LF06]</p>
+            <p>&#160;&#160;[&amp;Assign DIN05 = LF13]</p>
+            <p>&#160;&#160;[&amp;Assign DIN09 = LF14]</p>
+            <p>[&amp;EndIf]</p>
+            <p>*** Parse Returned XML for Langitude,Latitude Elements and UDPRN 
+	 Number</p>
+            <p>[&amp;Select xl,type=XL01,element=AFDPostcodeEverywhere,first,parent]</p>
+            <p>[&amp;DoWhile status(select)=""]</p>
+            <p>&#160;&#160;[&amp;Select xl,type=XL01,element=item value,first,parent]</p>
+            <p>&#160;&#160;[&amp;Assign LF30=XL01(element=Latitude,child)]</p>
+            <p>&#160;&#160;[&amp;Assign LF31=XL01(element=Longitude,child)]</p>
+            <p>&#160;&#160;[&amp;Assign LF32=XL01(element=UDPRN,child)]</p>
+            <p>[&amp;EndDoWhile]</p>
+            <p>[&amp;Message "The UDPRN Number which is used by Solicitors 
+	 in Conveyancing Systems as a unique reference for the property :"+LF32]</p>
+            <p>[&amp;Message "Google Map Location based on Langitude and Latitude"]</p>
+            <p>[&amp;Open "http://maps.google.com/maps?q="+LF30+",+"+LF31]</p>
+        </div>
+        <p><a href="javascript:void(0);" onclick="FMCToggler( this ); return false;" class="MCToggler_0" MadCap:targets="t1"><span style="line-height: 150%;">12</span> Retrieve AFD 
+ address information and additional XML parameters
+            </a>
+        </p>
+        <div MadCap:targetName="t1" style="display: none;">
+            <p>The following example shows how the &amp;AddressBook command can 
+	 be used in a working system. A button is placed on a user-defined 
+	 screen to allow users to search the AFD Postcode database when a new 
+	 address is created. The screen is then populated with the returned 
+	 data.</p>
+            <p class="Script">[&amp;Assign LF99=""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Postcode</p>
+            <p class="Script">[&amp;Assign LF01 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Company Name/Building Name/Sub-Name</p>
+            <p class="Script">[&amp;Assign LF02 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Formatted Address</p>
+            <p class="Script">[&amp;Assign LF03 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Locality</p>
+            <p class="Script">[&amp;Assign LF04 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Town</p>
+            <p class="Script">[&amp;Assign LF05 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 County</p>
+            <p class="Script">[&amp;Assign LF06 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Postcode</p>
+            <p class="Script">[&amp;Assign LF07 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 House Number</p>
+            <p class="Script">[&amp;Assign LF08 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 House/Building Name</p>
+            <p class="Script">[&amp;Assign LF09 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Sub-Name</p>
+            <p class="Script">[&amp;Assign LF10 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Organisation Name</p>
+            <p class="Script">[&amp;Assign LF11 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 PO Box</p>
+            <p class="Script">[&amp;Assign LF12 = ""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Street Name</p>
+            <p class="Script">[&amp;Assign LF20=""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Key</p>
+            <p class="Script">[&amp;Assign LF21=""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 List</p>
+            <p class="Script">[&amp;Assign LF30=""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Longitude</p>
+            <p class="Script">[&amp;Assign LF31=""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Latitude</p>
+            <p class="Script">[&amp;Assign LF32=""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 UDPRN Number</p>
+            <p class="Script">[&amp;If DIN21=""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Postcode field on the screen is blank</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;UserInput prompt="Enter 
+	 Postcode",result=LF99]</p>
+            <p class="Script">[&amp;Else]</p>
+            <p class="Script">&#160;&#160;&#160;[&amp;Assign LF99=DIN21] &#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Use postcode in postcode field on DIN screen if not blank</p>
+            <p class="Script">[&amp;EndIf]</p>
+            <p class="Script">*** Run the Addressbook command returning all address 
+	 information into local fields and Return XML elements for Langitude,Latitude 
+	 and UDPRN Number Elements</p>
+            <p class="Script">[&amp;Addressbook postcode="LF99",result="LF01,LF02,LF03,LF04,LF05,LF06,LF07,LF08,LF09,LF10,LF11,LF12,LF13,LF14",UserFields="Latitude,Longitude,UDPRN",UserResults="LF30,LF31,LF32"]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*** 
+	 Check for any errors with the command</p>
+            <p class="Script">[&amp;If status(Addressbook) &lt;&gt; ""]</p>
+            <p class="Script">&#160;&#160;[&amp;Message "There is an issue 
+	 with searching the for the Address please see your Administrator and 
+	 provide the following details:"+status (Addressbook)]</p>
+            <p class="Script">&#160;&#160;[&amp;Quit]</p>
+            <p class="Script">[&amp;EndIf]</p>
+            <p class="Script">[&amp;If LF06&lt;&gt;""] &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;** 
+	 Verify the Postcode Returned isn't blank and populate the DIN screen</p>
+            <p class="Script">&#160;&#160;[&amp;If LF09&lt;&gt;"" &amp;And 
+	 LF08&lt;&gt;""]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;[&amp;Assign DIN15 = LF09 
+	 + ", "+LF08]</p>
+            <p class="Script">&#160;&#160;[&amp;Else]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;[&amp;If LF09="" 
+	 &amp;And LF08&lt;&gt;""]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 DIN15 = LF08]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;[&amp;Else]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;If LF09&lt;&gt;"" 
+	 &amp;And LF08=""]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[&amp;Assign 
+	 DIN15 = LF09]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;&#160;&#160;[&amp;EndIf]</p>
+            <p class="Script">&#160;&#160;&#160;&#160;[&amp;EndIf]</p>
+            <p class="Script">&#160;&#160;[&amp;EndIf]</p>
+            <p class="Script">&#160;&#160;</p>
+            <p class="Script">&#160;&#160;[&amp;Assign DIN16 = LF07]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign DIN17 = LF12]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign DIN18 = LF03]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign DIN19 = LF04]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign DIN20 = LF05]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign DIN21 = LF06]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign DIN05 = LF13]</p>
+            <p class="Script">&#160;&#160;[&amp;Assign DIN09 = LF14]</p>
+            <p class="Script">[&amp;EndIf]</p>
+            <p class="Script">[&amp;Message "The UDPRN Number which is used 
+	 by Solicitors in Conveyancing Systems as a unique reference for the 
+	 property :"+LF32]</p>
+            <p class="Script">[&amp;Message "Google Map Location based on 
+	 Langitude and Latitude"]</p>
+            <p class="Script">[&amp;Open "http://maps.google.com/maps?q="+LF30+",+"+LF31]</p>
+        </div>
+        <p class="RelatedInfoHead">
+            <img src="../redboxes.GIF" alt="" style="border: none;" /> <b>See also:</b></p>
+        <ul>
+            <li value="1">&#160;<a href="../Miscellaneous_Options/Postcode_Integration.htm">Postcode 
+	 Integration</a></li>
+        </ul>
+        <div class="FooterTable">
+            <table style="width: 100%;mc-table-style: url('../Resources/TableStyles/SimpleDarkBackground.css');margin-left: 0;margin-right: auto;" cellspacing="0" class="TableStyle-SimpleDarkBackground" summary="LexisNexis Visualfiles Information">
+                <col style="width: 50%;" class="TableStyle-SimpleDarkBackground-Column-Column1" />
+                <col class="TableStyle-SimpleDarkBackground-Column-Column1" style="width: 50%;" />
+                <tbody>
+                    <tr class="TableStyle-SimpleDarkBackground-Body-Row1">
+                        <td class="TableStyle-SimpleDarkBackground-BodyB-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_0" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Follow Us</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_0" style="display: none;">
+                                    <p style="text-align: left;margin-top: 0;"><a href="https://twitter.com/LexisNexisES" class="Image" target="_blank" title="LexisNexis Enterprise Solutions" alt="LexisNexis Enterprise Solutions"><img src="../Resources/Images/twitter_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="Twitter" /></a><a href="https://www.linkedin.com/groups/4909675" class="Image" target="_blank" title="Visualfiles" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="https://www.linkedin.com/company/2206" class="Image" target="_blank" title="LexisNexis" alt="LexisNexis"> <img src="../Resources/Images/linkedin_icon_32x32.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis LinkedIn" /></a> <a href="http://www.lexisnexis-es.co.uk/blog/" class="Image" target="_blank" title="LexisNexis Enterprise Solutions Blog" alt="LexisNexis Enterprise Solutions Blog"><img src="../Resources/Images/LN_KnowledgeBurst.png" class="NoThumbnailHyperlinkedImage" alt="LexisNexis" /></a></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_1" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Visualfiles Feature Videos</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_1" style="display: none;">
+                                    <p class="FooterTopicMaster"><a href="../Videos_-_Feature_Overviews.htm" target="_self">Videos Feature Overviews</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_2" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Documentation Feedback</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_2" style="display: none;">
+                                    <p class="FooterTopicMaster">We update documentation based on your feedback. Please email your comments and suggestions to <script type="text/javascript">/*<![CDATA[*/var email=('documentation@lexisnexis.co.uk');
+											var subject = "Feedback from Topic: " + escape(document.title);
+											document.write('<a href="mailto:' + email +
+									'?subject=' +subject+ '">' + 'Documentation Feedback' + '<'+'/a>');/*]]>*/</script>.</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="TableStyle-SimpleDarkBackground-BodyA-Column1-Row1">
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_3" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Customer Support </a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_3" style="display: none;">
+                                    <p class="FooterTopicMaster">Customer Support Portal <a href="http://www.essupport.lexisnexis.co.uk/portal/" target="_blank" class="footermasterlarge">http://www.essupport.lexisnexis.co.uk/portal/</a></p>
+                                    <p class="FooterTopicMaster">Customer Support Phone: <span class="PrimaryCompanySupportPhoneNumber">+44(0)203 364 4555</span></p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_4" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Company Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_4" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyName">LexisNexis</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyStreetAddress">No. 3 City West Business Park, Gelderd Road</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyCityPostcode">Leeds, LS12 6LN</span>
+                                    </p>
+                                    <p class="FooterTopicMaster"><span class="PrimaryCompanyPhoneNumber">0113 2262031</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="MCDropDown_0">
+                                <div class="MCDropDownHead_0"><a class="MCDropDownHotSpot_Footer_0" href="javascript:void(0);" id="MCDropDownHotSpot_2717374667_5" onclick="FMCDropDown( this ); return false;"><img style="border: none;margin-right: 5px;" src="../SkinSupport/DropDownClosed.png" MadCap:altsrc="../SkinSupport/DropDownOpen.png" onload="if ( typeof( FMCPreloadImage ) == 'function' ) { FMCPreloadImage( '../../SkinSupport/DropDownOpen.png' ); }" alt="Closed" MadCap:alt2="Open" class="MCDropDownIcon" />Product Information</a>
+                                </div>
+                                <div class="MCDropDownBody_0" id="MCDropDownBody_2717374667_5" style="display: none;">
+                                    <p class="FooterTopicMaster"><span class="PrimaryProductFullName">Lexis® Visualfiles™</span> <span class="PrimaryProductVersionNumber">3.7</span></p>
+                                    <p class="FooterTopicMaster">Copyright © <span class="PrimaryProductReleaseYear">2017</span>&#160;<span class="PrimaryCompanyName">LexisNexis</span>. All rights reserved.</p>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../SkinSupport/MadCapBodyEnd.js">
+        </script>
+    </body>
+</html>
